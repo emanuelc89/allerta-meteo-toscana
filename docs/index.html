@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Allerta Meteo Toscana — Bollettino per zone di allerta</title>
 <meta name="description" content="Allerte meteo, previsioni e criticità per le zone di allerta della Toscana. Dati da fonti ufficiali aperte.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
   :root {
     --blu: #2b4380;
@@ -16,6 +17,11 @@
     --verde: #1a7f3c;
     --verde-bg: #e6f5eb;
     --verde-bordo: #c3e6cf;
+    --zona: #67b979;
+    --zona-scura: #4f9e63;
+    --gialla: #f2c94c;
+    --arancione: #f2994a;
+    --rossa: #eb5757;
   }
   * { box-sizing: border-box; margin: 0; }
   body {
@@ -24,63 +30,93 @@
     color: var(--testo);
     line-height: 1.5;
   }
-  header {
-    background: var(--blu);
-    color: #fff;
-    padding: 14px 20px;
-  }
+  header { background: var(--blu); color: #fff; padding: 14px 20px; }
   .header-inner {
     max-width: 1180px; margin: 0 auto;
     display: flex; align-items: center; gap: 14px;
   }
   .logo {
     width: 42px; height: 42px; flex-shrink: 0;
-    background: var(--blu-scuro);
-    border-radius: 10px;
-    display: grid; place-items: center;
-    font-size: 20px;
+    background: var(--blu-scuro); border-radius: 10px;
+    display: grid; place-items: center; font-size: 20px;
   }
   header h1 { font-size: 1.15rem; font-weight: 700; }
   header .sottotitolo { font-size: .82rem; opacity: .85; }
   main { max-width: 1180px; margin: 22px auto; padding: 0 20px; }
   .banner {
-    background: var(--verde-bg);
-    border: 1px solid var(--verde-bordo);
-    border-radius: 12px;
-    padding: 14px 18px;
+    background: var(--verde-bg); border: 1px solid var(--verde-bordo);
+    border-radius: 12px; padding: 14px 18px;
     display: flex; align-items: center; gap: 12px;
   }
   .banner .pallino {
     width: 34px; height: 34px; flex-shrink: 0;
     background: var(--verde); color: #fff;
-    border-radius: 50%;
-    display: grid; place-items: center;
+    border-radius: 50%; display: grid; place-items: center;
   }
   .banner strong { display: block; }
   .banner span { font-size: .88rem; color: var(--testo-tenue); }
+  .griglia {
+    display: grid; grid-template-columns: 1.9fr 1fr;
+    gap: 18px; align-items: start; margin-top: 18px;
+  }
   .card {
-    background: #fff;
-    border: 1px solid var(--bordo);
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-top: 18px;
+    background: #fff; border: 1px solid var(--bordo);
+    border-radius: 12px; padding: 18px 20px;
   }
   .card h2 { font-size: 1rem; margin-bottom: 12px; }
-  .placeholder-mappa {
-    border: 2px dashed var(--bordo);
-    border-radius: 10px;
-    min-height: 320px;
-    display: grid; place-items: center;
-    color: var(--testo-tenue);
-    font-size: .92rem;
-    text-align: center;
-    padding: 20px;
+  #mappa { height: 500px; border-radius: 10px; }
+  .leaflet-container { background: #fff; font: inherit; }
+  .errore-mappa {
+    height: 100%; display: grid; place-items: center;
+    color: var(--testo-tenue); text-align: center; padding: 24px; font-size: .92rem;
   }
+  .legenda {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--sfondo);
+    font-size: .82rem; color: var(--testo-tenue);
+  }
+  .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    display: inline-block; margin-right: 5px; vertical-align: -1px;
+  }
+  .dot-verde { background: var(--zona); }
+  .dot-gialla { background: var(--gialla); }
+  .dot-arancione { background: var(--arancione); }
+  .dot-rossa { background: var(--rossa); }
+  .dot-grigia { background: #cbd2dc; }
+  .pannello .suggerimento { color: var(--testo-tenue); font-size: .92rem; padding: 8px 0; }
+  .pan-testa { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+  .pan-testa h2 { font-size: 1.15rem; margin: 0; }
+  .badge {
+    font-size: .72rem; font-weight: 600; white-space: nowrap;
+    padding: 3px 10px; border-radius: 999px;
+    background: #e5e7eb; color: #4b5563;
+  }
+  .pan-luogo { font-size: .88rem; color: var(--testo-tenue); margin-top: 4px; }
+  .sotto-card {
+    border: 1px solid var(--bordo); border-radius: 10px;
+    padding: 12px 14px; margin-top: 16px;
+  }
+  .sotto-card h3 {
+    font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--testo-tenue); margin-bottom: 6px;
+  }
+  .riga-rischio {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 0; border-top: 1px solid var(--sfondo); font-size: .9rem;
+  }
+  .riga-rischio:first-of-type { border-top: 0; }
+  .stato { color: var(--testo-tenue); font-size: .85rem; }
+  .nota { font-size: .78rem; color: var(--testo-tenue); margin-top: 10px; }
   footer {
     max-width: 1180px; margin: 36px auto 26px; padding: 0 20px;
     font-size: .78rem; color: var(--testo-tenue);
   }
   footer a { color: var(--blu); }
+  @media (max-width: 900px) {
+    .griglia { grid-template-columns: 1fr; }
+    #mappa { height: 400px; }
+  }
 </style>
 </head>
 <body>
@@ -99,15 +135,50 @@
   <div class="banner">
     <div class="pallino" aria-hidden="true">✓</div>
     <div>
-      <strong>Sito in costruzione</strong>
-      <span>Tra poco qui troverai la mappa delle zone di allerta con i bollettini ufficiali aggiornati.</span>
+      <strong>La mappa è attiva</strong>
+      <span>Zone di allerta ufficiali della Toscana. I livelli dei bollettini verranno collegati nel prossimo aggiornamento.</span>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Mappa delle zone di allerta</h2>
-    <div class="placeholder-mappa">
-      Qui comparirà la mappa interattiva delle zone di allerta della Toscana.
+  <div class="griglia">
+    <div class="card">
+      <h2>Mappa delle zone di allerta</h2>
+      <div id="mappa"></div>
+      <div class="legenda">
+        <span><i class="dot dot-verde"></i>Nessuna allerta</span>
+        <span><i class="dot dot-gialla"></i>Allerta gialla</span>
+        <span><i class="dot dot-arancione"></i>Allerta arancione</span>
+        <span><i class="dot dot-rossa"></i>Allerta rossa</span>
+      </div>
+    </div>
+
+    <div class="card pannello">
+      <div id="pan-vuoto" class="suggerimento">
+        Tocca o clicca una zona della mappa per vederne i dettagli.
+      </div>
+      <div id="pan-dett" hidden>
+        <div class="pan-testa">
+          <h2 id="pan-nome"></h2>
+          <span class="badge" id="pan-badge">—</span>
+        </div>
+        <div class="pan-luogo" id="pan-comuni"></div>
+        <div class="sotto-card">
+          <h3>Criticità</h3>
+          <div class="riga-rischio">
+            <span>Rischio idraulico</span>
+            <span class="stato"><i class="dot dot-grigia"></i> In arrivo</span>
+          </div>
+          <div class="riga-rischio">
+            <span>Rischio temporali</span>
+            <span class="stato"><i class="dot dot-grigia"></i> In arrivo</span>
+          </div>
+          <div class="riga-rischio">
+            <span>Rischio idrogeologico</span>
+            <span class="stato"><i class="dot dot-grigia"></i> In arrivo</span>
+          </div>
+          <p class="nota">I livelli ufficiali dei bollettini verranno collegati nel prossimo aggiornamento del sito.</p>
+        </div>
+      </div>
     </div>
   </div>
 </main>
@@ -118,6 +189,56 @@
   Fonti dati: Dipartimento della Protezione Civile, Regione Toscana — Centro Funzionale Regionale, Consorzio LaMMA.
   Progetto open source su <a href="https://github.com/emanuelc89/allerta-meteo-toscana">GitHub</a>.
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  var COLORI = { base: '#67b979', hover: '#4f9e63', selezione: '#223768' };
+  var selezionata = null;
+
+  var mappa = L.map('mappa', { scrollWheelZoom: false, zoomSnap: 0.25 });
+  mappa.attributionControl.setPrefix(false);
+  mappa.attributionControl.addAttribution('Zone di allerta: dati DPC / Regione Toscana');
+
+  fetch('zone.geojson')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (geo) {
+      var layer = L.geoJSON(geo, {
+        style: function () {
+          return { color: '#ffffff', weight: 1, fillColor: COLORI.base, fillOpacity: 1 };
+        },
+        onEachFeature: function (feat, ly) {
+          ly.bindTooltip(feat.properties.nome, { sticky: true });
+          ly.on('mouseover', function () { if (ly !== selezionata) ly.setStyle({ fillColor: COLORI.hover }); });
+          ly.on('mouseout', function () { if (ly !== selezionata) ly.setStyle({ fillColor: COLORI.base }); });
+          ly.on('click', function () { seleziona(feat, ly); });
+        }
+      }).addTo(mappa);
+      mappa.fitBounds(layer.getBounds().pad(0.04));
+    })
+    .catch(function (err) {
+      mappa.remove();
+      document.getElementById('mappa').innerHTML =
+        '<div class="errore-mappa">Le zone della mappa non si sono caricate (' + err.message + ').<br>' +
+        'Se stai aprendo il file direttamente dal computer, avvia il piccolo server locale: ' +
+        'dal terminale, nella cartella docs, esegui <code>python -m http.server 8000</code> e apri localhost:8000.</div>';
+    });
+
+  function seleziona(feat, ly) {
+    if (selezionata) selezionata.setStyle({ color: '#ffffff', weight: 1, fillColor: COLORI.base });
+    selezionata = ly;
+    ly.setStyle({ color: COLORI.selezione, weight: 2.5, fillColor: COLORI.hover });
+    ly.bringToFront();
+
+    var p = feat.properties;
+    var c = p.comuni || [];
+    document.getElementById('pan-vuoto').hidden = true;
+    document.getElementById('pan-dett').hidden = false;
+    document.getElementById('pan-nome').textContent = p.nome;
+    document.getElementById('pan-comuni').textContent = c.length
+      ? c.length + ' comuni, tra cui ' + c.slice(0, 3).join(', ') + (c.length > 3 ? '\u2026' : '')
+      : '';
+  }
+</script>
 
 </body>
 </html>
