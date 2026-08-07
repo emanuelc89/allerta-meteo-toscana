@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="utf-8">
@@ -17,18 +17,15 @@
     --verde: #1a7f3c;
     --verde-bg: #e6f5eb;
     --verde-bordo: #c3e6cf;
-    --zona: #67b979;
-    --zona-scura: #4f9e63;
-    --gialla: #f2c94c;
-    --arancione: #f2994a;
-    --rossa: #eb5757;
+    --liv-verde: #67b979;
+    --liv-gialla: #f2c94c;
+    --liv-arancione: #f2994a;
+    --liv-rossa: #eb5757;
   }
   * { box-sizing: border-box; margin: 0; }
   body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: var(--sfondo);
-    color: var(--testo);
-    line-height: 1.5;
+    background: var(--sfondo); color: var(--testo); line-height: 1.5;
   }
   header { background: var(--blu); color: #fff; padding: 14px 20px; }
   .header-inner {
@@ -42,17 +39,25 @@
   }
   header h1 { font-size: 1.15rem; font-weight: 700; }
   header .sottotitolo { font-size: .82rem; opacity: .85; }
+  .tabs { margin-left: auto; display: flex; background: rgba(255,255,255,.15); border-radius: 9px; padding: 3px; }
+  .tabs button {
+    border: 0; background: transparent; color: #fff; cursor: pointer;
+    font: inherit; font-size: .9rem; padding: 6px 16px; border-radius: 7px;
+  }
+  .tabs button.attivo { background: #fff; color: var(--blu); font-weight: 600; }
   main { max-width: 1180px; margin: 22px auto; padding: 0 20px; }
   .banner {
-    background: var(--verde-bg); border: 1px solid var(--verde-bordo);
     border-radius: 12px; padding: 14px 18px;
     display: flex; align-items: center; gap: 12px;
+    background: var(--verde-bg); border: 1px solid var(--verde-bordo);
   }
+  .banner.attenzione { background: #fff7e6; border-color: #ffe1a6; }
   .banner .pallino {
-    width: 34px; height: 34px; flex-shrink: 0;
-    background: var(--verde); color: #fff;
+    width: 34px; height: 34px; flex-shrink: 0; color: #fff;
     border-radius: 50%; display: grid; place-items: center;
+    background: var(--verde);
   }
+  .banner.attenzione .pallino { background: var(--liv-arancione); }
   .banner strong { display: block; }
   .banner span { font-size: .88rem; color: var(--testo-tenue); }
   .griglia {
@@ -63,7 +68,9 @@
     background: #fff; border: 1px solid var(--bordo);
     border-radius: 12px; padding: 18px 20px;
   }
+  .card-testa { display: flex; justify-content: space-between; align-items: baseline; }
   .card h2 { font-size: 1rem; margin-bottom: 12px; }
+  .quando { font-size: .8rem; color: var(--testo-tenue); }
   #mappa { height: 500px; border-radius: 10px; }
   .leaflet-container { background: #fff; font: inherit; }
   .errore-mappa {
@@ -75,28 +82,23 @@
     margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--sfondo);
     font-size: .82rem; color: var(--testo-tenue);
   }
-  .dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    display: inline-block; margin-right: 5px; vertical-align: -1px;
-  }
-  .dot-verde { background: var(--zona); }
-  .dot-gialla { background: var(--gialla); }
-  .dot-arancione { background: var(--arancione); }
-  .dot-rossa { background: var(--rossa); }
-  .dot-grigia { background: #cbd2dc; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: -1px; }
+  .dot-verde { background: var(--liv-verde); }
+  .dot-gialla { background: var(--liv-gialla); }
+  .dot-arancione { background: var(--liv-arancione); }
+  .dot-rossa { background: var(--liv-rossa); }
   .pannello .suggerimento { color: var(--testo-tenue); font-size: .92rem; padding: 8px 0; }
   .pan-testa { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
   .pan-testa h2 { font-size: 1.15rem; margin: 0; }
   .badge {
-    font-size: .72rem; font-weight: 600; white-space: nowrap;
-    padding: 3px 10px; border-radius: 999px;
-    background: #e5e7eb; color: #4b5563;
+    font-size: .72rem; font-weight: 600; white-space: nowrap; color: #fff;
+    padding: 3px 10px; border-radius: 999px; background: var(--liv-verde);
   }
+  .badge[data-liv="gialla"] { background: var(--liv-gialla); color: #7a5b00; }
+  .badge[data-liv="arancione"] { background: var(--liv-arancione); }
+  .badge[data-liv="rossa"] { background: var(--liv-rossa); }
   .pan-luogo { font-size: .88rem; color: var(--testo-tenue); margin-top: 4px; }
-  .sotto-card {
-    border: 1px solid var(--bordo); border-radius: 10px;
-    padding: 12px 14px; margin-top: 16px;
-  }
+  .sotto-card { border: 1px solid var(--bordo); border-radius: 10px; padding: 12px 14px; margin-top: 16px; }
   .sotto-card h3 {
     font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
     color: var(--testo-tenue); margin-bottom: 6px;
@@ -107,13 +109,14 @@
   }
   .riga-rischio:first-of-type { border-top: 0; }
   .stato { color: var(--testo-tenue); font-size: .85rem; }
-  .nota { font-size: .78rem; color: var(--testo-tenue); margin-top: 10px; }
   footer {
     max-width: 1180px; margin: 36px auto 26px; padding: 0 20px;
     font-size: .78rem; color: var(--testo-tenue);
   }
   footer a { color: var(--blu); }
   @media (max-width: 900px) {
+    .header-inner { flex-wrap: wrap; }
+    .tabs { margin-left: 0; }
     .griglia { grid-template-columns: 1fr; }
     #mappa { height: 400px; }
   }
@@ -123,26 +126,33 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo" aria-hidden="true">⚠️</div>
+    <div class="logo" aria-hidden="true">&#9888;&#65039;</div>
     <div>
       <h1>Allerta Meteo Toscana</h1>
       <div class="sottotitolo">Bollettino di criticità per le zone di allerta regionali</div>
+    </div>
+    <div class="tabs" id="tabs">
+      <button data-giorno="oggi" class="attivo">Oggi</button>
+      <button data-giorno="domani">Domani</button>
     </div>
   </div>
 </header>
 
 <main>
-  <div class="banner">
-    <div class="pallino" aria-hidden="true">✓</div>
+  <div class="banner" id="banner">
+    <div class="pallino" aria-hidden="true">&#10003;</div>
     <div>
-      <strong>La mappa è attiva</strong>
-      <span>Zone di allerta ufficiali della Toscana. I livelli dei bollettini verranno collegati nel prossimo aggiornamento.</span>
+      <strong id="banner-titolo">Caricamento in corso…</strong>
+      <span id="banner-testo">Sto leggendo l'ultimo bollettino.</span>
     </div>
   </div>
 
   <div class="griglia">
     <div class="card">
-      <h2>Mappa delle zone di allerta</h2>
+      <div class="card-testa">
+        <h2>Mappa delle zone di allerta</h2>
+        <span class="quando" id="mappa-quando"></span>
+      </div>
       <div id="mappa"></div>
       <div class="legenda">
         <span><i class="dot dot-verde"></i>Nessuna allerta</span>
@@ -159,24 +169,23 @@
       <div id="pan-dett" hidden>
         <div class="pan-testa">
           <h2 id="pan-nome"></h2>
-          <span class="badge" id="pan-badge">—</span>
+          <span class="badge" id="pan-badge">&mdash;</span>
         </div>
         <div class="pan-luogo" id="pan-comuni"></div>
         <div class="sotto-card">
-          <h3>Criticità</h3>
+          <h3 id="pan-titolo-rischi">Criticità</h3>
           <div class="riga-rischio">
             <span>Rischio idraulico</span>
-            <span class="stato"><i class="dot dot-grigia"></i> In arrivo</span>
+            <span class="stato" id="r-idraulico"></span>
           </div>
           <div class="riga-rischio">
             <span>Rischio temporali</span>
-            <span class="stato"><i class="dot dot-grigia"></i> In arrivo</span>
+            <span class="stato" id="r-temporali"></span>
           </div>
           <div class="riga-rischio">
             <span>Rischio idrogeologico</span>
-            <span class="stato"><i class="dot dot-grigia"></i> In arrivo</span>
+            <span class="stato" id="r-idrogeologico"></span>
           </div>
-          <p class="nota">I livelli ufficiali dei bollettini verranno collegati nel prossimo aggiornamento del sito.</p>
         </div>
       </div>
     </div>
@@ -192,52 +201,155 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-  var COLORI = { base: '#67b979', hover: '#4f9e63', selezione: '#223768' };
+  var COLORI = { verde: '#67b979', gialla: '#f2c94c', arancione: '#f2994a', rossa: '#eb5757' };
+  var ETICHETTE = { verde: 'Nessuna allerta', gialla: 'Allerta gialla', arancione: 'Allerta arancione', rossa: 'Allerta rossa' };
+  var ORDINE = { verde: 0, gialla: 1, arancione: 2, rossa: 3 };
+
+  var allerte = null;
+  var giorno = 'oggi';
+  var layerZone = null;
   var selezionata = null;
+  var nomeSelezionato = null;
 
   var mappa = L.map('mappa', { scrollWheelZoom: false, zoomSnap: 0.25 });
   mappa.attributionControl.setPrefix(false);
   mappa.attributionControl.addAttribution('Zone di allerta: dati DPC / Regione Toscana');
 
-  fetch('zone.geojson')
-    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function (geo) {
-      var layer = L.geoJSON(geo, {
-        style: function () {
-          return { color: '#ffffff', weight: 1, fillColor: COLORI.base, fillOpacity: 1 };
-        },
-        onEachFeature: function (feat, ly) {
-          ly.bindTooltip(feat.properties.nome, { sticky: true });
-          ly.on('mouseover', function () { if (ly !== selezionata) ly.setStyle({ fillColor: COLORI.hover }); });
-          ly.on('mouseout', function () { if (ly !== selezionata) ly.setStyle({ fillColor: COLORI.base }); });
-          ly.on('click', function () { seleziona(feat, ly); });
-        }
-      }).addTo(mappa);
-      mappa.fitBounds(layer.getBounds().pad(0.04));
-    })
-    .catch(function (err) {
-      mappa.remove();
-      document.getElementById('mappa').innerHTML =
-        '<div class="errore-mappa">Le zone della mappa non si sono caricate (' + err.message + ').<br>' +
-        'Se stai aprendo il file direttamente dal computer, avvia il piccolo server locale: ' +
-        'dal terminale, nella cartella docs, esegui <code>python -m http.server 8000</code> e apri localhost:8000.</div>';
-    });
+  fetch('data/allerte.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('allerte ' + r.status)); })
+    .then(function (dati) { allerte = dati; aggiornaBanner(); return caricaMappa(); })
+    .catch(function (err) { console.warn('Allerte non caricate:', err.message); aggiornaBanner(); caricaMappa(); });
+
+  function caricaMappa() {
+    return fetch('zone.geojson')
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
+      .then(function (geo) {
+        layerZone = L.geoJSON(geo, {
+          style: stileZona,
+          onEachFeature: function (feat, ly) {
+            ly.on('mouseover', function () { if (ly !== selezionata) ly.setStyle({ weight: 2 }); ly.bringToFront(); });
+            ly.on('mouseout', function () { if (ly !== selezionata) ly.setStyle({ weight: 1 }); });
+            ly.on('click', function () { seleziona(feat, ly); });
+            aggiornaTooltip(feat, ly);
+          }
+        }).addTo(mappa);
+        mappa.fitBounds(layerZone.getBounds().pad(0.04));
+      })
+      .catch(function (err) {
+        mappa.remove();
+        document.getElementById('mappa').innerHTML =
+          '<div class="errore-mappa">Le zone della mappa non si sono caricate (' + err.message + ').<br>' +
+          'Se apri il file col doppio clic, avvia il mini-server: nella cartella docs esegui ' +
+          '<code>python -m http.server 8000</code> e apri localhost:8000.</div>';
+      });
+  }
+
+  function livelloZona(nomeZona) {
+    if (!allerte || !allerte[giorno] || !allerte[giorno][nomeZona]) return null;
+    return allerte[giorno][nomeZona].mappa;
+  }
+
+  function stileZona(feat) {
+    var liv = livelloZona(feat.properties.nome);
+    return { color: '#ffffff', weight: 1, fillColor: liv ? COLORI[liv] : '#cbd2dc', fillOpacity: 1 };
+  }
+
+  function aggiornaTooltip(feat, ly) {
+    var liv = livelloZona(feat.properties.nome);
+    var testo = feat.properties.nome + (liv ? ' — ' + ETICHETTE[liv] : '');
+    if (ly.getTooltip()) ly.setTooltipContent(testo); else ly.bindTooltip(testo, { sticky: true });
+  }
+
+  function ridisegna() {
+    if (!layerZone) return;
+    layerZone.eachLayer(function (ly) { ly.setStyle(stileZona(ly.feature)); aggiornaTooltip(ly.feature, ly); });
+    if (selezionata) selezionata.setStyle({ color: '#223768', weight: 2.5 });
+    if (nomeSelezionato) mostraDettaglio(nomeSelezionato);
+  }
 
   function seleziona(feat, ly) {
-    if (selezionata) selezionata.setStyle({ color: '#ffffff', weight: 1, fillColor: COLORI.base });
+    if (selezionata) selezionata.setStyle(stileZona(selezionata.feature));
     selezionata = ly;
-    ly.setStyle({ color: COLORI.selezione, weight: 2.5, fillColor: COLORI.hover });
+    nomeSelezionato = feat.properties.nome;
+    ly.setStyle({ color: '#223768', weight: 2.5 });
     ly.bringToFront();
+    mostraDettaglio(feat.properties.nome, feat.properties.comuni);
+  }
 
-    var p = feat.properties;
-    var c = p.comuni || [];
+  function testoRischio(liv) {
+    var cls = liv || 'grigia';
+    var et = liv ? ETICHETTE[liv] : 'Dato non disponibile';
+    return '<i class="dot dot-' + cls + '"></i> ' + et;
+  }
+
+  function mostraDettaglio(nomeZona, comuni) {
     document.getElementById('pan-vuoto').hidden = true;
     document.getElementById('pan-dett').hidden = false;
-    document.getElementById('pan-nome').textContent = p.nome;
-    document.getElementById('pan-comuni').textContent = c.length
-      ? c.length + ' comuni, tra cui ' + c.slice(0, 3).join(', ') + (c.length > 3 ? '\u2026' : '')
-      : '';
+    document.getElementById('pan-nome').textContent = nomeZona;
+    if (comuni && comuni.length) {
+      document.getElementById('pan-comuni').textContent =
+        comuni.length + ' comuni, tra cui ' + comuni.slice(0, 3).join(', ') + (comuni.length > 3 ? '…' : '');
+    }
+    var d = allerte && allerte[giorno] ? allerte[giorno][nomeZona] : null;
+    var badge = document.getElementById('pan-badge');
+    if (d) {
+      badge.textContent = ETICHETTE[d.mappa];
+      badge.setAttribute('data-liv', d.mappa);
+      document.getElementById('r-idraulico').innerHTML = testoRischio(d.idraulico);
+      document.getElementById('r-temporali').innerHTML = testoRischio(d.temporali);
+      document.getElementById('r-idrogeologico').innerHTML = testoRischio(d.idrogeologico);
+    } else {
+      badge.textContent = 'Dato non disponibile';
+      badge.setAttribute('data-liv', 'verde');
+      document.getElementById('r-idraulico').innerHTML = testoRischio(null);
+      document.getElementById('r-temporali').innerHTML = testoRischio(null);
+      document.getElementById('r-idrogeologico').innerHTML = testoRischio(null);
+    }
+    document.getElementById('pan-titolo-rischi').textContent = 'Criticità ' + (giorno === 'oggi' ? 'oggi' : 'domani');
   }
+
+  function aggiornaBanner() {
+    var banner = document.getElementById('banner');
+    var titolo = document.getElementById('banner-titolo');
+    var testo = document.getElementById('banner-testo');
+    var quando = document.getElementById('mappa-quando');
+    if (!allerte || !allerte[giorno]) {
+      banner.classList.remove('attenzione');
+      titolo.textContent = 'Dati non disponibili';
+      testo.textContent = 'Non è stato possibile leggere l\'ultimo bollettino.';
+      quando.textContent = '';
+      return;
+    }
+    var zone = allerte[giorno];
+    var peggiore = 'verde';
+    var conAllerta = [];
+    Object.keys(zone).forEach(function (n) {
+      var liv = zone[n].mappa;
+      if (ORDINE[liv] > ORDINE[peggiore]) peggiore = liv;
+      if (liv !== 'verde') conAllerta.push(n);
+    });
+    var quandoTxt = giorno === 'oggi' ? 'oggi' : 'domani';
+    quando.textContent = giorno === 'oggi' ? 'Oggi' : 'Domani';
+    if (peggiore === 'verde') {
+      banner.classList.remove('attenzione');
+      titolo.textContent = 'Nessuna allerta ' + quandoTxt + ' in Toscana';
+      testo.textContent = 'Nessun fenomeno significativo previsto sulle zone di allerta.';
+    } else {
+      banner.classList.add('attenzione');
+      titolo.textContent = ETICHETTE[peggiore] + ' ' + quandoTxt + ' in Toscana';
+      testo.textContent = conAllerta.length + (conAllerta.length === 1 ? ' zona interessata: ' : ' zone interessate: ') + conAllerta.slice(0, 4).join(', ') + (conAllerta.length > 4 ? '…' : '');
+    }
+    if (allerte.emesso) { testo.textContent += '  ·  Bollettino emesso il ' + allerte.emesso; }
+  }
+
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    giorno = b.getAttribute('data-giorno');
+    Array.prototype.forEach.call(this.querySelectorAll('button'), function (x) { x.classList.toggle('attivo', x === b); });
+    aggiornaBanner();
+    ridisegna();
+  });
 </script>
 
 </body>
