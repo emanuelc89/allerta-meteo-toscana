@@ -8,21 +8,20 @@ Scarica due bollettini ufficiali e produce docs/data/allerte.json:
    Copre 27 citta' italiane; in Toscana SOLO Firenze.
 
 Usa solo due domini: api.github.com (per scoprire l'ultimo aggiornamento)
-e raw.githubusercontent.com (per i dati veri e propri). Niente github.com
-"normale": su alcune reti quel dominio si comporta in modo imprevedibile
-con le richieste automatiche, pur essendo raggiungibile dal browser.
+e raw.githubusercontent.com (per i dati veri e propri).
 
 Ogni passaggio stampa un messaggio, cosi' se qualcosa si blocca si vede
 subito QUALE richiesta e' in corso, invece di un cursore muto.
 """
 
 import csv
+import gzip
 import io
 import json
 import re
 import sys
 import urllib.request
-from datetime import datetime, timezone, timedelta
+from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
 REPO_DPC = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
@@ -63,16 +62,25 @@ def peggiore(*livelli):
     return max(livelli, key=lambda l: ORDINE_PIOGGIA.get(l, 0))
 
 
-def scarica_json(url, timeout=TIMEOUT):
-    req = urllib.request.Request(url, headers={"User-Agent": "allerta-meteo-toscana"})
+def _scarica_bytes(url, timeout):
+    """Scarica chiedendo la compressione gzip: sui bollettini DPC taglia i dati da
+    trasferire di circa il 60%, utile su connessioni lente o reti filtrate."""
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "allerta-meteo-toscana", "Accept-Encoding": "gzip"}
+    )
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.load(r)
+        dati = r.read()
+        if r.info().get("Content-Encoding") == "gzip":
+            dati = gzip.decompress(dati)
+        return dati
+
+
+def scarica_json(url, timeout=TIMEOUT):
+    return json.loads(_scarica_bytes(url, timeout).decode("utf-8"))
 
 
 def scarica_testo(url, timeout=TIMEOUT):
-    req = urllib.request.Request(url, headers={"User-Agent": "allerta-meteo-toscana"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8")
+    return _scarica_bytes(url, timeout).decode("utf-8")
 
 
 def trova_ultimo_prefisso():
@@ -156,32 +164,50 @@ def main():
     log("Passo 2: cerco l'ultimo bollettino pioggia (DPC)...")
     prefisso = trova_ultimo_prefisso()
     data_str, ora_str = prefisso[:8], prefisso[9:]
+    data_emissione = date(int(data_str[0:4]), int(data_str[4:6]), int(data_str[6:8]))
     emesso_pioggia = f"{data_str[6:8]}/{data_str[4:6]}/{data_str[0:4]} {ora_str[0:2]}:{ora_str[2:4]}"
-    log(f"  > trovato: bollettino del {emesso_pioggia}")
+    log(f"  > trovato: bollettino emesso il {emesso_pioggia}")
 
-    log("Passo 3: scarico i dati di oggi e domani...")
-    bollettino_oggi = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_today.json")
-    bollettino_domani = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_tomorrow.json")
+    log("Passo 3: scarico i due giorni previsti dal bollettino...")
+    bollettino_a = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_today.json", timeout=45)
+    bollettino_b = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_tomorrow.json", timeout=45)
 
-    zone_oggi = estrai_zone_pioggia(bollettino_oggi, comuni_toscani)
-    zone_domani = estrai_zone_pioggia(bollettino_domani, comuni_toscani)
+    # IMPORTANTE: nel bollettino DPC "_today" si riferisce al GIORNO DI EMISSIONE
+    # e "_tomorrow" al giorno dopo. Siccome il bollettino esce nel pomeriggio,
+    # la mattina l'ultimo disponibile e' quello di ieri: prendere "_today" come
+    # "oggi" mostrerebbe i dati del giorno prima. Indicizzo quindi per data reale.
+    per_data = {
+        data_emissione.isoformat(): estrai_zone_pioggia(bollettino_a, comuni_toscani),
+        (data_emissione + timedelta(days=1)).isoformat(): estrai_zone_pioggia(bollettino_b, comuni_toscani),
+    }
 
     oggi_it = datetime.now(timezone(timedelta(hours=2))).date()
     domani_it = oggi_it + timedelta(days=1)
-    caldo_per_data = carica_caldo_firenze()
 
+    zone_oggi = per_data.get(oggi_it.isoformat())
+    zone_domani = per_data.get(domani_it.isoformat())
+
+    if zone_oggi is None:
+        log(f"  ATTENZIONE: il bollettino piu' recente ({emesso_pioggia}) non copre oggi.")
+    if zone_domani is None:
+        log("  > la previsione per domani non e' ancora stata pubblicata (esce nel pomeriggio).")
+
+    caldo_per_data = carica_caldo_firenze()
     caldo_oggi = caldo_per_data.get(oggi_it.isoformat())
     caldo_domani = caldo_per_data.get(domani_it.isoformat())
     caldo_attivo = bool(caldo_per_data)
 
-    if ZONA_CALORE_TOSCANA in zone_oggi and caldo_oggi:
+    if zone_oggi and ZONA_CALORE_TOSCANA in zone_oggi and caldo_oggi:
         zone_oggi[ZONA_CALORE_TOSCANA]["caldo"] = caldo_oggi
-    if ZONA_CALORE_TOSCANA in zone_domani and caldo_domani:
+    if zone_domani and ZONA_CALORE_TOSCANA in zone_domani and caldo_domani:
         zone_domani[ZONA_CALORE_TOSCANA]["caldo"] = caldo_domani
 
     dati = {
         "aggiornato": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "emesso_pioggia": emesso_pioggia,
+        "emesso_pioggia_data": data_emissione.isoformat(),
+        "data_oggi": oggi_it.isoformat(),
+        "data_domani": domani_it.isoformat(),
         "fonte_pioggia": "Dipartimento della Protezione Civile",
         "caldo_stagione_attiva": caldo_attivo,
         "caldo_citta_coperta": "Firenze",
@@ -191,9 +217,9 @@ def main():
         "domani": zone_domani,
     }
 
-    n = len(zone_oggi)
-    if n < 20:
-        log(f"ATTENZIONE: trovate solo {n} zone toscane (attese 26).")
+    n = len(zone_oggi) if zone_oggi else 0
+    if zone_oggi is not None and n < 20:
+        log(f"ATTENZIONE: trovate solo {n} zone toscane per oggi (attese 26).")
 
     log("Passo 5: salvo il file...")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -204,7 +230,9 @@ def main():
         f"caldo Firenze oggi: {ETICHETTE_CALDO.get(caldo_oggi['livello'])} (liv.{caldo_oggi['livello']})"
         if caldo_oggi else "caldo: fuori stagione o dato non disponibile"
     )
-    log(f"OK - pioggia {emesso_pioggia} - {n} zone - {msg_caldo} - scritto {out}")
+    stato_oggi = f"{n} zone" if zone_oggi else "OGGI NON COPERTO"
+    stato_domani = "domani disponibile" if zone_domani else "domani non ancora pubblicato"
+    log(f"OK - bollettino {emesso_pioggia} - {stato_oggi}, {stato_domani} - {msg_caldo} - scritto {out}")
 
 
 if __name__ == "__main__":

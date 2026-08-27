@@ -56,6 +56,8 @@
   }
   .banner.pioggia-attiva { background: #eaf3fb; border-color: #bcdcf3; }
   .banner.caldo-attivo { background: #fdf1e8; border-color: #f6cba6; }
+  .banner.avviso { background: #fdecea; border-color: #f3c0b9; }
+  .banner.neutro { background: #f4f6f9; border-color: var(--bordo); }
   .banner .pallino {
     width: 34px; height: 34px; flex-shrink: 0; color: #fff;
     border-radius: 50%; display: grid; place-items: center; font-size: 16px;
@@ -148,6 +150,7 @@
           <span><i class="quadr" style="background:var(--p-rossa)"></i>Rossa</span>
           <span>&#128167; = zona con allerta pioggia attiva</span>
         </div>
+        <div class="legenda-gruppo" id="riga-controllo" style="border-top:1px solid var(--sfondo);padding-top:8px;margin-top:4px"></div>
         <div class="legenda-gruppo">
           <span class="legenda-titolo">Caldo</span>
           <span>&#127777;&#65039; = allerta caldo attiva</span>
@@ -400,19 +403,84 @@
     }
   }
 
+  function oreDa(isoString) {
+    if (!isoString) return null;
+    var t = Date.parse(isoString);
+    if (isNaN(t)) return null;
+    return (Date.now() - t) / 3600000;
+  }
+
+  function bannerHtml(classe, colorePallino, simbolo, titolo, testo) {
+    return '<div class="banner ' + classe + '"><div class="pallino" style="background:' + colorePallino + '">' +
+      simbolo + '</div><div><strong>' + titolo + '</strong><span>' + testo + '</span></div></div>';
+  }
+
+  // Controlla che i dati siano davvero attuali. Meglio dire "non lo so"
+  // che mostrare con sicurezza un bollettino vecchio.
+  function bannerFreschezza() {
+    if (!allerte) {
+      return bannerHtml('avviso', '#c0392b', '!', 'Dati non disponibili',
+        'Non e\' stato possibile leggere l\'ultimo bollettino. Consulta ' +
+        '<a href="https://www.regione.toscana.it/allertameteo">il sito ufficiale della Regione</a>.');
+    }
+
+    var ore = oreDa(allerte.aggiornato);
+
+    if (allerte.oggi === null || allerte.oggi === undefined) {
+      return bannerHtml('avviso', '#c0392b', '!', 'Nessun bollettino disponibile per oggi',
+        'L\'ultimo bollettino risale al ' + (allerte.emesso_pioggia || 'una data precedente') +
+        ' e non copre la giornata odierna. Fai riferimento ' +
+        '<a href="https://www.regione.toscana.it/allertameteo">al sito ufficiale della Regione</a>.');
+    }
+
+    if (ore !== null && ore > 36) {
+      return bannerHtml('avviso', '#c0392b', '!', 'Aggiornamento automatico fermo',
+        'Questa pagina non riceve nuovi dati da circa ' + Math.round(ore) + ' ore: le informazioni ' +
+        'mostrate potrebbero non essere attuali. Fai riferimento ' +
+        '<a href="https://www.regione.toscana.it/allertameteo">al sito ufficiale della Regione</a>.');
+    }
+
+    return '';
+  }
+
+  function aggiornaRigaControllo() {
+    var el = document.getElementById('riga-controllo');
+    if (!el) return;
+    if (!allerte || !allerte.aggiornato) { el.textContent = ''; return; }
+    var d = new Date(allerte.aggiornato);
+    var ore = oreDa(allerte.aggiornato);
+    var quando = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' }) + ' alle ' +
+                 d.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+    el.innerHTML = '<span>Ultimo controllo automatico dei bollettini: ' + quando +
+      (ore !== null && ore > 36 ? ' <strong>(oltre 36 ore fa)</strong>' : '') + '</span>';
+  }
+
   function aggiornaBanner() {
     var contenitore = document.getElementById('banner-riga');
     var quando = document.getElementById('mappa-quando');
     var quandoTxt = giorno === 'oggi' ? 'oggi' : 'domani';
-    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' — ' + formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
+    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' \u2014 ' +
+      formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
 
-    if (!allerte || !allerte[giorno]) {
-      contenitore.innerHTML = '<div class="banner"><div class="pallino" style="background:#9aa4b2">?</div>' +
-        '<div><strong>Dati non disponibili</strong><span>Non è stato possibile leggere l\'ultimo bollettino.</span></div></div>';
+    var html = bannerFreschezza();
+    var zone = allerte ? allerte[giorno] : null;
+
+    if (!zone) {
+      if (giorno === 'domani') {
+        html += bannerHtml('neutro', '#9aa4b2', '&#8987;', 'Previsione di domani non ancora pubblicata',
+          'Il bollettino di criticita\' viene emesso di norma nel primo pomeriggio. ' +
+          'Riprova piu\' tardi: la pagina si aggiorna da sola.');
+      } else if (!allerte || allerte.oggi === null || allerte.oggi === undefined) {
+        // l'avviso principale e' gia' in cima, non lo ripeto
+      } else {
+        html += bannerHtml('neutro', '#9aa4b2', '?', 'Dati non disponibili',
+          'Non e\' stato possibile leggere i dati per questa giornata.');
+      }
+      contenitore.innerHTML = html;
+      aggiornaRigaControllo();
       return;
     }
 
-    var zone = allerte[giorno];
     var peggiorePioggia = 'verde';
     var zoneConPioggia = [];
     var peggioreCaldo = 0;
@@ -423,38 +491,33 @@
       if (d.caldo && d.caldo.livello > peggioreCaldo) peggioreCaldo = d.caldo.livello;
     });
 
-    var html = '';
+    var codaBollettino = allerte.emesso_pioggia ? '  \u00b7  Bollettino emesso il ' + allerte.emesso_pioggia : '';
 
     if (peggiorePioggia === 'verde') {
-      html += '<div class="banner"><div class="pallino" style="background:#3f9142">✓</div><div>' +
-        '<strong>Nessuna allerta pioggia ' + quandoTxt + ' in Toscana</strong>' +
-        '<span>Nessun fenomeno significativo previsto sulle zone di allerta.';
+      html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta pioggia ' + quandoTxt + ' in Toscana',
+        'Nessun fenomeno significativo previsto sulle zone di allerta.' + codaBollettino);
     } else {
-      html += '<div class="banner pioggia-attiva"><div class="pallino" style="background:' + COLORI_PIOGGIA[peggiorePioggia] + '">&#128167;</div><div>' +
-        '<strong>' + ETICHETTE_PIOGGIA[peggiorePioggia] + ' pioggia ' + quandoTxt + ' in Toscana</strong>' +
-        '<span>' + zoneConPioggia.length + (zoneConPioggia.length === 1 ? ' zona interessata: ' : ' zone interessate: ') +
-        zoneConPioggia.slice(0, 4).join(', ') + (zoneConPioggia.length > 4 ? '…' : '') + '.';
+      html += bannerHtml('pioggia-attiva', COLORI_PIOGGIA[peggiorePioggia], '&#128167;',
+        ETICHETTE_PIOGGIA[peggiorePioggia] + ' pioggia ' + quandoTxt + ' in Toscana',
+        zoneConPioggia.length + (zoneConPioggia.length === 1 ? ' zona interessata: ' : ' zone interessate: ') +
+        zoneConPioggia.slice(0, 4).join(', ') + (zoneConPioggia.length > 4 ? '\u2026' : '') + '.' + codaBollettino);
     }
-    if (allerte.emesso_pioggia) html += '  ·  Bollettino emesso il ' + allerte.emesso_pioggia;
-    html += '</span></div></div>';
 
     if (allerte.caldo_stagione_attiva === false) {
-      html += '<div class="banner"><div class="pallino" style="background:#9aa4b2">&#127777;&#65039;</div><div>' +
-        '<strong>Bollettino caldo non attivo</strong>' +
-        '<span>Il Ministero della Salute pubblica il bollettino ondate di calore da fine maggio a metà settembre.</span></div></div>';
+      html += bannerHtml('neutro', '#9aa4b2', '&#127777;&#65039;', 'Bollettino caldo non attivo',
+        'Il Ministero della Salute pubblica il bollettino ondate di calore da fine maggio a meta\' settembre.');
     } else if (peggioreCaldo === 0) {
-      html += '<div class="banner"><div class="pallino" style="background:#3f9142">✓</div><div>' +
-        '<strong>Nessuna allerta caldo ' + quandoTxt + ' a Firenze</strong>' +
-        '<span>Dato ufficiale disponibile solo per la città di Firenze (Ministero della Salute).</span></div></div>';
+      html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta caldo ' + quandoTxt + ' a Firenze',
+        'Dato ufficiale disponibile solo per la citta\' di Firenze (Ministero della Salute).');
     } else {
-      html += '<div class="banner caldo-attivo"><div class="pallino" style="background:' + COLORI_CALDO[peggioreCaldo] + '">&#127777;&#65039;</div><div>' +
-        '<strong>' + ETICHETTE_CALDO[peggioreCaldo] + ' a Firenze ' + quandoTxt + '</strong>' +
-        '<span>Livello ' + peggioreCaldo + ' su 3 — dato ufficiale disponibile solo per la città di Firenze.</span></div></div>';
+      html += bannerHtml('caldo-attivo', COLORI_CALDO[peggioreCaldo], '&#127777;&#65039;',
+        ETICHETTE_CALDO[peggioreCaldo] + ' a Firenze ' + quandoTxt,
+        'Livello ' + peggioreCaldo + ' su 3 \u2014 dato ufficiale disponibile solo per la citta\' di Firenze.');
     }
 
     contenitore.innerHTML = html;
+    aggiornaRigaControllo();
   }
-
   document.getElementById('tabs').addEventListener('click', function (e) {
     var b = e.target.closest('button');
     if (!b) return;
@@ -467,6 +530,7 @@
 
 </body>
 </html>
+
 
 
 
