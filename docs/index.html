@@ -120,7 +120,7 @@
     <div class="logo" aria-hidden="true">&#9888;&#65039;</div>
     <div>
       <h1>Allerta Meteo Toscana</h1>
-      <div class="sottotitolo">Bollettino di criticità per le zone di allerta regionali</div>
+      <div class="sottotitolo">Bollettino di criticità per le zone di allerta regionali · <span id="data-oggi"></span></div>
     </div>
     <div class="tabs" id="tabs">
       <button data-giorno="oggi" class="attivo">Oggi</button>
@@ -206,6 +206,20 @@
   var ORDINE_PIOGGIA = { verde: 0, gialla: 1, arancione: 2, rossa: 3 };
   var COLORI_CALDO = { 0: '#f6c453', 1: '#f6c453', 2: '#f2994a', 3: '#d64545' };
   var ETICHETTE_CALDO = { 0: 'Nessun rischio', 1: 'Pre-allerta', 2: 'Rischio elevato', 3: 'Ondata di calore' };
+
+  function formattaDataLunga(d) {
+    var s = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  var elDataOggi = document.getElementById('data-oggi');
+  if (elDataOggi) elDataOggi.textContent = formattaDataLunga(new Date());
+
+  function formattaDataLunga(d) {
+    var s = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  var elDataOggi = document.getElementById('data-oggi');
+  if (elDataOggi) elDataOggi.textContent = formattaDataLunga(new Date());
 
   var allerte = null;
   var giorno = 'oggi';
@@ -390,7 +404,7 @@
     var contenitore = document.getElementById('banner-riga');
     var quando = document.getElementById('mappa-quando');
     var quandoTxt = giorno === 'oggi' ? 'oggi' : 'domani';
-    quando.textContent = giorno === 'oggi' ? 'Oggi' : 'Domani';
+    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' u{2014} ' + formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
 
     if (!allerte || !allerte[giorno]) {
       contenitore.innerHTML = '<div class="banner"><div class="pallino" style="background:#9aa4b2">?</div>' +
@@ -453,3 +467,5 @@
 
 </body>
 </html>
+
+
