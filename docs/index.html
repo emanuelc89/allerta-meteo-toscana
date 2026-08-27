@@ -87,6 +87,33 @@
   .quadr { width: 13px; height: 13px; border-radius: 3px; display: inline-block; margin-right: 5px; vertical-align: -2px; }
   .legenda-icona { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; }
   .legenda-nota { font-size: .76rem; color: var(--testo-tenue); font-style: italic; }
+  .ricerca { position: relative; margin-bottom: 12px; }
+  .ricerca input {
+    width: 100%; font: inherit; font-size: .95rem;
+    padding: 10px 12px 10px 36px;
+    border: 1px solid var(--bordo); border-radius: 9px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 10px center;
+    background-size: 18px;
+  }
+  .ricerca input:focus { outline: 2px solid var(--blu); outline-offset: 1px; border-color: var(--blu); }
+  .risultati {
+    position: absolute; z-index: 1000; left: 0; right: 0; top: calc(100% + 4px);
+    background: #fff; border: 1px solid var(--bordo); border-radius: 9px;
+    box-shadow: 0 6px 18px rgba(31,41,55,.12);
+    list-style: none; margin: 0; padding: 4px; max-height: 260px; overflow-y: auto;
+  }
+  .risultati li {
+    padding: 8px 10px; border-radius: 6px; cursor: pointer; font-size: .92rem;
+    display: flex; justify-content: space-between; gap: 10px; align-items: baseline;
+  }
+  .risultati li.evidenziato, .risultati li:hover { background: #eef2f8; }
+  .risultati .zona-nome { color: var(--testo-tenue); font-size: .8rem; white-space: nowrap; }
+  .risultati .vuoto { color: var(--testo-tenue); cursor: default; }
+  .risultati .vuoto:hover { background: transparent; }
+  .comune-trovato {
+    font-size: .85rem; color: var(--blu); background: #eef2f8;
+    border-radius: 7px; padding: 6px 10px; margin-top: 8px;
+  }
   .pannello .suggerimento { color: var(--testo-tenue); font-size: .92rem; padding: 8px 0; }
   .pan-testa h2 { font-size: 1.15rem; margin: 0; }
   .pan-luogo { font-size: .88rem; color: var(--testo-tenue); margin-top: 4px; }
@@ -140,6 +167,12 @@
         <h2>Mappa delle zone di allerta</h2>
         <span class="quando" id="mappa-quando"></span>
       </div>
+      <div class="ricerca">
+        <input type="search" id="cerca-comune" autocomplete="off" spellcheck="false"
+               placeholder="Cerca il tuo comune (es. Vinci, Empoli, Pistoia)"
+               aria-label="Cerca il tuo comune" aria-autocomplete="list" role="combobox" aria-expanded="false">
+        <ul class="risultati" id="risultati-ricerca" role="listbox" hidden></ul>
+      </div>
       <div id="mappa"></div>
       <div class="legenda">
         <div class="legenda-gruppo">
@@ -168,6 +201,7 @@
           <h2 id="pan-nome"></h2>
         </div>
         <div class="pan-luogo" id="pan-comuni"></div>
+        <div class="comune-trovato" id="comune-trovato" hidden></div>
 
         <div class="sotto-card">
           <h3>&#128167; Rischio pioggia <span id="pan-titolo-giorno-p"></span></h3>
@@ -230,6 +264,8 @@
   var iconeAttive = [];
   var selezionata = null;
   var nomeSelezionato = null;
+  var comuneCercato = null;
+  var indiceComuni = [];
 
   var mappa = L.map('mappa', { scrollWheelZoom: false, zoomSnap: 0.25 });
   mappa.attributionControl.setPrefix(false);
@@ -259,6 +295,7 @@
         }).addTo(mappa);
         mappa.fitBounds(layerZone.getBounds().pad(0.04));
         disegnaIcone();
+        costruisciIndiceComuni(geo);
       })
       .catch(function (err) {
         mappa.remove();
@@ -352,10 +389,11 @@
     if (nomeSelezionato) mostraDettaglio(nomeSelezionato);
   }
 
-  function seleziona(feat, ly) {
+  function seleziona(feat, ly, comuneEvidenziato) {
     if (selezionata) selezionata.setStyle(stileZona(selezionata.feature));
     selezionata = ly;
     nomeSelezionato = feat.properties.nome;
+    comuneCercato = comuneEvidenziato || null;
     ly.setStyle({ color: '#223768', weight: 2.5 });
     ly.bringToFront();
     mostraDettaglio(feat.properties.nome, feat.properties.comuni);
@@ -374,6 +412,16 @@
     if (comuni && comuni.length) {
       document.getElementById('pan-comuni').textContent =
         comuni.length + ' comuni, tra cui ' + comuni.slice(0, 3).join(', ') + (comuni.length > 3 ? '…' : '');
+    }
+
+    var elTrovato = document.getElementById('comune-trovato');
+    if (elTrovato) {
+      if (comuneCercato) {
+        elTrovato.textContent = '\u{1F4CD} ' + comuneCercato + ' fa parte di questa zona di allerta.';
+        elTrovato.hidden = false;
+      } else {
+        elTrovato.hidden = true;
+      }
     }
 
     var testoGiorno = giorno === 'oggi' ? '(oggi)' : '(domani)';
@@ -518,6 +566,121 @@
     contenitore.innerHTML = html;
     aggiornaRigaControllo();
   }
+  // ---- Ricerca per comune -------------------------------------------------
+  // I nomi delle zone ("Valdarno Inf.", "Arno-Casentino") sono tecnici: quasi
+  // nessuno sa in quale ricade il proprio comune. Qui si cerca per comune e si
+  // arriva alla zona. Alcuni comuni ricadono in due zone: si mostrano entrambe.
+
+  function normalizza(s) {
+    return s.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]/g, '');
+  }
+
+  function costruisciIndiceComuni(geo) {
+    indiceComuni = [];
+    geo.features.forEach(function (f) {
+      (f.properties.comuni || []).forEach(function (com) {
+        indiceComuni.push({ comune: com, zona: f.properties.nome, chiave: normalizza(com) });
+      });
+    });
+    indiceComuni.sort(function (a, b) { return a.comune.localeCompare(b.comune, 'it'); });
+  }
+
+  function cerca(testo) {
+    var q = normalizza(testo);
+    if (q.length < 2) return [];
+    var inizio = [], dentro = [];
+    indiceComuni.forEach(function (v) {
+      if (v.chiave.indexOf(q) === 0) inizio.push(v);
+      else if (v.chiave.indexOf(q) > 0) dentro.push(v);
+    });
+    return inizio.concat(dentro).slice(0, 8);
+  }
+
+  var inputCerca = document.getElementById('cerca-comune');
+  var listaRisultati = document.getElementById('risultati-ricerca');
+  var risultatiCorrenti = [];
+  var indiceEvidenziato = -1;
+
+  function mostraRisultati(items) {
+    risultatiCorrenti = items;
+    indiceEvidenziato = -1;
+    if (!items.length) {
+      listaRisultati.innerHTML = '<li class="vuoto">Nessun comune trovato</li>';
+    } else {
+      listaRisultati.innerHTML = items.map(function (v, i) {
+        return '<li role="option" data-i="' + i + '"><span>' + v.comune +
+               '</span><span class="zona-nome">' + v.zona + '</span></li>';
+      }).join('');
+    }
+    listaRisultati.hidden = false;
+    inputCerca.setAttribute('aria-expanded', 'true');
+  }
+
+  function chiudiRisultati() {
+    listaRisultati.hidden = true;
+    inputCerca.setAttribute('aria-expanded', 'false');
+    indiceEvidenziato = -1;
+  }
+
+  function evidenzia(i) {
+    var voci = listaRisultati.querySelectorAll('li[data-i]');
+    Array.prototype.forEach.call(voci, function (el, k) {
+      el.classList.toggle('evidenziato', k === i);
+    });
+    indiceEvidenziato = i;
+  }
+
+  function vaiAZona(voce) {
+    if (!layerZone || !voce) return;
+    var trovato = null;
+    layerZone.eachLayer(function (ly) {
+      if (ly.feature.properties.nome === voce.zona) trovato = ly;
+    });
+    if (!trovato) return;
+    mappa.fitBounds(trovato.getBounds().pad(0.6));
+    seleziona(trovato.feature, trovato, voce.comune);
+    chiudiRisultati();
+    inputCerca.value = voce.comune;
+    inputCerca.blur();
+  }
+
+  if (inputCerca) {
+    inputCerca.addEventListener('input', function () {
+      var testo = this.value.trim();
+      if (testo.length < 2) { chiudiRisultati(); return; }
+      mostraRisultati(cerca(testo));
+    });
+
+    inputCerca.addEventListener('keydown', function (e) {
+      if (listaRisultati.hidden || !risultatiCorrenti.length) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        evidenzia((indiceEvidenziato + 1) % risultatiCorrenti.length);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        evidenzia((indiceEvidenziato - 1 + risultatiCorrenti.length) % risultatiCorrenti.length);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        vaiAZona(risultatiCorrenti[indiceEvidenziato >= 0 ? indiceEvidenziato : 0]);
+      } else if (e.key === 'Escape') {
+        chiudiRisultati();
+      }
+    });
+
+    listaRisultati.addEventListener('mousedown', function (e) {
+      var li = e.target.closest('li[data-i]');
+      if (!li) return;
+      e.preventDefault();
+      vaiAZona(risultatiCorrenti[parseInt(li.getAttribute('data-i'), 10)]);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.ricerca')) chiudiRisultati();
+    });
+  }
+
   document.getElementById('tabs').addEventListener('click', function (e) {
     var b = e.target.closest('button');
     if (!b) return;
@@ -530,6 +693,8 @@
 
 </body>
 </html>
+
+
 
 
 
