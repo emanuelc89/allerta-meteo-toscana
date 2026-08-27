@@ -1,16 +1,23 @@
+﻿"""
+Scarica due bollettini ufficiali e produce docs/data/allerte.json:
+
+1) PIOGGIA - Dipartimento della Protezione Civile
+   https://github.com/pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica
+2) CALDO - Ministero della Salute, bollettino ondate di calore
+   https://github.com/ondata/ondate-calore (estrazione a cura di onData)
+   Copre 27 citta' italiane; in Toscana SOLO Firenze.
+
+Usa solo due domini: api.github.com (per scoprire l'ultimo aggiornamento)
+e raw.githubusercontent.com (per i dati veri e propri). Niente github.com
+"normale": su alcune reti quel dominio si comporta in modo imprevedibile
+con le richieste automatiche, pur essendo raggiungibile dal browser.
+
+Ogni passaggio stampa un messaggio, cosi' se qualcosa si blocca si vede
+subito QUALE richiesta e' in corso, invece di un cursore muto.
 """
-Scarica il Bollettino di criticita' del Dipartimento della Protezione Civile
-ed estrae le allerte delle 26 zone della Toscana per oggi e domani.
 
-Fonte: https://github.com/pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica
-Il DPC ripubblica ogni giorno (di norma entro le 16) un GeoJSON nazionale con,
-per ogni zona di allerta, il livello di criticita' per rischio idraulico,
-temporali e idrogeologico.
-
-Lo script produce docs/data/allerte.json, un file leggero che la pagina web legge
-per colorare la mappa. Non serve alcun database ne' alcun server.
-"""
-
+import csv
+import io
 import json
 import re
 import sys
@@ -18,23 +25,27 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-# --- Configurazione ------------------------------------------------------
+REPO_DPC = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
+BASE_RAW_DPC = f"https://raw.githubusercontent.com/{REPO_DPC}/master/files/geojson"
+API_COMMITS_DPC = f"https://api.github.com/repos/{REPO_DPC}/commits"
 
-REPO = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
-BASE_RAW = f"https://raw.githubusercontent.com/{REPO}/master/files/geojson"
-API_COMMITS = f"https://api.github.com/repos/{REPO}/commits"
+URL_CALORE_CSV = "https://raw.githubusercontent.com/ondata/ondate-calore/main/data/ondate-calore_latest.csv"
+CITTA_CALORE_TOSCANA = "FIRENZE"
+ZONA_CALORE_TOSCANA = "Arno-Firenze"
+TIMEOUT = 15
 
-# Cartella di output: docs/data/ accanto a questo script (che sta in scripts/)
 QUI = Path(__file__).resolve().parent
 OUT_DIR = QUI.parent / "docs" / "data"
-
-# I comuni toscani, per riconoscere le zone di allerta della Toscana.
-# Elenco caricato da docs/data/comuni_toscana.json (generato una volta sola).
 COMUNI_FILE = OUT_DIR / "comuni_toscana.json"
 
+ETICHETTE_CALDO = {0: "Nessun rischio", 1: "Pre-allerta", 2: "Rischio elevato", 3: "Ondata di calore"}
 
-# Da stringa del bollettino a livello sintetico usato dalla pagina.
-def livello_da_testo(testo: str) -> str:
+
+def log(msg):
+    print(msg, flush=True)
+
+
+def livello_da_testo(testo):
     t = (testo or "").upper()
     if "ROSSA" in t:
         return "rossa"
@@ -42,54 +53,52 @@ def livello_da_testo(testo: str) -> str:
         return "arancione"
     if "GIALLA" in t:
         return "gialla"
-    return "verde"  # "NESSUNA ALLERTA" o campo mancante
+    return "verde"
 
 
-def scarica_json(url: str, timeout: int = 60):
+ORDINE_PIOGGIA = {"verde": 0, "gialla": 1, "arancione": 2, "rossa": 3}
+
+
+def peggiore(*livelli):
+    return max(livelli, key=lambda l: ORDINE_PIOGGIA.get(l, 0))
+
+
+def scarica_json(url, timeout=TIMEOUT):
     req = urllib.request.Request(url, headers={"User-Agent": "allerta-meteo-toscana"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
 
-def trova_ultimo_prefisso() -> str:
-    """
-    Restituisce il prefisso 'AAAAMMGG_HHMM' del bollettino piu' recente.
-    Prova prima l'ultimo commit via API; se non disponibile, ricava la data
-    di oggi (fuso italiano) e cerca l'orario provando i file.
-    """
-    # Tentativo 1: leggo i nomi file dall'ultimo commit
-    try:
-        commits = scarica_json(f"{API_COMMITS}?per_page=10")
-        for c in commits:
-            msg = c.get("commit", {}).get("message", "")
-            m = re.search(r"(\d{8}_\d{4})", msg)
+def scarica_testo(url, timeout=TIMEOUT):
+    req = urllib.request.Request(url, headers={"User-Agent": "allerta-meteo-toscana"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8")
+
+
+def trova_ultimo_prefisso():
+    log("  > interrogo l'elenco degli ultimi aggiornamenti (api.github.com)...")
+    commits = scarica_json(f"{API_COMMITS_DPC}?per_page=5")
+    log(f"  > trovati {len(commits)} aggiornamenti recenti, controllo il piu' recente...")
+
+    for i, c in enumerate(commits, 1):
+        sha = c["sha"]
+        try:
+            dettaglio = scarica_json(f"{API_COMMITS_DPC}/{sha}")
+        except Exception as e:
+            log(f"  > dettaglio aggiornamento {i}/{len(commits)} non raggiungibile ({e}), provo il successivo...")
+            continue
+        for file_info in dettaglio.get("files", []):
+            m = re.search(r"(\d{8}_\d{4})", file_info.get("filename", ""))
             if m:
                 return m.group(1)
-    except Exception:
-        pass
 
-    # Tentativo 2: uso la data odierna italiana e cerco l'orario per tentativi
-    oggi = datetime.now(timezone(timedelta(hours=2)))
-    for giorni in range(0, 3):  # oggi, ieri, l'altroieri
-        g = (oggi - timedelta(days=giorni)).strftime("%Y%m%d")
-        for hh in range(17, 11, -1):
-            for mm in range(59, -1, -1):
-                pref = f"{g}_{hh:02d}{mm:02d}"
-                url = f"{BASE_RAW}/{pref}_today.json"
-                try:
-                    req = urllib.request.Request(url, method="HEAD",
-                                                 headers={"User-Agent": "allerta-meteo-toscana"})
-                    urllib.request.urlopen(req, timeout=10)
-                    return pref
-                except Exception:
-                    continue
-    raise RuntimeError("Nessun bollettino trovato negli ultimi giorni.")
+    raise RuntimeError("Nessun bollettino trovato negli ultimi 5 aggiornamenti del repository DPC.")
 
 
-def carica_comuni_toscani() -> set:
+def carica_comuni_toscani():
     if COMUNI_FILE.exists():
         return set(json.loads(COMUNI_FILE.read_text(encoding="utf-8")))
-    # Fallback: scarico l'elenco ISTAT e filtro la Toscana, poi salvo in cache
+    log("  > prima volta: scarico l'elenco dei comuni toscani (solo ora, poi resta in cache)...")
     url = "https://raw.githubusercontent.com/matteocontrini/comuni-json/master/comuni.json"
     comuni_it = scarica_json(url)
     toscani = sorted({c["nome"] for c in comuni_it if c["regione"]["nome"] == "Toscana"})
@@ -98,50 +107,111 @@ def carica_comuni_toscani() -> set:
     return set(toscani)
 
 
-def estrai_zone(bollettino: dict, comuni_toscani: set) -> dict:
-    """Da un GeoJSON nazionale ricava {nome_zona: {mappa, idraulico, temporali, idrogeologico}}."""
+def estrai_zone_pioggia(bollettino, comuni_toscani):
     risultato = {}
     for f in bollettino.get("features", []):
         p = f.get("properties", {})
         comuni = p.get("Comuni", [])
         if not any(c in comuni_toscani for c in comuni):
             continue
+        idraulico = livello_da_testo(p.get("Per rischio idraulico"))
+        temporali = livello_da_testo(p.get("Per rischio temporali"))
+        idrogeologico = livello_da_testo(p.get("Per rischio idrogeologico"))
         risultato[p["Nome zona"]] = {
-            "mappa": livello_da_testo(p.get("Rappresentata nella mappa")),
-            "idraulico": livello_da_testo(p.get("Per rischio idraulico")),
-            "temporali": livello_da_testo(p.get("Per rischio temporali")),
-            "idrogeologico": livello_da_testo(p.get("Per rischio idrogeologico")),
+            "pioggia": peggiore(idraulico, temporali, idrogeologico),
+            "idraulico": idraulico,
+            "temporali": temporali,
+            "idrogeologico": idrogeologico,
+            "caldo": None,
         }
     return risultato
 
 
-def main():
-    comuni_toscani = carica_comuni_toscani()
-    prefisso = trova_ultimo_prefisso()
-    data_str = prefisso[:8]
-    ora_str = prefisso[9:]
-    emesso = f"{data_str[6:8]}/{data_str[4:6]}/{data_str[0:4]} {ora_str[0:2]}:{ora_str[2:4]}"
+def carica_caldo_firenze():
+    log("Passo 4: bollettino caldo (Ministero della Salute, Firenze)...")
+    try:
+        testo = scarica_testo(URL_CALORE_CSV)
+    except Exception as e:
+        log(f"  > non raggiungibile ({e}), proseguo senza dati caldo.")
+        return {}
 
-    oggi = scarica_json(f"{BASE_RAW}/{prefisso}_today.json")
-    domani = scarica_json(f"{BASE_RAW}/{prefisso}_tomorrow.json")
+    righe = {}
+    lettore = csv.DictReader(io.StringIO(testo))
+    for r in lettore:
+        if r.get("citta", "").strip().upper() != CITTA_CALORE_TOSCANA:
+            continue
+        data = r.get("data", "").strip()
+        m = re.search(r"(\d)", r.get("livello", ""))
+        if not data or not m:
+            continue
+        liv = int(m.group(1))
+        righe[data] = {"livello": liv, "etichetta": ETICHETTE_CALDO.get(liv, "Sconosciuto")}
+    return righe
+
+
+def main():
+    log("Passo 1: comuni toscani...")
+    comuni_toscani = carica_comuni_toscani()
+
+    log("Passo 2: cerco l'ultimo bollettino pioggia (DPC)...")
+    prefisso = trova_ultimo_prefisso()
+    data_str, ora_str = prefisso[:8], prefisso[9:]
+    emesso_pioggia = f"{data_str[6:8]}/{data_str[4:6]}/{data_str[0:4]} {ora_str[0:2]}:{ora_str[2:4]}"
+    log(f"  > trovato: bollettino del {emesso_pioggia}")
+
+    log("Passo 3: scarico i dati di oggi e domani...")
+    bollettino_oggi = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_today.json")
+    bollettino_domani = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_tomorrow.json")
+
+    zone_oggi = estrai_zone_pioggia(bollettino_oggi, comuni_toscani)
+    zone_domani = estrai_zone_pioggia(bollettino_domani, comuni_toscani)
+
+    oggi_it = datetime.now(timezone(timedelta(hours=2))).date()
+    domani_it = oggi_it + timedelta(days=1)
+    caldo_per_data = carica_caldo_firenze()
+
+    caldo_oggi = caldo_per_data.get(oggi_it.isoformat())
+    caldo_domani = caldo_per_data.get(domani_it.isoformat())
+    caldo_attivo = bool(caldo_per_data)
+
+    if ZONA_CALORE_TOSCANA in zone_oggi and caldo_oggi:
+        zone_oggi[ZONA_CALORE_TOSCANA]["caldo"] = caldo_oggi
+    if ZONA_CALORE_TOSCANA in zone_domani and caldo_domani:
+        zone_domani[ZONA_CALORE_TOSCANA]["caldo"] = caldo_domani
 
     dati = {
         "aggiornato": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "emesso": emesso,
-        "fonte": "Dipartimento della Protezione Civile",
-        "oggi": estrai_zone(oggi, comuni_toscani),
-        "domani": estrai_zone(domani, comuni_toscani),
+        "emesso_pioggia": emesso_pioggia,
+        "fonte_pioggia": "Dipartimento della Protezione Civile",
+        "caldo_stagione_attiva": caldo_attivo,
+        "caldo_citta_coperta": "Firenze",
+        "caldo_zona_coperta": ZONA_CALORE_TOSCANA,
+        "fonte_caldo": "Ministero della Salute (dati estratti da onData)",
+        "oggi": zone_oggi,
+        "domani": zone_domani,
     }
 
-    n = len(dati["oggi"])
+    n = len(zone_oggi)
     if n < 20:
-        print(f"ATTENZIONE: trovate solo {n} zone toscane (attese 26).", file=sys.stderr)
+        log(f"ATTENZIONE: trovate solo {n} zone toscane (attese 26).")
 
+    log("Passo 5: salvo il file...")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / "allerte.json"
     out.write_text(json.dumps(dati, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"OK - bollettino {emesso} - {n} zone - scritto {out}")
+
+    msg_caldo = (
+        f"caldo Firenze oggi: {ETICHETTE_CALDO.get(caldo_oggi['livello'])} (liv.{caldo_oggi['livello']})"
+        if caldo_oggi else "caldo: fuori stagione o dato non disponibile"
+    )
+    log(f"OK - pioggia {emesso_pioggia} - {n} zone - {msg_caldo} - scritto {out}")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        log("")
+        log(f"ERRORE: {type(e).__name__}: {e}")
+        log("Se il problema persiste, potrebbe essere la rete (proxy, VPN, firewall) a bloccare la richiesta mostrata sopra.")
+        sys.exit(1)

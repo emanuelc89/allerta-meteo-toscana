@@ -1,321 +1,383 @@
 {
- "aggiornato": "2026-08-07T13:12:10+00:00",
- "emesso": "07/08/2026 14:23",
- "fonte": "Dipartimento della Protezione Civile",
+ "aggiornato": "2026-08-27T09:30:40+00:00",
+ "emesso_pioggia": "26/08/2026 14:22",
+ "fonte_pioggia": "Dipartimento della Protezione Civile",
+ "caldo_stagione_attiva": true,
+ "caldo_citta_coperta": "Firenze",
+ "caldo_zona_coperta": "Arno-Firenze",
+ "fonte_caldo": "Ministero della Salute (dati estratti da onData)",
  "oggi": {
   "Arno-Casentino": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Arno-Valdarno Sup.": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Arno-Firenze": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": {
+    "livello": 2,
+    "etichetta": "Rischio elevato"
+   }
   },
   "Valdarno Inf.": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Valdelsa-Valdera": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Arno-Costa": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Bisenzio e Ombrone Pt": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Valdichiana": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Etruria": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Etruria-Costa Nord": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Etruria-Costa Sud": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Fiora e Albegna": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Fiora e Albegna-Costa e Giglio": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Isole": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Lunigiana": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Mugello-Val di Sieve": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Ombrone Gr-Alto": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Ombrone Gr-Medio": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Ombrone Gr-Costa": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Reno": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Romagna-Toscana": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Serchio-Garfagnana-Lima": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Serchio-Lucca": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Serchio-Costa": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Valtiberina": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Versilia": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   }
  },
  "domani": {
   "Arno-Casentino": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Arno-Valdarno Sup.": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Arno-Firenze": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": {
+    "livello": 2,
+    "etichetta": "Rischio elevato"
+   }
   },
   "Valdarno Inf.": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Valdelsa-Valdera": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Arno-Costa": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Bisenzio e Ombrone Pt": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Valdichiana": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Etruria": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Etruria-Costa Nord": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Etruria-Costa Sud": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Fiora e Albegna": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Fiora e Albegna-Costa e Giglio": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Isole": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Lunigiana": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Mugello-Val di Sieve": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Ombrone Gr-Alto": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Ombrone Gr-Medio": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Ombrone Gr-Costa": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Reno": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Romagna-Toscana": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Serchio-Garfagnana-Lima": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Serchio-Lucca": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Serchio-Costa": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Valtiberina": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   },
   "Versilia": {
-   "mappa": "verde",
+   "pioggia": "verde",
    "idraulico": "verde",
    "temporali": "verde",
-   "idrogeologico": "verde"
+   "idrogeologico": "verde",
+   "caldo": null
   }
  }
 }
