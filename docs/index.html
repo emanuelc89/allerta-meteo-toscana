@@ -404,7 +404,7 @@
     var contenitore = document.getElementById('banner-riga');
     var quando = document.getElementById('mappa-quando');
     var quandoTxt = giorno === 'oggi' ? 'oggi' : 'domani';
-    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' u{2014} ' + formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
+    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' — ' + formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
 
     if (!allerte || !allerte[giorno]) {
       contenitore.innerHTML = '<div class="banner"><div class="pallino" style="background:#9aa4b2">?</div>' +
@@ -467,5 +467,6 @@
 
 </body>
 </html>
+
 
 
