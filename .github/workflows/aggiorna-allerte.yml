@@ -23,10 +23,13 @@ jobs:
       - name: Esegui lo script delle allerte
         run: python scripts/fetch_allerte.py
 
+      - name: Esegui lo script delle previsioni
+        run: python scripts/fetch_previsioni.py
+
       - name: Salva i dati aggiornati, se cambiati
         run: |
           git config user.name "Robot allerte meteo"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/data/allerte.json
-          git diff --staged --quiet && echo "Nessuna modifica, salto il commit" || git commit -m "Aggiornamento automatico bollettino allerte"
+          git add docs/data/allerte.json docs/data/previsioni.json
+          git diff --staged --quiet && echo "Nessuna modifica, salto il commit" || git commit -m "Aggiornamento automatico bollettino allerte e previsioni"
           git push
