@@ -102,6 +102,12 @@
   .quadr { width: 13px; height: 13px; border-radius: 3px; display: inline-block; margin-right: 5px; vertical-align: -2px; }
   .legenda-icona { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; }
   .legenda-nota { font-size: .76rem; color: var(--testo-tenue); font-style: italic; }
+  .btn-aggiorna {
+    border: 1px solid var(--bordo); background: #fff; color: var(--blu);
+    font: inherit; font-size: .8rem; padding: 4px 10px; border-radius: 7px; cursor: pointer;
+  }
+  .btn-aggiorna:hover { background: #f4f6f9; }
+  .btn-aggiorna:disabled { opacity: .6; cursor: default; }
   .ricerca { position: relative; margin-bottom: 12px; }
   .ricerca input {
     width: 100%; font: inherit; font-size: .95rem;
@@ -212,6 +218,9 @@
           <span>&#128167; = zona con allerta pioggia attiva</span>
         </div>
         <div class="legenda-gruppo" id="riga-controllo" style="border-top:1px solid var(--sfondo);padding-top:8px;margin-top:4px"></div>
+        <div class="legenda-gruppo">
+          <button id="bottone-aggiorna" class="btn-aggiorna" type="button">&#8635; Aggiorna ora</button>
+        </div>
         <div class="legenda-gruppo">
           <span class="legenda-titolo">Caldo</span>
           <span>&#127777;&#65039; = allerta caldo attiva</span>
@@ -778,12 +787,7 @@
     });
   }
 
-  document.getElementById('tabs').addEventListener('click', function (e) {
-    var b = e.target.closest('button');
-    if (!b) return;
-    giorno = b.getAttribute('data-giorno');
-    Array.prototype.forEach.call(this.querySelectorAll('button'), function (x) { x.classList.toggle('attivo', x === b); });
-
+  function applicaAggiornamento() {
     var banner = document.getElementById('banner-riga');
     var pannello = document.getElementById('pan-dett');
     var conDissolvenza = !animazioniRidotte();
@@ -804,6 +808,47 @@
         });
       });
     }
+  }
+
+  function ricaricaDati(daBottone) {
+    var bottone = document.getElementById('bottone-aggiorna');
+    if (bottone && daBottone) { bottone.disabled = true; bottone.textContent = 'Aggiornamento…'; }
+
+    var cacheBust = '?_=' + Date.now();
+    Promise.all([
+      fetch('data/allerte.json' + cacheBust)
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('allerte ' + r.status)); }),
+      fetch('data/previsioni.json' + cacheBust)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; })
+    ]).then(function (risultati) {
+      allerte = risultati[0];
+      if (risultati[1]) previsioni = risultati[1];
+      applicaAggiornamento();
+    }).catch(function (err) {
+      console.warn('Aggiornamento automatico non riuscito:', err.message);
+    }).finally(function () {
+      if (bottone && daBottone) { bottone.disabled = false; bottone.textContent = '↻ Aggiorna ora'; }
+    });
+  }
+
+  var bottoneAggiorna = document.getElementById('bottone-aggiorna');
+  if (bottoneAggiorna) bottoneAggiorna.addEventListener('click', function () { ricaricaDati(true); });
+
+  setInterval(function () {
+    if (!document.hidden) ricaricaDati(false);
+  }, 5 * 60 * 1000);
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) ricaricaDati(false);
+  });
+
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    giorno = b.getAttribute('data-giorno');
+    Array.prototype.forEach.call(this.querySelectorAll('button'), function (x) { x.classList.toggle('attivo', x === b); });
+    applicaAggiornamento();
   });
 </script>
 
