@@ -572,7 +572,7 @@
   function bannerFreschezza() {
     if (!allerte) {
       return bannerHtml('avviso', '#c0392b', '!', 'Dati non disponibili',
-        'Non e\' stato possibile leggere l\'ultimo bollettino. Consulta ' +
+        'Non è stato possibile leggere l\'ultimo bollettino. Consulta ' +
         '<a href="https://www.regione.toscana.it/allertameteo">il sito ufficiale della Regione</a>.');
     }
 
@@ -620,13 +620,13 @@
     if (!zone) {
       if (giorno === 'domani') {
         html += bannerHtml('neutro', '#9aa4b2', '&#8987;', 'Previsione di domani non ancora pubblicata',
-          'Il bollettino di criticita\' viene emesso di norma nel primo pomeriggio. ' +
-          'Riprova piu\' tardi: la pagina si aggiorna da sola.');
+          'Il bollettino di criticità viene emesso di norma nel primo pomeriggio. ' +
+          'Riprova più tardi: la pagina si aggiorna da sola.');
       } else if (!allerte || allerte.oggi === null || allerte.oggi === undefined) {
         // l'avviso principale e' gia' in cima, non lo ripeto
       } else {
         html += bannerHtml('neutro', '#9aa4b2', '?', 'Dati non disponibili',
-          'Non e\' stato possibile leggere i dati per questa giornata.');
+          'Non è stato possibile leggere i dati per questa giornata.');
       }
       contenitore.innerHTML = html;
       aggiornaRigaControllo();
@@ -657,10 +657,10 @@
 
     if (allerte.caldo_stagione_attiva === false) {
       html += bannerHtml('neutro', '#9aa4b2', '&#127777;&#65039;', 'Bollettino caldo non attivo',
-        'Il Ministero della Salute pubblica il bollettino ondate di calore da fine maggio a meta\' settembre.');
+        'Il Ministero della Salute pubblica il bollettino ondate di calore da fine maggio a metà settembre.');
     } else if (peggioreCaldo === 0) {
       html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta caldo ' + quandoTxt + ' a Firenze',
-        'Dato ufficiale disponibile solo per la citta\' di Firenze (Ministero della Salute).');
+        'Dato ufficiale disponibile solo per la città di Firenze (Ministero della Salute).');
     } else {
       html += bannerHtml('caldo-attivo', COLORI_CALDO[peggioreCaldo], '&#127777;&#65039;',
         ETICHETTE_CALDO[peggioreCaldo] + ' a Firenze ' + quandoTxt,
@@ -797,6 +797,7 @@
 
 </body>
 </html>
+
 
 
 
