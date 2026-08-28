@@ -129,6 +129,28 @@
   .riga-rischio:first-of-type { border-top: 0; }
   .stato { color: var(--testo-tenue); font-size: .85rem; }
   .nota-copertura { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
+  .previsioni-giorni { display: flex; gap: 8px; margin-top: 4px; }
+  .prev-giorno {
+    flex: 1; text-align: center; border: 1px solid var(--bordo); border-radius: 9px;
+    padding: 8px 4px; font-size: .82rem;
+  }
+  .prev-giorno .g-nome { font-weight: 600; text-transform: capitalize; }
+  .prev-giorno img { width: 34px; height: 34px; margin: 2px auto; display: block; }
+  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .72rem; min-height: 1.6em; }
+  .prev-giorno .g-temp { font-weight: 600; }
+  .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 400; }
+  .prev-comune { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
+  .previsioni-giorni { display: flex; gap: 8px; margin-top: 4px; }
+  .prev-giorno {
+    flex: 1; text-align: center; border: 1px solid var(--bordo); border-radius: 9px;
+    padding: 8px 4px; font-size: .82rem;
+  }
+  .prev-giorno .g-nome { font-weight: 600; text-transform: capitalize; }
+  .prev-giorno img { width: 34px; height: 34px; margin: 2px auto; display: block; }
+  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .72rem; min-height: 1.6em; }
+  .prev-giorno .g-temp { font-weight: 600; }
+  .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 400; }
+  .prev-comune { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
   footer {
     max-width: 1180px; margin: 36px auto 26px; padding: 0 20px;
     font-size: .78rem; color: var(--testo-tenue);
@@ -223,6 +245,18 @@
           <h3>&#127777;&#65039; Rischio caldo <span id="pan-titolo-giorno-c"></span></h3>
           <div id="caldo-contenuto"></div>
         </div>
+
+        <div class="sotto-card" id="box-previsioni" hidden>
+          <h3>&#9925; Previsioni prossimi giorni</h3>
+          <div class="previsioni-giorni" id="previsioni-contenuto"></div>
+          <div class="prev-comune" id="previsioni-comune"></div>
+        </div>
+
+        <div class="sotto-card" id="box-previsioni" hidden>
+          <h3>&#9925; Previsioni prossimi giorni</h3>
+          <div class="previsioni-giorni" id="previsioni-contenuto"></div>
+          <div class="prev-comune" id="previsioni-comune"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -270,6 +304,20 @@
   var mappa = L.map('mappa', { scrollWheelZoom: false, zoomSnap: 0.25 });
   mappa.attributionControl.setPrefix(false);
   mappa.attributionControl.addAttribution('Zone di allerta: dati DPC / Ministero della Salute');
+
+  var previsioni = null;
+
+  fetch('data/previsioni.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('previsioni ' + r.status)); })
+    .then(function (dati) { previsioni = dati; })
+    .catch(function (err) { console.warn('Previsioni non caricate:', err.message); });
+
+  var previsioni = null;
+
+  fetch('data/previsioni.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('previsioni ' + r.status)); })
+    .then(function (dati) { previsioni = dati; })
+    .catch(function (err) { console.warn('Previsioni non caricate:', err.message); });
 
   fetch('data/allerte.json')
     .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('allerte ' + r.status)); })
@@ -404,6 +452,60 @@
     return '<i class="quadr" style="background:' + COLORI_PIOGGIA[liv] + '"></i> ' + ETICHETTE_PIOGGIA[liv];
   }
 
+  function mostraPrevisioni(nomeZona) {
+    var box = document.getElementById('box-previsioni');
+    if (!previsioni || !previsioni.zone) { box.hidden = true; return; }
+    var dati = previsioni.zone[nomeZona];
+    if (!dati || !dati.giorni || !dati.giorni.length) { box.hidden = true; return; }
+
+    var html = dati.giorni.map(function (g) {
+      var icona = g.icona_url
+        ? '<img src="' + g.icona_url + '" alt="' + (g.descrizione || '') + '" loading="lazy">'
+        : '';
+      var nomeGiorno = (g.data_descr || '').slice(0, 3);
+      return '<div class="prev-giorno">' +
+        '<div class="g-nome">' + nomeGiorno + '</div>' +
+        icona +
+        '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
+        '<div class="g-temp">' + (g.max != null ? g.max + '\u00b0' : '\u2014') +
+        ' <span class="min">' + (g.min != null ? g.min + '\u00b0' : '') + '</span></div>' +
+        '</div>';
+    }).join('');
+
+    document.getElementById('previsioni-contenuto').innerHTML = html;
+    document.getElementById('previsioni-comune').textContent =
+      'Previsioni per ' + dati.comune + ', comune pi\u00f9 popoloso della zona' +
+      (dati.aggiornamento ? ' \u00b7 aggiornato ' + dati.aggiornamento : '');
+    box.hidden = false;
+  }
+
+  function mostraPrevisioni(nomeZona) {
+    var box = document.getElementById('box-previsioni');
+    if (!previsioni || !previsioni.zone) { box.hidden = true; return; }
+    var dati = previsioni.zone[nomeZona];
+    if (!dati || !dati.giorni || !dati.giorni.length) { box.hidden = true; return; }
+
+    var html = dati.giorni.map(function (g) {
+      var icona = g.icona_url
+        ? '<img src="' + g.icona_url + '" alt="' + (g.descrizione || '') + '" loading="lazy">'
+        : '';
+      var nomeGiorno = (g.data_descr || '').slice(0, 3);
+      return '<div class="prev-giorno">' +
+        '<div class="g-nome">' + nomeGiorno + '</div>' +
+        icona +
+        '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
+        '<div class="g-temp">' + (g.max != null ? g.max + '°' : '—') +
+        ' <span class="min">' + (g.min != null ? g.min + '°' : '') + '</span></div>' +
+        '</div>';
+    }).join('');
+
+    document.getElementById('previsioni-contenuto').innerHTML = html;
+    document.getElementById('previsioni-comune').textContent =
+      'Previsioni per ' + dati.comune + ', comune più popoloso della zona' +
+      (dati.aggiornamento ? ' · aggiornato ' + dati.aggiornamento : '');
+    box.hidden = false;
+  }
+
   function mostraDettaglio(nomeZona, comuni) {
     document.getElementById('pan-vuoto').hidden = true;
     document.getElementById('pan-dett').hidden = false;
@@ -449,6 +551,8 @@
     } else {
       boxCaldo.innerHTML = '<p class="nota-copertura">Il bollettino ufficiale ministeriale copre solo la città di Firenze: questa zona non è coperta.</p>';
     }
+
+    mostraPrevisioni(nomeZona);
   }
 
   function oreDa(isoString) {
@@ -693,6 +797,8 @@
 
 </body>
 </html>
+
+
 
 
 

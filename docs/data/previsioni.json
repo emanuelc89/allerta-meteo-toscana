@@ -1,0 +1,786 @@
+{
+ "fonte": "Consorzio LaMMA - Regione Toscana",
+ "nota": "Previsione del comune piu' popoloso della zona, non media sull'intero territorio.",
+ "zone": {
+  "Arno-Casentino": {
+   "comune": "Bibbiena",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 24,
+     "max": 37,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 18,
+     "max": 30,
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 17,
+     "max": 31,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Arno-Costa": {
+   "comune": "Livorno",
+   "aggiornamento": "28/08/2026 07:46",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 33,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 27,
+     "max": 30,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 25,
+     "max": 29,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+    }
+   ]
+  },
+  "Arno-Firenze": {
+   "comune": "Firenze",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 26,
+     "max": 38,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 23,
+     "max": 33,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 20,
+     "max": 32,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Arno-Valdarno Sup.": {
+   "comune": "Montevarchi",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 24,
+     "max": 35,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 22,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 19,
+     "max": 30,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Bisenzio e Ombrone Pt": {
+   "comune": "Prato",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 26,
+     "max": 37,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 23,
+     "max": 31,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 20,
+     "max": 31,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Etruria": {
+   "comune": "Campiglia Marittima",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 35,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 26,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 24,
+     "max": 31,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Etruria-Costa Nord": {
+   "comune": "Piombino",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 36,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 26,
+     "max": 33,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 25,
+     "max": 32,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Etruria-Costa Sud": {
+   "comune": "Piombino",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 36,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 26,
+     "max": 33,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 25,
+     "max": 32,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Fiora e Albegna": {
+   "comune": "Manciano",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 26,
+     "max": 32,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 24,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 18,
+     "max": 32,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Fiora e Albegna-Costa e Giglio": {
+   "comune": "Orbetello",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 31,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 25,
+     "max": 31,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 20,
+     "max": 31,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Isole": {
+   "comune": "Portoferraio",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 28,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 27,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 24,
+     "max": 31,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Lunigiana": {
+   "comune": "Aulla",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 24,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 19,
+     "max": 30,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 17,
+     "max": 29,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+    }
+   ]
+  },
+  "Mugello-Val di Sieve": {
+   "comune": "Pontassieve",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 25,
+     "max": 35,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 21,
+     "max": 30,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 18,
+     "max": 29,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Ombrone Gr-Alto": {
+   "comune": "Siena",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 24,
+     "max": 35,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 21,
+     "max": 31,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 18,
+     "max": 29,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Ombrone Gr-Costa": {
+   "comune": "Grosseto",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 36,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 25,
+     "max": 35,
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 21,
+     "max": 33,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Ombrone Gr-Medio": {
+   "comune": "Montalcino",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 24,
+     "max": 34,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 19,
+     "max": 29,
+     "descrizione": "pioggia e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 17,
+     "max": 29,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    }
+   ]
+  },
+  "Reno": {
+   "comune": "Pistoia",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 26,
+     "max": 36,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 23,
+     "max": 30,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 19,
+     "max": 31,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+    }
+   ]
+  },
+  "Romagna-Toscana": {
+   "comune": "Firenzuola",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 25,
+     "max": 33,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 21,
+     "max": 29,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 18,
+     "max": 29,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Serchio-Costa": {
+   "comune": "Viareggio",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 28,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 26,
+     "max": 29,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 24,
+     "max": 28,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    }
+   ]
+  },
+  "Serchio-Garfagnana-Lima": {
+   "comune": "Montecatini-Terme",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 25,
+     "max": 36,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 22,
+     "max": 31,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 19,
+     "max": 30,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+    }
+   ]
+  },
+  "Serchio-Lucca": {
+   "comune": "Lucca",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 25,
+     "max": 35,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 22,
+     "max": 30,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 19,
+     "max": 29,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+    }
+   ]
+  },
+  "Valdarno Inf.": {
+   "comune": "Empoli",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 26,
+     "max": 37,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 23,
+     "max": 32,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 20,
+     "max": 31,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+    }
+   ]
+  },
+  "Valdelsa-Valdera": {
+   "comune": "Poggibonsi",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 26,
+     "max": 37,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 21,
+     "max": 31,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 18,
+     "max": 31,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Valdichiana": {
+   "comune": "Arezzo",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 24,
+     "max": 35,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 21,
+     "max": 32,
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 18,
+     "max": 30,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Valtiberina": {
+   "comune": "Sansepolcro",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 23,
+     "max": 34,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 20,
+     "max": 31,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 17,
+     "max": 30,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+    }
+   ]
+  },
+  "Versilia": {
+   "comune": "Massa",
+   "aggiornamento": "28/08/2026 07:45",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Venerdì",
+     "min": 27,
+     "max": 32,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Sabato",
+     "min": 24,
+     "max": 29,
+     "descrizione": "velato",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Domenica",
+     "min": 22,
+     "max": 28,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+    }
+   ]
+  }
+ }
+}
