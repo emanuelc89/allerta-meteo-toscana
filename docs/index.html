@@ -38,6 +38,15 @@
     width: 42px; height: 42px; flex-shrink: 0;
     background: var(--blu-scuro); border-radius: 10px;
     display: grid; place-items: center; font-size: 20px;
+    transition: background 0.6s ease;
+  }
+  .logo.logo-attenzione { animation: pulsaLogo 2.2s ease-in-out infinite; }
+  @keyframes pulsaLogo {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(235,87,87,.55); }
+    50% { box-shadow: 0 0 0 8px rgba(235,87,87,0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo.logo-attenzione { animation: none; }
   }
   header h1 { font-size: 1.15rem; font-weight: 700; }
   header .sottotitolo { font-size: .82rem; opacity: .85; }
@@ -77,6 +86,12 @@
   .quando { font-size: .8rem; color: var(--testo-tenue); }
   #mappa { height: 500px; border-radius: 10px; }
   .leaflet-container { background: #fff; font: inherit; }
+  .leaflet-interactive { transition: fill 0.5s ease; }
+  #pan-dett, #banner-riga { transition: opacity 0.25s ease; }
+  .dissolvenza { opacity: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .leaflet-interactive, #pan-dett, #banner-riga, .prev-giorno *, .pallino { transition: none !important; animation: none !important; }
+  }
   .errore-mappa {
     height: 100%; display: grid; place-items: center;
     color: var(--testo-tenue); text-align: center; padding: 24px; font-size: .92rem;
@@ -159,7 +174,7 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo" aria-hidden="true">&#9888;&#65039;</div>
+    <div class="logo" id="logo-triangolo" aria-hidden="true">&#9888;&#65039;</div>
     <div>
       <h1>Allerta Meteo Toscana</h1>
       <div class="sottotitolo">Bollettino di criticità per le zone di allerta regionali · <span id="data-oggi"></span></div>
@@ -424,13 +439,35 @@
     return '<i class="quadr" style="background:' + COLORI_PIOGGIA[liv] + '"></i> ' + ETICHETTE_PIOGGIA[liv];
   }
 
+  function animaNumero(elemento, valoreFinale, suffisso, durataMs) {
+    suffisso = suffisso || '';
+    durataMs = durataMs || 600;
+    if (valoreFinale == null) { elemento.textContent = '—'; return; }
+    if (animazioniRidotte()) { elemento.textContent = valoreFinale + suffisso; return; }
+
+    var inizio = null;
+    var partenza = 0;
+    function passo(adesso) {
+      if (!inizio) inizio = adesso;
+      var progresso = Math.min((adesso - inizio) / durataMs, 1);
+      var valoreCorrente = Math.round(partenza + (valoreFinale - partenza) * progresso);
+      elemento.textContent = valoreCorrente + suffisso;
+      if (progresso < 1) requestAnimationFrame(passo);
+    }
+    requestAnimationFrame(passo);
+  }
+
+  function animazioniRidotte() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
   function mostraPrevisioni(nomeZona) {
     var box = document.getElementById('box-previsioni');
     if (!previsioni || !previsioni.zone) { box.hidden = true; return; }
     var dati = previsioni.zone[nomeZona];
     if (!dati || !dati.giorni || !dati.giorni.length) { box.hidden = true; return; }
 
-    var html = dati.giorni.map(function (g) {
+    var html = dati.giorni.map(function (g, i) {
       var icona = g.icona_url
         ? '<img src="' + g.icona_url + '" alt="' + (g.descrizione || '') + '" loading="lazy">'
         : '';
@@ -442,13 +479,20 @@
         '<div class="g-nome">' + nomeGiorno + '</div>' +
         icona +
         '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
-        '<div class="g-temp">' + (g.max != null ? g.max + '°' : '—') +
+        '<div class="g-temp"><span id="pv-max-' + i + '">—</span>' +
         ' <span class="min">' + (g.min != null ? g.min + '°' : '') + '</span></div>' +
-        '<div class="g-humidex" title="' + titoloHumidex + '"><svg width=\'13\' height=\'13\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\' style=\'vertical-align:-2px\'><path d=\'M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/></svg> <b>' + fmtH(g.humidex_notte) + '</b>/<b>' + fmtH(g.humidex_giorno) + '</b></div>' +
+        '<div class="g-humidex" title="' + titoloHumidex + '"><svg width=\'13\' height=\'13\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\' style=\'vertical-align:-2px\'><path d=\'M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/></svg> ' +
+        '<b id="pv-hn-' + i + '">—</b>/<b id="pv-hg-' + i + '">—</b></div>' +
         '</div>';
     }).join('');
 
     document.getElementById('previsioni-contenuto').innerHTML = html;
+
+    dati.giorni.forEach(function (g, i) {
+      animaNumero(document.getElementById('pv-max-' + i), g.max, '°');
+      animaNumero(document.getElementById('pv-hn-' + i), g.humidex_notte, '°');
+      animaNumero(document.getElementById('pv-hg-' + i), g.humidex_giorno, '°');
+    });
     document.getElementById('previsioni-comune').innerHTML =
       'Previsioni per ' + dati.comune + ', comune più popoloso della zona' +
       (dati.aggiornamento ? ' · aggiornato ' + dati.aggiornamento : '') +
@@ -576,6 +620,8 @@
         html += bannerHtml('neutro', '#9aa4b2', '?', 'Dati non disponibili',
           'Non è stato possibile leggere i dati per questa giornata.');
       }
+      var logoFermo = document.getElementById('logo-triangolo');
+      if (logoFermo) logoFermo.classList.remove('logo-attenzione');
       contenitore.innerHTML = html;
       aggiornaRigaControllo();
       return;
@@ -590,6 +636,9 @@
       if (d.pioggia !== 'verde') zoneConPioggia.push(n);
       if (d.caldo && d.caldo.livello > peggioreCaldo) peggioreCaldo = d.caldo.livello;
     });
+
+    var logo = document.getElementById('logo-triangolo');
+    if (logo) logo.classList.toggle('logo-attenzione', peggiorePioggia !== 'verde' || peggioreCaldo > 0);
 
     var codaBollettino = allerte.emesso_pioggia ? '  ·  Bollettino emesso il ' + allerte.emesso_pioggia : '';
 
@@ -734,12 +783,29 @@
     if (!b) return;
     giorno = b.getAttribute('data-giorno');
     Array.prototype.forEach.call(this.querySelectorAll('button'), function (x) { x.classList.toggle('attivo', x === b); });
+
+    var banner = document.getElementById('banner-riga');
+    var pannello = document.getElementById('pan-dett');
+    var conDissolvenza = !animazioniRidotte();
+
+    if (conDissolvenza) {
+      banner.style.opacity = '0';
+      if (!pannello.hidden) pannello.style.opacity = '0';
+    }
+
     aggiornaBanner();
     ridisegna();
+
+    if (conDissolvenza) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          banner.style.opacity = '1';
+          if (!pannello.hidden) pannello.style.opacity = '1';
+        });
+      });
+    }
   });
 </script>
 
 </body>
 </html>
-
-
