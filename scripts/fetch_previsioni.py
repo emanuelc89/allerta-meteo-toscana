@@ -1,21 +1,25 @@
 ﻿"""
 Scarica le previsioni meteo a 3 giorni per un comune rappresentativo di
 ciascuna delle 26 zone di allerta, dai dati aperti del Consorzio LaMMA
-(servizio meteorologico ufficiale della Regione Toscana).
+(servizio meteorologico ufficiale della Regione Toscana), e calcola
+l'Humidex (temperatura percepita in base all'umidita') per le fasce
+notturne e diurne di ciascun giorno.
 
 Fonte: https://www.lamma.toscana.it/previ/ita/xml/comuni_web/dati/<comune>.xml
 Un file XML per comune, aggiornato 2 volte al giorno (1 nel weekend).
 
 Il comune rappresentativo di ogni zona e' quello piu' popoloso al suo
-interno: e' una scelta dichiarata e verificabile, non arbitraria. La
-pagina la mostra sempre in chiaro ("Previsioni per <comune>") cosi' che
-sia trasparente che si tratta di un solo punto della zona, non di una
-media su tutto il territorio.
+interno: e' una scelta dichiarata e verificabile, non arbitraria.
+
+L'Humidex usa la formula ufficiale di Environment Canada (Masterton &
+Richardson, 1979): e' un indicatore di percezione del caldo umido,
+calcolato da noi sui dati LaMMA, non un bollettino ufficiale.
 
 Produce docs/data/previsioni.json.
 """
 
 import json
+import math
 import re
 import sys
 import unicodedata
@@ -82,13 +86,50 @@ def scarica_xml(url, timeout=TIMEOUT):
         return dati
 
 
+FASCE_NOTTE = {"notte", "notte2"}
+FASCE_GIORNO = {"mattina", "mattina2", "pomeriggio", "pomeriggio2", "sera", "sera2"}
+
+
+def punto_di_rugiada(temp_c, rh):
+    """Formula di Magnus-Tetens (standard meteorologico pubblico)."""
+    a, b = 17.27, 237.7
+    alpha = (a * temp_c) / (b + temp_c) + math.log(rh / 100.0)
+    return (b * alpha) / (a - alpha)
+
+
+def humidex(temp_c, rh):
+    """
+    Formula Humidex ufficiale di Environment Canada (Masterton & Richardson, 1979):
+    H = T + 0.5555 x (tensione di vapore al punto di rugiada - 10).
+    E' un indicatore di percezione del caldo umido, non una previsione ufficiale.
+    """
+    if rh is None or rh <= 0:
+        return temp_c
+    td_k = punto_di_rugiada(temp_c, rh) + 273.15
+    e = 6.11 * math.exp(5417.7530 * (1 / 273.16 - 1 / td_k))
+    return temp_c + 0.5555 * (e - 10)
+
+
+def etichetta_humidex(h):
+    if h is None:
+        return None
+    if h < 30:
+        return "nessun disagio"
+    if h < 40:
+        return "qualche disagio"
+    if h < 45:
+        return "disagio notevole"
+    if h < 54:
+        return "pericoloso"
+    return "rischio di colpo di calore"
+
+
 def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
     root = ET.fromstring(xml_bytes)
     aggiornamento = root.findtext("aggiornamento", default="")
-    giorni = []
+    per_giorno = {}
+
     for prev in root.findall("previsione"):
-        if prev.get("ora") != "giorno":
-            continue
         try:
             idday = int(prev.get("idday", "99"))
         except ValueError:
@@ -96,25 +137,63 @@ def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
         if idday > max_giorni:
             continue
 
-        simbolo = prev.find("simbolo")
-        tmin = tmax = None
-        for t in prev.findall("temp"):
-            if t.get("temp_type") == "min":
-                tmin = t.text
-            elif t.get("temp_type") == "max":
-                tmax = t.text
-
-        giorni.append({
-            "giorno": idday,
-            "data_descr": prev.get("datadescr"),
-            "min": int(tmin) if tmin not in (None, "") else None,
-            "max": int(tmax) if tmax not in (None, "") else None,
-            "descrizione": simbolo.get("descr") if simbolo is not None else None,
-            "icona_url": (BASE_ICONE + "/" + simbolo.get("image_name"))
-                         if simbolo is not None and simbolo.get("image_name") else None,
+        ora = prev.get("ora")
+        d = per_giorno.setdefault(idday, {
+            "data_descr": prev.get("datadescr"), "_notte": [], "_giorno": [],
         })
 
-    giorni.sort(key=lambda g: g["giorno"])
+        if ora == "giorno":
+            simbolo = prev.find("simbolo")
+            for t in prev.findall("temp"):
+                if t.get("temp_type") == "min":
+                    d["min"] = int(t.text) if t.text else None
+                elif t.get("temp_type") == "max":
+                    d["max"] = int(t.text) if t.text else None
+            if simbolo is not None:
+                d["descrizione"] = simbolo.get("descr")
+                if simbolo.get("image_name"):
+                    d["icona_url"] = BASE_ICONE + "/" + simbolo.get("image_name")
+            continue
+
+        temp_el = prev.find("temp")
+        um_el = prev.find("um")
+        if temp_el is None or um_el is None or not temp_el.text or not um_el.text:
+            continue
+        try:
+            t = float(temp_el.text)
+            rh = float(um_el.text)
+        except ValueError:
+            continue
+        voce = {"temp": t, "um": rh, "humidex": humidex(t, rh)}
+        if ora in FASCE_NOTTE:
+            d["_notte"].append(voce)
+        elif ora in FASCE_GIORNO:
+            d["_giorno"].append(voce)
+
+    def media(lista, chiave):
+        vals = [v[chiave] for v in lista]
+        return round(sum(vals) / len(vals)) if vals else None
+
+    giorni = []
+    for idday in sorted(per_giorno):
+        d = per_giorno[idday]
+        h_notte = media(d["_notte"], "humidex")
+        h_giorno = media(d["_giorno"], "humidex")
+        giorni.append({
+            "giorno": idday,
+            "data_descr": d.get("data_descr"),
+            "min": d.get("min"),
+            "max": d.get("max"),
+            "descrizione": d.get("descrizione"),
+            "icona_url": d.get("icona_url"),
+            "umidita_notte": media(d["_notte"], "um"),
+            "umidita_giorno": media(d["_giorno"], "um"),
+            "humidex_notte": h_notte,
+            "humidex_giorno": h_giorno,
+            "humidex_notte_etichetta": etichetta_humidex(h_notte),
+            "humidex_giorno_etichetta": etichetta_humidex(h_giorno),
+        })
+
     return aggiornamento, giorni
 
 
@@ -142,7 +221,7 @@ def main():
 
     dati = {
         "fonte": "Consorzio LaMMA - Regione Toscana",
-        "nota": "Previsione del comune piu' popoloso della zona, non media sull'intero territorio.",
+        "nota": "Previsione del comune piu' popoloso della zona. L'Humidex e' un indicatore calcolato, non un dato ufficiale.",
         "zone": risultato,
     }
 

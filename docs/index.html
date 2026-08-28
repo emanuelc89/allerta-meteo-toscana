@@ -140,17 +140,8 @@
   .prev-giorno .g-temp { font-weight: 600; }
   .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 400; }
   .prev-comune { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
-  .previsioni-giorni { display: flex; gap: 8px; margin-top: 4px; }
-  .prev-giorno {
-    flex: 1; text-align: center; border: 1px solid var(--bordo); border-radius: 9px;
-    padding: 8px 4px; font-size: .82rem;
-  }
-  .prev-giorno .g-nome { font-weight: 600; text-transform: capitalize; }
-  .prev-giorno img { width: 34px; height: 34px; margin: 2px auto; display: block; }
-  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .72rem; min-height: 1.6em; }
-  .prev-giorno .g-temp { font-weight: 600; }
-  .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 400; }
-  .prev-comune { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
+  .prev-giorno .g-humidex { font-size: .7rem; color: var(--testo-tenue); margin-top: 3px; border-top: 1px dashed var(--bordo); padding-top: 3px; }
+  .prev-giorno .g-humidex b { color: var(--testo); font-weight: 600; }
   footer {
     max-width: 1180px; margin: 36px auto 26px; padding: 0 20px;
     font-size: .78rem; color: var(--testo-tenue);
@@ -252,11 +243,6 @@
           <div class="prev-comune" id="previsioni-comune"></div>
         </div>
 
-        <div class="sotto-card" id="box-previsioni" hidden>
-          <h3>&#9925; Previsioni prossimi giorni</h3>
-          <div class="previsioni-giorni" id="previsioni-contenuto"></div>
-          <div class="prev-comune" id="previsioni-comune"></div>
-        </div>
       </div>
     </div>
   </div>
@@ -285,13 +271,6 @@
   var elDataOggi = document.getElementById('data-oggi');
   if (elDataOggi) elDataOggi.textContent = formattaDataLunga(new Date());
 
-  function formattaDataLunga(d) {
-    var s = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  }
-  var elDataOggi = document.getElementById('data-oggi');
-  if (elDataOggi) elDataOggi.textContent = formattaDataLunga(new Date());
-
   var allerte = null;
   var giorno = 'oggi';
   var layerZone = null;
@@ -304,13 +283,6 @@
   var mappa = L.map('mappa', { scrollWheelZoom: false, zoomSnap: 0.25 });
   mappa.attributionControl.setPrefix(false);
   mappa.attributionControl.addAttribution('Zone di allerta: dati DPC / Ministero della Salute');
-
-  var previsioni = null;
-
-  fetch('data/previsioni.json')
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('previsioni ' + r.status)); })
-    .then(function (dati) { previsioni = dati; })
-    .catch(function (err) { console.warn('Previsioni non caricate:', err.message); });
 
   var previsioni = null;
 
@@ -463,46 +435,24 @@
         ? '<img src="' + g.icona_url + '" alt="' + (g.descrizione || '') + '" loading="lazy">'
         : '';
       var nomeGiorno = (g.data_descr || '').slice(0, 3);
-      return '<div class="prev-giorno">' +
-        '<div class="g-nome">' + nomeGiorno + '</div>' +
-        icona +
-        '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
-        '<div class="g-temp">' + (g.max != null ? g.max + '\u00b0' : '\u2014') +
-        ' <span class="min">' + (g.min != null ? g.min + '\u00b0' : '') + '</span></div>' +
-        '</div>';
-    }).join('');
-
-    document.getElementById('previsioni-contenuto').innerHTML = html;
-    document.getElementById('previsioni-comune').textContent =
-      'Previsioni per ' + dati.comune + ', comune pi\u00f9 popoloso della zona' +
-      (dati.aggiornamento ? ' \u00b7 aggiornato ' + dati.aggiornamento : '');
-    box.hidden = false;
-  }
-
-  function mostraPrevisioni(nomeZona) {
-    var box = document.getElementById('box-previsioni');
-    if (!previsioni || !previsioni.zone) { box.hidden = true; return; }
-    var dati = previsioni.zone[nomeZona];
-    if (!dati || !dati.giorni || !dati.giorni.length) { box.hidden = true; return; }
-
-    var html = dati.giorni.map(function (g) {
-      var icona = g.icona_url
-        ? '<img src="' + g.icona_url + '" alt="' + (g.descrizione || '') + '" loading="lazy">'
-        : '';
-      var nomeGiorno = (g.data_descr || '').slice(0, 3);
+      var fmtH = function (v) { return v != null ? v + '°' : '—'; };
+      var titoloHumidex = 'Notte: ' + fmtH(g.humidex_notte) + (g.humidex_notte_etichetta ? ' (' + g.humidex_notte_etichetta + ')' : '') +
+        ' · Giorno: ' + fmtH(g.humidex_giorno) + (g.humidex_giorno_etichetta ? ' (' + g.humidex_giorno_etichetta + ')' : '');
       return '<div class="prev-giorno">' +
         '<div class="g-nome">' + nomeGiorno + '</div>' +
         icona +
         '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
         '<div class="g-temp">' + (g.max != null ? g.max + '°' : '—') +
         ' <span class="min">' + (g.min != null ? g.min + '°' : '') + '</span></div>' +
+        '<div class="g-humidex" title="' + titoloHumidex + '">&#128167; <b>' + fmtH(g.humidex_notte) + '</b>/<b>' + fmtH(g.humidex_giorno) + '</b></div>' +
         '</div>';
     }).join('');
 
     document.getElementById('previsioni-contenuto').innerHTML = html;
-    document.getElementById('previsioni-comune').textContent =
+    document.getElementById('previsioni-comune').innerHTML =
       'Previsioni per ' + dati.comune + ', comune più popoloso della zona' +
-      (dati.aggiornamento ? ' · aggiornato ' + dati.aggiornamento : '');
+      (dati.aggiornamento ? ' · aggiornato ' + dati.aggiornamento : '') +
+      '<br>&#128167; notte/giorno = Humidex medio (temperatura percepita in base all\'umidità) — indicatore calcolato, non un dato ufficiale.';
     box.hidden = false;
   }
 
@@ -519,7 +469,7 @@
     var elTrovato = document.getElementById('comune-trovato');
     if (elTrovato) {
       if (comuneCercato) {
-        elTrovato.textContent = '\u{1F4CD} ' + comuneCercato + ' fa parte di questa zona di allerta.';
+        elTrovato.textContent = '📍 ' + comuneCercato + ' fa parte di questa zona di allerta.';
         elTrovato.hidden = false;
       } else {
         elTrovato.hidden = true;
@@ -567,8 +517,6 @@
       simbolo + '</div><div><strong>' + titolo + '</strong><span>' + testo + '</span></div></div>';
   }
 
-  // Controlla che i dati siano davvero attuali. Meglio dire "non lo so"
-  // che mostrare con sicurezza un bollettino vecchio.
   function bannerFreschezza() {
     if (!allerte) {
       return bannerHtml('avviso', '#c0392b', '!', 'Dati non disponibili',
@@ -611,7 +559,7 @@
     var contenitore = document.getElementById('banner-riga');
     var quando = document.getElementById('mappa-quando');
     var quandoTxt = giorno === 'oggi' ? 'oggi' : 'domani';
-    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' \u2014 ' +
+    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' — ' +
       formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
 
     var html = bannerFreschezza();
@@ -623,7 +571,7 @@
           'Il bollettino di criticità viene emesso di norma nel primo pomeriggio. ' +
           'Riprova più tardi: la pagina si aggiorna da sola.');
       } else if (!allerte || allerte.oggi === null || allerte.oggi === undefined) {
-        // l'avviso principale e' gia' in cima, non lo ripeto
+        // niente: l'avviso principale e' gia' in cima
       } else {
         html += bannerHtml('neutro', '#9aa4b2', '?', 'Dati non disponibili',
           'Non è stato possibile leggere i dati per questa giornata.');
@@ -643,37 +591,33 @@
       if (d.caldo && d.caldo.livello > peggioreCaldo) peggioreCaldo = d.caldo.livello;
     });
 
-    var codaBollettino = allerte.emesso_pioggia ? '  \u00b7  Bollettino emesso il ' + allerte.emesso_pioggia : '';
+    var codaBollettino = allerte.emesso_pioggia ? '  ·  Bollettino emesso il ' + allerte.emesso_pioggia : '';
 
     if (peggiorePioggia === 'verde') {
-      html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta ' + quandoTxt + ' in Toscana',
+      html += bannerHtml('', '#3f9142', '✓', 'Nessuna allerta ' + quandoTxt + ' in Toscana',
         'Nessun fenomeno significativo previsto sulle zone di allerta.' + codaBollettino);
     } else {
       html += bannerHtml('pioggia-attiva', COLORI_PIOGGIA[peggiorePioggia], '&#128167;',
         ETICHETTE_PIOGGIA[peggiorePioggia] + ' ' + quandoTxt + ' in Toscana',
         zoneConPioggia.length + (zoneConPioggia.length === 1 ? ' zona interessata: ' : ' zone interessate: ') +
-        zoneConPioggia.slice(0, 4).join(', ') + (zoneConPioggia.length > 4 ? '\u2026' : '') + '.' + codaBollettino);
+        zoneConPioggia.slice(0, 4).join(', ') + (zoneConPioggia.length > 4 ? '…' : '') + '.' + codaBollettino);
     }
 
     if (allerte.caldo_stagione_attiva === false) {
       html += bannerHtml('neutro', '#9aa4b2', '&#127777;&#65039;', 'Bollettino caldo non attivo',
         'Il Ministero della Salute pubblica il bollettino ondate di calore da fine maggio a metà settembre.');
     } else if (peggioreCaldo === 0) {
-      html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta caldo ' + quandoTxt + ' a Firenze',
+      html += bannerHtml('', '#3f9142', '✓', 'Nessuna allerta caldo ' + quandoTxt + ' a Firenze',
         'Dato ufficiale disponibile solo per la città di Firenze (Ministero della Salute).');
     } else {
       html += bannerHtml('caldo-attivo', COLORI_CALDO[peggioreCaldo], '&#127777;&#65039;',
         ETICHETTE_CALDO[peggioreCaldo] + ' a Firenze ' + quandoTxt,
-        'Livello ' + peggioreCaldo + ' su 3 \u2014 dato ufficiale disponibile solo per la citta\' di Firenze.');
+        'Livello ' + peggioreCaldo + ' su 3 — dato ufficiale disponibile solo per la città di Firenze.');
     }
 
     contenitore.innerHTML = html;
     aggiornaRigaControllo();
   }
-  // ---- Ricerca per comune -------------------------------------------------
-  // I nomi delle zone ("Valdarno Inf.", "Arno-Casentino") sono tecnici: quasi
-  // nessuno sa in quale ricade il proprio comune. Qui si cerca per comune e si
-  // arriva alla zona. Alcuni comuni ricadono in due zone: si mostrano entrambe.
 
   function normalizza(s) {
     return s.toLowerCase()
@@ -797,15 +741,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

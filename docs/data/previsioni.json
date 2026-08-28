@@ -1,6 +1,6 @@
 {
  "fonte": "Consorzio LaMMA - Regione Toscana",
- "nota": "Previsione del comune piu' popoloso della zona, non media sull'intero territorio.",
+ "nota": "Previsione del comune piu' popoloso della zona. L'Humidex e' un indicatore calcolato, non un dato ufficiale.",
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
@@ -12,7 +12,13 @@
      "min": 24,
      "max": 37,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 63,
+     "humidex_notte": null,
+     "humidex_giorno": 39,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -20,7 +26,13 @@
      "min": 18,
      "max": 30,
      "descrizione": "pioggia debole e schiarite",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
+     "umidita_notte": 94,
+     "umidita_giorno": 54,
+     "humidex_notte": 29,
+     "humidex_giorno": 28,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     },
     {
      "giorno": 3,
@@ -28,7 +40,13 @@
      "min": 17,
      "max": 31,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 93,
+     "umidita_giorno": 66,
+     "humidex_notte": 22,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -42,7 +60,13 @@
      "min": 27,
      "max": 33,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 72,
+     "humidex_notte": null,
+     "humidex_giorno": 42,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -50,7 +74,13 @@
      "min": 27,
      "max": 30,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 70,
+     "umidita_giorno": 51,
+     "humidex_notte": 36,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -58,7 +88,13 @@
      "min": 25,
      "max": 29,
      "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 62,
+     "umidita_giorno": 65,
+     "humidex_notte": 31,
+     "humidex_giorno": 35,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -72,7 +108,13 @@
      "min": 26,
      "max": 38,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 56,
+     "humidex_notte": null,
+     "humidex_giorno": 42,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -80,7 +122,13 @@
      "min": 23,
      "max": 33,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 84,
+     "umidita_giorno": 47,
+     "humidex_notte": 35,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -88,7 +136,13 @@
      "min": 20,
      "max": 32,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 76,
+     "umidita_giorno": 58,
+     "humidex_notte": 25,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -102,7 +156,13 @@
      "min": 24,
      "max": 35,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": null,
+     "umidita_giorno": 60,
+     "humidex_notte": null,
+     "humidex_giorno": 39,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -110,7 +170,13 @@
      "min": 22,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 86,
+     "umidita_giorno": 48,
+     "humidex_notte": 35,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -118,7 +184,13 @@
      "min": 19,
      "max": 30,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 83,
+     "umidita_giorno": 62,
+     "humidex_notte": 24,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -132,7 +204,13 @@
      "min": 26,
      "max": 37,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 59,
+     "humidex_notte": null,
+     "humidex_giorno": 41,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -140,7 +218,13 @@
      "min": 23,
      "max": 31,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 84,
+     "umidita_giorno": 53,
+     "humidex_notte": 35,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -148,7 +232,13 @@
      "min": 20,
      "max": 31,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 75,
+     "umidita_giorno": 61,
+     "humidex_notte": 25,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -162,7 +252,13 @@
      "min": 27,
      "max": 35,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 67,
+     "humidex_notte": null,
+     "humidex_giorno": 43,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -170,7 +266,13 @@
      "min": 26,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 72,
+     "umidita_giorno": 48,
+     "humidex_notte": 34,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -178,7 +280,13 @@
      "min": 24,
      "max": 31,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 61,
+     "umidita_giorno": 57,
+     "humidex_notte": 29,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -192,7 +300,13 @@
      "min": 27,
      "max": 36,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 67,
+     "humidex_notte": null,
+     "humidex_giorno": 44,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -200,7 +314,13 @@
      "min": 26,
      "max": 33,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 72,
+     "umidita_giorno": 48,
+     "humidex_notte": 38,
+     "humidex_giorno": 35,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -208,7 +328,13 @@
      "min": 25,
      "max": 32,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 61,
+     "umidita_giorno": 57,
+     "humidex_notte": 33,
+     "humidex_giorno": 35,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -222,7 +348,13 @@
      "min": 27,
      "max": 36,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 67,
+     "humidex_notte": null,
+     "humidex_giorno": 44,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -230,7 +362,13 @@
      "min": 26,
      "max": 33,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 72,
+     "umidita_giorno": 48,
+     "humidex_notte": 38,
+     "humidex_giorno": 35,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -238,7 +376,13 @@
      "min": 25,
      "max": 32,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 61,
+     "umidita_giorno": 57,
+     "humidex_notte": 33,
+     "humidex_giorno": 35,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -252,7 +396,13 @@
      "min": 26,
      "max": 32,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 74,
+     "humidex_notte": null,
+     "humidex_giorno": 40,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -260,7 +410,13 @@
      "min": 24,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 98,
+     "umidita_giorno": 45,
+     "humidex_notte": 36,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -268,7 +424,13 @@
      "min": 18,
      "max": 32,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 48,
+     "umidita_giorno": 53,
+     "humidex_notte": 19,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -282,7 +444,13 @@
      "min": 27,
      "max": 31,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 74,
+     "humidex_notte": null,
+     "humidex_giorno": 40,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -290,7 +458,13 @@
      "min": 25,
      "max": 31,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 98,
+     "umidita_giorno": 45,
+     "humidex_notte": 40,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "disagio notevole",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -298,7 +472,13 @@
      "min": 20,
      "max": 31,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 48,
+     "umidita_giorno": 53,
+     "humidex_notte": 22,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -312,7 +492,13 @@
      "min": 28,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 74,
+     "humidex_notte": null,
+     "humidex_giorno": 42,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -320,7 +506,13 @@
      "min": 27,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 74,
+     "umidita_giorno": 42,
+     "humidex_notte": 36,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -328,7 +520,13 @@
      "min": 24,
      "max": 31,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 56,
+     "umidita_giorno": 52,
+     "humidex_notte": 29,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -342,7 +540,13 @@
      "min": 24,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 78,
+     "humidex_notte": null,
+     "humidex_giorno": 40,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -350,7 +554,13 @@
      "min": 19,
      "max": 30,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 90,
+     "umidita_giorno": 68,
+     "humidex_notte": 29,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -358,7 +568,13 @@
      "min": 17,
      "max": 29,
      "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 86,
+     "umidita_giorno": 70,
+     "humidex_notte": 21,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -372,7 +588,13 @@
      "min": 25,
      "max": 35,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 70,
+     "humidex_notte": null,
+     "humidex_giorno": 39,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -380,7 +602,13 @@
      "min": 21,
      "max": 30,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 88,
+     "umidita_giorno": 56,
+     "humidex_notte": 35,
+     "humidex_giorno": 30,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -388,7 +616,13 @@
      "min": 18,
      "max": 29,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 87,
+     "umidita_giorno": 66,
+     "humidex_notte": 24,
+     "humidex_giorno": 30,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -402,7 +636,13 @@
      "min": 24,
      "max": 35,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 60,
+     "humidex_notte": null,
+     "humidex_giorno": 39,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -410,7 +650,13 @@
      "min": 21,
      "max": 31,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 83,
+     "umidita_giorno": 43,
+     "humidex_notte": 35,
+     "humidex_giorno": 29,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     },
     {
      "giorno": 3,
@@ -418,7 +664,13 @@
      "min": 18,
      "max": 29,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 79,
+     "umidita_giorno": 63,
+     "humidex_notte": 22,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -432,7 +684,13 @@
      "min": 27,
      "max": 36,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 67,
+     "humidex_notte": null,
+     "humidex_giorno": 43,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -440,7 +698,13 @@
      "min": 25,
      "max": 35,
      "descrizione": "pioggia debole e schiarite",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
+     "umidita_notte": 96,
+     "umidita_giorno": 44,
+     "humidex_notte": 39,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -448,7 +712,13 @@
      "min": 21,
      "max": 33,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 63,
+     "umidita_giorno": 52,
+     "humidex_notte": 26,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -462,7 +732,13 @@
      "min": 24,
      "max": 34,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 70,
+     "humidex_notte": null,
+     "humidex_giorno": 38,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -470,7 +746,13 @@
      "min": 19,
      "max": 29,
      "descrizione": "pioggia e schiarite",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole2.png",
+     "umidita_notte": 96,
+     "umidita_giorno": 53,
+     "humidex_notte": 35,
+     "humidex_giorno": 28,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     },
     {
      "giorno": 3,
@@ -478,7 +760,13 @@
      "min": 17,
      "max": 29,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 90,
+     "umidita_giorno": 64,
+     "humidex_notte": 22,
+     "humidex_giorno": 29,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     }
    ]
   },
@@ -492,7 +780,13 @@
      "min": 26,
      "max": 36,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 66,
+     "humidex_notte": null,
+     "humidex_giorno": 42,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -500,7 +794,13 @@
      "min": 23,
      "max": 30,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 88,
+     "umidita_giorno": 58,
+     "humidex_notte": 34,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -508,7 +808,13 @@
      "min": 19,
      "max": 31,
      "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 78,
+     "umidita_giorno": 60,
+     "humidex_notte": 24,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -522,7 +828,13 @@
      "min": 25,
      "max": 33,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 64,
+     "humidex_notte": null,
+     "humidex_giorno": 38,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -530,7 +842,13 @@
      "min": 21,
      "max": 29,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 75,
+     "umidita_giorno": 49,
+     "humidex_notte": 28,
+     "humidex_giorno": 27,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     },
     {
      "giorno": 3,
@@ -538,7 +856,13 @@
      "min": 18,
      "max": 29,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 76,
+     "umidita_giorno": 57,
+     "humidex_notte": 23,
+     "humidex_giorno": 28,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     }
    ]
   },
@@ -552,7 +876,13 @@
      "min": 28,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 69,
+     "humidex_notte": null,
+     "humidex_giorno": 41,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -560,7 +890,13 @@
      "min": 26,
      "max": 29,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 68,
+     "umidita_giorno": 54,
+     "humidex_notte": 34,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -568,7 +904,13 @@
      "min": 24,
      "max": 28,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 70,
+     "umidita_giorno": 64,
+     "humidex_notte": 30,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -582,7 +924,13 @@
      "min": 25,
      "max": 36,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 70,
+     "humidex_notte": null,
+     "humidex_giorno": 42,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -590,7 +938,13 @@
      "min": 22,
      "max": 31,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 80,
+     "umidita_giorno": 60,
+     "humidex_notte": 33,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -598,7 +952,13 @@
      "min": 19,
      "max": 30,
      "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 82,
+     "umidita_giorno": 67,
+     "humidex_notte": 24,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -612,7 +972,13 @@
      "min": 25,
      "max": 35,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 70,
+     "humidex_notte": null,
+     "humidex_giorno": 41,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -620,7 +986,13 @@
      "min": 22,
      "max": 30,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 80,
+     "umidita_giorno": 60,
+     "humidex_notte": 33,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -628,7 +1000,13 @@
      "min": 19,
      "max": 29,
      "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 82,
+     "umidita_giorno": 67,
+     "humidex_notte": 24,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -642,7 +1020,13 @@
      "min": 26,
      "max": 37,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": null,
+     "umidita_giorno": 59,
+     "humidex_notte": null,
+     "humidex_giorno": 41,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -650,7 +1034,13 @@
      "min": 23,
      "max": 32,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 82,
+     "umidita_giorno": 48,
+     "humidex_notte": 34,
+     "humidex_giorno": 32,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -658,7 +1048,13 @@
      "min": 20,
      "max": 31,
      "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 78,
+     "umidita_giorno": 64,
+     "humidex_notte": 26,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -672,7 +1068,13 @@
      "min": 26,
      "max": 37,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 52,
+     "humidex_notte": null,
+     "humidex_giorno": 40,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -680,7 +1082,13 @@
      "min": 21,
      "max": 31,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 83,
+     "umidita_giorno": 51,
+     "humidex_notte": 32,
+     "humidex_giorno": 31,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -688,7 +1096,13 @@
      "min": 18,
      "max": 31,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 87,
+     "umidita_giorno": 69,
+     "humidex_notte": 24,
+     "humidex_giorno": 34,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -702,7 +1116,13 @@
      "min": 24,
      "max": 35,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 61,
+     "humidex_notte": null,
+     "humidex_giorno": 39,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -710,7 +1130,13 @@
      "min": 21,
      "max": 32,
      "descrizione": "pioggia debole e schiarite",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
+     "umidita_notte": 84,
+     "umidita_giorno": 44,
+     "humidex_notte": 35,
+     "humidex_giorno": 30,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -718,7 +1144,13 @@
      "min": 18,
      "max": 30,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 73,
+     "umidita_giorno": 57,
+     "humidex_notte": 22,
+     "humidex_giorno": 30,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   },
@@ -732,7 +1164,13 @@
      "min": 23,
      "max": 34,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 64,
+     "humidex_notte": null,
+     "humidex_giorno": 37,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 2,
@@ -740,7 +1178,13 @@
      "min": 20,
      "max": 31,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 74,
+     "umidita_giorno": 48,
+     "humidex_notte": 31,
+     "humidex_giorno": 29,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     },
     {
      "giorno": 3,
@@ -748,7 +1192,13 @@
      "min": 17,
      "max": 30,
      "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 78,
+     "umidita_giorno": 60,
+     "humidex_notte": 21,
+     "humidex_giorno": 29,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio"
     }
    ]
   },
@@ -762,7 +1212,13 @@
      "min": 27,
      "max": 32,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 78,
+     "humidex_notte": null,
+     "humidex_giorno": 41,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "disagio notevole"
     },
     {
      "giorno": 2,
@@ -770,7 +1226,13 @@
      "min": 24,
      "max": 29,
      "descrizione": "velato",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
+     "umidita_notte": 86,
+     "umidita_giorno": 63,
+     "humidex_notte": 36,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     },
     {
      "giorno": 3,
@@ -778,7 +1240,13 @@
      "min": 22,
      "max": 28,
      "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png"
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": 74,
+     "umidita_giorno": 68,
+     "humidex_notte": 29,
+     "humidex_giorno": 33,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "qualche disagio"
     }
    ]
   }
