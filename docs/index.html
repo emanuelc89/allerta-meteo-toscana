@@ -444,7 +444,7 @@
         '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
         '<div class="g-temp">' + (g.max != null ? g.max + '°' : '—') +
         ' <span class="min">' + (g.min != null ? g.min + '°' : '') + '</span></div>' +
-        '<div class="g-humidex" title="' + titoloHumidex + '">&#128167; <b>' + fmtH(g.humidex_notte) + '</b>/<b>' + fmtH(g.humidex_giorno) + '</b></div>' +
+        '<div class="g-humidex" title="' + titoloHumidex + '"><svg width=\'13\' height=\'13\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\' style=\'vertical-align:-2px\'><path d=\'M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/></svg> <b>' + fmtH(g.humidex_notte) + '</b>/<b>' + fmtH(g.humidex_giorno) + '</b></div>' +
         '</div>';
     }).join('');
 
@@ -452,7 +452,7 @@
     document.getElementById('previsioni-comune').innerHTML =
       'Previsioni per ' + dati.comune + ', comune più popoloso della zona' +
       (dati.aggiornamento ? ' · aggiornato ' + dati.aggiornamento : '') +
-      '<br>&#128167; notte/giorno = Humidex medio (temperatura percepita in base all\'umidità) — indicatore calcolato, non un dato ufficiale.';
+      '<br><svg width=\'13\' height=\'13\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\' style=\'vertical-align:-2px\'><path d=\'M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/></svg> notte/giorno = Humidex medio (temperatura percepita in base all\'umidità) — indicatore calcolato, non un dato ufficiale.';
     box.hidden = false;
   }
 
@@ -741,4 +741,5 @@
 
 </body>
 </html>
+
 
