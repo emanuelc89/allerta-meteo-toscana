@@ -198,7 +198,7 @@
       <div id="mappa"></div>
       <div class="legenda">
         <div class="legenda-gruppo">
-          <span class="legenda-titolo">Pioggia</span>
+          <span class="legenda-titolo">Criticità</span>
           <span><i class="quadr" style="background:var(--nessuna)"></i>Nessuna</span>
           <span><i class="quadr" style="background:var(--p-gialla)"></i>Gialla</span>
           <span><i class="quadr" style="background:var(--p-arancione)"></i>Arancione</span>
@@ -226,7 +226,7 @@
         <div class="comune-trovato" id="comune-trovato" hidden></div>
 
         <div class="sotto-card">
-          <h3>&#128167; Rischio pioggia <span id="pan-titolo-giorno-p"></span></h3>
+          <h3>&#128167; Criticità <span id="pan-titolo-giorno-p"></span></h3>
           <div class="riga-rischio">
             <span>Rischio idraulico</span>
             <span class="stato" id="r-idraulico"></span>
@@ -373,7 +373,7 @@
     var d = datiZona(feat.properties.nome);
     var testo = feat.properties.nome;
     if (d) {
-      testo += ' — Pioggia: ' + ETICHETTE_PIOGGIA[d.pioggia];
+      testo += ' — Criticità: ' + ETICHETTE_PIOGGIA[d.pioggia];
       if (d.caldo) testo += ' · Caldo: ' + ETICHETTE_CALDO[d.caldo.livello];
     }
     if (ly.getTooltip()) ly.setTooltipContent(testo);
@@ -646,11 +646,11 @@
     var codaBollettino = allerte.emesso_pioggia ? '  \u00b7  Bollettino emesso il ' + allerte.emesso_pioggia : '';
 
     if (peggiorePioggia === 'verde') {
-      html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta pioggia ' + quandoTxt + ' in Toscana',
+      html += bannerHtml('', '#3f9142', '\u2713', 'Nessuna allerta ' + quandoTxt + ' in Toscana',
         'Nessun fenomeno significativo previsto sulle zone di allerta.' + codaBollettino);
     } else {
       html += bannerHtml('pioggia-attiva', COLORI_PIOGGIA[peggiorePioggia], '&#128167;',
-        ETICHETTE_PIOGGIA[peggiorePioggia] + ' pioggia ' + quandoTxt + ' in Toscana',
+        ETICHETTE_PIOGGIA[peggiorePioggia] + ' ' + quandoTxt + ' in Toscana',
         zoneConPioggia.length + (zoneConPioggia.length === 1 ? ' zona interessata: ' : ' zone interessate: ') +
         zoneConPioggia.slice(0, 4).join(', ') + (zoneConPioggia.length > 4 ? '\u2026' : '') + '.' + codaBollettino);
     }
@@ -797,6 +797,7 @@
 
 </body>
 </html>
+
 
 
 
