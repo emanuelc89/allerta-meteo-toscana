@@ -223,8 +223,10 @@
         </div>
         <div class="legenda-gruppo">
           <span class="legenda-titolo">Caldo</span>
-          <span>&#127777;&#65039; = allerta caldo attiva</span>
-          <span class="legenda-nota">Dato ufficiale disponibile solo per la città di Firenze (Ministero della Salute)</span>
+          <span>&#127777;&#65039; rosso/arancio = allerta ufficiale (solo Firenze, Ministero della Salute)</span>
+        </div>
+        <div class="legenda-gruppo">
+          <span>&#127777;&#65039; <span style="color:#c0722d;font-weight:600">marrone</span> = stima calcolata (Humidex o temperatura oltre 35°, non un bollettino ufficiale)</span>
         </div>
       </div>
     </div>
@@ -286,6 +288,7 @@
   var ETICHETTE_PIOGGIA = { verde: 'Nessuna allerta', gialla: 'Allerta gialla', arancione: 'Allerta arancione', rossa: 'Allerta rossa' };
   var ORDINE_PIOGGIA = { verde: 0, gialla: 1, arancione: 2, rossa: 3 };
   var COLORI_CALDO = { 0: '#f6c453', 1: '#f6c453', 2: '#f2994a', 3: '#d64545' };
+  var COLORE_CALDO_STIMATO = '#c0722d';  // colore fisso, diverso dal gradiente ufficiale
   var ETICHETTE_CALDO = { 0: 'Nessun rischio', 1: 'Pre-allerta', 2: 'Rischio elevato', 3: 'Ondata di calore' };
 
   function formattaDataLunga(d) {
@@ -355,6 +358,14 @@
     return allerte[giorno][nomeZona] || null;
   }
 
+  function caldoStimatoZona(nomeZona) {
+    if (!previsioni || !previsioni.zone) return null;
+    var dati = previsioni.zone[nomeZona];
+    if (!dati || !dati.giorni || !dati.giorni.length) return null;
+    var indice = giorno === 'oggi' ? 0 : 1;
+    return dati.giorni[indice] || null;
+  }
+
   function stileZona(feat) {
     var d = datiZona(feat.properties.nome);
     var liv = d ? d.pioggia : null;
@@ -370,7 +381,15 @@
     var testo = feat.properties.nome;
     if (d) {
       testo += ' — Criticità: ' + ETICHETTE_PIOGGIA[d.pioggia];
-      if (d.caldo) testo += ' · Caldo: ' + ETICHETTE_CALDO[d.caldo.livello];
+      if (d.caldo) {
+        testo += ' · Caldo: ' + ETICHETTE_CALDO[d.caldo.livello];
+      } else {
+        var stimato = caldoStimatoZona(feat.properties.nome);
+        if (stimato && stimato.caldo_stimato) {
+          testo += ' · Caldo (stima): ' + (stimato.max != null ? stimato.max + '°' : '?') +
+            (stimato.humidex_giorno_etichetta ? ', ' + stimato.humidex_giorno_etichetta : '');
+        }
+      }
     }
     if (ly.getTooltip()) ly.setTooltipContent(testo);
     else ly.bindTooltip(testo, { sticky: true });
@@ -418,6 +437,15 @@
         var mTerm = L.marker(puntoCaldo, { icon: svgTermometro(COLORI_CALDO[d.caldo.livello]), interactive: false });
         mTerm.addTo(mappa);
         iconeAttive.push(mTerm);
+      } else {
+        var stimato = caldoStimatoZona(ly.feature.properties.nome);
+        if (stimato && stimato.caldo_stimato) {
+          var offsetStim = (d.pioggia && d.pioggia !== 'verde') ? 0.06 : 0;
+          var puntoCaldoStim = L.latLng(centro.lat, centro.lng + offsetStim);
+          var mTermStim = L.marker(puntoCaldoStim, { icon: svgTermometro(COLORE_CALDO_STIMATO), interactive: false });
+          mTermStim.addTo(mappa);
+          iconeAttive.push(mTermStim);
+        }
       }
     });
   }
@@ -552,7 +580,18 @@
         boxCaldo.innerHTML = '<p class="nota-copertura">Nessun dato disponibile per oggi.</p>';
       }
     } else {
-      boxCaldo.innerHTML = '<p class="nota-copertura">Il bollettino ufficiale ministeriale copre solo la città di Firenze: questa zona non è coperta.</p>';
+      var stimatoPannello = caldoStimatoZona(nomeZona);
+      if (stimatoPannello && stimatoPannello.caldo_stimato) {
+        boxCaldo.innerHTML =
+          '<div class="riga-rischio"><span>Stima: ' +
+          (stimatoPannello.max != null ? stimatoPannello.max + '° max' : 'n/d') +
+          (stimatoPannello.humidex_giorno_etichetta ? ', ' + stimatoPannello.humidex_giorno_etichetta : '') + '</span>' +
+          '<span class="stato"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' +
+          COLORE_CALDO_STIMATO + ';margin-right:6px;vertical-align:-1px;"></span>Attiva</span></div>' +
+          '<p class="nota-copertura">Il bollettino ufficiale ministeriale copre solo Firenze. Questa è una stima calcolata da temperatura e Humidex sui dati LaMMA, non un bollettino ufficiale.</p>';
+      } else {
+        boxCaldo.innerHTML = '<p class="nota-copertura">Il bollettino ufficiale ministeriale copre solo la città di Firenze. Nessuna stima di rischio caldo per questa zona al momento.</p>';
+      }
     }
 
     mostraPrevisioni(nomeZona);

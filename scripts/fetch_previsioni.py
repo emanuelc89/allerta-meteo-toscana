@@ -124,6 +124,26 @@ def etichetta_humidex(h):
     return "rischio di colpo di calore"
 
 
+SOGLIA_HUMIDEX_ALLERTA = 40   # da qui in su: "disagio notevole" o peggio (Environment Canada)
+SOGLIA_TEMPERATURA_SECCA = 35  # criterio esplicito per il caldo secco (bassa umidita')
+
+
+def caldo_stimato(temp_max, humidex_giorno):
+    """
+    True se la zona merita il termometro sulla mappa, secondo uno di due criteri
+    alternativi (basta che ne sia vero uno):
+    - Humidex diurno >= 40 (disagio notevole o peggio, lato umido del grafico)
+    - temperatura massima > 35 gradi (lato secco del grafico, dove l'Humidex
+      da solo non scatterebbe perche' richiede umidita' alta)
+    Non e' un bollettino ufficiale: e' una stima calcolata sui dati LaMMA.
+    """
+    if temp_max is not None and temp_max > SOGLIA_TEMPERATURA_SECCA:
+        return True
+    if humidex_giorno is not None and humidex_giorno >= SOGLIA_HUMIDEX_ALLERTA:
+        return True
+    return False
+
+
 def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
     root = ET.fromstring(xml_bytes)
     aggiornamento = root.findtext("aggiornamento", default="")
@@ -192,6 +212,7 @@ def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
             "humidex_giorno": h_giorno,
             "humidex_notte_etichetta": etichetta_humidex(h_notte),
             "humidex_giorno_etichetta": etichetta_humidex(h_giorno),
+            "caldo_stimato": caldo_stimato(d.get("max"), h_giorno),
         })
 
     return aggiornamento, giorni
