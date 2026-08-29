@@ -1,9 +1,9 @@
 {
- "aggiornato": "2026-08-28T21:32:52+00:00",
- "emesso_pioggia": "28/08/2026 14:38",
- "emesso_pioggia_data": "2026-08-28",
- "data_oggi": "2026-08-28",
- "data_domani": "2026-08-29",
+ "aggiornato": "2026-08-29T15:46:37+00:00",
+ "emesso_pioggia": "29/08/2026 13:31",
+ "emesso_pioggia_data": "2026-08-29",
+ "data_oggi": "2026-08-29",
+ "data_domani": "2026-08-30",
  "fonte_pioggia": "Dipartimento della Protezione Civile",
  "caldo_stagione_attiva": true,
  "caldo_citta_coperta": "Firenze",
@@ -30,8 +30,8 @@
    "temporali": "verde",
    "idrogeologico": "verde",
    "caldo": {
-    "livello": 2,
-    "etichetta": "Rischio elevato"
+    "livello": 1,
+    "etichetta": "Pre-allerta"
    }
   },
   "Valdarno Inf.": {
@@ -217,8 +217,8 @@
    "temporali": "verde",
    "idrogeologico": "verde",
    "caldo": {
-    "livello": 1,
-    "etichetta": "Pre-allerta"
+    "livello": 0,
+    "etichetta": "Nessun rischio"
    }
   },
   "Valdarno Inf.": {
