@@ -56,6 +56,11 @@
     font: inherit; font-size: .9rem; padding: 6px 16px; border-radius: 7px;
   }
   .tabs button.attivo { background: #fff; color: var(--blu); font-weight: 600; }
+  .link-fiumi {
+    color: #fff; text-decoration: none; font-size: .85rem; white-space: nowrap;
+    border: 1px solid rgba(255,255,255,.4); border-radius: 7px; padding: 6px 12px;
+  }
+  .link-fiumi:hover { background: rgba(255,255,255,.15); }
   main { max-width: 1180px; margin: 22px auto; padding: 0 20px; }
   .banner-riga { display: flex; flex-direction: column; gap: 10px; }
   .banner {
@@ -209,6 +214,7 @@
       <button data-giorno="oggi" class="attivo">Oggi</button>
       <button data-giorno="domani">Domani</button>
     </div>
+    <a class="link-fiumi" href="fiumi.html">&#127754; Mappa fluviale</a>
   </div>
 </header>
 
@@ -1107,6 +1113,7 @@
 
 </body>
 </html>
+
 
 
 
