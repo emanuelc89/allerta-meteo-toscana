@@ -644,6 +644,7 @@
 
   function mostraIdrometria(nomeZona) {
     var box = document.getElementById('box-idrometria');
+    if (giorno === 'domani') { box.hidden = true; return; }
     if (!idrometria || !idrometria.zone) { box.hidden = true; return; }
     var stazioni = idrometria.zone[nomeZona];
     if (!stazioni || !stazioni.length) { box.hidden = true; return; }
@@ -1097,3 +1098,4 @@
 
 </body>
 </html>
+
