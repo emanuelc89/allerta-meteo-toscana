@@ -145,30 +145,47 @@
       '</div>';
   }
 
-  fetch('data/idrometria_mappa.json')
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
-    .then(function (dati) {
-      var gruppo = L.layerGroup();
-      dati.stazioni.forEach(function (s) {
-        var colore = s.stato ? COLORI_STATO[s.stato] : '#9aa4b2';
-        var marker = L.circleMarker([s.lat, s.lng], {
-          radius: 6, weight: 1.5, color: '#fff', fillColor: colore, fillOpacity: 0.95
-        });
-        marker.bindPopup(costruisciPopup(s));
-        gruppo.addLayer(marker);
-      });
-      gruppo.addTo(mappa);
+  var gruppoMarker = null;
 
-      var aggiornato = dati.aggiornato ? new Date(dati.aggiornato).toLocaleString('it-IT') : '—';
-      document.getElementById('sottotesto').textContent =
-        dati.stazioni.length + ' stazioni geolocalizzate · aggiornato ' + aggiornato +
-        ' · dati non validati (fonte CFR)';
-    })
-    .catch(function (err) {
-      document.getElementById('sottotesto').textContent =
-        'Non è stato possibile caricare i dati delle stazioni (' + err.message + ').';
-    });
+  function caricaDati() {
+    var cacheBust = '?_=' + Date.now();
+    fetch('data/idrometria_mappa.json' + cacheBust)
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
+      .then(function (dati) {
+        if (gruppoMarker) mappa.removeLayer(gruppoMarker);
+        gruppoMarker = L.layerGroup();
+        dati.stazioni.forEach(function (s) {
+          var colore = s.stato ? COLORI_STATO[s.stato] : '#9aa4b2';
+          var marker = L.circleMarker([s.lat, s.lng], {
+            radius: 6, weight: 1.5, color: '#fff', fillColor: colore, fillOpacity: 0.95
+          });
+          marker.bindPopup(costruisciPopup(s));
+          gruppoMarker.addLayer(marker);
+        });
+        gruppoMarker.addTo(mappa);
+
+        var aggiornato = dati.aggiornato ? new Date(dati.aggiornato).toLocaleString('it-IT') : '—';
+        document.getElementById('sottotesto').textContent =
+          dati.stazioni.length + ' stazioni geolocalizzate · aggiornato ' + aggiornato +
+          ' · dati non validati (fonte CFR)';
+      })
+      .catch(function (err) {
+        document.getElementById('sottotesto').textContent =
+          'Non è stato possibile caricare i dati delle stazioni (' + err.message + ').';
+      });
+  }
+
+  caricaDati();
+
+  setInterval(function () {
+    if (!document.hidden) caricaDati();
+  }, 5 * 60 * 1000);
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) caricaDati();
+  });
 </script>
 
 </body>
 </html>
+
