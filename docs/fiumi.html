@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mappa fluviale — Allerta Meteo Toscana</title>
+<meta name="description" content="Mappa dei fiumi e torrenti monitorati in Toscana, con livelli idrometrici in tempo reale.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root {
+    --blu: #2b4380;
+    --blu-scuro: #223768;
+    --sfondo: #f2f5f9;
+    --testo: #1f2937;
+    --testo-tenue: #6b7280;
+    --bordo: #e3e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--sfondo); color: var(--testo); line-height: 1.5;
+  }
+  header { background: var(--blu); color: #fff; padding: 14px 20px; }
+  .header-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  }
+  .logo {
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: var(--blu-scuro); border-radius: 10px;
+    display: grid; place-items: center; font-size: 20px;
+  }
+  header h1 { font-size: 1.15rem; font-weight: 700; }
+  header .sottotitolo { font-size: .82rem; opacity: .85; }
+  .torna {
+    margin-left: auto; color: #fff; text-decoration: none; font-size: .88rem;
+    border: 1px solid rgba(255,255,255,.4); border-radius: 7px; padding: 6px 12px;
+  }
+  .torna:hover { background: rgba(255,255,255,.15); }
+  main { max-width: 1180px; margin: 22px auto; padding: 0 20px; }
+  .card {
+    background: #fff; border: 1px solid var(--bordo);
+    border-radius: 12px; padding: 18px 20px;
+  }
+  .card h2 { font-size: 1rem; margin-bottom: 4px; }
+  .card .sotto { font-size: .82rem; color: var(--testo-tenue); margin-bottom: 12px; }
+  #mappa { height: 640px; border-radius: 10px; }
+  .legenda {
+    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--sfondo);
+    display: flex; flex-wrap: wrap; gap: 14px; font-size: .82rem; color: var(--testo-tenue);
+  }
+  .pallino { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: -1px; }
+  .popup-fiume { font-size: .88rem; min-width: 180px; }
+  .popup-fiume .titolo { font-weight: 700; margin-bottom: 4px; }
+  .popup-fiume .riga { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
+  .popup-fiume .stato-testo { font-weight: 600; }
+  footer {
+    max-width: 1180px; margin: 24px auto 26px; padding: 0 20px;
+    font-size: .78rem; color: var(--testo-tenue);
+  }
+  footer a { color: var(--blu); }
+  @media (max-width: 700px) {
+    #mappa { height: 480px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo" aria-hidden="true">&#127754;</div>
+    <div>
+      <h1>Mappa fluviale della Toscana</h1>
+      <div class="sottotitolo">Livelli idrometrici in tempo reale, fonte Centro Funzionale Regionale</div>
+    </div>
+    <a class="torna" href="index.html">&larr; Torna al bollettino</a>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Stazioni idrometriche monitorate</h2>
+    <div class="sotto" id="sottotesto">Caricamento...</div>
+    <div id="mappa"></div>
+    <div class="legenda">
+      <span><i class="pallino" style="background:#3f9142"></i>Sotto le soglie</span>
+      <span><i class="pallino" style="background:#f2c94c"></i>In avvicinamento (attenzione)</span>
+      <span><i class="pallino" style="background:#f2994a"></i>Sopra soglia 1 (attenzione)</span>
+      <span><i class="pallino" style="background:#e0672f"></i>In avvicinamento (criticità)</span>
+      <span><i class="pallino" style="background:#eb5757"></i>Sopra soglia 2 (criticità)</span>
+      <span><i class="pallino" style="background:#9aa4b2"></i>Nessuna soglia definita</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Sito non ufficiale a scopo informativo. Dati acquisiti in tempo reale e non sottoposti a validazione ufficiale.
+  Fonte: <a href="https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro">Centro Funzionale Regionale della Toscana</a>.
+  Progetto open source su <a href="https://github.com/emanuelc89/allerta-meteo-toscana">GitHub</a>.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  var COLORI_STATO = {
+    sopra_soglia2: '#eb5757',
+    in_avvicinamento_soglia2: '#e0672f',
+    sopra_soglia1: '#f2994a',
+    in_avvicinamento_soglia1: '#f2c94c',
+    normale: '#3f9142'
+  };
+  var ETICHETTE_STATO = {
+    sopra_soglia2: 'Sopra soglia 2 (criticità)',
+    in_avvicinamento_soglia2: 'In avvicinamento alla soglia di criticità',
+    sopra_soglia1: 'Sopra soglia 1 (attenzione)',
+    in_avvicinamento_soglia1: 'In avvicinamento alla soglia di attenzione',
+    normale: 'Sotto le soglie'
+  };
+  var ICONE_TENDENZA = { 'in aumento': '↑', 'in diminuzione': '↓', 'stabile': '→' };
+
+  var mappa = L.map('mappa').setView([43.6, 11.1], 8);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(mappa);
+
+  function costruisciPopup(s) {
+    var colore = s.stato ? COLORI_STATO[s.stato] : '#9aa4b2';
+    var etichetta = s.stato ? ETICHETTE_STATO[s.stato] : 'Nessuna soglia definita';
+    var sogliaTxt = (s.soglia1 != null || s.soglia2 != null)
+      ? '<div class="riga"><span>Soglie</span><span>' +
+        (s.soglia1 != null ? s.soglia1.toFixed(2) : '?') + 'm / ' +
+        (s.soglia2 != null ? s.soglia2.toFixed(2) : '?') + 'm</span></div>'
+      : '';
+    var portataTxt = s.portata != null
+      ? '<div class="riga"><span>Portata</span><span>' + s.portata.toFixed(2) + ' m³/s</span></div>'
+      : '';
+    return '<div class="popup-fiume">' +
+      '<div class="titolo">' + s.fiume + ' – ' + s.stazione + '</div>' +
+      '<div class="riga"><span>Zona</span><span>' + (s.zona_nome || '—') + '</span></div>' +
+      '<div class="riga"><span>Livello</span><span style="color:' + colore + '" class="stato-testo">' +
+        (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA[s.tendenza] || '') +
+      '</span></div>' +
+      sogliaTxt + portataTxt +
+      '<div class="riga" style="margin-top:4px"><span style="color:' + colore + '">' + etichetta + '</span></div>' +
+      '</div>';
+  }
+
+  fetch('data/idrometria_mappa.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
+    .then(function (dati) {
+      var gruppo = L.layerGroup();
+      dati.stazioni.forEach(function (s) {
+        var colore = s.stato ? COLORI_STATO[s.stato] : '#9aa4b2';
+        var marker = L.circleMarker([s.lat, s.lng], {
+          radius: 6, weight: 1.5, color: '#fff', fillColor: colore, fillOpacity: 0.95
+        });
+        marker.bindPopup(costruisciPopup(s));
+        gruppo.addLayer(marker);
+      });
+      gruppo.addTo(mappa);
+
+      var aggiornato = dati.aggiornato ? new Date(dati.aggiornato).toLocaleString('it-IT') : '—';
+      document.getElementById('sottotesto').textContent =
+        dati.stazioni.length + ' stazioni geolocalizzate · aggiornato ' + aggiornato +
+        ' · dati non validati (fonte CFR)';
+    })
+    .catch(function (err) {
+      document.getElementById('sottotesto').textContent =
+        'Non è stato possibile caricare i dati delle stazioni (' + err.message + ').';
+    });
+</script>
+
+</body>
+</html>
