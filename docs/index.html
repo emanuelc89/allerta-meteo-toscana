@@ -321,7 +321,7 @@
   var ETICHETTE_PIOGGIA = { verde: 'Nessuna allerta', gialla: 'Allerta gialla', arancione: 'Allerta arancione', rossa: 'Allerta rossa' };
   var ORDINE_PIOGGIA = { verde: 0, gialla: 1, arancione: 2, rossa: 3 };
   var COLORI_CALDO = { 0: '#f6c453', 1: '#f6c453', 2: '#f2994a', 3: '#d64545' };
-  var COLORE_CALDO_STIMATO = '#c0722d';  // colore fisso, diverso dal gradiente ufficiale
+  var COLORE_CALDO_STIMATO = '#c0722d';
   var ETICHETTE_CALDO = { 0: 'Nessun rischio', 1: 'Pre-allerta', 2: 'Rischio elevato', 3: 'Ondata di calore' };
 
   function formattaDataLunga(d) {
@@ -617,7 +617,80 @@
     return frasi.join(' ');
   }
 
-  function mostraDettaglio(nomeZona, comuni) {    document.getElementById('pan-vuoto').hidden = true;
+  function svgSparkline(punti) {
+    if (!punti || punti.length < 2) return '';
+    var valori = punti.map(function (p) { return p[1]; });
+    var minV = Math.min.apply(null, valori);
+    var maxV = Math.max.apply(null, valori);
+    var span = (maxV - minV) || 1;
+    var w = 56, h = 20;
+    var coord = punti.map(function (p, i) {
+      var x = (i / (punti.length - 1)) * w;
+      var y = h - ((p[1] - minV) / span) * (h - 3) - 1.5;
+      return x.toFixed(1) + ',' + y.toFixed(1);
+    }).join(' ');
+    return '<svg class="fiume-sparkline" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">' +
+      '<polyline points="' + coord + '" fill="none" stroke="currentColor" stroke-width="1.6" ' +
+      'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  var ETICHETTE_STATO_FIUME = {
+    sopra_soglia2: 'sopra soglia 2 (criticità)',
+    sopra_soglia1: 'sopra soglia 1 (attenzione)',
+    normale: 'sotto le soglie'
+  };
+  var COLORI_STATO_FIUME = { sopra_soglia2: '#eb5757', sopra_soglia1: '#f2994a', normale: '#3f9142' };
+  var ICONE_TENDENZA_FIUME = { 'in aumento': '↑', 'in diminuzione': '↓', 'stabile': '→' };
+
+  function mostraIdrometria(nomeZona) {
+    var box = document.getElementById('box-idrometria');
+    if (!idrometria || !idrometria.zone) { box.hidden = true; return; }
+    var stazioni = idrometria.zone[nomeZona];
+    if (!stazioni || !stazioni.length) { box.hidden = true; return; }
+
+    var html = stazioni.map(function (s) {
+      var colore = s.stato ? COLORI_STATO_FIUME[s.stato] : '#9aa4b2';
+      var etichettaStato = s.stato ? ETICHETTE_STATO_FIUME[s.stato] : 'nessuna soglia definita per questa stazione';
+      var sogliaTxt = (s.soglia1 != null || s.soglia2 != null)
+        ? ' (soglie ' + (s.soglia1 != null ? s.soglia1.toFixed(2) : '?') + 'm / ' + (s.soglia2 != null ? s.soglia2.toFixed(2) : '?') + 'm)'
+        : '';
+      var portataTxt = s.portata != null ? s.portata.toFixed(2) + ' m³/s' : '';
+      return '<div class="fiume-riga">' +
+        '<div>' +
+          '<div class="fiume-nome">' + s.fiume + ' <span style="font-weight:400;color:var(--testo-tenue)">– ' + s.stazione + '</span></div>' +
+          '<div class="fiume-info" style="color:' + colore + '">' + etichettaStato + sogliaTxt + '</div>' +
+        '</div>' +
+        '<div class="fiume-dati">' +
+          svgSparkline(s.storico) +
+          '<div class="fiume-livello" style="color:' + colore + '">' +
+            (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA_FIUME[s.tendenza] || '') +
+          '</div>' +
+          (portataTxt ? '<div class="fiume-portata">' + portataTxt + '</div>' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    document.getElementById('idrometria-contenuto').innerHTML = html;
+
+    var d = datiZona(nomeZona);
+    var collegamento = document.getElementById('idro-collegamento');
+    if (d && d.pioggia && d.pioggia !== 'verde') {
+      collegamento.innerHTML = '<div class="fiume-collegamento">💧 ' + ETICHETTE_PIOGGIA[d.pioggia] +
+        ' in corso per questa zona: tieni d\'occhio l\'andamento dei fiumi qui sotto.</div>';
+    } else {
+      collegamento.innerHTML = '';
+    }
+
+    var testoGiornoIdro = giorno === 'oggi' ? '(oggi)' : '(domani)';
+    document.getElementById('idro-titolo-giorno').textContent = testoGiornoIdro;
+    document.getElementById('idrometria-nota').textContent =
+      'Fonte: Centro Funzionale Regionale, dati in tempo reale non validati' +
+      (idrometria.aggiornato ? ' · aggiornato ' + new Date(idrometria.aggiornato).toLocaleString('it-IT') : '') + '.';
+    box.hidden = false;
+  }
+
+  function mostraDettaglio(nomeZona, comuni) {
+    document.getElementById('pan-vuoto').hidden = true;
     document.getElementById('pan-dett').hidden = false;
     document.getElementById('pan-nome').textContent = nomeZona;
 
@@ -1013,7 +1086,8 @@
     });
   }
 
-  document.getElementById('tabs').addEventListener('click', function (e) {    var b = e.target.closest('button');
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
     if (!b) return;
     giorno = b.getAttribute('data-giorno');
     Array.prototype.forEach.call(this.querySelectorAll('button'), function (x) { x.classList.toggle('attivo', x === b); });
@@ -1023,6 +1097,3 @@
 
 </body>
 </html>
-
-
-
