@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-09-02T11:04:32+00:00",
+ "aggiornato": "2026-09-02T11:24:19+00:00",
  "fonte": "Centro Funzionale Regionale della Toscana (dati non validati)",
  "fonte_url": "https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro",
  "nota": "Livelli e portate acquisiti in tempo reale, non sottoposti a validazione ufficiale (fonte CFR).",
@@ -19,12 +19,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.21
      ]
     ]
@@ -38,18 +42,22 @@
     "zona_nome": "Versilia",
     "soglia1": 2.2,
     "soglia2": 3.0,
-    "livello": 1.21,
-    "portata": 1.02,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "livello": 1.2,
+    "portata": 0.97,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       1.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.2
      ]
     ]
    },
@@ -62,18 +70,22 @@
     "zona_nome": "Versilia",
     "soglia1": 1.9,
     "soglia2": 3.0,
-    "livello": -1.05,
-    "portata": 1.38,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "livello": -1.04,
+    "portata": 1.43,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -1.05
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -1.04
      ]
     ]
    },
@@ -88,15 +100,19 @@
     "soglia2": null,
     "livello": 0.17,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": 0.09,
-    "delta_6h": 0.2,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "stabile",
+    "delta_1h": -0.03,
+    "delta_3h": 0.06,
+    "delta_6h": 0.19,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.17
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.17
      ]
     ]
@@ -115,12 +131,16 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.46
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.46
      ]
     ]
@@ -139,12 +159,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.21
      ]
     ]
@@ -161,14 +185,18 @@
     "livello": -0.1,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
+    "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.30",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.1
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.1
      ]
     ]
@@ -184,15 +212,19 @@
     "soglia2": 0.9,
     "livello": 0.02,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.02
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.02
      ]
     ]
@@ -211,12 +243,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -1.18
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -1.18
      ]
     ]
@@ -235,12 +271,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.08
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.08
      ]
     ]
@@ -254,18 +294,22 @@
     "zona_nome": "Versilia",
     "soglia1": 0.8,
     "soglia2": 1.3,
-    "livello": 0.71,
+    "livello": 0.72,
     "portata": null,
-    "delta_1h": 0.03,
-    "delta_3h": 0.01,
-    "delta_6h": 0.22,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": 0.07,
+    "delta_3h": 0.02,
+    "delta_6h": 0.04,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.71
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.72
      ]
     ]
    },
@@ -281,14 +325,18 @@
     "livello": 0.76,
     "portata": null,
     "delta_1h": -0.01,
-    "delta_3h": -0.04,
-    "delta_6h": -0.08,
-    "orario_lettura": "02/09 11.45",
+    "delta_3h": -0.03,
+    "delta_6h": -0.07,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.76
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.76
      ]
     ]
@@ -309,12 +357,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.22
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.22
      ]
     ]
@@ -333,12 +385,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.64
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.64
      ]
     ]
@@ -354,18 +410,22 @@
     "zona_nome": "Valdichiana",
     "soglia1": 2.5,
     "soglia2": 3.0,
-    "livello": 0.06,
-    "portata": 0.64,
-    "delta_1h": 0.02,
-    "delta_3h": -0.4,
-    "delta_6h": -0.27,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "stabile",
+    "livello": 0.15,
+    "portata": 2.11,
+    "delta_1h": -0.13,
+    "delta_3h": -0.05,
+    "delta_6h": -0.24,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.06
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.15
      ]
     ]
    },
@@ -383,12 +443,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.04
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.04
      ]
     ]
@@ -407,12 +471,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.61
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.61
      ]
     ]
@@ -426,18 +494,22 @@
     "zona_nome": "Valdichiana",
     "soglia1": 2.0,
     "soglia2": 2.6,
-    "livello": -0.16,
+    "livello": -0.18,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": -0.02,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.16
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.18
      ]
     ]
    },
@@ -450,18 +522,22 @@
     "zona_nome": "Valdichiana",
     "soglia1": 1.5,
     "soglia2": 2.0,
-    "livello": 0.34,
+    "livello": 0.33,
     "portata": null,
-    "delta_1h": 0.06,
-    "delta_3h": 0.01,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "in aumento",
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.34
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.33
      ]
     ]
    },
@@ -474,18 +550,22 @@
     "zona_nome": "Valdichiana",
     "soglia1": 2.0,
     "soglia2": 2.7,
-    "livello": 0.79,
-    "portata": 0.12,
-    "delta_1h": 0.01,
-    "delta_3h": -0.02,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 11.45",
+    "livello": 0.71,
+    "portata": 0.03,
+    "delta_1h": -0.01,
+    "delta_3h": -0.09,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.79
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.71
      ]
     ]
    },
@@ -502,13 +582,17 @@
     "portata": 0.07,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.02
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.02
      ]
     ]
@@ -527,12 +611,16 @@
     "delta_1h": 0.01,
     "delta_3h": null,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.56
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.56
      ]
     ]
@@ -558,6 +646,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       1.53
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.53
      ]
     ]
    },
@@ -575,12 +667,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.34
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.34
      ]
     ]
@@ -601,12 +697,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.04
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.04
      ]
     ]
@@ -625,12 +725,16 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": null,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.73
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.73
      ]
     ]
@@ -656,6 +760,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       0.34
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.34
      ]
     ]
    },
@@ -673,12 +781,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.02
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.02
      ]
     ]
@@ -692,18 +804,22 @@
     "zona_nome": "Arno-Valdarno Sup.",
     "soglia1": 4.0,
     "soglia2": 5.0,
-    "livello": 1.18,
-    "portata": 3.85,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "livello": 1.17,
+    "portata": 3.61,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       1.18
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.17
      ]
     ]
    },
@@ -721,12 +837,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.21
      ]
     ]
@@ -745,12 +865,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.47
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.47
      ]
     ]
@@ -771,12 +895,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.78
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.78
      ]
     ]
@@ -795,12 +923,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.91
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.91
      ]
     ]
@@ -818,13 +950,17 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.99
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.99
      ]
     ]
@@ -850,6 +986,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       -0.13
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.13
      ]
     ]
    },
@@ -866,13 +1006,17 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.27
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.27
      ]
     ]
@@ -891,12 +1035,16 @@
     "delta_1h": -0.01,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.27
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.27
      ]
     ]
@@ -917,12 +1065,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.67
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.67
      ]
     ]
@@ -941,12 +1093,16 @@
     "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.13
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.13
      ]
     ]
@@ -963,14 +1119,18 @@
     "livello": 0.6,
     "portata": null,
     "delta_1h": -0.01,
-    "delta_3h": 0.0,
+    "delta_3h": 0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.6
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.6
      ]
     ]
@@ -984,18 +1144,22 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 3.0,
     "soglia2": 5.5,
-    "livello": 0.75,
+    "livello": 0.74,
     "portata": null,
     "delta_1h": -0.04,
-    "delta_3h": -0.06,
-    "delta_6h": -0.06,
-    "orario_lettura": "02/09 12.00",
+    "delta_3h": -0.07,
+    "delta_6h": -0.07,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.75
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.74
      ]
     ]
    },
@@ -1013,12 +1177,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.03
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.03
      ]
     ]
@@ -1044,6 +1212,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       0.32
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.32
      ]
     ]
    },
@@ -1061,12 +1233,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.12
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.12
      ]
     ]
@@ -1080,18 +1256,22 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 1.8,
     "soglia2": 2.3,
-    "livello": 0.31,
+    "livello": 0.36,
     "portata": null,
-    "delta_1h": -0.16,
-    "delta_3h": -0.12,
-    "delta_6h": -0.07,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.04,
+    "delta_3h": -0.05,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.31
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.36
      ]
     ]
    },
@@ -1106,15 +1286,19 @@
     "soglia2": 3.15,
     "livello": -0.11,
     "portata": 0.24,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.11
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.11
      ]
     ]
@@ -1131,14 +1315,18 @@
     "livello": 1.21,
     "portata": null,
     "delta_1h": 0.02,
-    "delta_3h": -0.13,
+    "delta_3h": -0.09,
     "delta_6h": -0.28,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.21
      ]
     ]
@@ -1155,14 +1343,18 @@
     "livello": 0.31,
     "portata": 0.31,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.03,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.31
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.31
      ]
     ]
@@ -1181,12 +1373,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.7
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.7
      ]
     ]
@@ -1205,12 +1401,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      2.23
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       2.23
      ]
     ]
@@ -1229,12 +1429,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.25
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.25
      ]
     ]
@@ -1255,12 +1459,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.18
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.18
      ]
     ]
@@ -1286,6 +1494,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       -0.56
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.56
      ]
     ]
    },
@@ -1301,14 +1513,18 @@
     "livello": -0.13,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.13
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.13
      ]
     ]
@@ -1327,12 +1543,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.15
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.15
      ]
     ]
@@ -1350,13 +1570,17 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.12
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.12
      ]
     ]
@@ -1373,14 +1597,18 @@
     "livello": 0.53,
     "portata": null,
     "delta_1h": -0.01,
-    "delta_3h": -0.03,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 11.45",
+    "delta_3h": -0.02,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.53
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.53
      ]
     ]
@@ -1399,12 +1627,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.45
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.45
      ]
     ]
@@ -1423,12 +1655,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.22
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.22
      ]
     ]
@@ -1454,6 +1690,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       -0.16
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.16
      ]
     ]
    },
@@ -1470,13 +1710,17 @@
     "portata": 0.21,
     "delta_1h": 0.0,
     "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.37
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.37
      ]
     ]
@@ -1495,12 +1739,16 @@
     "delta_1h": -0.01,
     "delta_3h": -0.02,
     "delta_6h": -0.02,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.21
      ]
     ]
@@ -1526,6 +1774,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       0.37
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.37
      ]
     ]
    },
@@ -1543,12 +1795,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.07
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.07
      ]
     ]
@@ -1565,14 +1821,18 @@
     "livello": -0.02,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.02
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.02
      ]
     ]
@@ -1593,12 +1853,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.03
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.03
      ]
     ]
@@ -1617,12 +1881,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.7
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.7
      ]
     ]
@@ -1636,18 +1904,22 @@
     "zona_nome": "Valdelsa-Valdera",
     "soglia1": 3.8,
     "soglia2": 5.5,
-    "livello": 0.67,
+    "livello": 0.31,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": 0.34,
-    "delta_6h": 0.34,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "stabile",
+    "delta_1h": -0.39,
+    "delta_3h": -0.02,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.67
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.31
      ]
     ]
    },
@@ -1662,15 +1934,19 @@
     "soglia2": 3.6,
     "livello": -0.15,
     "portata": 0.99,
-    "delta_1h": 0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.15
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.15
      ]
     ]
@@ -1684,18 +1960,22 @@
     "zona_nome": "Valdelsa-Valdera",
     "soglia1": 1.5,
     "soglia2": 2.0,
-    "livello": 0.5,
-    "portata": 0.79,
-    "delta_1h": -0.01,
-    "delta_3h": -0.19,
-    "delta_6h": -0.21,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "stabile",
+    "livello": 0.56,
+    "portata": 1.44,
+    "delta_1h": 0.03,
+    "delta_3h": -0.18,
+    "delta_6h": -0.14,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.5
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.56
      ]
     ]
    },
@@ -1713,12 +1993,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.23
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.23
      ]
     ]
@@ -1737,14 +2021,18 @@
     "livello": 0.59,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.05,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 12.00",
+    "delta_3h": -0.01,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.59
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.59
      ]
     ]
@@ -1763,12 +2051,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -6.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -6.21
      ]
     ]
@@ -1787,12 +2079,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.87
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.87
      ]
     ]
@@ -1811,12 +2107,16 @@
     "delta_1h": 0.01,
     "delta_3h": 0.0,
     "delta_6h": -0.03,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -7.41
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -7.41
      ]
     ]
@@ -1835,12 +2135,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.14
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.14
      ]
     ]
@@ -1854,18 +2158,22 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 10.4,
     "soglia2": 11.0,
-    "livello": 8.18,
+    "livello": 8.19,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.03,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": 0.0,
+    "delta_3h": -0.02,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       8.18
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      8.19
      ]
     ]
    },
@@ -1883,12 +2191,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.89
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.89
      ]
     ]
@@ -1907,12 +2219,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.82
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.82
      ]
     ]
@@ -1931,12 +2247,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      3.82
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       3.82
      ]
     ]
@@ -1955,12 +2275,16 @@
     "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.63
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.63
      ]
     ]
@@ -1979,12 +2303,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.44
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.44
      ]
     ]
@@ -2003,12 +2331,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.28
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.28
      ]
     ]
@@ -2027,12 +2359,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.48
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.48
      ]
     ]
@@ -2049,14 +2385,18 @@
     "livello": 0.64,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.1,
-    "orario_lettura": "02/09 11.45",
+    "delta_3h": -0.06,
+    "delta_6h": -0.04,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.64
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.64
      ]
     ]
@@ -2070,18 +2410,22 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": null,
     "soglia2": null,
-    "livello": -0.12,
+    "livello": -0.13,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": -0.01,
+    "delta_3h": -0.02,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.12
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.13
      ]
     ]
    },
@@ -2099,12 +2443,16 @@
     "delta_1h": 0.01,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.15
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.15
      ]
     ]
@@ -2118,18 +2466,22 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 3.5,
     "soglia2": 4.3,
-    "livello": 0.42,
+    "livello": 0.41,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.42
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.41
      ]
     ]
    },
@@ -2142,18 +2494,22 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 5.0,
     "soglia2": 6.0,
-    "livello": -0.07,
+    "livello": -0.06,
     "portata": 0.02,
-    "delta_1h": -0.01,
-    "delta_3h": -0.43,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": 0.0,
+    "delta_3h": -0.38,
+    "delta_6h": 0.03,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.07
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.06
      ]
     ]
    },
@@ -2170,13 +2526,17 @@
     "portata": 11.5,
     "delta_1h": 0.0,
     "delta_3h": 0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.47
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.47
      ]
     ]
@@ -2190,18 +2550,22 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 1.04,
+    "livello": 1.07,
     "portata": null,
-    "delta_1h": 0.08,
-    "delta_3h": 0.27,
-    "delta_6h": 0.28,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": 0.09,
+    "delta_3h": 0.29,
+    "delta_6h": 0.31,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       1.04
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.07
      ]
     ]
    },
@@ -2219,12 +2583,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.01
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.01
      ]
     ]
@@ -2240,18 +2608,22 @@
     "zona_nome": "Arno-Costa",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 0.77,
+    "livello": 0.76,
     "portata": null,
-    "delta_1h": -0.04,
-    "delta_3h": 0.1,
-    "delta_6h": 0.21,
-    "orario_lettura": "02/09 12.00",
+    "delta_1h": -0.08,
+    "delta_3h": 0.05,
+    "delta_6h": 0.2,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.77
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.76
      ]
     ]
    },
@@ -2264,18 +2636,22 @@
     "zona_nome": "Arno-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.85,
+    "livello": 0.87,
     "portata": null,
-    "delta_1h": -0.04,
-    "delta_3h": 0.03,
-    "delta_6h": 0.18,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": -0.02,
+    "delta_3h": 0.05,
+    "delta_6h": 0.21,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.85
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.87
      ]
     ]
    },
@@ -2288,18 +2664,22 @@
     "zona_nome": "Arno-Costa",
     "soglia1": 1.5,
     "soglia2": 2.0,
-    "livello": 0.28,
+    "livello": 0.26,
     "portata": null,
-    "delta_1h": 0.04,
-    "delta_3h": 0.18,
-    "delta_6h": 0.27,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in aumento",
+    "delta_1h": -0.02,
+    "delta_3h": 0.12,
+    "delta_6h": 0.24,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.28
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.26
      ]
     ]
    },
@@ -2317,12 +2697,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.2
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.2
      ]
     ]
@@ -2336,18 +2720,22 @@
     "zona_nome": "Arno-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.15,
+    "livello": 0.17,
     "portata": null,
-    "delta_1h": -0.05,
-    "delta_3h": 0.07,
+    "delta_1h": 0.0,
+    "delta_3h": 0.1,
     "delta_6h": 0.21,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in diminuzione",
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.15
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.17
      ]
     ]
    },
@@ -2360,18 +2748,22 @@
     "zona_nome": "Arno-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.35,
+    "livello": 0.3,
     "portata": null,
-    "delta_1h": -0.06,
-    "delta_3h": -0.01,
+    "delta_1h": -0.12,
+    "delta_3h": -0.06,
     "delta_6h": -0.03,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "in diminuzione",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.35
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.3
      ]
     ]
    }
@@ -2391,12 +2783,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.17
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.17
      ]
     ]
@@ -2410,18 +2806,22 @@
     "zona_nome": "Etruria",
     "soglia1": 2.0,
     "soglia2": 3.0,
-    "livello": 0.24,
+    "livello": 0.26,
     "portata": null,
-    "delta_1h": -0.04,
-    "delta_3h": -0.04,
-    "delta_6h": -0.16,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": -0.01,
+    "delta_3h": -0.07,
+    "delta_6h": -0.19,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.24
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.26
      ]
     ]
    },
@@ -2439,12 +2839,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      2.33
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       2.33
      ]
     ]
@@ -2460,15 +2864,19 @@
     "soglia2": 3.5,
     "livello": 0.94,
     "portata": 3.03,
-    "delta_1h": 0.01,
+    "delta_1h": 0.02,
     "delta_3h": 0.0,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.94
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.94
      ]
     ]
@@ -2487,12 +2895,16 @@
     "delta_1h": 0.02,
     "delta_3h": 0.02,
     "delta_6h": 0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.28
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.28
      ]
     ]
@@ -2518,6 +2930,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       0.65
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.65
      ]
     ]
    },
@@ -2533,14 +2949,18 @@
     "livello": -0.2,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.2
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.2
      ]
     ]
@@ -2554,18 +2974,22 @@
     "zona_nome": "Etruria",
     "soglia1": 2.0,
     "soglia2": 3.0,
-    "livello": -0.15,
+    "livello": -0.16,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.15
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.16
      ]
     ]
    },
@@ -2578,18 +3002,22 @@
     "zona_nome": "Etruria",
     "soglia1": 3.0,
     "soglia2": 4.0,
-    "livello": -0.34,
+    "livello": -0.33,
     "portata": null,
-    "delta_1h": -0.03,
-    "delta_3h": -0.04,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.0,
+    "delta_3h": -0.02,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.34
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.33
      ]
     ]
    },
@@ -2607,12 +3035,16 @@
     "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": -0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.37
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.37
      ]
     ]
@@ -2631,12 +3063,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.66
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.66
      ]
     ]
@@ -2655,12 +3091,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.55
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.55
      ]
     ]
@@ -2674,18 +3114,22 @@
     "zona_nome": "Etruria",
     "soglia1": 1.8,
     "soglia2": 2.5,
-    "livello": 0.63,
+    "livello": 0.6,
     "portata": null,
-    "delta_1h": -0.04,
-    "delta_3h": -0.01,
-    "delta_6h": 0.21,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.07,
+    "delta_3h": 0.07,
+    "delta_6h": 0.24,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.63
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.6
      ]
     ]
    },
@@ -2703,12 +3147,16 @@
     "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.24
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.24
      ]
     ]
@@ -2724,15 +3172,19 @@
     "soglia2": null,
     "livello": 0.46,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.03,
+    "delta_1h": -0.01,
+    "delta_3h": 0.02,
     "delta_6h": 0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.46
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.46
      ]
     ]
@@ -2751,12 +3203,16 @@
     "delta_1h": -0.01,
     "delta_3h": 0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.73
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.73
      ]
     ]
@@ -2773,14 +3229,18 @@
     "livello": 1.73,
     "portata": 1.71,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.73
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.73
      ]
     ]
@@ -2799,12 +3259,16 @@
     "delta_1h": 0.01,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.79
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.79
      ]
     ]
@@ -2820,15 +3284,19 @@
     "soglia2": 3.2,
     "livello": 0.93,
     "portata": 0.82,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": -0.03,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.93
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.93
      ]
     ]
@@ -2844,18 +3312,22 @@
     "zona_nome": "Isole",
     "soglia1": null,
     "soglia2": null,
-    "livello": 2.36,
+    "livello": 2.35,
     "portata": null,
-    "delta_1h": 0.02,
-    "delta_3h": 0.11,
+    "delta_1h": 0.01,
+    "delta_3h": 0.1,
     "delta_6h": 0.19,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       2.36
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      2.35
      ]
     ]
    }
@@ -2870,18 +3342,22 @@
     "zona_nome": "Etruria-Costa Sud",
     "soglia1": 2.5,
     "soglia2": 3.5,
-    "livello": 1.59,
-    "portata": 20.5,
+    "livello": 1.64,
+    "portata": 22.2,
     "delta_1h": 0.0,
-    "delta_3h": -0.04,
-    "delta_6h": -0.22,
-    "orario_lettura": "02/09 11.45",
+    "delta_3h": -0.12,
+    "delta_6h": -0.06,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       1.59
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.64
      ]
     ]
    },
@@ -2894,18 +3370,22 @@
     "zona_nome": "Etruria-Costa Sud",
     "soglia1": 2.0,
     "soglia2": 3.3,
-    "livello": 0.31,
-    "portata": 3.04,
-    "delta_1h": -0.16,
-    "delta_3h": 0.21,
-    "delta_6h": -1.15,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in diminuzione",
+    "livello": 0.72,
+    "portata": 6.61,
+    "delta_1h": 0.47,
+    "delta_3h": 0.25,
+    "delta_6h": 0.45,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.31
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.72
      ]
     ]
    },
@@ -2923,12 +3403,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.45
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.45
      ]
     ]
@@ -2949,12 +3433,16 @@
     "delta_1h": 0.01,
     "delta_3h": 0.04,
     "delta_6h": 0.07,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.43
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.43
      ]
     ]
@@ -2973,12 +3461,16 @@
     "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.01
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.01
      ]
     ]
@@ -2997,12 +3489,16 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": -0.03,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.08
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.08
      ]
     ]
@@ -3021,12 +3517,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.39
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.39
      ]
     ]
@@ -3045,12 +3545,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.34
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.34
      ]
     ]
@@ -3068,15 +3572,19 @@
     "soglia2": 7.5,
     "livello": -0.13,
     "portata": 0.42,
-    "delta_1h": 0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.13
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.13
      ]
     ]
@@ -3095,12 +3603,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.02,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.43
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.43
      ]
     ]
@@ -3119,12 +3631,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.44
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.44
      ]
     ]
@@ -3143,12 +3659,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.27
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.27
      ]
     ]
@@ -3162,18 +3682,22 @@
     "zona_nome": "Ombrone Gr-Alto",
     "soglia1": 4.5,
     "soglia2": 6.0,
-    "livello": 0.47,
+    "livello": 0.46,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": -0.02,
     "delta_3h": 0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 11.45",
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.47
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.46
      ]
     ]
    },
@@ -3188,15 +3712,19 @@
     "soglia2": 3.5,
     "livello": 0.21,
     "portata": 0.5,
-    "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_1h": null,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.21
      ]
     ]
@@ -3215,12 +3743,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.85
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.85
      ]
     ]
@@ -3234,18 +3766,22 @@
     "zona_nome": "Ombrone Gr-Alto",
     "soglia1": 2.5,
     "soglia2": 7.8,
-    "livello": -0.27,
+    "livello": -0.26,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.27
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.26
      ]
     ]
    }
@@ -3265,12 +3801,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.22
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.22
      ]
     ]
@@ -3284,18 +3824,22 @@
     "zona_nome": "Ombrone Gr-Medio",
     "soglia1": 2.5,
     "soglia2": 6.5,
-    "livello": -0.63,
-    "portata": 1.39,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "livello": -0.64,
+    "portata": 1.37,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.63
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.64
      ]
     ]
    },
@@ -3313,12 +3857,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.2
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.2
      ]
     ]
@@ -3332,18 +3880,22 @@
     "zona_nome": "Ombrone Gr-Medio",
     "soglia1": 3.0,
     "soglia2": 3.5,
-    "livello": 0.65,
+    "livello": 0.68,
     "portata": null,
-    "delta_1h": -0.03,
-    "delta_3h": -0.06,
-    "delta_6h": -0.08,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.0,
+    "delta_3h": -0.03,
+    "delta_6h": -0.05,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.65
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.68
      ]
     ]
    }
@@ -3363,12 +3915,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.11
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.11
      ]
     ]
@@ -3387,12 +3943,16 @@
     "delta_1h": -0.12,
     "delta_3h": -0.12,
     "delta_6h": -0.12,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.89
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.89
      ]
     ]
@@ -3408,15 +3968,19 @@
     "soglia2": 5.3,
     "livello": 1.63,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": -0.02,
     "delta_6h": -0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.63
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.63
      ]
     ]
@@ -3435,12 +3999,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.0
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.0
      ]
     ]
@@ -3459,12 +4027,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.25
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.25
      ]
     ]
@@ -3480,15 +4052,19 @@
     "soglia2": 5.75,
     "livello": -1.21,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -1.21
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -1.21
      ]
     ]
@@ -3506,13 +4082,17 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.08,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": -0.06,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.99
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.99
      ]
     ]
@@ -3526,18 +4106,22 @@
     "zona_nome": "Serchio-Garfagnana-Lima",
     "soglia1": 4.7,
     "soglia2": 6.5,
-    "livello": 0.62,
-    "portata": 0.51,
-    "delta_1h": -0.03,
-    "delta_3h": -0.05,
-    "delta_6h": 0.05,
-    "orario_lettura": "02/09 11.45",
+    "livello": 0.6,
+    "portata": 0.47,
+    "delta_1h": -0.05,
+    "delta_3h": -0.08,
+    "delta_6h": 0.04,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.62
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.6
      ]
     ]
    },
@@ -3555,12 +4139,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.88
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.88
      ]
     ]
@@ -3581,12 +4169,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.41
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.41
      ]
     ]
@@ -3605,12 +4197,16 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.36
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.36
      ]
     ]
@@ -3624,18 +4220,22 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.28,
+    "livello": 0.27,
     "portata": null,
-    "delta_1h": 0.02,
-    "delta_3h": 0.11,
+    "delta_1h": -0.04,
+    "delta_3h": 0.08,
     "delta_6h": 0.19,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "stabile",
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.28
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.27
      ]
     ]
    },
@@ -3653,12 +4253,16 @@
     "delta_1h": 0.01,
     "delta_3h": 0.02,
     "delta_6h": 0.02,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.98
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.98
      ]
     ]
@@ -3675,14 +4279,18 @@
     "livello": 0.66,
     "portata": null,
     "delta_1h": -0.01,
-    "delta_3h": -0.03,
+    "delta_3h": -0.02,
     "delta_6h": -0.06,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.66
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.66
      ]
     ]
@@ -3696,18 +4304,22 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": 7.5,
     "soglia2": 9.0,
-    "livello": 1.27,
+    "livello": 1.28,
     "portata": null,
-    "delta_1h": 0.07,
+    "delta_1h": 0.01,
     "delta_3h": 0.17,
-    "delta_6h": 0.25,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in aumento",
+    "delta_6h": 0.27,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       1.27
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.28
      ]
     ]
    },
@@ -3722,15 +4334,19 @@
     "soglia2": null,
     "livello": 0.44,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.12,
-    "delta_6h": 0.19,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": -0.01,
+    "delta_3h": 0.1,
+    "delta_6h": 0.18,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.44
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.44
      ]
     ]
@@ -3751,12 +4367,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.74
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.74
      ]
     ]
@@ -3772,15 +4392,19 @@
     "soglia2": 5.26,
     "livello": -3.07,
     "portata": 2.63,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -3.07
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -3.07
      ]
     ]
@@ -3799,12 +4423,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -1.32
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -1.32
      ]
     ]
@@ -3821,14 +4449,18 @@
     "livello": 0.31,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.31
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.31
      ]
     ]
@@ -3846,13 +4478,17 @@
     "portata": 12.5,
     "delta_1h": 0.0,
     "delta_3h": 0.01,
-    "delta_6h": 0.03,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.05
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.05
      ]
     ]
@@ -3868,15 +4504,19 @@
     "soglia2": 1.4,
     "livello": 0.12,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.12
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.12
      ]
     ]
@@ -3895,12 +4535,16 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": -0.04,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.1
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.1
      ]
     ]
@@ -3919,12 +4563,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.04
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.04
      ]
     ]
@@ -3943,12 +4591,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.06
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.06
      ]
     ]
@@ -3967,12 +4619,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.27
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.27
      ]
     ]
@@ -3991,12 +4647,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.18
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.18
      ]
     ]
@@ -4012,18 +4672,22 @@
     "zona_nome": "Lunigiana",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 1.1,
-    "portata": 1.43,
-    "delta_1h": 0.03,
-    "delta_3h": 0.04,
-    "delta_6h": 0.05,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "in aumento",
+    "livello": 1.11,
+    "portata": 1.52,
+    "delta_1h": 0.02,
+    "delta_3h": 0.05,
+    "delta_6h": 0.06,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       1.1
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.11
      ]
     ]
    },
@@ -4041,12 +4705,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.16
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.16
      ]
     ]
@@ -4072,6 +4740,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       0.07
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.07
      ]
     ]
    },
@@ -4089,12 +4761,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.7
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.7
      ]
     ]
@@ -4108,18 +4784,22 @@
     "zona_nome": "Lunigiana",
     "soglia1": 2.5,
     "soglia2": 3.5,
-    "livello": 0.76,
+    "livello": 0.75,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.76
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.75
      ]
     ]
    },
@@ -4137,12 +4817,16 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -1.38
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -1.38
      ]
     ]
@@ -4161,12 +4845,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.30",
+    "orario_lettura": "02/09 11.45",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.18
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.18
      ]
     ]
@@ -4185,12 +4873,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.19
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.19
      ]
     ]
@@ -4209,12 +4901,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.68
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.68
      ]
     ]
@@ -4232,15 +4928,19 @@
     "soglia2": null,
     "livello": 0.11,
     "portata": null,
-    "delta_1h": 0.04,
-    "delta_3h": 0.15,
-    "delta_6h": 0.24,
-    "orario_lettura": "02/09 12.00",
+    "delta_1h": 0.03,
+    "delta_3h": 0.14,
+    "delta_6h": 0.25,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "in aumento",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.11
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.11
      ]
     ]
@@ -4259,12 +4959,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.12
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.12
      ]
     ]
@@ -4278,18 +4982,22 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.1,
+    "livello": 0.11,
     "portata": null,
-    "delta_1h": 0.04,
+    "delta_1h": 0.02,
     "delta_3h": 0.14,
-    "delta_6h": 0.24,
-    "orario_lettura": "02/09 12.00",
-    "tendenza": "in aumento",
+    "delta_6h": 0.23,
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.1
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.11
      ]
     ]
    },
@@ -4304,15 +5012,19 @@
     "soglia2": null,
     "livello": 0.16,
     "portata": null,
-    "delta_1h": 0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.04,
-    "delta_6h": 0.09,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": 0.07,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.16
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.16
      ]
     ]
@@ -4328,15 +5040,19 @@
     "soglia2": 3.2,
     "livello": 0.22,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": -0.05,
+    "delta_1h": -0.06,
+    "delta_3h": -0.04,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
-    "tendenza": "stabile",
+    "orario_lettura": "02/09 12.15",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.22
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.22
      ]
     ]
@@ -4350,18 +5066,22 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": 4.5,
     "soglia2": 6.0,
-    "livello": 0.75,
+    "livello": 0.74,
     "portata": null,
-    "delta_1h": 0.09,
-    "delta_3h": 0.19,
+    "delta_1h": 0.05,
+    "delta_3h": 0.18,
     "delta_6h": 0.28,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "in aumento",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.75
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.74
      ]
     ]
    },
@@ -4377,14 +5097,18 @@
     "livello": 0.13,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
+    "delta_3h": 0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.13
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.13
      ]
     ]
@@ -4398,18 +5122,22 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.31,
+    "livello": 0.32,
     "portata": null,
-    "delta_1h": 0.03,
-    "delta_3h": 0.15,
-    "delta_6h": 0.23,
-    "orario_lettura": "02/09 11.45",
+    "delta_1h": 0.04,
+    "delta_3h": 0.14,
+    "delta_6h": 0.24,
+    "orario_lettura": "02/09 12.00",
     "tendenza": "in aumento",
     "stato": null,
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.31
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.32
      ]
     ]
    }
@@ -4428,13 +5156,17 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.34
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.34
      ]
     ]
@@ -4450,15 +5182,19 @@
     "soglia2": 2.0,
     "livello": 0.01,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.20",
+    "delta_1h": -0.01,
+    "delta_3h": 0.02,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.35",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.01
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.01
      ]
     ]
@@ -4476,15 +5212,19 @@
     "soglia2": 2.7,
     "livello": 0.01,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.01
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.01
      ]
     ]
@@ -4502,15 +5242,19 @@
     "soglia2": 4.5,
     "livello": 1.17,
     "portata": null,
-    "delta_1h": 0.02,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      1.17
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       1.17
      ]
     ]
@@ -4526,15 +5270,19 @@
     "soglia2": 5.5,
     "livello": -0.36,
     "portata": null,
-    "delta_1h": -0.02,
+    "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      -0.36
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       -0.36
      ]
     ]
@@ -4550,15 +5298,19 @@
     "soglia2": 6.0,
     "livello": 0.42,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": 0.0,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 12.00",
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.42
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.42
      ]
     ]
@@ -4584,6 +5336,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       1.87
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      1.87
      ]
     ]
    }
@@ -4601,14 +5357,18 @@
     "livello": 0.13,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 11.45",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.13
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.13
      ]
     ]
@@ -4627,12 +5387,16 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.30",
+    "orario_lettura": "02/09 12.00",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
+      0.39
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
       0.39
      ]
     ]
@@ -4658,6 +5422,10 @@
      [
       "2026-09-02T11:04:32+00:00",
       386.77
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      386.77
      ]
     ]
    },
@@ -4670,18 +5438,22 @@
     "zona_nome": "Valtiberina",
     "soglia1": 1.0,
     "soglia2": 1.7,
-    "livello": -0.07,
+    "livello": -0.08,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 12.00",
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.15",
     "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       -0.07
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      -0.08
      ]
     ]
    }
@@ -4696,18 +5468,22 @@
     "zona_nome": "Reno",
     "soglia1": 1.2,
     "soglia2": 1.7,
-    "livello": 0.02,
-    "portata": 0.56,
-    "delta_1h": 0.03,
-    "delta_3h": 0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 11.20",
-    "tendenza": "in aumento",
+    "livello": 0.01,
+    "portata": null,
+    "delta_1h": 0.01,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.35",
+    "tendenza": "stabile",
     "stato": "normale",
     "storico": [
      [
       "2026-09-02T11:04:32+00:00",
       0.02
+     ],
+     [
+      "2026-09-02T11:24:19+00:00",
+      0.01
      ]
     ]
    }
