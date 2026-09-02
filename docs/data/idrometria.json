@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-09-02T15:10:20+00:00",
+ "aggiornato": "2026-09-02T18:40:15+00:00",
  "fonte": "Centro Funzionale Regionale della Toscana (dati non validati)",
  "fonte_url": "https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro",
  "nota": "Livelli e portate acquisiti in tempo reale, non sottoposti a validazione ufficiale (fonte CFR).",
@@ -19,7 +19,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.08199198,
@@ -56,6 +56,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.21
      ]
     ]
    },
@@ -72,8 +76,8 @@
     "portata": 0.97,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.04515801,
@@ -110,6 +114,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.2
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.2
      ]
     ]
    },
@@ -122,12 +130,12 @@
     "zona_nome": "Versilia",
     "soglia1": 1.9,
     "soglia2": 3.0,
-    "livello": -1.04,
-    "portata": 1.43,
+    "livello": -1.05,
+    "portata": 1.38,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": -0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.05829269,
@@ -164,6 +172,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -1.04
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -1.05
      ]
     ]
    },
@@ -176,13 +188,13 @@
     "zona_nome": "Versilia",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.11,
+    "livello": 0.05,
     "portata": null,
-    "delta_1h": 0.02,
-    "delta_3h": -0.09,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": 0.07,
+    "delta_3h": 0.02,
+    "delta_6h": -0.13,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in aumento",
     "stato": null,
     "lat": 43.95571147,
     "lng": 10.16357936,
@@ -218,6 +230,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.11
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.05
      ]
     ]
    },
@@ -234,8 +250,8 @@
     "portata": 0.1,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.93373023,
@@ -272,6 +288,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.46
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.46
      ]
     ]
    },
@@ -289,7 +309,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.08155636,
@@ -326,6 +346,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.21
      ]
     ]
    },
@@ -343,7 +367,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.08224604,
@@ -380,6 +404,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.1
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.1
      ]
     ]
    },
@@ -397,7 +425,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.09103529,
@@ -434,6 +462,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.02
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.02
      ]
     ]
    },
@@ -451,7 +483,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.08084704,
@@ -488,6 +520,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -1.18
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -1.18
      ]
     ]
    },
@@ -505,7 +541,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.08003805,
@@ -542,6 +578,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.08
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.08
      ]
     ]
    },
@@ -554,13 +594,13 @@
     "zona_nome": "Versilia",
     "soglia1": 0.8,
     "soglia2": 1.3,
-    "livello": 0.69,
+    "livello": 0.62,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": -0.03,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": -0.04,
+    "delta_3h": -0.1,
+    "delta_6h": -0.08,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 44.03198733,
     "lng": 10.09720446,
@@ -596,6 +636,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.69
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.62
      ]
     ]
    },
@@ -610,10 +654,10 @@
     "soglia2": 2.0,
     "livello": 0.74,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": -0.02,
-    "delta_6h": -0.05,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.02,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.92402323,
@@ -650,6 +694,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.74
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.74
      ]
     ]
    }
@@ -667,9 +715,9 @@
     "livello": 1.21,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.80051122,
@@ -706,6 +754,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.21
      ]
     ]
    },
@@ -718,12 +770,12 @@
     "zona_nome": "Arno-Casentino",
     "soglia1": 3.5,
     "soglia2": 5.0,
-    "livello": 0.64,
-    "portata": 0.43,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 16.00",
+    "livello": 0.63,
+    "portata": 0.41,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.57167994,
@@ -760,6 +812,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.64
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.63
      ]
     ]
    }
@@ -774,12 +830,12 @@
     "zona_nome": "Valdichiana",
     "soglia1": 2.5,
     "soglia2": 3.0,
-    "livello": 0.04,
-    "portata": 0.55,
+    "livello": 0.05,
+    "portata": 0.6,
     "delta_1h": -0.01,
-    "delta_3h": -0.02,
-    "delta_6h": -0.53,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": -0.01,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.4668595,
@@ -816,6 +872,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.04
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.05
      ]
     ]
    },
@@ -828,12 +888,12 @@
     "zona_nome": "Valdichiana",
     "soglia1": 1.0,
     "soglia2": 1.5,
-    "livello": -0.06,
+    "livello": -0.05,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.02,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.00560004,
@@ -870,6 +930,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.06
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.05
      ]
     ]
    },
@@ -884,10 +948,10 @@
     "soglia2": 1.8,
     "livello": 0.6,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.05266671,
@@ -924,6 +988,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.6
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.6
      ]
     ]
    },
@@ -938,10 +1006,10 @@
     "soglia2": 2.6,
     "livello": -0.18,
     "portata": null,
-    "delta_1h": 0.02,
-    "delta_3h": -0.01,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.23710004,
@@ -978,6 +1046,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.18
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.18
      ]
     ]
    },
@@ -990,12 +1062,12 @@
     "zona_nome": "Valdichiana",
     "soglia1": 1.5,
     "soglia2": 2.0,
-    "livello": 0.32,
+    "livello": 0.33,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.02,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.02,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.24833836,
@@ -1032,6 +1104,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.32
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.33
      ]
     ]
    },
@@ -1044,13 +1120,13 @@
     "zona_nome": "Valdichiana",
     "soglia1": 2.0,
     "soglia2": 2.7,
-    "livello": 0.79,
-    "portata": 0.12,
-    "delta_1h": 0.04,
-    "delta_3h": 0.13,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in aumento",
+    "livello": 0.82,
+    "portata": 0.17,
+    "delta_1h": 0.02,
+    "delta_3h": 0.06,
+    "delta_6h": 0.16,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.13799004,
     "lng": 11.82380001,
@@ -1086,6 +1162,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.79
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.82
      ]
     ]
    },
@@ -1101,9 +1181,9 @@
     "livello": 0.03,
     "portata": 0.08,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.22294593,
@@ -1140,6 +1220,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.03
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.03
      ]
     ]
    },
@@ -1155,9 +1239,9 @@
     "livello": -0.56,
     "portata": 0.09,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
-    "delta_6h": null,
-    "orario_lettura": "02/09 13.30",
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.23582169,
@@ -1194,6 +1278,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.56
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.56
      ]
     ]
    },
@@ -1206,12 +1294,12 @@
     "zona_nome": "Valdichiana",
     "soglia1": 3.0,
     "soglia2": 3.5,
-    "livello": 1.52,
-    "portata": 19.0,
-    "delta_1h": -0.01,
+    "livello": 1.51,
+    "portata": 18.8,
+    "delta_1h": 0.0,
     "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.30",
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.23727004,
@@ -1248,6 +1336,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.52
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.51
      ]
     ]
    },
@@ -1265,7 +1357,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.32028004,
@@ -1302,6 +1394,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.34
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.34
      ]
     ]
    }
@@ -1316,12 +1412,12 @@
     "zona_nome": "Arno-Valdarno Sup.",
     "soglia1": 1.0,
     "soglia2": 1.5,
-    "livello": -0.05,
+    "livello": -0.06,
     "portata": null,
-    "delta_1h": 0.0,
+    "delta_1h": 0.01,
     "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.51039804,
@@ -1358,6 +1454,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.05
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.06
      ]
     ]
    },
@@ -1373,9 +1473,9 @@
     "livello": -0.73,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.50251504,
@@ -1412,6 +1512,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.73
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.73
      ]
     ]
    },
@@ -1429,7 +1533,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.00",
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.4835286,
@@ -1466,6 +1570,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.34
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.34
      ]
     ]
    },
@@ -1482,8 +1590,8 @@
     "portata": 2.68,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.54121154,
@@ -1520,6 +1628,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.01
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.01
      ]
     ]
    },
@@ -1535,9 +1647,9 @@
     "livello": 1.18,
     "portata": 3.85,
     "delta_1h": 0.0,
-    "delta_3h": 0.03,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.68984952,
@@ -1574,6 +1686,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.18
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.18
      ]
     ]
    },
@@ -1591,7 +1707,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.41512306,
@@ -1628,6 +1744,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.2
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.2
      ]
     ]
    },
@@ -1642,10 +1762,10 @@
     "soglia2": 2.5,
     "livello": 0.47,
     "portata": null,
-    "delta_1h": 0.0,
+    "delta_1h": 0.01,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.55613121,
@@ -1682,6 +1802,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.47
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.47
      ]
     ]
    }
@@ -1701,7 +1825,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.97497199,
@@ -1738,6 +1862,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.78
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.78
      ]
     ]
    },
@@ -1755,7 +1883,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.96510551,
@@ -1792,6 +1920,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.91
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.91
      ]
     ]
    },
@@ -1804,13 +1936,13 @@
     "zona_nome": "Mugello-Val di Sieve",
     "soglia1": 2.8,
     "soglia2": 5.0,
-    "livello": 0.97,
+    "livello": 0.95,
     "portata": null,
-    "delta_1h": 0.02,
-    "delta_3h": -0.02,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": 0.04,
+    "delta_3h": -0.04,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 43.95905781,
     "lng": 11.3223474,
@@ -1846,6 +1978,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.97
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.95
      ]
     ]
    },
@@ -1858,12 +1994,12 @@
     "zona_nome": "Mugello-Val di Sieve",
     "soglia1": 2.5,
     "soglia2": 3.5,
-    "livello": -0.13,
+    "livello": -0.14,
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.00",
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.88608806,
@@ -1900,6 +2036,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.13
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.14
      ]
     ]
    },
@@ -1912,12 +2052,12 @@
     "zona_nome": "Mugello-Val di Sieve",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 0.26,
+    "livello": 0.27,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.80078683,
@@ -1954,6 +2094,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.26
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.27
      ]
     ]
    },
@@ -1971,7 +2115,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.80123596,
@@ -2008,6 +2152,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.27
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.27
      ]
     ]
    }
@@ -2027,7 +2175,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.77119752,
@@ -2064,6 +2212,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.67
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.67
      ]
     ]
    },
@@ -2076,12 +2228,12 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 5.5,
     "soglia2": 7.0,
-    "livello": 1.12,
+    "livello": 1.13,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": 0.0,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.77430255,
@@ -2118,6 +2270,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.13
      ]
     ]
    },
@@ -2130,13 +2286,13 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 3.0,
     "soglia2": 5.5,
-    "livello": 0.57,
+    "livello": 0.6,
     "portata": null,
-    "delta_1h": 0.01,
+    "delta_1h": -0.03,
     "delta_3h": 0.0,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "stabile",
+    "delta_6h": 0.03,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 43.76763842,
     "lng": 11.25492454,
@@ -2172,6 +2328,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.57
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.6
      ]
     ]
    },
@@ -2184,12 +2344,12 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 3.0,
     "soglia2": 5.5,
-    "livello": 0.68,
+    "livello": 0.73,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": -0.02,
-    "delta_6h": -0.12,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": -0.01,
+    "delta_3h": 0.03,
+    "delta_6h": 0.04,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.76763455,
@@ -2226,6 +2386,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.68
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.73
      ]
     ]
    },
@@ -2243,7 +2407,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.78685984,
@@ -2280,6 +2444,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.03
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.03
      ]
     ]
    },
@@ -2292,12 +2460,12 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 2.0,
     "soglia2": 2.2,
-    "livello": 0.32,
+    "livello": 0.31,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.5830492,
@@ -2334,6 +2502,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.32
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.31
      ]
     ]
    },
@@ -2346,12 +2518,12 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 2.6,
     "soglia2": 4.8,
-    "livello": -0.12,
+    "livello": -0.13,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.71248019,
@@ -2388,6 +2560,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.13
      ]
     ]
    },
@@ -2400,13 +2576,13 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 1.8,
     "soglia2": 2.3,
-    "livello": 0.31,
+    "livello": 0.3,
     "portata": null,
-    "delta_1h": -0.04,
-    "delta_3h": -0.03,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": -0.02,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.66432002,
     "lng": 11.31454246,
@@ -2442,6 +2618,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.31
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.3
      ]
     ]
    },
@@ -2456,10 +2636,10 @@
     "soglia2": 3.15,
     "livello": -0.11,
     "portata": 0.24,
-    "delta_1h": 0.01,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.7548105,
@@ -2496,6 +2676,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.11
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.11
      ]
     ]
    },
@@ -2508,13 +2692,13 @@
     "zona_nome": "Arno-Firenze",
     "soglia1": 5.5,
     "soglia2": 7.0,
-    "livello": 1.13,
+    "livello": 1.15,
     "portata": null,
-    "delta_1h": -0.07,
-    "delta_3h": -0.09,
-    "delta_6h": -0.06,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.0,
+    "delta_3h": 0.02,
+    "delta_6h": -0.08,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.75987296,
     "lng": 11.04925061,
@@ -2550,6 +2734,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.13
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.15
      ]
     ]
    },
@@ -2564,10 +2752,10 @@
     "soglia2": 2.5,
     "livello": 0.31,
     "portata": 0.31,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.73460004,
@@ -2604,6 +2792,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.31
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.31
      ]
     ]
    },
@@ -2618,10 +2810,10 @@
     "soglia2": 2.3,
     "livello": 0.69,
     "portata": 0.01,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.57100004,
@@ -2658,6 +2850,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.69
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.69
      ]
     ]
    },
@@ -2675,7 +2871,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.76763068,
@@ -2712,6 +2908,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       2.23
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      2.23
      ]
     ]
    },
@@ -2726,10 +2926,10 @@
     "soglia2": 2.3,
     "livello": 0.25,
     "portata": 0.06,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.72416707,
@@ -2766,6 +2966,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.25
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.25
      ]
     ]
    }
@@ -2782,10 +2986,10 @@
     "soglia2": 2.8,
     "livello": 0.17,
     "portata": 0.64,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.92290615,
@@ -2822,6 +3026,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.17
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.17
      ]
     ]
    },
@@ -2834,12 +3042,12 @@
     "zona_nome": "Bisenzio e Ombrone Pt",
     "soglia1": 1.0,
     "soglia2": 1.5,
-    "livello": -0.56,
-    "portata": 0.52,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "livello": -0.57,
+    "portata": 0.41,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.87944275,
@@ -2876,6 +3084,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.56
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.57
      ]
     ]
    },
@@ -2890,10 +3102,10 @@
     "soglia2": 2.5,
     "livello": -0.12,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.86085549,
@@ -2930,6 +3142,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.12
      ]
     ]
    },
@@ -2947,7 +3163,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.8036842,
@@ -2984,6 +3200,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.15
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.15
      ]
     ]
    },
@@ -2996,12 +3216,12 @@
     "zona_nome": "Bisenzio e Ombrone Pt",
     "soglia1": 2.0,
     "soglia2": 3.0,
-    "livello": 0.12,
+    "livello": 0.13,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.82315128,
@@ -3038,6 +3258,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.13
      ]
     ]
    },
@@ -3050,12 +3274,12 @@
     "zona_nome": "Bisenzio e Ombrone Pt",
     "soglia1": 5.0,
     "soglia2": 7.5,
-    "livello": 0.52,
+    "livello": 0.51,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.02,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.77305367,
@@ -3092,6 +3316,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.52
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.51
      ]
     ]
    },
@@ -3104,12 +3332,12 @@
     "zona_nome": "Bisenzio e Ombrone Pt",
     "soglia1": 2.0,
     "soglia2": 2.8,
-    "livello": 0.44,
+    "livello": 0.45,
     "portata": 0.08,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.9198062,
@@ -3146,6 +3374,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.44
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.45
      ]
     ]
    },
@@ -3163,7 +3395,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.81459079,
@@ -3200,6 +3432,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.22
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.22
      ]
     ]
    },
@@ -3214,10 +3450,10 @@
     "soglia2": 3.5,
     "livello": -0.16,
     "portata": 0.05,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.88887904,
@@ -3254,6 +3490,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.16
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.16
      ]
     ]
    },
@@ -3268,10 +3508,10 @@
     "soglia2": 3.0,
     "livello": 0.36,
     "portata": 0.16,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.88605604,
@@ -3308,6 +3548,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.36
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.36
      ]
     ]
    },
@@ -3324,8 +3568,8 @@
     "portata": 0.1,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.8682049,
@@ -3362,6 +3606,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.21
      ]
     ]
    },
@@ -3374,12 +3622,12 @@
     "zona_nome": "Bisenzio e Ombrone Pt",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.38,
+    "livello": 0.39,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.91499004,
@@ -3416,6 +3664,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.38
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.39
      ]
     ]
    },
@@ -3428,12 +3680,12 @@
     "zona_nome": "Bisenzio e Ombrone Pt",
     "soglia1": 2.5,
     "soglia2": 3.0,
-    "livello": -0.07,
-    "portata": 0.12,
+    "livello": -0.08,
+    "portata": 0.11,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.86210604,
@@ -3470,6 +3722,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.07
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.08
      ]
     ]
    },
@@ -3484,10 +3740,10 @@
     "soglia2": null,
     "livello": -0.02,
     "portata": null,
-    "delta_1h": 0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.8682165,
@@ -3524,6 +3780,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.02
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.02
      ]
     ]
    }
@@ -3543,7 +3803,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.65000299,
@@ -3580,6 +3840,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.03
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.03
      ]
     ]
    },
@@ -3594,10 +3858,10 @@
     "soglia2": 4.5,
     "livello": 0.7,
     "portata": 0.72,
-    "delta_1h": 0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.50",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.47146402,
@@ -3634,6 +3898,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.7
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.7
      ]
     ]
    },
@@ -3646,12 +3914,12 @@
     "zona_nome": "Valdelsa-Valdera",
     "soglia1": 3.8,
     "soglia2": 5.5,
-    "livello": 0.34,
+    "livello": 0.33,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": -0.36,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.23,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.54469475,
@@ -3688,6 +3956,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.34
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.33
      ]
     ]
    },
@@ -3700,12 +3972,12 @@
     "zona_nome": "Valdelsa-Valdera",
     "soglia1": 2.6,
     "soglia2": 3.6,
-    "livello": -0.16,
-    "portata": 0.95,
+    "livello": -0.17,
+    "portata": 0.94,
     "delta_1h": -0.01,
     "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.60448417,
@@ -3742,6 +4014,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.16
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.17
      ]
     ]
    },
@@ -3754,12 +4030,12 @@
     "zona_nome": "Valdelsa-Valdera",
     "soglia1": 1.5,
     "soglia2": 2.0,
-    "livello": 0.59,
-    "portata": 2.78,
-    "delta_1h": -0.12,
-    "delta_3h": -0.1,
-    "delta_6h": 0.05,
-    "orario_lettura": "02/09 16.00",
+    "livello": 0.69,
+    "portata": 7.44,
+    "delta_1h": -0.04,
+    "delta_3h": -0.03,
+    "delta_6h": 0.03,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 43.45563463,
@@ -3796,6 +4072,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.59
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.69
      ]
     ]
    },
@@ -3808,12 +4088,12 @@
     "zona_nome": "Valdelsa-Valdera",
     "soglia1": 2.8,
     "soglia2": 3.5,
-    "livello": 0.23,
+    "livello": 0.22,
     "portata": 0.02,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.15",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.60257214,
@@ -3850,6 +4130,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.23
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.22
      ]
     ]
    }
@@ -3866,10 +4150,10 @@
     "soglia2": 3.5,
     "livello": 0.59,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.71860551,
@@ -3906,6 +4190,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.59
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.59
      ]
     ]
    },
@@ -3923,7 +4211,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.72403343,
@@ -3960,6 +4248,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -6.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -6.21
      ]
     ]
    },
@@ -3977,7 +4269,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.68937413,
@@ -4014,6 +4306,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.87
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.87
      ]
     ]
    },
@@ -4026,12 +4322,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 3.5,
     "soglia2": 5.5,
-    "livello": -7.26,
-    "portata": 11.0,
-    "delta_1h": 0.01,
-    "delta_3h": 0.11,
-    "delta_6h": 0.16,
-    "orario_lettura": "02/09 15.45",
+    "livello": -7.3,
+    "portata": 10.1,
+    "delta_1h": -0.01,
+    "delta_3h": -0.04,
+    "delta_6h": 0.04,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.71974183,
@@ -4068,6 +4364,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -7.26
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -7.3
      ]
     ]
    },
@@ -4085,7 +4385,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.63155152,
@@ -4122,6 +4422,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.14
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.14
      ]
     ]
    },
@@ -4134,12 +4438,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 10.4,
     "soglia2": 11.0,
-    "livello": 8.17,
+    "livello": 8.19,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.68193776,
@@ -4176,6 +4480,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       8.17
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      8.19
      ]
     ]
    },
@@ -4193,7 +4501,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.592285,
@@ -4230,6 +4538,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.89
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.89
      ]
     ]
    },
@@ -4247,7 +4559,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.61982503,
@@ -4284,6 +4596,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.82
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.82
      ]
     ]
    },
@@ -4299,9 +4615,9 @@
     "livello": 3.82,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.63782329,
@@ -4338,6 +4654,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       3.82
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      3.82
      ]
     ]
    },
@@ -4350,12 +4670,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 5.0,
     "soglia2": 6.5,
-    "livello": -0.63,
-    "portata": 6.9,
+    "livello": -0.61,
+    "portata": 7.64,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.02,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.66533383,
@@ -4392,6 +4712,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.63
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.61
      ]
     ]
    },
@@ -4404,12 +4728,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 5.0,
     "soglia2": 6.2,
-    "livello": 0.43,
-    "portata": 9.44,
+    "livello": 0.44,
+    "portata": 10.0,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.68458598,
@@ -4446,6 +4770,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.43
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.44
      ]
     ]
    },
@@ -4458,12 +4786,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 5.5,
     "soglia2": 6.5,
-    "livello": 0.27,
+    "livello": 0.28,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.65161844,
@@ -4500,6 +4828,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.27
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.28
      ]
     ]
    },
@@ -4517,7 +4849,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.72119321,
@@ -4554,6 +4886,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.48
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.48
      ]
     ]
    },
@@ -4568,10 +4904,10 @@
     "soglia2": 5.5,
     "livello": 0.63,
     "portata": null,
-    "delta_1h": 0.01,
+    "delta_1h": 0.02,
     "delta_3h": 0.0,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": null,
@@ -4608,6 +4944,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.63
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.63
      ]
     ]
    },
@@ -4620,12 +4960,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": null,
     "soglia2": null,
-    "livello": -0.11,
+    "livello": -0.1,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.02,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": -0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.71586004,
@@ -4662,6 +5002,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.11
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.1
      ]
     ]
    },
@@ -4676,10 +5020,10 @@
     "soglia2": 2.8,
     "livello": 1.15,
     "portata": 0.36,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.85145004,
@@ -4716,6 +5060,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.15
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.15
      ]
     ]
    },
@@ -4730,10 +5078,10 @@
     "soglia2": 4.3,
     "livello": 0.41,
     "portata": null,
-    "delta_1h": 0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.68392588,
@@ -4770,6 +5118,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.41
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.41
      ]
     ]
    },
@@ -4782,12 +5134,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 5.0,
     "soglia2": 6.0,
-    "livello": -0.05,
-    "portata": 0.05,
-    "delta_1h": 0.0,
-    "delta_3h": 0.02,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "livello": -0.08,
+    "portata": null,
+    "delta_1h": -0.02,
+    "delta_3h": -0.02,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.61901604,
@@ -4824,6 +5176,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.05
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.08
      ]
     ]
    },
@@ -4836,12 +5192,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 5.0,
     "soglia2": 6.2,
-    "livello": 0.45,
-    "portata": 10.5,
+    "livello": 0.46,
+    "portata": 11.0,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.68300004,
@@ -4878,6 +5234,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.45
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.46
      ]
     ]
    },
@@ -4890,13 +5250,13 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 0.91,
+    "livello": 0.83,
     "portata": null,
-    "delta_1h": -0.07,
-    "delta_3h": -0.13,
-    "delta_6h": 0.07,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.01,
+    "delta_3h": -0.09,
+    "delta_6h": -0.17,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.62523799,
     "lng": 10.46121145,
@@ -4932,6 +5292,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.91
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.83
      ]
     ]
    },
@@ -4944,12 +5308,12 @@
     "zona_nome": "Valdarno Inf.",
     "soglia1": 2.3,
     "soglia2": 3.0,
-    "livello": 0.0,
+    "livello": 0.01,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.6004278,
@@ -4986,6 +5350,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.0
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.01
      ]
     ]
    }
@@ -5000,13 +5368,13 @@
     "zona_nome": "Arno-Costa",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 0.71,
+    "livello": 0.65,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": -0.11,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "stabile",
+    "delta_1h": 0.09,
+    "delta_3h": -0.03,
+    "delta_6h": -0.1,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 43.71269559,
     "lng": 10.39098394,
@@ -5042,6 +5410,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.71
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.65
      ]
     ]
    },
@@ -5054,13 +5426,13 @@
     "zona_nome": "Arno-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.78,
+    "livello": 0.74,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.08,
-    "delta_6h": -0.05,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "stabile",
+    "delta_1h": 0.03,
+    "delta_3h": 0.03,
+    "delta_6h": -0.12,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in aumento",
     "stato": null,
     "lat": 43.68072984,
     "lng": 10.28034926,
@@ -5096,6 +5468,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.78
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.74
      ]
     ]
    },
@@ -5108,12 +5484,12 @@
     "zona_nome": "Arno-Costa",
     "soglia1": 1.5,
     "soglia2": 2.0,
-    "livello": 0.17,
+    "livello": 0.09,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": -0.1,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.01,
+    "delta_3h": -0.04,
+    "delta_6h": -0.16,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.59997329,
@@ -5150,6 +5526,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.17
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.09
      ]
     ]
    },
@@ -5167,7 +5547,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.40629371,
@@ -5204,6 +5584,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.2
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.2
      ]
     ]
    },
@@ -5216,13 +5600,13 @@
     "zona_nome": "Arno-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.07,
+    "livello": 0.02,
     "portata": null,
-    "delta_1h": -0.04,
-    "delta_3h": -0.09,
-    "delta_6h": -0.08,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": -0.11,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": null,
     "lat": 43.54625609,
     "lng": 10.29963166,
@@ -5258,6 +5642,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.07
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.02
      ]
     ]
    },
@@ -5270,13 +5658,13 @@
     "zona_nome": "Arno-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.39,
+    "livello": 0.28,
     "portata": null,
-    "delta_1h": 0.07,
-    "delta_3h": 0.07,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in aumento",
+    "delta_1h": -0.05,
+    "delta_3h": -0.02,
+    "delta_6h": -0.12,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in diminuzione",
     "stato": null,
     "lat": null,
     "lng": null,
@@ -5312,6 +5700,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.39
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.28
      ]
     ]
    }
@@ -5326,12 +5718,12 @@
     "zona_nome": "Etruria",
     "soglia1": 1.7,
     "soglia2": 2.5,
-    "livello": 0.16,
-    "portata": 0.12,
+    "livello": 0.17,
+    "portata": 0.14,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.30193473,
@@ -5368,6 +5760,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.16
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.17
      ]
     ]
    },
@@ -5380,13 +5776,13 @@
     "zona_nome": "Etruria",
     "soglia1": 2.0,
     "soglia2": 3.0,
-    "livello": 0.18,
+    "livello": 0.28,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.04,
-    "delta_6h": -0.08,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": 0.09,
+    "delta_3h": 0.08,
+    "delta_6h": 0.05,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 43.25349284,
     "lng": 10.94356851,
@@ -5422,6 +5818,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.18
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.28
      ]
     ]
    },
@@ -5439,7 +5839,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.33417223,
@@ -5476,6 +5876,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       2.33
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      2.33
      ]
     ]
    },
@@ -5491,9 +5895,9 @@
     "livello": 0.93,
     "portata": 2.96,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": -0.01,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.3546726,
@@ -5530,6 +5934,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.93
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.93
      ]
     ]
    },
@@ -5545,9 +5953,9 @@
     "livello": -0.31,
     "portata": 0.24,
     "delta_1h": 0.0,
-    "delta_3h": -0.03,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.0,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.32333573,
@@ -5584,6 +5992,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.31
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.31
      ]
     ]
    },
@@ -5596,13 +6008,13 @@
     "zona_nome": "Etruria",
     "soglia1": 2.8,
     "soglia2": 3.8,
-    "livello": 0.62,
+    "livello": 0.63,
     "portata": null,
-    "delta_1h": 0.06,
-    "delta_3h": -0.03,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in aumento",
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.00",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.31023848,
     "lng": 10.67375556,
@@ -5638,6 +6050,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.62
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.63
      ]
     ]
    },
@@ -5655,7 +6071,7 @@
     "delta_1h": 0.0,
     "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.11158687,
@@ -5692,6 +6108,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.2
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.2
      ]
     ]
    },
@@ -5706,10 +6126,10 @@
     "soglia2": 3.0,
     "livello": -0.16,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.12698154,
@@ -5746,6 +6166,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.16
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.16
      ]
     ]
    },
@@ -5762,8 +6186,8 @@
     "portata": null,
     "delta_1h": 0.01,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.07273466,
@@ -5799,6 +6223,10 @@
      ],
      [
       "2026-09-02T15:10:20+00:00",
+      -0.33
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
       -0.33
      ]
     ]
@@ -5812,12 +6240,12 @@
     "zona_nome": "Etruria",
     "soglia1": 3.0,
     "soglia2": 4.0,
-    "livello": -0.37,
+    "livello": -0.36,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.07273466,
@@ -5854,6 +6282,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.37
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.36
      ]
     ]
    },
@@ -5866,12 +6298,12 @@
     "zona_nome": "Etruria",
     "soglia1": 2.8,
     "soglia2": 5.0,
-    "livello": -0.65,
+    "livello": -0.71,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": -0.06,
+    "delta_6h": -0.06,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.06740108,
@@ -5908,6 +6340,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.65
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.71
      ]
     ]
    },
@@ -5924,8 +6360,8 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.01901018,
@@ -5962,6 +6398,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.54
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.54
      ]
     ]
    },
@@ -5974,13 +6414,13 @@
     "zona_nome": "Etruria",
     "soglia1": 1.8,
     "soglia2": 2.5,
-    "livello": 0.72,
+    "livello": 0.6,
     "portata": null,
-    "delta_1h": 0.11,
-    "delta_3h": 0.11,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in aumento",
+    "delta_1h": -0.01,
+    "delta_3h": -0.02,
+    "delta_6h": -0.05,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.00142823,
     "lng": 11.22266235,
@@ -6016,6 +6456,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.72
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.6
      ]
     ]
    },
@@ -6032,8 +6476,8 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.12119237,
@@ -6070,6 +6514,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.24
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.24
      ]
     ]
    },
@@ -6085,9 +6533,9 @@
     "livello": 0.46,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.26802104,
@@ -6124,6 +6572,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.46
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.46
      ]
     ]
    },
@@ -6140,8 +6592,8 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.33996843,
@@ -6177,6 +6629,10 @@
      ],
      [
       "2026-09-02T15:10:20+00:00",
+      1.73
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
       1.73
      ]
     ]
@@ -6192,10 +6648,10 @@
     "soglia2": 6.0,
     "livello": 1.73,
     "portata": 1.71,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.33996843,
@@ -6232,6 +6688,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.73
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.73
      ]
     ]
    },
@@ -6246,10 +6706,10 @@
     "soglia2": 4.0,
     "livello": -0.8,
     "portata": null,
-    "delta_1h": 0.0,
+    "delta_1h": -0.01,
     "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.03391004,
@@ -6286,6 +6746,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.8
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.8
      ]
     ]
    },
@@ -6298,13 +6762,13 @@
     "zona_nome": "Etruria",
     "soglia1": 2.5,
     "soglia2": 3.2,
-    "livello": 0.92,
-    "portata": 0.78,
-    "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "stabile",
+    "livello": 0.96,
+    "portata": 0.92,
+    "delta_1h": 0.04,
+    "delta_3h": 0.05,
+    "delta_6h": 0.04,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 42.89484673,
     "lng": 11.0058117,
@@ -6340,6 +6804,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.92
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.96
      ]
     ]
    }
@@ -6354,12 +6822,12 @@
     "zona_nome": "Isole",
     "soglia1": null,
     "soglia2": null,
-    "livello": 2.27,
+    "livello": 2.21,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": -0.1,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": -0.04,
+    "delta_6h": -0.15,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 42.81215059,
@@ -6396,6 +6864,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       2.27
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      2.21
      ]
     ]
    }
@@ -6410,12 +6882,12 @@
     "zona_nome": "Etruria-Costa Sud",
     "soglia1": 2.5,
     "soglia2": 3.5,
-    "livello": 1.73,
-    "portata": 25.6,
-    "delta_1h": -0.09,
-    "delta_3h": 0.1,
-    "delta_6h": 0.12,
-    "orario_lettura": "02/09 15.45",
+    "livello": 1.56,
+    "portata": 19.5,
+    "delta_1h": -0.28,
+    "delta_3h": -0.21,
+    "delta_6h": -0.09,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 42.93961563,
@@ -6452,6 +6924,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.73
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.56
      ]
     ]
    },
@@ -6464,13 +6940,13 @@
     "zona_nome": "Etruria-Costa Sud",
     "soglia1": 2.0,
     "soglia2": 3.3,
-    "livello": 0.14,
-    "portata": 1.83,
-    "delta_1h": -0.11,
-    "delta_3h": -0.9,
-    "delta_6h": 0.1,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in diminuzione",
+    "livello": 1.21,
+    "portata": 13.3,
+    "delta_1h": 0.72,
+    "delta_3h": 0.99,
+    "delta_6h": 0.23,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 42.96930099,
     "lng": 10.80643324,
@@ -6506,6 +6982,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.14
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.21
      ]
     ]
    },
@@ -6518,12 +6998,12 @@
     "zona_nome": "Etruria-Costa Sud",
     "soglia1": 2.5,
     "soglia2": 3.5,
-    "livello": 0.45,
+    "livello": 0.43,
     "portata": null,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": -0.01,
+    "delta_3h": -0.02,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.93887036,
@@ -6560,6 +7040,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.45
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.43
      ]
     ]
    }
@@ -6574,12 +7058,12 @@
     "zona_nome": "Ombrone Gr-Costa",
     "soglia1": 3.0,
     "soglia2": 4.0,
-    "livello": 0.43,
-    "portata": 1.09,
+    "livello": 0.39,
+    "portata": 1.02,
     "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": 0.03,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": -0.04,
+    "delta_6h": -0.05,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.80462988,
@@ -6616,6 +7100,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.43
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.39
      ]
     ]
    },
@@ -6631,9 +7119,9 @@
     "livello": 0.0,
     "portata": 3.54,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.77781446,
@@ -6670,6 +7158,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.0
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.0
      ]
     ]
    },
@@ -6685,9 +7177,9 @@
     "livello": 0.07,
     "portata": 0.77,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.90321705,
@@ -6724,6 +7216,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.07
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.07
      ]
     ]
    },
@@ -6736,12 +7232,12 @@
     "zona_nome": "Ombrone Gr-Costa",
     "soglia1": 6.5,
     "soglia2": 7.5,
-    "livello": 0.4,
+    "livello": 0.39,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.76246795,
@@ -6778,6 +7274,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.4
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.39
      ]
     ]
    },
@@ -6795,7 +7295,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.74865832,
@@ -6832,6 +7332,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.34
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.34
      ]
     ]
    }
@@ -6846,12 +7350,12 @@
     "zona_nome": "Ombrone Gr-Alto",
     "soglia1": 6.0,
     "soglia2": 7.5,
-    "livello": -0.13,
-    "portata": 0.42,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "livello": -0.14,
+    "portata": 0.39,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.13528476,
@@ -6888,6 +7392,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.13
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.14
      ]
     ]
    },
@@ -6900,12 +7408,12 @@
     "zona_nome": "Ombrone Gr-Alto",
     "soglia1": 6.5,
     "soglia2": 7.5,
-    "livello": 0.43,
+    "livello": 0.42,
     "portata": null,
     "delta_1h": -0.01,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.01,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.24003304,
@@ -6942,6 +7450,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.43
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.42
      ]
     ]
    },
@@ -6954,12 +7466,12 @@
     "zona_nome": "Ombrone Gr-Alto",
     "soglia1": 1.2,
     "soglia2": 2.0,
-    "livello": -0.44,
+    "livello": -0.45,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.35657004,
@@ -6996,6 +7508,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.44
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.45
      ]
     ]
    },
@@ -7012,8 +7528,8 @@
     "portata": 0.23,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.20078953,
@@ -7050,6 +7566,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.28
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.28
      ]
     ]
    },
@@ -7062,13 +7582,13 @@
     "zona_nome": "Ombrone Gr-Alto",
     "soglia1": 4.5,
     "soglia2": 6.0,
-    "livello": 0.46,
+    "livello": 0.43,
     "portata": null,
-    "delta_1h": -0.09,
-    "delta_3h": 0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.0,
+    "delta_3h": -0.16,
+    "delta_6h": -0.05,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.21503304,
     "lng": 11.38691901,
@@ -7104,6 +7624,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.46
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.43
      ]
     ]
    },
@@ -7121,7 +7645,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.21464544,
@@ -7158,6 +7682,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.21
      ]
     ]
    },
@@ -7175,7 +7703,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.0971748,
@@ -7212,6 +7740,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.85
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.85
      ]
     ]
    },
@@ -7229,7 +7761,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.07928057,
@@ -7266,6 +7798,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.26
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.26
      ]
     ]
    }
@@ -7285,7 +7821,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.97577156,
@@ -7322,6 +7858,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.22
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.22
      ]
     ]
    },
@@ -7336,10 +7876,10 @@
     "soglia2": 6.5,
     "livello": -0.64,
     "portata": 1.37,
-    "delta_1h": -0.01,
-    "delta_3h": 0.0,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.93488416,
@@ -7376,6 +7916,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.64
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.64
      ]
     ]
    },
@@ -7393,7 +7937,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.96096516,
@@ -7430,6 +7974,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.2
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.2
      ]
     ]
    },
@@ -7444,10 +7992,10 @@
     "soglia2": 3.5,
     "livello": 0.68,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": 0.01,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": -0.02,
+    "delta_3h": 0.0,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.79391238,
@@ -7484,6 +8032,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.68
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.68
      ]
     ]
    }
@@ -7498,12 +8050,12 @@
     "zona_nome": "Serchio-Garfagnana-Lima",
     "soglia1": 1.8,
     "soglia2": 2.5,
-    "livello": 0.11,
-    "portata": 0.41,
-    "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "livello": 0.1,
+    "portata": 0.32,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.99910874,
@@ -7540,6 +8092,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.11
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.1
      ]
     ]
    },
@@ -7554,11 +8110,11 @@
     "soglia2": 3.2,
     "livello": 1.01,
     "portata": null,
-    "delta_1h": 0.08,
-    "delta_3h": 0.12,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in aumento",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.12,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.99218933,
     "lng": 10.22270859,
@@ -7594,6 +8150,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.01
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.01
      ]
     ]
    },
@@ -7608,10 +8168,10 @@
     "soglia2": 5.3,
     "livello": 1.65,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.99281454,
@@ -7648,6 +8208,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.65
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.65
      ]
     ]
    },
@@ -7665,7 +8229,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.97257289,
@@ -7702,6 +8266,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.0
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.0
      ]
     ]
    },
@@ -7717,9 +8285,9 @@
     "livello": -0.26,
     "portata": 4.13,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.16293523,
@@ -7756,6 +8324,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.26
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.26
      ]
     ]
    },
@@ -7770,10 +8342,10 @@
     "soglia2": 5.75,
     "livello": -1.21,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.09005498,
@@ -7810,6 +8382,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -1.21
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -1.21
      ]
     ]
    },
@@ -7822,13 +8398,13 @@
     "zona_nome": "Serchio-Garfagnana-Lima",
     "soglia1": 3.0,
     "soglia2": 4.0,
-    "livello": 0.98,
+    "livello": 1.01,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "stabile",
+    "delta_1h": -0.03,
+    "delta_3h": 0.0,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 44.09820337,
     "lng": 10.75169922,
@@ -7864,6 +8440,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.98
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.01
      ]
     ]
    },
@@ -7878,11 +8458,11 @@
     "soglia2": 6.5,
     "livello": 0.64,
     "portata": 0.55,
-    "delta_1h": 0.05,
-    "delta_3h": 0.05,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.30",
-    "tendenza": "in aumento",
+    "delta_1h": -0.03,
+    "delta_3h": 0.02,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 44.04358921,
     "lng": 10.71979646,
@@ -7918,6 +8498,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.64
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.64
      ]
     ]
    },
@@ -7930,12 +8514,12 @@
     "zona_nome": "Serchio-Garfagnana-Lima",
     "soglia1": 2.9,
     "soglia2": 3.75,
-    "livello": 0.89,
-    "portata": 3.62,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
+    "livello": 0.88,
+    "portata": 3.18,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.00199864,
@@ -7972,6 +8556,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.89
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.88
      ]
     ]
    }
@@ -7991,7 +8579,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.83181541,
@@ -8028,6 +8616,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.41
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.41
      ]
     ]
    },
@@ -8044,8 +8636,8 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.86766836,
@@ -8082,6 +8674,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.36
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.36
      ]
     ]
    },
@@ -8094,13 +8690,13 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.24,
+    "livello": 0.13,
     "portata": null,
-    "delta_1h": 0.04,
-    "delta_3h": -0.04,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in aumento",
+    "delta_1h": 0.02,
+    "delta_3h": -0.05,
+    "delta_6h": -0.14,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": null,
     "lat": 43.86731642,
     "lng": 10.2585134,
@@ -8136,6 +8732,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.24
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.13
      ]
     ]
    },
@@ -8148,12 +8748,12 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": 4.5,
     "soglia2": 7.5,
-    "livello": 0.97,
-    "portata": 8.0,
+    "livello": 0.96,
+    "portata": 7.4,
     "delta_1h": 0.0,
     "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.81885909,
@@ -8190,6 +8790,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.97
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.96
      ]
     ]
    },
@@ -8202,12 +8806,12 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": 1.8,
     "soglia2": 2.3,
-    "livello": 0.65,
+    "livello": 0.7,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.0,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.02,
+    "delta_3h": 0.05,
+    "delta_6h": 0.05,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.81876005,
@@ -8244,6 +8848,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.65
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.7
      ]
     ]
    },
@@ -8256,12 +8864,12 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": 7.5,
     "soglia2": 9.0,
-    "livello": 1.13,
+    "livello": 1.05,
     "portata": null,
-    "delta_1h": -0.07,
-    "delta_3h": -0.08,
-    "delta_6h": -0.11,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": -0.09,
+    "delta_3h": -0.12,
+    "delta_6h": -0.22,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 43.78051413,
@@ -8298,6 +8906,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.13
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.05
      ]
     ]
    },
@@ -8310,13 +8922,13 @@
     "zona_nome": "Serchio-Costa",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.38,
+    "livello": 0.31,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.09,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": 0.03,
+    "delta_3h": -0.04,
+    "delta_6h": -0.13,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in aumento",
     "stato": null,
     "lat": 43.78135827,
     "lng": 10.26973308,
@@ -8352,6 +8964,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.38
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.31
      ]
     ]
    }
@@ -8371,7 +8987,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.01975039,
@@ -8408,6 +9024,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.73
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.73
      ]
     ]
    },
@@ -8422,11 +9042,11 @@
     "soglia2": 5.26,
     "livello": -3.1,
     "portata": 2.01,
-    "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": 0.03,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 43.97987674,
     "lng": 10.55150986,
@@ -8462,6 +9082,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -3.1
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -3.1
      ]
     ]
    },
@@ -8479,7 +9103,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.92935294,
@@ -8516,6 +9140,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -1.32
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -1.32
      ]
     ]
    },
@@ -8530,10 +9158,10 @@
     "soglia2": 2.5,
     "livello": 0.3,
     "portata": null,
-    "delta_1h": -0.02,
-    "delta_3h": -0.02,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.88176349,
@@ -8570,6 +9198,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.3
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.3
      ]
     ]
    },
@@ -8582,12 +9214,12 @@
     "zona_nome": "Serchio-Lucca",
     "soglia1": 1.5,
     "soglia2": 2.8,
-    "livello": 0.02,
-    "portata": 9.59,
+    "livello": 0.03,
+    "portata": 10.5,
     "delta_1h": 0.0,
-    "delta_3h": -0.03,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.0,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.85725455,
@@ -8624,6 +9256,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.02
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.03
      ]
     ]
    },
@@ -8641,7 +9277,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.86504483,
@@ -8678,6 +9314,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.12
      ]
     ]
    },
@@ -8690,13 +9330,13 @@
     "zona_nome": "Serchio-Lucca",
     "soglia1": 1.4,
     "soglia2": 1.8,
-    "livello": 0.05,
+    "livello": 0.1,
     "portata": null,
-    "delta_1h": 0.04,
-    "delta_3h": 0.13,
-    "delta_6h": 0.15,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in aumento",
+    "delta_1h": -0.01,
+    "delta_3h": 0.03,
+    "delta_6h": 0.17,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.82965342,
     "lng": 10.46976451,
@@ -8732,6 +9372,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.05
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.1
      ]
     ]
    },
@@ -8748,8 +9392,8 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.81140971,
@@ -8786,6 +9430,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.03
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.03
      ]
     ]
    },
@@ -8801,9 +9449,9 @@
     "livello": 0.05,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.8066652,
@@ -8840,6 +9488,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.05
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.05
      ]
     ]
    },
@@ -8857,7 +9509,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.81599999,
@@ -8894,6 +9546,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.27
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.27
      ]
     ]
    },
@@ -8908,10 +9564,10 @@
     "soglia2": null,
     "livello": 0.17,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.81599225,
@@ -8948,6 +9604,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.17
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.17
      ]
     ]
    }
@@ -8962,12 +9622,12 @@
     "zona_nome": "Lunigiana",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 1.06,
-    "portata": 1.11,
-    "delta_1h": -0.03,
-    "delta_3h": -0.02,
-    "delta_6h": -0.02,
-    "orario_lettura": "02/09 15.45",
+    "livello": 1.05,
+    "portata": 1.04,
+    "delta_1h": -0.04,
+    "delta_3h": -0.05,
+    "delta_6h": -0.04,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "in diminuzione",
     "stato": "normale",
     "lat": 44.20232022,
@@ -9004,6 +9664,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.06
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.05
      ]
     ]
    },
@@ -9021,7 +9685,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.1981283,
@@ -9058,6 +9722,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.16
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.16
      ]
     ]
    },
@@ -9073,9 +9741,9 @@
     "livello": 0.07,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
+    "delta_3h": 0.01,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.3841463,
@@ -9112,6 +9780,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.07
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.07
      ]
     ]
    },
@@ -9124,13 +9796,13 @@
     "zona_nome": "Lunigiana",
     "soglia1": 2.0,
     "soglia2": 3.0,
-    "livello": 0.53,
+    "livello": 0.7,
     "portata": null,
-    "delta_1h": -0.18,
-    "delta_3h": -0.17,
-    "delta_6h": -0.17,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.30966349,
     "lng": 9.9841248,
@@ -9166,6 +9838,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.53
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.7
      ]
     ]
    },
@@ -9178,13 +9854,13 @@
     "zona_nome": "Lunigiana",
     "soglia1": 2.5,
     "soglia2": 3.5,
-    "livello": 0.76,
+    "livello": 0.73,
     "portata": null,
-    "delta_1h": 0.04,
-    "delta_3h": 0.02,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in aumento",
+    "delta_1h": -0.02,
+    "delta_3h": 0.0,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.24278456,
     "lng": 10.00342804,
@@ -9220,6 +9896,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.76
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.73
      ]
     ]
    },
@@ -9234,11 +9914,11 @@
     "soglia2": 2.1,
     "livello": -1.39,
     "portata": 2.19,
-    "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "stabile",
+    "delta_1h": 2.3,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in aumento",
     "stato": "normale",
     "lat": 44.36170263,
     "lng": 9.89669145,
@@ -9274,6 +9954,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -1.39
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -1.39
      ]
     ]
    },
@@ -9286,12 +9970,12 @@
     "zona_nome": "Lunigiana",
     "soglia1": 4.0,
     "soglia2": 5.7,
-    "livello": 0.18,
-    "portata": 7.18,
+    "livello": 0.17,
+    "portata": 6.37,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.30",
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.20178712,
@@ -9328,6 +10012,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.18
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.17
      ]
     ]
    },
@@ -9340,12 +10028,12 @@
     "zona_nome": "Lunigiana",
     "soglia1": 3.0,
     "soglia2": 3.8,
-    "livello": 0.19,
+    "livello": 0.18,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.29318978,
@@ -9382,6 +10070,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.19
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.18
      ]
     ]
    },
@@ -9396,10 +10088,10 @@
     "soglia2": 4.0,
     "livello": 0.67,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.33677085,
@@ -9436,6 +10128,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.67
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.67
      ]
     ]
    }
@@ -9450,13 +10146,13 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": null,
     "soglia2": null,
-    "livello": -0.05,
+    "livello": -0.09,
     "portata": null,
-    "delta_1h": -0.09,
-    "delta_3h": -0.16,
-    "delta_6h": -0.07,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.01,
+    "delta_3h": -0.03,
+    "delta_6h": -0.19,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "stabile",
     "stato": null,
     "lat": 42.48087404,
     "lng": 11.19804401,
@@ -9492,6 +10188,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.05
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.09
      ]
     ]
    },
@@ -9509,7 +10209,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": null,
     "lat": 42.43647204,
@@ -9546,6 +10246,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.12
      ]
     ]
    },
@@ -9558,13 +10262,13 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": null,
     "soglia2": null,
-    "livello": -0.08,
+    "livello": -0.09,
     "portata": null,
-    "delta_1h": -0.07,
-    "delta_3h": -0.17,
-    "delta_6h": -0.11,
-    "orario_lettura": "02/09 16.00",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.04,
+    "delta_3h": -0.01,
+    "delta_6h": -0.16,
+    "orario_lettura": "02/09 19.30",
+    "tendenza": "in aumento",
     "stato": null,
     "lat": 42.43205404,
     "lng": 11.16731701,
@@ -9600,6 +10304,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.08
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.09
      ]
     ]
    },
@@ -9612,12 +10320,12 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.13,
+    "livello": 0.11,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.03,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": -0.02,
+    "delta_6h": -0.04,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": null,
     "lat": 42.42518104,
@@ -9654,6 +10362,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.13
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.11
      ]
     ]
    },
@@ -9666,13 +10378,13 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": 2.5,
     "soglia2": 3.2,
-    "livello": 0.22,
+    "livello": 0.23,
     "portata": null,
-    "delta_1h": -0.05,
-    "delta_3h": -0.01,
-    "delta_6h": -0.03,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": -0.01,
+    "delta_3h": -0.04,
+    "delta_6h": -0.04,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.56784766,
     "lng": 11.23360022,
@@ -9708,6 +10420,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.22
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.23
      ]
     ]
    },
@@ -9720,13 +10436,13 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": 4.5,
     "soglia2": 6.0,
-    "livello": 0.52,
+    "livello": 0.48,
     "portata": null,
-    "delta_1h": -0.12,
-    "delta_3h": -0.18,
-    "delta_6h": -0.09,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.02,
+    "delta_3h": -0.01,
+    "delta_6h": -0.24,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.51859804,
     "lng": 11.24191601,
@@ -9762,6 +10478,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.52
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.48
      ]
     ]
    },
@@ -9777,9 +10497,9 @@
     "livello": 0.12,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.41252404,
@@ -9816,6 +10536,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.12
      ]
     ]
    },
@@ -9828,13 +10552,13 @@
     "zona_nome": "Fiora e Albegna-Costa e Giglio",
     "soglia1": null,
     "soglia2": null,
-    "livello": 0.15,
+    "livello": 0.12,
     "portata": null,
-    "delta_1h": -0.09,
-    "delta_3h": -0.16,
-    "delta_6h": -0.07,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in diminuzione",
+    "delta_1h": 0.03,
+    "delta_3h": -0.02,
+    "delta_6h": -0.18,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "in aumento",
     "stato": null,
     "lat": null,
     "lng": null,
@@ -9870,6 +10594,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.15
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.12
      ]
     ]
    }
@@ -9884,12 +10612,12 @@
     "zona_nome": "Romagna-Toscana",
     "soglia1": 3.0,
     "soglia2": 4.0,
-    "livello": 0.33,
+    "livello": 0.34,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.15212804,
@@ -9926,6 +10654,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.33
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.34
      ]
     ]
    },
@@ -9938,12 +10670,12 @@
     "zona_nome": "Romagna-Toscana",
     "soglia1": 1.2,
     "soglia2": 2.0,
-    "livello": 0.0,
+    "livello": 0.03,
     "portata": null,
-    "delta_1h": -0.01,
+    "delta_1h": 0.01,
     "delta_3h": 0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.20",
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 18.50",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.07428336,
@@ -9980,6 +10712,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.0
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.03
      ]
     ]
    }
@@ -9996,10 +10732,10 @@
     "soglia2": 2.7,
     "livello": 0.02,
     "portata": null,
-    "delta_1h": 0.01,
-    "delta_3h": 0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.45",
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.31487874,
@@ -10036,6 +10772,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.02
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.02
      ]
     ]
    }
@@ -10050,12 +10790,12 @@
     "zona_nome": "Fiora e Albegna",
     "soglia1": 3.5,
     "soglia2": 4.5,
-    "livello": 1.18,
+    "livello": 1.15,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.01,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": -0.03,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.63807765,
@@ -10092,6 +10832,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.18
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.15
      ]
     ]
    },
@@ -10104,13 +10848,13 @@
     "zona_nome": "Fiora e Albegna",
     "soglia1": 4.0,
     "soglia2": 5.5,
-    "livello": -0.32,
+    "livello": -0.33,
     "portata": null,
-    "delta_1h": 0.03,
-    "delta_3h": 0.03,
-    "delta_6h": 0.01,
-    "orario_lettura": "02/09 15.45",
-    "tendenza": "in aumento",
+    "delta_1h": -0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
+    "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.54522904,
     "lng": 11.34708001,
@@ -10146,6 +10890,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.32
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.33
      ]
     ]
    },
@@ -10158,12 +10906,12 @@
     "zona_nome": "Fiora e Albegna",
     "soglia1": 3.5,
     "soglia2": 6.0,
-    "livello": 0.42,
+    "livello": 0.43,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": 0.0,
-    "delta_6h": 0.0,
-    "orario_lettura": "02/09 16.00",
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.54410205,
@@ -10200,6 +10948,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.42
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.43
      ]
     ]
    },
@@ -10214,10 +10966,10 @@
     "soglia2": 5.5,
     "livello": 1.86,
     "portata": null,
-    "delta_1h": -0.01,
-    "delta_3h": -0.01,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.15",
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 42.59349157,
@@ -10254,6 +11006,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       1.86
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      1.86
      ]
     ]
    }
@@ -10271,9 +11027,9 @@
     "livello": 0.12,
     "portata": null,
     "delta_1h": 0.0,
-    "delta_3h": -0.01,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.45",
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.15",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.56530004,
@@ -10310,6 +11066,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.12
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.12
      ]
     ]
    },
@@ -10327,7 +11087,7 @@
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": 0.0,
-    "orario_lettura": "02/09 15.30",
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.57869663,
@@ -10364,6 +11124,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       0.39
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      0.39
      ]
     ]
    },
@@ -10376,12 +11140,12 @@
     "zona_nome": "Valtiberina",
     "soglia1": null,
     "soglia2": null,
-    "livello": 386.76,
+    "livello": 386.75,
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
     "delta_6h": -0.01,
-    "orario_lettura": "02/09 15.30",
+    "orario_lettura": "02/09 19.00",
     "tendenza": "stabile",
     "stato": null,
     "lat": 43.59138904,
@@ -10418,6 +11182,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       386.76
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      386.75
      ]
     ]
    },
@@ -10434,8 +11202,8 @@
     "portata": null,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": -0.01,
-    "orario_lettura": "02/09 16.00",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 19.30",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 43.66902862,
@@ -10472,6 +11240,10 @@
      [
       "2026-09-02T15:10:20+00:00",
       -0.08
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
+      -0.08
      ]
     ]
    }
@@ -10490,8 +11262,8 @@
     "portata": 0.56,
     "delta_1h": 0.0,
     "delta_3h": 0.0,
-    "delta_6h": 0.02,
-    "orario_lettura": "02/09 15.20",
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 18.50",
     "tendenza": "stabile",
     "stato": "normale",
     "lat": 44.05548908,
@@ -10527,6 +11299,10 @@
      ],
      [
       "2026-09-02T15:10:20+00:00",
+      0.02
+     ],
+     [
+      "2026-09-02T18:40:15+00:00",
       0.02
      ]
     ]
