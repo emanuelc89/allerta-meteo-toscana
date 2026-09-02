@@ -19,7 +19,9 @@ acquisiti in tempo reale e NON sottoposti a validazione: sono comunque gli
 stessi dati che il CFR stesso pubblica al pubblico, non una nostra stima.
 
 Produce docs/data/idrometria.json (stato attuale) e aggiorna
-docs/data/idrometria_storico.json (storico compatto, ultime ~72 ore).
+docs/data/idrometria_storico.json (storico completo, ultime ~72 ore, uso
+interno per il calcolo del grafico: il file pubblico ne espone solo gli
+ultimi punti, per restare leggero).
 """
 
 import json
@@ -37,6 +39,7 @@ OUT_DIR = QUI.parent / "docs" / "data"
 FILE_STORICO = OUT_DIR / "idrometria_storico.json"
 
 ORE_STORICO_DA_TENERE = 72
+PUNTI_SPARKLINE_MAX = 30  # nel file pubblico basta un assaggio recente, non 72 ore intere
 
 ZONE = {
     "A1": "Arno-Casentino",
@@ -194,7 +197,7 @@ def main():
     storico = aggiorna_storico(stazioni, adesso)
 
     for s in stazioni:
-        s["storico"] = storico.get(s["id"], [])
+        s["storico"] = storico.get(s["id"], [])[-PUNTI_SPARKLINE_MAX:]
 
     per_zona, _ = raggruppa_per_zona(stazioni)
 
