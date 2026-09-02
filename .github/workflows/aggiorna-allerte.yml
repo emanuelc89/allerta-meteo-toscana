@@ -34,5 +34,10 @@ jobs:
           git config user.name "Robot allerte meteo"
           git config user.email "actions@users.noreply.github.com"
           git add docs/data/allerte.json docs/data/previsioni.json
-          git diff --staged --quiet && echo "Nessuna modifica, salto il commit" || git commit -m "Aggiornamento automatico bollettino allerte e previsioni"
-          git push
+          if git diff --staged --quiet; then
+            echo "Nessuna modifica, salto il commit"
+          else
+            git commit -m "Aggiornamento automatico bollettino allerte e previsioni"
+            git pull --rebase --autostash origin main
+            git push
+          fi

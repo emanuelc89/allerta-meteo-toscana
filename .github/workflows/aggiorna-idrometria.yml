@@ -28,5 +28,10 @@ jobs:
           git config user.name "Robot allerte meteo"
           git config user.email "actions@users.noreply.github.com"
           git add docs/data/idrometria.json docs/data/idrometria_storico.json
-          git diff --staged --quiet && echo "Nessuna modifica, salto il commit" || git commit -m "Aggiornamento automatico livelli idrometrici"
-          git push
+          if git diff --staged --quiet; then
+            echo "Nessuna modifica, salto il commit"
+          else
+            git commit -m "Aggiornamento automatico livelli idrometrici"
+            git pull --rebase --autostash origin main
+            git push
+          fi
