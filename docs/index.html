@@ -163,6 +163,21 @@
   .prev-comune { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
   .prev-giorno .g-humidex { font-size: .7rem; color: var(--testo-tenue); margin-top: 3px; border-top: 1px dashed var(--bordo); padding-top: 3px; }
   .prev-giorno .g-humidex b { color: var(--testo); font-weight: 600; }
+  .fiume-riga {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 9px 0; border-top: 1px solid var(--sfondo); font-size: .85rem;
+  }
+  .fiume-riga:first-of-type { border-top: 0; }
+  .fiume-nome { font-weight: 600; }
+  .fiume-info { font-size: .72rem; color: var(--testo-tenue); margin-top: 2px; }
+  .fiume-dati { text-align: right; white-space: nowrap; }
+  .fiume-livello { font-weight: 600; }
+  .fiume-portata { font-size: .7rem; color: var(--testo-tenue); }
+  .fiume-sparkline { display: block; margin-left: auto; }
+  .fiume-collegamento {
+    font-size: .82rem; background: #fdf1e8; border: 1px solid #f6cba6;
+    border-radius: 8px; padding: 8px 10px; margin-bottom: 10px;
+  }
   footer {
     max-width: 1180px; margin: 36px auto 26px; padding: 0 20px;
     font-size: .78rem; color: var(--testo-tenue);
@@ -268,6 +283,13 @@
           <div id="caldo-contenuto"></div>
         </div>
 
+        <div class="sotto-card" id="box-idrometria" hidden>
+          <h3>&#127754; Fiumi monitorati <span id="idro-titolo-giorno"></span></h3>
+          <div id="idro-collegamento"></div>
+          <div id="idrometria-contenuto"></div>
+          <div class="prev-comune" id="idrometria-nota"></div>
+        </div>
+
         <div class="sotto-card" id="box-previsioni" hidden>
           <h3>&#9925; Previsioni prossimi giorni</h3>
           <div class="previsioni-giorni" id="previsioni-contenuto"></div>
@@ -324,6 +346,12 @@
   mappa.attributionControl.addAttribution('Zone di allerta: dati DPC / Ministero della Salute');
 
   var previsioni = null;
+  var idrometria = null;
+
+  fetch('data/idrometria.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('idrometria ' + r.status)); })
+    .then(function (dati) { idrometria = dati; })
+    .catch(function (err) { console.warn('Idrometria non caricata:', err.message); });
 
   fetch('data/previsioni.json')
     .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('previsioni ' + r.status)); })
@@ -645,6 +673,7 @@
       }
     }
 
+    mostraIdrometria(nomeZona);
     mostraPrevisioni(nomeZona);
 
     var boxVocale = document.getElementById('box-vocale');
@@ -994,5 +1023,6 @@
 
 </body>
 </html>
+
 
 

@@ -1,0 +1,4716 @@
+{
+ "aggiornato": "2026-09-02T11:04:32+00:00",
+ "fonte": "Centro Funzionale Regionale della Toscana (dati non validati)",
+ "fonte_url": "https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro",
+ "nota": "Livelli e portate acquisiti in tempo reale, non sottoposti a validazione ufficiale (fonte CFR).",
+ "zone": {
+  "Versilia": [
+   {
+    "id": "TOS01004005",
+    "fiume": "Carrione",
+    "stazione": "Carrara",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 1.8,
+    "soglia2": 2.5,
+    "livello": 0.21,
+    "portata": 0.15,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004007",
+    "fiume": "Carrione",
+    "stazione": "Avenza",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 2.2,
+    "soglia2": 3.0,
+    "livello": 1.21,
+    "portata": 1.02,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004011",
+    "fiume": "Frigido",
+    "stazione": "Canevara",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 1.9,
+    "soglia2": 3.0,
+    "livello": -1.05,
+    "portata": 1.38,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -1.05
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004055",
+    "fiume": "Mare",
+    "stazione": "Forte dei Marmi",
+    "provincia": "LU",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.17,
+    "portata": null,
+    "delta_1h": -0.02,
+    "delta_3h": 0.09,
+    "delta_6h": 0.2,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.17
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004059",
+    "fiume": "Camaiore",
+    "stazione": "Camaiore",
+    "provincia": "LU",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 1.5,
+    "soglia2": 2.0,
+    "livello": -0.46,
+    "portata": 0.1,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.46
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004001",
+    "fiume": "Carrione (ramo Colonnata)",
+    "stazione": "Pesa Miseglia",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 0.5,
+    "soglia2": 0.9,
+    "livello": 0.21,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004002",
+    "fiume": "Carrione (ramo Colonnata)",
+    "stazione": "Colonnata Valle",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 0.45,
+    "soglia2": 0.6,
+    "livello": -0.1,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.30",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.1
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004003",
+    "fiume": "Carrione (ramo di Torano)",
+    "stazione": "Torano",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 0.5,
+    "soglia2": 0.9,
+    "livello": 0.02,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.02
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004005",
+    "fiume": "Carrione",
+    "stazione": "Ponte della Bugia",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": -0.2,
+    "soglia2": 0.3,
+    "livello": -1.18,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -1.18
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004006",
+    "fiume": "Gragnana",
+    "stazione": "Santuario della Salute",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 1.0,
+    "soglia2": 1.5,
+    "livello": 0.08,
+    "portata": 0.17,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.08
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004009",
+    "fiume": "Ricortola",
+    "stazione": "Ricortola",
+    "provincia": "MS",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 0.8,
+    "soglia2": 1.3,
+    "livello": 0.71,
+    "portata": null,
+    "delta_1h": 0.03,
+    "delta_3h": 0.01,
+    "delta_6h": 0.22,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.71
+     ]
+    ]
+   },
+   {
+    "id": "TOS09001000",
+    "fiume": "Baccatoio",
+    "stazione": "Baccatoio",
+    "provincia": "LU",
+    "zona_codice": "V",
+    "zona_nome": "Versilia",
+    "soglia1": 1.5,
+    "soglia2": 2.0,
+    "livello": 0.76,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.04,
+    "delta_6h": -0.08,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.76
+     ]
+    ]
+   }
+  ],
+  "Arno-Casentino": [
+   {
+    "id": "TOS01004379",
+    "fiume": "Arno",
+    "stazione": "Stia",
+    "provincia": "AR",
+    "zona_codice": "A1",
+    "zona_nome": "Arno-Casentino",
+    "soglia1": 1.5,
+    "soglia2": 2.5,
+    "livello": 1.22,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.22
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004411",
+    "fiume": "Arno",
+    "stazione": "Subbiano",
+    "provincia": "AR",
+    "zona_codice": "A1",
+    "zona_nome": "Arno-Casentino",
+    "soglia1": 3.5,
+    "soglia2": 5.0,
+    "livello": 0.64,
+    "portata": 0.43,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.64
+     ]
+    ]
+   }
+  ],
+  "Valdichiana": [
+   {
+    "id": "TOS01004521",
+    "fiume": "Canale della Chiana",
+    "stazione": "Ponte Ferrovia FI-Roma",
+    "provincia": "AR",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 2.5,
+    "soglia2": 3.0,
+    "livello": 0.06,
+    "portata": 0.64,
+    "delta_1h": 0.02,
+    "delta_3h": -0.4,
+    "delta_6h": -0.27,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.06
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004505",
+    "fiume": "Montelungo",
+    "stazione": "Chiusi",
+    "provincia": "SI",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 1.0,
+    "soglia2": 1.5,
+    "livello": -0.04,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.04
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004508",
+    "fiume": "Lago di Chiusi",
+    "stazione": "Sbarchino",
+    "provincia": "SI",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 1.6,
+    "soglia2": 1.8,
+    "livello": 0.61,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.61
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004509",
+    "fiume": "Mucchia",
+    "stazione": "Ponte SP Lauretana",
+    "provincia": "AR",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 2.0,
+    "soglia2": 2.6,
+    "livello": -0.16,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.16
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004511",
+    "fiume": "Esse di Cortona",
+    "stazione": "Camucia",
+    "provincia": "AR",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 1.5,
+    "soglia2": 2.0,
+    "livello": 0.34,
+    "portata": null,
+    "delta_1h": 0.06,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.34
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004512",
+    "fiume": "Salarco",
+    "stazione": "Montepulciano",
+    "provincia": "SI",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 2.0,
+    "soglia2": 2.7,
+    "livello": 0.79,
+    "portata": 0.12,
+    "delta_1h": 0.01,
+    "delta_3h": -0.02,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.79
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004513",
+    "fiume": "Foenna",
+    "stazione": "Sinalunga",
+    "provincia": "SI",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": 0.02,
+    "portata": 0.07,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.02
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004515",
+    "fiume": "Esse",
+    "stazione": "Foiano",
+    "provincia": "AR",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 2.5,
+    "soglia2": 3.3,
+    "livello": -0.56,
+    "portata": 0.09,
+    "delta_1h": 0.01,
+    "delta_3h": null,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.56
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004517",
+    "fiume": "Allacciante di Sx",
+    "stazione": "Foiano SP28",
+    "provincia": "AR",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 3.0,
+    "soglia2": 3.5,
+    "livello": 1.53,
+    "portata": 19.1,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.53
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004519",
+    "fiume": "Canale della Chiana",
+    "stazione": "Ponte di Cesa",
+    "provincia": "AR",
+    "zona_codice": "C",
+    "zona_nome": "Valdichiana",
+    "soglia1": 4.0,
+    "soglia2": 5.2,
+    "livello": -0.34,
+    "portata": 0.26,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.34
+     ]
+    ]
+   }
+  ],
+  "Arno-Valdarno Sup.": [
+   {
+    "id": "TOS01004557",
+    "fiume": "Oreno",
+    "stazione": "Laterina",
+    "provincia": "AR",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 1.0,
+    "soglia2": 1.5,
+    "livello": -0.04,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.04
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004561",
+    "fiume": "Arno",
+    "stazione": "Ponte Romito",
+    "provincia": "AR",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 5.5,
+    "soglia2": 6.5,
+    "livello": -0.73,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": null,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.73
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004568",
+    "fiume": "Ambra",
+    "stazione": "Bucine",
+    "provincia": "AR",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 2.2,
+    "soglia2": 3.8,
+    "livello": 0.34,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.34
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004571",
+    "fiume": "Arno",
+    "stazione": "Montevarchi",
+    "provincia": "AR",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 4.0,
+    "soglia2": 5.0,
+    "livello": 0.02,
+    "portata": 2.92,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.02
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004591",
+    "fiume": "Arno",
+    "stazione": "Incisa Valle",
+    "provincia": "FI",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 4.0,
+    "soglia2": 5.0,
+    "livello": 1.18,
+    "portata": 3.85,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.18
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004563",
+    "fiume": "Ambra",
+    "stazione": "Ambra",
+    "provincia": "AR",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 2.0,
+    "soglia2": 2.5,
+    "livello": 0.21,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004575",
+    "fiume": "Ciuffenna",
+    "stazione": "Terranuova",
+    "provincia": "AR",
+    "zona_codice": "A2",
+    "zona_nome": "Arno-Valdarno Sup.",
+    "soglia1": 2.1,
+    "soglia2": 2.5,
+    "livello": 0.47,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.47
+     ]
+    ]
+   }
+  ],
+  "Mugello-Val di Sieve": [
+   {
+    "id": "TOS01004611",
+    "fiume": "Sieve",
+    "stazione": "Bilancino",
+    "provincia": "FI",
+    "zona_codice": "M",
+    "zona_nome": "Mugello-Val di Sieve",
+    "soglia1": 2.8,
+    "soglia2": 3.3,
+    "livello": 0.78,
+    "portata": 2.4,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.78
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004621",
+    "fiume": "Sieve",
+    "stazione": "S. Piero a Sieve-Sieve",
+    "provincia": "FI",
+    "zona_codice": "M",
+    "zona_nome": "Mugello-Val di Sieve",
+    "soglia1": 2.8,
+    "soglia2": 3.5,
+    "livello": 0.91,
+    "portata": 2.09,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.91
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004623",
+    "fiume": "Carza",
+    "stazione": "S. Piero a Sieve-Carza",
+    "provincia": "FI",
+    "zona_codice": "M",
+    "zona_nome": "Mugello-Val di Sieve",
+    "soglia1": 2.8,
+    "soglia2": 5.0,
+    "livello": 0.99,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.99
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004625",
+    "fiume": "Sieve",
+    "stazione": "Dicomano",
+    "provincia": "FI",
+    "zona_codice": "M",
+    "zona_nome": "Mugello-Val di Sieve",
+    "soglia1": 2.5,
+    "soglia2": 3.5,
+    "livello": -0.13,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.13
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004641",
+    "fiume": "Sieve",
+    "stazione": "Fornacina",
+    "provincia": "FI",
+    "zona_codice": "M",
+    "zona_nome": "Mugello-Val di Sieve",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 0.27,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.27
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004642",
+    "fiume": "Sieve",
+    "stazione": "Fornacina 2 ul",
+    "provincia": "FI",
+    "zona_codice": "M",
+    "zona_nome": "Mugello-Val di Sieve",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 0.27,
+    "portata": 3.1,
+    "delta_1h": -0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.27
+     ]
+    ]
+   }
+  ],
+  "Arno-Firenze": [
+   {
+    "id": "TOS01004659",
+    "fiume": "Arno",
+    "stazione": "Nave di Rosano",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 4.0,
+    "soglia2": 5.5,
+    "livello": -0.67,
+    "portata": 6.47,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.67
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004661",
+    "fiume": "Arno",
+    "stazione": "Nave di Rosano valle",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 5.5,
+    "soglia2": 7.0,
+    "livello": 1.13,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.13
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004679",
+    "fiume": "Arno",
+    "stazione": "Firenze Uffizi",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 3.0,
+    "soglia2": 5.5,
+    "livello": 0.6,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.6
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004683",
+    "fiume": "Arno",
+    "stazione": "Firenze Uffizi 3",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 3.0,
+    "soglia2": 5.5,
+    "livello": 0.75,
+    "portata": null,
+    "delta_1h": -0.04,
+    "delta_3h": -0.06,
+    "delta_6h": -0.06,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.75
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004702",
+    "fiume": "Mugnone",
+    "stazione": "Ponte alle Mosse",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": 0.03,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.03
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004705",
+    "fiume": "Greve",
+    "stazione": "Greve",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 2.0,
+    "soglia2": 2.2,
+    "livello": 0.32,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.32
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004723",
+    "fiume": "Greve",
+    "stazione": "Tavarnuzze",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 2.6,
+    "soglia2": 4.8,
+    "livello": -0.12,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.12
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004725",
+    "fiume": "Ema",
+    "stazione": "Strada in Chianti",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 1.8,
+    "soglia2": 2.3,
+    "livello": 0.31,
+    "portata": null,
+    "delta_1h": -0.16,
+    "delta_3h": -0.12,
+    "delta_6h": -0.07,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.31
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004731",
+    "fiume": "Greve",
+    "stazione": "Ponte di Scandicci",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 2.0,
+    "soglia2": 3.15,
+    "livello": -0.11,
+    "portata": 0.24,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.11
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004901",
+    "fiume": "Arno",
+    "stazione": "Montelupo",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 5.5,
+    "soglia2": 7.0,
+    "livello": 1.21,
+    "portata": null,
+    "delta_1h": 0.02,
+    "delta_3h": -0.13,
+    "delta_6h": -0.28,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004729",
+    "fiume": "Ema",
+    "stazione": "Ponte a Niccheri",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 1.8,
+    "soglia2": 2.5,
+    "livello": 0.31,
+    "portata": 0.31,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.03,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.31
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004911",
+    "fiume": "Pesa",
+    "stazione": "Sambuca",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 1.8,
+    "soglia2": 2.3,
+    "livello": 0.7,
+    "portata": 0.02,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.7
+     ]
+    ]
+   },
+   {
+    "id": "TOS15004682",
+    "fiume": "Arno",
+    "stazione": "Firenze Uffizi 2",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 3.0,
+    "soglia2": 5.5,
+    "livello": 2.23,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      2.23
+     ]
+    ]
+   },
+   {
+    "id": "TOS19000704",
+    "fiume": "Ema",
+    "stazione": "Grassina",
+    "provincia": "FI",
+    "zona_codice": "A3",
+    "zona_nome": "Arno-Firenze",
+    "soglia1": 1.5,
+    "soglia2": 2.3,
+    "livello": 0.25,
+    "portata": 0.06,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.25
+     ]
+    ]
+   }
+  ],
+  "Bisenzio e Ombrone Pt": [
+   {
+    "id": "TOS01004779",
+    "fiume": "Bisenzio",
+    "stazione": "Gamberame",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 1.8,
+    "soglia2": 2.8,
+    "livello": 0.18,
+    "portata": 0.67,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.18
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004782",
+    "fiume": "Bisenzio",
+    "stazione": "Prato",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 1.0,
+    "soglia2": 1.5,
+    "livello": -0.56,
+    "portata": 0.52,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.30",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.56
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004784",
+    "fiume": "Marina",
+    "stazione": "Calenzano",
+    "provincia": "FI",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 1.5,
+    "soglia2": 2.5,
+    "livello": -0.13,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.13
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004791",
+    "fiume": "Bisenzio",
+    "stazione": "S. Piero a Ponti",
+    "provincia": "FI",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 3.5,
+    "soglia2": 5.5,
+    "livello": 1.15,
+    "portata": 0.13,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.15
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004795",
+    "fiume": "Fosso Reale",
+    "stazione": "Sesto Fiorentino",
+    "provincia": "FI",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": 0.12,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.12
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004811",
+    "fiume": "Arno",
+    "stazione": "Ponte a Signa",
+    "provincia": "FI",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 5.0,
+    "soglia2": 7.5,
+    "livello": 0.53,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.03,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.53
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004839",
+    "fiume": "Ombrone PT",
+    "stazione": "Pontelungo valle",
+    "provincia": "PT",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 2.0,
+    "soglia2": 2.8,
+    "livello": 0.45,
+    "portata": 0.08,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.45
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004875",
+    "fiume": "Ombrone PT",
+    "stazione": "Poggio a Caiano",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 4.0,
+    "soglia2": 5.0,
+    "livello": 0.22,
+    "portata": 0.26,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.22
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004847",
+    "fiume": "Calice",
+    "stazione": "Variante Pratese",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 3.0,
+    "soglia2": 3.5,
+    "livello": -0.16,
+    "portata": 0.05,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.16
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004851",
+    "fiume": "Brana",
+    "stazione": "Ponte dei Gelli",
+    "provincia": "PT",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 2.5,
+    "soglia2": 3.0,
+    "livello": 0.37,
+    "portata": 0.21,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.37
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004863",
+    "fiume": "Ombrone PT",
+    "stazione": "Ponte alle Vanne",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 3.6,
+    "soglia2": 4.6,
+    "livello": 0.21,
+    "portata": 0.1,
+    "delta_1h": -0.01,
+    "delta_3h": -0.02,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004869",
+    "fiume": "Bagnolo",
+    "stazione": "Bagnolo",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.37,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.37
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004871",
+    "fiume": "Stella",
+    "stazione": "Ponte alla Ceppa",
+    "provincia": "PT",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": 2.5,
+    "soglia2": 3.0,
+    "livello": -0.07,
+    "portata": 0.12,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.07
+     ]
+    ]
+   },
+   {
+    "id": "TOS15004865",
+    "fiume": "Ombrone PT",
+    "stazione": "Ponte alle Vanne Cassa",
+    "provincia": "PO",
+    "zona_codice": "B",
+    "zona_nome": "Bisenzio e Ombrone Pt",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": -0.02,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.02
+     ]
+    ]
+   }
+  ],
+  "Valdelsa-Valdera": [
+   {
+    "id": "TOS01004915",
+    "fiume": "Virginio",
+    "stazione": "Montespertoli",
+    "provincia": "FI",
+    "zona_codice": "A5",
+    "zona_nome": "Valdelsa-Valdera",
+    "soglia1": 1.0,
+    "soglia2": 2.0,
+    "livello": 0.03,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.03
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004965",
+    "fiume": "Elsa",
+    "stazione": "Poggibonsi",
+    "provincia": "SI",
+    "zona_codice": "A5",
+    "zona_nome": "Valdelsa-Valdera",
+    "soglia1": 2.5,
+    "soglia2": 4.5,
+    "livello": 0.7,
+    "portata": 0.72,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.7
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004967",
+    "fiume": "Elsa",
+    "stazione": "Certaldo",
+    "provincia": "FI",
+    "zona_codice": "A5",
+    "zona_nome": "Valdelsa-Valdera",
+    "soglia1": 3.8,
+    "soglia2": 5.5,
+    "livello": 0.67,
+    "portata": null,
+    "delta_1h": -0.02,
+    "delta_3h": 0.34,
+    "delta_6h": 0.34,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.67
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004971",
+    "fiume": "Elsa",
+    "stazione": "Castelfiorentino",
+    "provincia": "FI",
+    "zona_codice": "A5",
+    "zona_nome": "Valdelsa-Valdera",
+    "soglia1": 2.6,
+    "soglia2": 3.6,
+    "livello": -0.15,
+    "portata": 0.99,
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.15
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005115",
+    "fiume": "Era",
+    "stazione": "Molino d'Era",
+    "provincia": "PI",
+    "zona_codice": "A5",
+    "zona_nome": "Valdelsa-Valdera",
+    "soglia1": 1.5,
+    "soglia2": 2.0,
+    "livello": 0.5,
+    "portata": 0.79,
+    "delta_1h": -0.01,
+    "delta_3h": -0.19,
+    "delta_6h": -0.21,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.5
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005135",
+    "fiume": "Roglio",
+    "stazione": "Forcoli",
+    "provincia": "PI",
+    "zona_codice": "A5",
+    "zona_nome": "Valdelsa-Valdera",
+    "soglia1": 2.8,
+    "soglia2": 3.5,
+    "livello": 0.23,
+    "portata": 0.02,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.23
+     ]
+    ]
+   }
+  ],
+  "Valdarno Inf.": [
+   {
+    "id": "TOS01004921",
+    "fiume": "Pesa",
+    "stazione": "Turbone",
+    "provincia": "FI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 2.5,
+    "soglia2": 3.5,
+    "livello": 0.59,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.05,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.59
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004941",
+    "fiume": "Arno",
+    "stazione": "Empoli",
+    "provincia": "FI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 3.0,
+    "soglia2": 4.5,
+    "livello": -6.21,
+    "portata": 7.54,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -6.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS01004981",
+    "fiume": "Elsa",
+    "stazione": "Ponte a Elsa",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": 0.87,
+    "portata": 4.66,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.87
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005001",
+    "fiume": "Arno",
+    "stazione": "Fucecchio valle",
+    "provincia": "FI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 3.5,
+    "soglia2": 5.5,
+    "livello": -7.41,
+    "portata": 8.63,
+    "delta_1h": 0.01,
+    "delta_3h": 0.0,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -7.41
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005005",
+    "fiume": "Egola",
+    "stazione": "Fornacino",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 2.8,
+    "soglia2": 3.5,
+    "livello": -0.14,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.14
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005101",
+    "fiume": "Usciana",
+    "stazione": "Cateratte monte",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 10.4,
+    "soglia2": 11.0,
+    "livello": 8.18,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.03,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      8.18
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005131",
+    "fiume": "Era",
+    "stazione": "Capannoli",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 6.5,
+    "soglia2": 7.5,
+    "livello": 1.89,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.89
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005151",
+    "fiume": "Cascina",
+    "stazione": "Ponsacco",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 0.82,
+    "portata": 0.02,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.82
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005161",
+    "fiume": "Era",
+    "stazione": "Belvedere",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 8.0,
+    "soglia2": 9.0,
+    "livello": 3.82,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      3.82
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005181",
+    "fiume": "Arno",
+    "stazione": "Pontedera",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 5.0,
+    "soglia2": 6.5,
+    "livello": -0.63,
+    "portata": 6.9,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.63
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005191",
+    "fiume": "Arno",
+    "stazione": "S. Giovanni alla Vena valle",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 5.0,
+    "soglia2": 6.2,
+    "livello": 0.44,
+    "portata": 10.0,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.44
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005262",
+    "fiume": "Scolmatore",
+    "stazione": "Gello",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 5.5,
+    "soglia2": 6.5,
+    "livello": 0.28,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.28
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004935",
+    "fiume": "Orme",
+    "stazione": "Empoli-Pontorme",
+    "provincia": "FI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 1.4,
+    "soglia2": 1.9,
+    "livello": -0.48,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.48
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004993",
+    "fiume": "Arno",
+    "stazione": "Cassa Piaggioni Arno",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 4.5,
+    "soglia2": 5.5,
+    "livello": 0.64,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.1,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.64
+     ]
+    ]
+   },
+   {
+    "id": "TOS03004995",
+    "fiume": "Arno",
+    "stazione": "Cassa Piaggioni Invaso",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": -0.12,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.12
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005077",
+    "fiume": "Pescia di Collodi",
+    "stazione": "San Salvatore",
+    "provincia": "LU",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 2.0,
+    "soglia2": 2.8,
+    "livello": 1.15,
+    "portata": 0.36,
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.15
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005097",
+    "fiume": "Allacciante",
+    "stazione": "Calcinaia",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 3.5,
+    "soglia2": 4.3,
+    "livello": 0.42,
+    "portata": null,
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.42
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005141",
+    "fiume": "Era",
+    "stazione": "Ponte via Chiavaccini",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 5.0,
+    "soglia2": 6.0,
+    "livello": -0.07,
+    "portata": 0.02,
+    "delta_1h": -0.01,
+    "delta_3h": -0.43,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.07
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005193",
+    "fiume": "Arno",
+    "stazione": "S. Giovanni alla Vena valle_r",
+    "provincia": "PI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 5.0,
+    "soglia2": 6.2,
+    "livello": 0.47,
+    "portata": 11.5,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.47
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005282",
+    "fiume": "Scolmatore",
+    "stazione": "SR206 Emilia",
+    "provincia": "LI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 1.04,
+    "portata": null,
+    "delta_1h": 0.08,
+    "delta_3h": 0.27,
+    "delta_6h": 0.28,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.04
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005335",
+    "fiume": "Tora",
+    "stazione": "Ponte SS555",
+    "provincia": "LI",
+    "zona_codice": "A4",
+    "zona_nome": "Valdarno Inf.",
+    "soglia1": 2.3,
+    "soglia2": 3.0,
+    "livello": 0.01,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.01
+     ]
+    ]
+   }
+  ],
+  "Arno-Costa": [
+   {
+    "id": "TOS01005231",
+    "fiume": "Arno",
+    "stazione": "Pisa a Sostegno",
+    "provincia": "PI",
+    "zona_codice": "A6",
+    "zona_nome": "Arno-Costa",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 0.77,
+    "portata": null,
+    "delta_1h": -0.04,
+    "delta_3h": 0.1,
+    "delta_6h": 0.21,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.77
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005251",
+    "fiume": "Arno",
+    "stazione": "Bocca d'Arno 1",
+    "provincia": "PI",
+    "zona_codice": "A6",
+    "zona_nome": "Arno-Costa",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.85,
+    "portata": null,
+    "delta_1h": -0.04,
+    "delta_3h": 0.03,
+    "delta_6h": 0.18,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.85
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005342",
+    "fiume": "Scolmatore",
+    "stazione": "Stagno",
+    "provincia": "LI",
+    "zona_codice": "A6",
+    "zona_nome": "Arno-Costa",
+    "soglia1": 1.5,
+    "soglia2": 2.0,
+    "livello": 0.28,
+    "portata": null,
+    "delta_1h": 0.04,
+    "delta_3h": 0.18,
+    "delta_6h": 0.27,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.28
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005365",
+    "fiume": "Fine",
+    "stazione": "Castellina Marittima",
+    "provincia": "PI",
+    "zona_codice": "A6",
+    "zona_nome": "Arno-Costa",
+    "soglia1": 2.5,
+    "soglia2": 3.3,
+    "livello": 0.2,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.2
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005981",
+    "fiume": "Mare",
+    "stazione": "Livorno Mareografo",
+    "provincia": "LI",
+    "zona_codice": "A6",
+    "zona_nome": "Arno-Costa",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.15,
+    "portata": null,
+    "delta_1h": -0.05,
+    "delta_3h": 0.07,
+    "delta_6h": 0.21,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.15
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005351",
+    "fiume": "Chioma",
+    "stazione": "Porticciolo del Chioma",
+    "provincia": "LI",
+    "zona_codice": "A6",
+    "zona_nome": "Arno-Costa",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.35,
+    "portata": null,
+    "delta_1h": -0.06,
+    "delta_3h": -0.01,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.35
+     ]
+    ]
+   }
+  ],
+  "Etruria": [
+   {
+    "id": "TOS01005372",
+    "fiume": "Cecina",
+    "stazione": "Masso degli Specchi",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 1.7,
+    "soglia2": 2.5,
+    "livello": 0.17,
+    "portata": 0.14,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.17
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005377",
+    "fiume": "Pavone",
+    "stazione": "S. Dalmazio",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": 0.24,
+    "portata": null,
+    "delta_1h": -0.04,
+    "delta_3h": -0.04,
+    "delta_6h": -0.16,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.24
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005386",
+    "fiume": "Cecina",
+    "stazione": "Ponte SR439",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 3.3,
+    "soglia2": 4.0,
+    "livello": 2.33,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      2.33
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005395",
+    "fiume": "Cecina",
+    "stazione": "Montegemoli",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.8,
+    "soglia2": 3.5,
+    "livello": 0.94,
+    "portata": 3.03,
+    "delta_1h": 0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.94
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005401",
+    "fiume": "Cecina",
+    "stazione": "Ponte di Monterufoli",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.0,
+    "soglia2": 2.8,
+    "livello": -0.28,
+    "portata": 0.28,
+    "delta_1h": 0.02,
+    "delta_3h": 0.02,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.28
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005403",
+    "fiume": "Sterza",
+    "stazione": "Case Grisella",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.8,
+    "soglia2": 3.8,
+    "livello": 0.65,
+    "portata": null,
+    "delta_1h": -0.02,
+    "delta_3h": -0.03,
+    "delta_6h": 0.09,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.65
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005461",
+    "fiume": "Cornia",
+    "stazione": "SP Lodano",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 1.5,
+    "soglia2": 2.5,
+    "livello": -0.2,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.2
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005465",
+    "fiume": "Massera",
+    "stazione": "Molino del Balzone",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": -0.15,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.15
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005471",
+    "fiume": "Cornia",
+    "stazione": "Ponte per Montioni",
+    "provincia": "LI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": -0.34,
+    "portata": null,
+    "delta_1h": -0.03,
+    "delta_3h": -0.04,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.34
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005472",
+    "fiume": "Cornia",
+    "stazione": "Ponte per Montioni 2",
+    "provincia": "LI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": -0.37,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.37
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005485",
+    "fiume": "Milia",
+    "stazione": "Calzalunga",
+    "provincia": "LI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.8,
+    "soglia2": 5.0,
+    "livello": -0.66,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.66
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005489",
+    "fiume": "Cornia",
+    "stazione": "Vecchia SS Aurelia",
+    "provincia": "LI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 4.5,
+    "soglia2": 5.5,
+    "livello": 0.55,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.55
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005785",
+    "fiume": "Gretano",
+    "stazione": "Roccastrada",
+    "provincia": "GR",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 1.8,
+    "soglia2": 2.5,
+    "livello": 0.63,
+    "portata": null,
+    "delta_1h": -0.04,
+    "delta_3h": -0.01,
+    "delta_6h": 0.21,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.63
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005801",
+    "fiume": "Merse",
+    "stazione": "Montieri",
+    "provincia": "GR",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 1.0,
+    "soglia2": 2.0,
+    "livello": 0.24,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.24
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005379",
+    "fiume": "Possera",
+    "stazione": "Bulera",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.46,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.03,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.46
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005415",
+    "fiume": "Cecina",
+    "stazione": "Steccaia Q",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 5.0,
+    "soglia2": 6.0,
+    "livello": 1.73,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.73
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005417",
+    "fiume": "Cecina",
+    "stazione": "Steccaia",
+    "provincia": "PI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 5.0,
+    "soglia2": 6.0,
+    "livello": 1.73,
+    "portata": 1.71,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.73
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005487",
+    "fiume": "Cornia",
+    "stazione": "Cafaggio",
+    "provincia": "LI",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": -0.79,
+    "portata": null,
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.79
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005615",
+    "fiume": "Sovata",
+    "stazione": "Sovata",
+    "provincia": "GR",
+    "zona_codice": "E1",
+    "zona_nome": "Etruria",
+    "soglia1": 2.5,
+    "soglia2": 3.2,
+    "livello": 0.93,
+    "portata": 0.82,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.93
+     ]
+    ]
+   }
+  ],
+  "Isole": [
+   {
+    "id": "TOS01005441",
+    "fiume": "Mare",
+    "stazione": "Portoferraio",
+    "provincia": "LI",
+    "zona_codice": "I",
+    "zona_nome": "Isole",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 2.36,
+    "portata": null,
+    "delta_1h": 0.02,
+    "delta_3h": 0.11,
+    "delta_6h": 0.19,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      2.36
+     ]
+    ]
+   }
+  ],
+  "Etruria-Costa Sud": [
+   {
+    "id": "TOS01005572",
+    "fiume": "Pecora",
+    "stazione": "La Cura SP152",
+    "provincia": "GR",
+    "zona_codice": "E3",
+    "zona_nome": "Etruria-Costa Sud",
+    "soglia1": 2.5,
+    "soglia2": 3.5,
+    "livello": 1.59,
+    "portata": 20.5,
+    "delta_1h": 0.0,
+    "delta_3h": -0.04,
+    "delta_6h": -0.22,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.59
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005573",
+    "fiume": "Pecora",
+    "stazione": "Cura Nuova",
+    "provincia": "GR",
+    "zona_codice": "E3",
+    "zona_nome": "Etruria-Costa Sud",
+    "soglia1": 2.0,
+    "soglia2": 3.3,
+    "livello": 0.31,
+    "portata": 3.04,
+    "delta_1h": -0.16,
+    "delta_3h": 0.21,
+    "delta_6h": -1.15,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.31
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005577",
+    "fiume": "Rigiolato",
+    "stazione": "Scarlino",
+    "provincia": "GR",
+    "zona_codice": "E3",
+    "zona_nome": "Etruria-Costa Sud",
+    "soglia1": 2.5,
+    "soglia2": 3.5,
+    "livello": 0.45,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.45
+     ]
+    ]
+   }
+  ],
+  "Ombrone Gr-Costa": [
+   {
+    "id": "TOS01005601",
+    "fiume": "Bruna",
+    "stazione": "Macchiascandona",
+    "provincia": "GR",
+    "zona_codice": "O3",
+    "zona_nome": "Ombrone Gr-Costa",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": 0.43,
+    "portata": 1.09,
+    "delta_1h": 0.01,
+    "delta_3h": 0.04,
+    "delta_6h": 0.07,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.43
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005822",
+    "fiume": "OmbroneGR",
+    "stazione": "Istia",
+    "provincia": "GR",
+    "zona_codice": "O3",
+    "zona_nome": "Ombrone Gr-Costa",
+    "soglia1": 4.0,
+    "soglia2": 5.0,
+    "livello": -0.01,
+    "portata": 2.68,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.01
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005611",
+    "fiume": "Bruna",
+    "stazione": "Lepri",
+    "provincia": "GR",
+    "zona_codice": "O3",
+    "zona_nome": "Ombrone Gr-Costa",
+    "soglia1": 1.5,
+    "soglia2": 2.5,
+    "livello": 0.08,
+    "portata": 0.79,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.03,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.08
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005831",
+    "fiume": "OmbroneGR",
+    "stazione": "Ponte Tura Aurelia",
+    "provincia": "GR",
+    "zona_codice": "O3",
+    "zona_nome": "Ombrone Gr-Costa",
+    "soglia1": 6.5,
+    "soglia2": 7.5,
+    "livello": 0.39,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.39
+     ]
+    ]
+   },
+   {
+    "id": "TOS16005841",
+    "fiume": "OmbroneGR",
+    "stazione": "Berrettino",
+    "provincia": "GR",
+    "zona_codice": "O3",
+    "zona_nome": "Ombrone Gr-Costa",
+    "soglia1": 3.5,
+    "soglia2": 6.5,
+    "livello": 1.34,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.34
+     ]
+    ]
+   }
+  ],
+  "Ombrone Gr-Alto": [
+   {
+    "id": "TOS01005672",
+    "fiume": "OmbroneGR",
+    "stazione": "Buonconvento",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 6.0,
+    "soglia2": 7.5,
+    "livello": -0.13,
+    "portata": 0.42,
+    "delta_1h": 0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.13
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005641",
+    "fiume": "OmbroneGR",
+    "stazione": "Ponte del Garbo",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 6.5,
+    "soglia2": 7.5,
+    "livello": 0.43,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.43
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005651",
+    "fiume": "Arbia",
+    "stazione": "Pianella",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 1.2,
+    "soglia2": 2.0,
+    "livello": -0.44,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.44
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005655",
+    "fiume": "Arbia",
+    "stazione": "Podere Nuovo",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 4.5,
+    "soglia2": 5.5,
+    "livello": -0.27,
+    "portata": 0.23,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.27
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005657",
+    "fiume": "Sorra",
+    "stazione": "Radi",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 4.5,
+    "soglia2": 6.0,
+    "livello": 0.47,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.47
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005707",
+    "fiume": "Merse",
+    "stazione": "Ponte Orgia",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 2.5,
+    "soglia2": 3.5,
+    "livello": 0.21,
+    "portata": 0.5,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005711",
+    "fiume": "Merse",
+    "stazione": "Montepescini",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": -0.85,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.85
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005725",
+    "fiume": "Farma",
+    "stazione": "Petriolo",
+    "provincia": "SI",
+    "zona_codice": "O1",
+    "zona_nome": "Ombrone Gr-Alto",
+    "soglia1": 2.5,
+    "soglia2": 7.8,
+    "livello": -0.27,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.27
+     ]
+    ]
+   }
+  ],
+  "Ombrone Gr-Medio": [
+   {
+    "id": "TOS01005761",
+    "fiume": "Orcia",
+    "stazione": "Monte Amiata Scalo",
+    "provincia": "SI",
+    "zona_codice": "O2",
+    "zona_nome": "Ombrone Gr-Medio",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 0.22,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.22
+     ]
+    ]
+   },
+   {
+    "id": "TOS01005791",
+    "fiume": "OmbroneGR",
+    "stazione": "Sasso d'Ombrone",
+    "provincia": "GR",
+    "zona_codice": "O2",
+    "zona_nome": "Ombrone Gr-Medio",
+    "soglia1": 2.5,
+    "soglia2": 6.5,
+    "livello": -0.63,
+    "portata": 1.39,
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.63
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005781",
+    "fiume": "Orcia",
+    "stazione": "S. Angelo Cinigiano",
+    "provincia": "SI",
+    "zona_codice": "O2",
+    "zona_nome": "Ombrone Gr-Medio",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": -0.2,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.2
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005811",
+    "fiume": "Trasubbie",
+    "stazione": "Castellina",
+    "provincia": "GR",
+    "zona_codice": "O2",
+    "zona_nome": "Ombrone Gr-Medio",
+    "soglia1": 3.0,
+    "soglia2": 3.5,
+    "livello": 0.65,
+    "portata": null,
+    "delta_1h": -0.03,
+    "delta_3h": -0.06,
+    "delta_6h": -0.08,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.65
+     ]
+    ]
+   }
+  ],
+  "Serchio-Garfagnana-Lima": [
+   {
+    "id": "TOS02004017",
+    "fiume": "Vezza",
+    "stazione": "Ruosina",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 1.8,
+    "soglia2": 2.5,
+    "livello": 0.11,
+    "portata": 0.41,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.11
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004028",
+    "fiume": "Versilia",
+    "stazione": "Seravezza 1",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 2.5,
+    "soglia2": 3.2,
+    "livello": 0.89,
+    "portata": null,
+    "delta_1h": -0.12,
+    "delta_3h": -0.12,
+    "delta_6h": -0.12,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.89
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004029",
+    "fiume": "Versilia",
+    "stazione": "Seravezza 2",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 4.0,
+    "soglia2": 5.3,
+    "livello": 1.63,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.02,
+    "delta_6h": -0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.63
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004045",
+    "fiume": "Versilia",
+    "stazione": "Ponte Tavole",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 2.8,
+    "soglia2": 4.0,
+    "livello": 1.0,
+    "portata": 1.5,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.0
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004115",
+    "fiume": "Serchio",
+    "stazione": "Camporgiano",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 2.25,
+    "soglia2": 2.75,
+    "livello": -0.25,
+    "portata": 4.32,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.25
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004165",
+    "fiume": "Serchio",
+    "stazione": "Ponte di Campia",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 3.0,
+    "soglia2": 5.75,
+    "livello": -1.21,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -1.21
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004215",
+    "fiume": "Lima",
+    "stazione": "Casotti di Cutigliano",
+    "provincia": "PT",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": 0.99,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.08,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.99
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004231",
+    "fiume": "Lima",
+    "stazione": "Ponte di Lucchio",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 4.7,
+    "soglia2": 6.5,
+    "livello": 0.62,
+    "portata": 0.51,
+    "delta_1h": -0.03,
+    "delta_3h": -0.05,
+    "delta_6h": 0.05,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in diminuzione",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.62
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004255",
+    "fiume": "Lima",
+    "stazione": "Chifenti",
+    "provincia": "LU",
+    "zona_codice": "S1",
+    "zona_nome": "Serchio-Garfagnana-Lima",
+    "soglia1": 2.9,
+    "soglia2": 3.75,
+    "livello": 0.88,
+    "portata": 3.18,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.88
+     ]
+    ]
+   }
+  ],
+  "Serchio-Costa": [
+   {
+    "id": "TOS02004081",
+    "fiume": "Lago Massaciuccoli",
+    "stazione": "Torre del Lago",
+    "provincia": "LU",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": 0.35,
+    "soglia2": 0.4,
+    "livello": -0.41,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.41
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004091",
+    "fiume": "Canale Burlamacca",
+    "stazione": "Viareggio 1",
+    "provincia": "LU",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": -0.36,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.36
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004101",
+    "fiume": "Canale Burlamacca",
+    "stazione": "Viareggio 2",
+    "provincia": "LU",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.28,
+    "portata": null,
+    "delta_1h": 0.02,
+    "delta_3h": 0.11,
+    "delta_6h": 0.19,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.28
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004311",
+    "fiume": "Serchio",
+    "stazione": "Ripafratta",
+    "provincia": "PI",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": 4.5,
+    "soglia2": 7.5,
+    "livello": 0.98,
+    "portata": 8.6,
+    "delta_1h": 0.01,
+    "delta_3h": 0.02,
+    "delta_6h": 0.02,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.98
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004317",
+    "fiume": "Ozzeri",
+    "stazione": "Ripafratta 2",
+    "provincia": "PI",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": 1.8,
+    "soglia2": 2.3,
+    "livello": 0.66,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.03,
+    "delta_6h": -0.06,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.66
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004365",
+    "fiume": "Serchio",
+    "stazione": "Vecchiano",
+    "provincia": "PI",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": 7.5,
+    "soglia2": 9.0,
+    "livello": 1.27,
+    "portata": null,
+    "delta_1h": 0.07,
+    "delta_3h": 0.17,
+    "delta_6h": 0.25,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.27
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004369",
+    "fiume": "Serchio",
+    "stazione": "Bocca di Serchio",
+    "provincia": "PI",
+    "zona_codice": "S3",
+    "zona_nome": "Serchio-Costa",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.44,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.12,
+    "delta_6h": 0.19,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.44
+     ]
+    ]
+   }
+  ],
+  "Serchio-Lucca": [
+   {
+    "id": "TOS02004195",
+    "fiume": "Serchio",
+    "stazione": "Calavorno",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 4.7,
+    "soglia2": 6.65,
+    "livello": 0.74,
+    "portata": 5.39,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.74
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004271",
+    "fiume": "Serchio",
+    "stazione": "Borgo a Mozzano",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 3.0,
+    "soglia2": 5.26,
+    "livello": -3.07,
+    "portata": 2.63,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -3.07
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004284",
+    "fiume": "Serchio",
+    "stazione": "Piaggione",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 6.8,
+    "soglia2": 8.85,
+    "livello": -1.32,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -1.32
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004286",
+    "fiume": "Freddana",
+    "stazione": "Mutigliano",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 1.5,
+    "soglia2": 2.5,
+    "livello": 0.31,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.31
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004291",
+    "fiume": "Serchio",
+    "stazione": "Monte S. Quirico",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 1.5,
+    "soglia2": 2.8,
+    "livello": 0.05,
+    "portata": 12.5,
+    "delta_1h": 0.0,
+    "delta_3h": 0.01,
+    "delta_6h": 0.03,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.05
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004305",
+    "fiume": "Contesora",
+    "stazione": "Ponte Guido",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 0.9,
+    "soglia2": 1.4,
+    "livello": 0.12,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.12
+     ]
+    ]
+   },
+   {
+    "id": "TOS02004315",
+    "fiume": "Ozzeri",
+    "stazione": "Pontetetto",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": 1.4,
+    "soglia2": 1.8,
+    "livello": -0.1,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.04,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.1
+     ]
+    ]
+   },
+   {
+    "id": "TOS15004335",
+    "fiume": "Guappero",
+    "stazione": "Guappero cassa mezzo",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.04,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.04
+     ]
+    ]
+   },
+   {
+    "id": "TOS15004336",
+    "fiume": "Guappero",
+    "stazione": "Guappero cassa monte",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.06,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.06
+     ]
+    ]
+   },
+   {
+    "id": "TOS15004337",
+    "fiume": "Guappero",
+    "stazione": "Guappero cassa valle 1",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.27,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.27
+     ]
+    ]
+   },
+   {
+    "id": "TOS15004338",
+    "fiume": "Guappero",
+    "stazione": "Guappero cassa valle 2",
+    "provincia": "LU",
+    "zona_codice": "S2",
+    "zona_nome": "Serchio-Lucca",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.18,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.18
+     ]
+    ]
+   }
+  ],
+  "Lunigiana": [
+   {
+    "id": "TOS03000109",
+    "fiume": "Aulella",
+    "stazione": "Soliera",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 1.1,
+    "portata": 1.43,
+    "delta_1h": 0.03,
+    "delta_3h": 0.04,
+    "delta_6h": 0.05,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.1
+     ]
+    ]
+   },
+   {
+    "id": "TOS03001246",
+    "fiume": "Magra",
+    "stazione": "Calamazza",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 4.0,
+    "soglia2": 5.7,
+    "livello": 0.16,
+    "portata": 5.56,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.16
+     ]
+    ]
+   },
+   {
+    "id": "TOS09000001",
+    "fiume": "Magra",
+    "stazione": "Piccatello",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 2.0,
+    "soglia2": 2.7,
+    "livello": 0.07,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.07
+     ]
+    ]
+   },
+   {
+    "id": "TOS09000015",
+    "fiume": "Bagnone",
+    "stazione": "Bagnone",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": 0.7,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.7
+     ]
+    ]
+   },
+   {
+    "id": "TOS09000021",
+    "fiume": "Torrente Taverone",
+    "stazione": "Licciana Nardi",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 2.5,
+    "soglia2": 3.5,
+    "livello": 0.76,
+    "portata": null,
+    "delta_1h": 0.01,
+    "delta_3h": 0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.76
+     ]
+    ]
+   },
+   {
+    "id": "TOS09001083",
+    "fiume": "Magra",
+    "stazione": "S. Giustina",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 1.4,
+    "soglia2": 2.1,
+    "livello": -1.38,
+    "portata": 2.27,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -1.38
+     ]
+    ]
+   },
+   {
+    "id": "TOS09001246",
+    "fiume": "Magra",
+    "stazione": "Calamazza ARPAL",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 4.0,
+    "soglia2": 5.7,
+    "livello": 0.18,
+    "portata": 7.18,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.30",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.18
+     ]
+    ]
+   },
+   {
+    "id": "TOS11000705",
+    "fiume": "Magra",
+    "stazione": "Ponte Magra",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 3.0,
+    "soglia2": 3.8,
+    "livello": 0.19,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.19
+     ]
+    ]
+   },
+   {
+    "id": "TOS11000706",
+    "fiume": "Teglia",
+    "stazione": "Ponte Teglia",
+    "provincia": "MS",
+    "zona_codice": "L",
+    "zona_nome": "Lunigiana",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": 0.68,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.68
+     ]
+    ]
+   }
+  ],
+  "Fiora e Albegna-Costa e Giglio": [
+   {
+    "id": "TOS03003111",
+    "fiume": "Laguna",
+    "stazione": "Fibia",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.11,
+    "portata": null,
+    "delta_1h": 0.04,
+    "delta_3h": 0.15,
+    "delta_6h": 0.24,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in aumento",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.11
+     ]
+    ]
+   },
+   {
+    "id": "TOS03003116",
+    "fiume": "Laguna",
+    "stazione": "Diga",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.12,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.12
+     ]
+    ]
+   },
+   {
+    "id": "TOS03003117",
+    "fiume": "Laguna",
+    "stazione": "Nassa",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.1,
+    "portata": null,
+    "delta_1h": 0.04,
+    "delta_3h": 0.14,
+    "delta_6h": 0.24,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "in aumento",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.1
+     ]
+    ]
+   },
+   {
+    "id": "TOS03003118",
+    "fiume": "Laguna",
+    "stazione": "Ansedonia",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.16,
+    "portata": null,
+    "delta_1h": 0.01,
+    "delta_3h": 0.04,
+    "delta_6h": 0.09,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.16
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005865",
+    "fiume": "Osa",
+    "stazione": "Podere Peretti",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": 2.5,
+    "soglia2": 3.2,
+    "livello": 0.22,
+    "portata": null,
+    "delta_1h": -0.02,
+    "delta_3h": -0.05,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.22
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005897",
+    "fiume": "Albegna",
+    "stazione": "SP323 Amiatina",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": 4.5,
+    "soglia2": 6.0,
+    "livello": 0.75,
+    "portata": null,
+    "delta_1h": 0.09,
+    "delta_3h": 0.19,
+    "delta_6h": 0.28,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.75
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005995",
+    "fiume": "Chiarone",
+    "stazione": "S. S. 1 Aurelia",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": 4.0,
+    "soglia2": 5.0,
+    "livello": 0.13,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.13
+     ]
+    ]
+   },
+   {
+    "id": "TOS03006000",
+    "fiume": " ",
+    "stazione": "Giglio Porto",
+    "provincia": "GR",
+    "zona_codice": "F2",
+    "zona_nome": "Fiora e Albegna-Costa e Giglio",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 0.31,
+    "portata": null,
+    "delta_1h": 0.03,
+    "delta_3h": 0.15,
+    "delta_6h": 0.23,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "in aumento",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.31
+     ]
+    ]
+   }
+  ],
+  "Romagna-Toscana": [
+   {
+    "id": "TOS03004373",
+    "fiume": "Santerno",
+    "stazione": "Firenzuola Coniale",
+    "provincia": "FI",
+    "zona_codice": "R2",
+    "zona_nome": "Romagna-Toscana",
+    "soglia1": 3.0,
+    "soglia2": 4.0,
+    "livello": 0.34,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.34
+     ]
+    ]
+   },
+   {
+    "id": "TOS30250000",
+    "fiume": "Lamone",
+    "stazione": "Marradi",
+    "provincia": "FI",
+    "zona_codice": "R2",
+    "zona_nome": "Romagna-Toscana",
+    "soglia1": 1.2,
+    "soglia2": 2.0,
+    "livello": 0.01,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.20",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.01
+     ]
+    ]
+   }
+  ],
+  "Etruria-Costa Nord": [
+   {
+    "id": "TOS03005435",
+    "fiume": "Cecina",
+    "stazione": "Cecina SP39",
+    "provincia": "LI",
+    "zona_codice": "E2",
+    "zona_nome": "Etruria-Costa Nord",
+    "soglia1": 2.2,
+    "soglia2": 2.7,
+    "livello": 0.01,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": -0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.01
+     ]
+    ]
+   }
+  ],
+  "Fiora e Albegna": [
+   {
+    "id": "TOS03005881",
+    "fiume": "Albegna",
+    "stazione": "Ponte di Montemerano",
+    "provincia": "GR",
+    "zona_codice": "F1",
+    "zona_nome": "Fiora e Albegna",
+    "soglia1": 3.5,
+    "soglia2": 4.5,
+    "livello": 1.17,
+    "portata": null,
+    "delta_1h": 0.02,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.17
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005889",
+    "fiume": "Elsa",
+    "stazione": "SR74 Maremmana",
+    "provincia": "GR",
+    "zona_codice": "F1",
+    "zona_nome": "Fiora e Albegna",
+    "soglia1": 4.0,
+    "soglia2": 5.5,
+    "livello": -0.36,
+    "portata": null,
+    "delta_1h": -0.02,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.36
+     ]
+    ]
+   },
+   {
+    "id": "TOS03005895",
+    "fiume": "Albegna",
+    "stazione": "Marsiliana",
+    "provincia": "GR",
+    "zona_codice": "F1",
+    "zona_nome": "Fiora e Albegna",
+    "soglia1": 3.5,
+    "soglia2": 6.0,
+    "livello": 0.42,
+    "portata": null,
+    "delta_1h": -0.01,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.42
+     ]
+    ]
+   },
+   {
+    "id": "TOS07000046",
+    "fiume": "Fiora",
+    "stazione": "Pitigliano",
+    "provincia": "GR",
+    "zona_codice": "F1",
+    "zona_nome": "Fiora e Albegna",
+    "soglia1": 4.5,
+    "soglia2": 5.5,
+    "livello": 1.87,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.01,
+    "orario_lettura": "02/09 11.30",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      1.87
+     ]
+    ]
+   }
+  ],
+  "Valtiberina": [
+   {
+    "id": "TOS03006123",
+    "fiume": "Tevere",
+    "stazione": "Sansepolcro",
+    "provincia": "AR",
+    "zona_codice": "T",
+    "zona_nome": "Valtiberina",
+    "soglia1": 2.0,
+    "soglia2": 3.0,
+    "livello": 0.13,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": -0.01,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.45",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.13
+     ]
+    ]
+   },
+   {
+    "id": "TOS06006028",
+    "fiume": "Tevere",
+    "stazione": "Gorgabuia",
+    "provincia": "AR",
+    "zona_codice": "T",
+    "zona_nome": "Valtiberina",
+    "soglia1": 1.42,
+    "soglia2": 1.86,
+    "livello": 0.39,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.30",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.39
+     ]
+    ]
+   },
+   {
+    "id": "TOS06006078",
+    "fiume": "Invaso Diga",
+    "stazione": "Montedoglio",
+    "provincia": "AR",
+    "zona_codice": "T",
+    "zona_nome": "Valtiberina",
+    "soglia1": null,
+    "soglia2": null,
+    "livello": 386.77,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": -0.01,
+    "orario_lettura": "02/09 11.30",
+    "tendenza": "stabile",
+    "stato": null,
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      386.77
+     ]
+    ]
+   },
+   {
+    "id": "TOS19000702",
+    "fiume": "Tevere",
+    "stazione": "Pieve S. Stefano",
+    "provincia": "AR",
+    "zona_codice": "T",
+    "zona_nome": "Valtiberina",
+    "soglia1": 1.0,
+    "soglia2": 1.7,
+    "livello": -0.07,
+    "portata": null,
+    "delta_1h": 0.0,
+    "delta_3h": 0.0,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 12.00",
+    "tendenza": "stabile",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      -0.07
+     ]
+    ]
+   }
+  ],
+  "Reno": [
+   {
+    "id": "TOS30150800",
+    "fiume": "Reno",
+    "stazione": "Pracchia",
+    "provincia": "PT",
+    "zona_codice": "R1",
+    "zona_nome": "Reno",
+    "soglia1": 1.2,
+    "soglia2": 1.7,
+    "livello": 0.02,
+    "portata": 0.56,
+    "delta_1h": 0.03,
+    "delta_3h": 0.01,
+    "delta_6h": 0.0,
+    "orario_lettura": "02/09 11.20",
+    "tendenza": "in aumento",
+    "stato": "normale",
+    "storico": [
+     [
+      "2026-09-02T11:04:32+00:00",
+      0.02
+     ]
+    ]
+   }
+  ]
+ }
+}
