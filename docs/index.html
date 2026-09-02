@@ -188,6 +188,21 @@
     font-size: .78rem; color: var(--testo-tenue);
   }
   footer a { color: var(--blu); }
+  .form-contatto {
+    margin-top: 14px; padding: 14px 16px; background: #fff; border: 1px solid var(--bordo);
+    border-radius: 10px; max-width: 420px;
+  }
+  .form-contatto h3 { font-size: .85rem; color: var(--testo); margin-bottom: 8px; font-weight: 600; }
+  .form-contatto input, .form-contatto textarea {
+    width: 100%; font: inherit; font-size: .85rem; padding: 8px 10px; margin-bottom: 8px;
+    border: 1px solid var(--bordo); border-radius: 7px; box-sizing: border-box;
+  }
+  .form-contatto textarea { min-height: 70px; resize: vertical; }
+  .form-contatto button {
+    border: 0; background: var(--blu); color: #fff; font: inherit; font-size: .85rem;
+    padding: 8px 16px; border-radius: 7px; cursor: pointer;
+  }
+  .form-contatto button:hover { background: var(--blu-scuro); }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; }
     .tabs { margin-left: 0; }
@@ -313,13 +328,26 @@
   </div>
 </main>
 
-<footer>
+<footer id="contatti">
   Sito non ufficiale a scopo informativo. Per le allerte fa fede
   <a href="https://www.regione.toscana.it/allertameteo">regione.toscana.it/allertameteo</a>.
   Fonti dati: Dipartimento della Protezione Civile (pioggia), Ministero della Salute / dati estratti da
   <a href="https://github.com/ondata/ondate-calore">onData</a> (caldo), Regione Toscana — Centro Funzionale Regionale, Consorzio LaMMA.
   Progetto open source su <a href="https://github.com/emanuelc89/allerta-meteo-toscana">GitHub</a>.
   &middot; <a href="fiumi.html">Mappa fluviale con tutti i livelli idrometrici</a>
+  <p style="margin-top:14px">Progetto ideato e sviluppato da <strong>Emanuel Ciuro</strong>.</p>
+
+  <div class="form-contatto">
+    <h3>Contattami</h3>
+    <form action="https://formsubmit.co/LMNC89@GMAIL.COM" method="POST">
+      <input type="hidden" name="_subject" value="Nuovo messaggio da Allerta Meteo Toscana">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="Nome" placeholder="Il tuo nome (facoltativo)">
+      <input type="email" name="Email" placeholder="La tua email" required>
+      <textarea name="Messaggio" placeholder="Scrivi qui il tuo messaggio" required></textarea>
+      <button type="submit">Invia messaggio</button>
+    </form>
+  </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -1113,6 +1141,7 @@
 
 </body>
 </html>
+
 
 
 
