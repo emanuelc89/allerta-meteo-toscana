@@ -6,10 +6,10 @@ ufficiali (la stessa sigla e' gia' presente nel dato sorgente).
 
 Fonte: https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro
 
-Produce docs/data/idrometria.json (stato attuale) e aggiorna
-docs/data/idrometria_storico.json (storico completo, ultime ~72 ore, uso
-interno per il calcolo del grafico: il file pubblico ne espone solo gli
-ultimi punti, per restare leggero).
+Produce docs/data/idrometria.json (stato attuale, raggruppato per zona),
+docs/data/idrometria_mappa.json (elenco piatto con coordinate, per la mappa
+fluviale), e aggiorna docs/data/idrometria_storico.json (storico completo,
+uso interno) e docs/data/coordinate_idrometri.json (cache delle coordinate).
 """
 
 import json
@@ -20,11 +20,16 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 URL_STAZIONI = "https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro"
+URL_COORDINATE = (
+    "https://geo.sir.toscana.it/geoserver/geo/ows?service=WFS&version=1.0.0"
+    "&request=GetFeature&typeName=geo:cf_idrometri&outputFormat=application/json&srsName=EPSG:4326"
+)
 TIMEOUT = 20
 
 QUI = Path(__file__).resolve().parent
 OUT_DIR = QUI.parent / "docs" / "data"
 FILE_STORICO = OUT_DIR / "idrometria_storico.json"
+FILE_COORDINATE = OUT_DIR / "coordinate_idrometri.json"
 
 ORE_STORICO_DA_TENERE = 72
 PUNTI_SPARKLINE_MAX = 30
@@ -71,6 +76,34 @@ def scarica_html(url, timeout=TIMEOUT):
         return r.read().decode("utf-8", errors="replace")
 
 
+def scarica_json(url, timeout=TIMEOUT):
+    return json.loads(scarica_html(url, timeout))
+
+
+def carica_coordinate_stazioni():
+    if FILE_COORDINATE.exists():
+        try:
+            return json.loads(FILE_COORDINATE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    log("  > prima volta: scarico le coordinate delle stazioni dal registro SIR...")
+    dati = scarica_json(URL_COORDINATE)
+    coordinate = {}
+    for feat in dati.get("features", []):
+        geom = feat.get("geometry")
+        props = feat.get("properties", {})
+        id_st = props.get("id_stazione")
+        if not id_st or not geom or geom.get("type") != "Point":
+            continue
+        lng, lat = geom["coordinates"][0], geom["coordinates"][1]
+        coordinate[id_st] = [lat, lng]
+
+    FILE_COORDINATE.parent.mkdir(parents=True, exist_ok=True)
+    FILE_COORDINATE.write_text(json.dumps(coordinate, ensure_ascii=False), encoding="utf-8")
+    return coordinate
+
+
 def numero(testo):
     testo = (testo or "").strip()
     if not testo:
@@ -89,12 +122,6 @@ MARGINE_AVVICINAMENTO = 0.20
 
 
 def stato_soglia(livello, soglia1, soglia2):
-    """
-    Restituisce lo stato del livello rispetto alle soglie UFFICIALI, con una
-    fascia di preavviso ("in_avvicinamento_*") calcolata come una frazione
-    della distanza ufficiale fra soglia1 e soglia2: niente di previsto o
-    stimato, solo una lettura piu' sfumata dello stesso confronto di sempre.
-    """
     if livello is None or (soglia1 is None and soglia2 is None):
         return None
 
@@ -199,6 +226,17 @@ def main():
     zone_coperte = len(per_zona)
     log(f"  > {zone_coperte}/26 zone hanno almeno una stazione")
 
+    coordinate = carica_coordinate_stazioni()
+    con_coordinate = 0
+    for s in stazioni:
+        coord = coordinate.get(s["id"])
+        if coord:
+            s["lat"], s["lng"] = coord
+            con_coordinate += 1
+        else:
+            s["lat"], s["lng"] = None, None
+    log(f"  > {con_coordinate}/{len(stazioni)} stazioni con coordinate note")
+
     adesso = datetime.now(timezone.utc).isoformat(timespec="seconds")
     storico = aggiorna_storico(stazioni, adesso)
 
@@ -219,7 +257,20 @@ def main():
     out = OUT_DIR / "idrometria.json"
     out.write_text(json.dumps(dati, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    log(f"OK - {len(stazioni)} stazioni, {zone_coperte}/26 zone - scritto {out}")
+    campi_mappa = ("id", "fiume", "stazione", "zona_nome", "lat", "lng",
+                   "livello", "soglia1", "soglia2", "portata", "tendenza", "stato")
+    dati_mappa = {
+        "aggiornato": adesso,
+        "fonte": "Centro Funzionale Regionale della Toscana (dati non validati)",
+        "stazioni": [
+            {k: s[k] for k in campi_mappa}
+            for s in stazioni if s.get("lat") is not None
+        ],
+    }
+    out_mappa = OUT_DIR / "idrometria_mappa.json"
+    out_mappa.write_text(json.dumps(dati_mappa, ensure_ascii=False), encoding="utf-8")
+
+    log(f"OK - {len(stazioni)} stazioni, {zone_coperte}/26 zone - scritto {out} e {out_mappa}")
 
     if zone_coperte < 15:
         sys.exit(1)
