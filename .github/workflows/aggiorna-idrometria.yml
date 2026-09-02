@@ -1,0 +1,32 @@
+﻿name: Aggiorna idrometria
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Esegui lo script dell'idrometria
+        run: python scripts/fetch_idrometria.py
+
+      - name: Salva i dati aggiornati, se cambiati
+        run: |
+          git config user.name "Robot allerte meteo"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/idrometria.json docs/data/idrometria_storico.json
+          git diff --staged --quiet && echo "Nessuna modifica, salto il commit" || git commit -m "Aggiornamento automatico livelli idrometrici"
+          git push
