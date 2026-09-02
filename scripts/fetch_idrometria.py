@@ -5,18 +5,6 @@ Funzionale Regionale della Toscana, e li raggruppa per le 26 zone di allerta
 ufficiali (la stessa sigla e' gia' presente nel dato sorgente).
 
 Fonte: https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro
-I dati sono incorporati direttamente nella pagina HTML dentro un blocco
-JavaScript (non e' un'API separata): li leggiamo con un'espressione regolare,
-non e' un metodo fragile quanto sembra perche' la struttura e' stabile da anni.
-
-IMPORTANTE sull'ordine dei campi (verificato guardando l'intestazione reale
-della tabella, non assunto): il campo 6 e' "liv.2" (soglia di criticita',
-la PIU' ALTA) e il campo 7 e' "liv.1" (soglia di attenzione, la piu' bassa).
-E' l'ordine opposto a quello che ci si aspetterebbe leggendo i nomi.
-
-Il Centro Funzionale della Regione Toscana specifica che questi dati sono
-acquisiti in tempo reale e NON sottoposti a validazione: sono comunque gli
-stessi dati che il CFR stesso pubblica al pubblico, non una nostra stima.
 
 Produce docs/data/idrometria.json (stato attuale) e aggiorna
 docs/data/idrometria_storico.json (storico completo, ultime ~72 ore, uso
@@ -39,7 +27,7 @@ OUT_DIR = QUI.parent / "docs" / "data"
 FILE_STORICO = OUT_DIR / "idrometria_storico.json"
 
 ORE_STORICO_DA_TENERE = 72
-PUNTI_SPARKLINE_MAX = 30  # nel file pubblico basta un assaggio recente, non 72 ore intere
+PUNTI_SPARKLINE_MAX = 30
 
 ZONE = {
     "A1": "Arno-Casentino",
@@ -97,13 +85,31 @@ def pulisci_nome_stazione(testo):
     return re.sub(r"\s*\((GPRS|RADIO)\)\s*$", "", testo or "").strip()
 
 
+MARGINE_AVVICINAMENTO = 0.20
+
+
 def stato_soglia(livello, soglia1, soglia2):
+    """
+    Restituisce lo stato del livello rispetto alle soglie UFFICIALI, con una
+    fascia di preavviso ("in_avvicinamento_*") calcolata come una frazione
+    della distanza ufficiale fra soglia1 e soglia2: niente di previsto o
+    stimato, solo una lettura piu' sfumata dello stesso confronto di sempre.
+    """
     if livello is None or (soglia1 is None and soglia2 is None):
         return None
+
+    margine = None
+    if soglia1 is not None and soglia2 is not None and soglia2 > soglia1:
+        margine = (soglia2 - soglia1) * MARGINE_AVVICINAMENTO
+
     if soglia2 is not None and livello >= soglia2:
         return "sopra_soglia2"
     if soglia1 is not None and livello >= soglia1:
+        if margine is not None and livello >= soglia2 - margine:
+            return "in_avvicinamento_soglia2"
         return "sopra_soglia1"
+    if soglia1 is not None and margine is not None and livello >= soglia1 - margine:
+        return "in_avvicinamento_soglia1"
     return "normale"
 
 

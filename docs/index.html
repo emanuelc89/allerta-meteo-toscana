@@ -636,10 +636,18 @@
 
   var ETICHETTE_STATO_FIUME = {
     sopra_soglia2: 'sopra soglia 2 (criticità)',
+    in_avvicinamento_soglia2: 'in avvicinamento alla soglia di criticità',
     sopra_soglia1: 'sopra soglia 1 (attenzione)',
+    in_avvicinamento_soglia1: 'in avvicinamento alla soglia di attenzione',
     normale: 'sotto le soglie'
   };
-  var COLORI_STATO_FIUME = { sopra_soglia2: '#eb5757', sopra_soglia1: '#f2994a', normale: '#3f9142' };
+  var COLORI_STATO_FIUME = {
+    sopra_soglia2: '#eb5757',
+    in_avvicinamento_soglia2: '#e0672f',
+    sopra_soglia1: '#f2994a',
+    in_avvicinamento_soglia1: '#f2c94c',
+    normale: '#3f9142'
+  };
   var ICONE_TENDENZA_FIUME = { 'in aumento': '↑', 'in diminuzione': '↓', 'stabile': '→' };
 
   function mostraIdrometria(nomeZona) {
@@ -1098,4 +1106,5 @@
 
 </body>
 </html>
+
 
