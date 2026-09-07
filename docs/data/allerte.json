@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-09-07T05:41:39+00:00",
+ "aggiornato": "2026-09-07T10:53:31+00:00",
  "emesso_pioggia": "06/09/2026 14:26",
  "emesso_pioggia_data": "2026-09-06",
  "data_oggi": "2026-09-07",
@@ -29,7 +29,10 @@
    "idraulico": "verde",
    "temporali": "verde",
    "idrogeologico": "verde",
-   "caldo": null
+   "caldo": {
+    "livello": 1,
+    "etichetta": "Pre-allerta"
+   }
   },
   "Valdarno Inf.": {
    "pioggia": "verde",
