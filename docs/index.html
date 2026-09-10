@@ -203,6 +203,13 @@
     padding: 8px 16px; border-radius: 7px; cursor: pointer;
   }
   .form-contatto button:hover { background: var(--blu-scuro); }
+  .form-iscrizione input[type="email"] {
+    width: 100%; font: inherit; font-size: .85rem; padding: 8px 10px; margin-bottom: 8px;
+    border: 1px solid var(--bordo); border-radius: 7px; box-sizing: border-box;
+  }
+  .form-iscrizione .esito { font-size: .8rem; margin-top: 6px; }
+  .form-iscrizione .esito.ok { color: #3f9142; }
+  .form-iscrizione .esito.errore { color: #c0392b; }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; }
     .tabs { margin-left: 0; }
@@ -321,6 +328,14 @@
           <h3>&#128266; Riassunto vocale</h3>
           <p class="nota-copertura" id="testo-vocale"></p>
           <button id="bottone-vocale" class="btn-aggiorna" type="button" aria-label="Ascolta il bollettino">&#128266; Ascolta</button>
+        </div>
+
+        <div class="sotto-card form-iscrizione" id="box-iscrizione" hidden>
+          <h3>&#128231; Ricevi avvisi per questa zona</h3>
+          <p class="nota-copertura">Un'email solo quando succede qualcosa che vale la pena sapere — non un bollettino quotidiano.</p>
+          <input type="email" id="iscrizione-email" placeholder="La tua email" autocomplete="email">
+          <button id="bottone-iscrizione" class="btn-aggiorna" type="button">Iscrivimi</button>
+          <div class="esito" id="iscrizione-esito"></div>
         </div>
 
       </div>
@@ -810,6 +825,13 @@
       var bottoneVocaleReset = document.getElementById('bottone-vocale');
       if (bottoneVocaleReset) bottoneVocaleReset.innerHTML = '&#128266; Ascolta';
     }
+
+    var boxIscrizione = document.getElementById('box-iscrizione');
+    if (boxIscrizione) {
+      boxIscrizione.hidden = false;
+      document.getElementById('iscrizione-esito').textContent = '';
+      document.getElementById('iscrizione-esito').className = 'esito';
+    }
   }
 
   function oreDa(isoString) {
@@ -1130,6 +1152,53 @@
     });
   }
 
+  var URL_WORKER = 'https://triggeridrometria.lmnc89.workers.dev';
+
+  var bottoneIscrizione = document.getElementById('bottone-iscrizione');
+  if (bottoneIscrizione) {
+    bottoneIscrizione.addEventListener('click', function () {
+      var campoEmail = document.getElementById('iscrizione-email');
+      var esito = document.getElementById('iscrizione-esito');
+      var email = campoEmail.value.trim();
+
+      if (!email || email.indexOf('@') === -1 || !nomeSelezionato) {
+        esito.textContent = 'Scrivi un indirizzo email valido.';
+        esito.className = 'esito errore';
+        return;
+      }
+
+      bottoneIscrizione.disabled = true;
+      bottoneIscrizione.textContent = 'Invio...';
+      esito.textContent = '';
+      esito.className = 'esito';
+
+      fetch(URL_WORKER + '/iscrivi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, zona: nomeSelezionato })
+      })
+        .then(function (r) { return r.json().then(function (dati) { return { status: r.status, dati: dati }; }); })
+        .then(function (risultato) {
+          if (risultato.status === 200 && risultato.dati.ok) {
+            esito.textContent = risultato.dati.messaggio;
+            esito.className = 'esito ok';
+            campoEmail.value = '';
+          } else {
+            esito.textContent = risultato.dati.errore || 'Qualcosa non ha funzionato, riprova.';
+            esito.className = 'esito errore';
+          }
+        })
+        .catch(function () {
+          esito.textContent = 'Impossibile contattare il servizio di iscrizione. Riprova più tardi.';
+          esito.className = 'esito errore';
+        })
+        .finally(function () {
+          bottoneIscrizione.disabled = false;
+          bottoneIscrizione.textContent = 'Iscrivimi';
+        });
+    });
+  }
+
   document.getElementById('tabs').addEventListener('click', function (e) {
     var b = e.target.closest('button');
     if (!b) return;
@@ -1142,6 +1211,7 @@
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e7b35b91883449e0b1b69fbca05fce21"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
+
 
 
 

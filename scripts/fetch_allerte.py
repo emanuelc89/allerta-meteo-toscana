@@ -157,6 +157,59 @@ def carica_caldo_firenze():
     return righe
 
 
+MESI_ITALIANI = {
+    "gennaio": 1, "febbraio": 2, "marzo": 3, "aprile": 4, "maggio": 5, "giugno": 6,
+    "luglio": 7, "agosto": 8, "settembre": 9, "ottobre": 10, "novembre": 11, "dicembre": 12,
+}
+
+URL_CFR_CRITICITA = "https://www.cfr.toscana.it/index.php?IDS=2&IDSS=76"
+
+
+def controlla_bollettino_cfr_piu_recente(emissione_dpc):
+    """
+    Legge SOLO la riga di emissione del bollettino regionale del CFR (non
+    l'intera tabella delle criticita', che e' testo libero con un numero di
+    righe variabile e quindi piu' fragile da interpretare in modo affidabile).
+    Se il CFR risulta pubblicato dopo il bollettino nazionale DPC che stiamo
+    usando, lo segnaliamo soltanto: non sostituiamo i nostri dati con quelli
+    del CFR, ci limitiamo ad avvisare che ne esiste uno piu' fresco altrove.
+    Qualunque problema nel leggere questa pagina non deve mai bloccare il
+    resto dello script: in caso di dubbio, restituisce None e si prosegue.
+    """
+    try:
+        html = scarica_testo(URL_CFR_CRITICITA, timeout=15)
+    except Exception as e:
+        log(f"  > controllo CFR non riuscito ({e}), lo salto senza bloccare il resto")
+        return None
+
+    testo = re.sub(r"<[^>]+>", " ", html)
+    m = re.search(
+        r"Emissione\s+di\s+\w+\s*,?\s+(\d{1,2})\s+(\w+)\s+(\d{4})\s*,?\s+ore\s+(\d{1,2})[.:](\d{2})",
+        testo, re.IGNORECASE
+    )
+    if not m:
+        log("  > riga di emissione del CFR non trovata (formato pagina cambiato?), salto il controllo")
+        return None
+
+    giorno, mese_nome, anno, ora, minuto = m.groups()
+    mese = MESI_ITALIANI.get(mese_nome.lower())
+    if not mese:
+        log(f"  > mese '{mese_nome}' non riconosciuto, salto il controllo")
+        return None
+
+    try:
+        emissione_cfr = datetime(int(anno), mese, int(giorno), int(ora), int(minuto))
+    except ValueError:
+        log("  > data di emissione del CFR non valida, salto il controllo")
+        return None
+
+    if emissione_dpc and emissione_cfr > emissione_dpc + timedelta(hours=1):
+        log(f"  > il CFR ha un bollettino piu' recente ({emissione_cfr}) di quello DPC in uso ({emissione_dpc})")
+        return emissione_cfr.strftime("%d/%m/%Y %H:%M")
+
+    return None
+
+
 def main():
     log("Passo 1: comuni toscani...")
     comuni_toscani = carica_comuni_toscani()
@@ -168,14 +221,17 @@ def main():
     emesso_pioggia = f"{data_str[6:8]}/{data_str[4:6]}/{data_str[0:4]} {ora_str[0:2]}:{ora_str[2:4]}"
     log(f"  > trovato: bollettino emesso il {emesso_pioggia}")
 
+    log("Passo 2b: controllo se il CFR ha un bollettino piu' recente...")
+    emissione_dpc_dt = datetime(
+        int(data_str[0:4]), int(data_str[4:6]), int(data_str[6:8]),
+        int(ora_str[0:2]), int(ora_str[2:4])
+    )
+    cfr_piu_recente = controlla_bollettino_cfr_piu_recente(emissione_dpc_dt)
+
     log("Passo 3: scarico i due giorni previsti dal bollettino...")
     bollettino_a = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_today.json", timeout=45)
     bollettino_b = scarica_json(f"{BASE_RAW_DPC}/{prefisso}_tomorrow.json", timeout=45)
 
-    # IMPORTANTE: nel bollettino DPC "_today" si riferisce al GIORNO DI EMISSIONE
-    # e "_tomorrow" al giorno dopo. Siccome il bollettino esce nel pomeriggio,
-    # la mattina l'ultimo disponibile e' quello di ieri: prendere "_today" come
-    # "oggi" mostrerebbe i dati del giorno prima. Indicizzo quindi per data reale.
     per_data = {
         data_emissione.isoformat(): estrai_zone_pioggia(bollettino_a, comuni_toscani),
         (data_emissione + timedelta(days=1)).isoformat(): estrai_zone_pioggia(bollettino_b, comuni_toscani),
@@ -209,6 +265,7 @@ def main():
         "data_oggi": oggi_it.isoformat(),
         "data_domani": domani_it.isoformat(),
         "fonte_pioggia": "Dipartimento della Protezione Civile",
+        "cfr_bollettino_piu_recente": cfr_piu_recente,
         "caldo_stagione_attiva": caldo_attivo,
         "caldo_citta_coperta": "Firenze",
         "caldo_zona_coperta": ZONA_CALORE_TOSCANA,
