@@ -210,6 +210,28 @@
   .form-iscrizione .esito { font-size: .8rem; margin-top: 6px; }
   .form-iscrizione .esito.ok { color: #3f9142; }
   .form-iscrizione .esito.errore { color: #c0392b; }
+  .card-iscrizione {
+    background: #eef2f8; border: 1px solid #c7d5ea; border-left: 4px solid var(--blu);
+    border-radius: 12px; padding: 18px 20px; margin-bottom: 18px;
+  }
+  .card-iscrizione h2 { font-size: 1.05rem; margin-bottom: 6px; }
+  .card-iscrizione p { font-size: .88rem; color: var(--testo-tenue); margin-bottom: 12px; }
+  .card-iscrizione .riga-form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .card-iscrizione select, .card-iscrizione input[type="email"] {
+    font: inherit; font-size: .9rem; padding: 9px 12px;
+    border: 1px solid var(--bordo); border-radius: 8px; background: #fff;
+  }
+  .card-iscrizione select { flex: 1; min-width: 180px; }
+  .card-iscrizione input[type="email"] { flex: 1.4; min-width: 200px; }
+  .card-iscrizione button {
+    border: 0; background: var(--blu); color: #fff; font: inherit; font-size: .9rem; font-weight: 600;
+    padding: 9px 20px; border-radius: 8px; cursor: pointer; white-space: nowrap;
+  }
+  .card-iscrizione button:hover { background: var(--blu-scuro); }
+  .card-iscrizione button:disabled { opacity: .6; cursor: default; }
+  .card-iscrizione .esito { font-size: .85rem; margin-top: 10px; }
+  .card-iscrizione .esito.ok { color: #3f9142; font-weight: 600; }
+  .card-iscrizione .esito.errore { color: #c0392b; }
   @media (max-width: 900px) {
     .header-inner { flex-wrap: wrap; }
     .tabs { margin-left: 0; }
@@ -242,6 +264,45 @@
 
 <main>
   <div class="banner-riga" id="banner-riga"></div>
+
+  <div class="card card-iscrizione">
+    <h2>&#128231; Fatti avvisare, non andare a cercarlo</h2>
+    <p>Il fiume della tua zona supera una soglia ufficiale, o il rischio pioggia peggiora davvero? Te lo scriviamo noi — un'email solo quando conta, mai un bollettino quotidiano.</p>
+    <div class="riga-form">
+      <select id="iscrizione-zona">
+        <option value="">Scegli la tua zona&hellip;</option>
+        <option value="Arno-Casentino">Arno-Casentino</option>
+        <option value="Arno-Costa">Arno-Costa</option>
+        <option value="Arno-Firenze">Arno-Firenze</option>
+        <option value="Arno-Valdarno Sup.">Arno-Valdarno Sup.</option>
+        <option value="Bisenzio e Ombrone Pt">Bisenzio e Ombrone Pt</option>
+        <option value="Etruria">Etruria</option>
+        <option value="Etruria-Costa Nord">Etruria-Costa Nord</option>
+        <option value="Etruria-Costa Sud">Etruria-Costa Sud</option>
+        <option value="Fiora e Albegna">Fiora e Albegna</option>
+        <option value="Fiora e Albegna-Costa e Giglio">Fiora e Albegna-Costa e Giglio</option>
+        <option value="Isole">Isole</option>
+        <option value="Lunigiana">Lunigiana</option>
+        <option value="Mugello-Val di Sieve">Mugello-Val di Sieve</option>
+        <option value="Ombrone Gr-Alto">Ombrone Gr-Alto</option>
+        <option value="Ombrone Gr-Costa">Ombrone Gr-Costa</option>
+        <option value="Ombrone Gr-Medio">Ombrone Gr-Medio</option>
+        <option value="Reno">Reno</option>
+        <option value="Romagna-Toscana">Romagna-Toscana</option>
+        <option value="Serchio-Costa">Serchio-Costa</option>
+        <option value="Serchio-Garfagnana-Lima">Serchio-Garfagnana-Lima</option>
+        <option value="Serchio-Lucca">Serchio-Lucca</option>
+        <option value="Valdarno Inf.">Valdarno Inf.</option>
+        <option value="Valdelsa-Valdera">Valdelsa-Valdera</option>
+        <option value="Valdichiana">Valdichiana</option>
+        <option value="Valtiberina">Valtiberina</option>
+        <option value="Versilia">Versilia</option>
+      </select>
+      <input type="email" id="iscrizione-email" placeholder="La tua email" autocomplete="email">
+      <button id="bottone-iscrizione" type="button">Iscrivimi gratis</button>
+    </div>
+    <div class="esito" id="iscrizione-esito"></div>
+  </div>
 
   <div class="griglia">
     <div class="card">
@@ -328,14 +389,6 @@
           <h3>&#128266; Riassunto vocale</h3>
           <p class="nota-copertura" id="testo-vocale"></p>
           <button id="bottone-vocale" class="btn-aggiorna" type="button" aria-label="Ascolta il bollettino">&#128266; Ascolta</button>
-        </div>
-
-        <div class="sotto-card form-iscrizione" id="box-iscrizione" hidden>
-          <h3>&#128231; Ricevi avvisi per questa zona</h3>
-          <p class="nota-copertura">Un'email solo quando succede qualcosa che vale la pena sapere — non un bollettino quotidiano.</p>
-          <input type="email" id="iscrizione-email" placeholder="La tua email" autocomplete="email">
-          <button id="bottone-iscrizione" class="btn-aggiorna" type="button">Iscrivimi</button>
-          <div class="esito" id="iscrizione-esito"></div>
         </div>
 
       </div>
@@ -826,12 +879,8 @@
       if (bottoneVocaleReset) bottoneVocaleReset.innerHTML = '&#128266; Ascolta';
     }
 
-    var boxIscrizione = document.getElementById('box-iscrizione');
-    if (boxIscrizione) {
-      boxIscrizione.hidden = false;
-      document.getElementById('iscrizione-esito').textContent = '';
-      document.getElementById('iscrizione-esito').className = 'esito';
-    }
+    var selettoreZonaIscrizione = document.getElementById('iscrizione-zona');
+    if (selettoreZonaIscrizione) selettoreZonaIscrizione.value = nomeZona;
   }
 
   function oreDa(isoString) {
@@ -1157,11 +1206,18 @@
   var bottoneIscrizione = document.getElementById('bottone-iscrizione');
   if (bottoneIscrizione) {
     bottoneIscrizione.addEventListener('click', function () {
+      var selettoreZona = document.getElementById('iscrizione-zona');
       var campoEmail = document.getElementById('iscrizione-email');
       var esito = document.getElementById('iscrizione-esito');
+      var zona = selettoreZona.value;
       var email = campoEmail.value.trim();
 
-      if (!email || email.indexOf('@') === -1 || !nomeSelezionato) {
+      if (!zona) {
+        esito.textContent = 'Scegli prima la tua zona.';
+        esito.className = 'esito errore';
+        return;
+      }
+      if (!email || email.indexOf('@') === -1) {
         esito.textContent = 'Scrivi un indirizzo email valido.';
         esito.className = 'esito errore';
         return;
@@ -1175,7 +1231,7 @@
       fetch(URL_WORKER + '/iscrivi', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, zona: nomeSelezionato })
+        body: JSON.stringify({ email: email, zona: zona })
       })
         .then(function (r) { return r.json().then(function (dati) { return { status: r.status, dati: dati }; }); })
         .then(function (risultato) {
@@ -1194,7 +1250,7 @@
         })
         .finally(function () {
           bottoneIscrizione.disabled = false;
-          bottoneIscrizione.textContent = 'Iscrivimi';
+          bottoneIscrizione.textContent = 'Iscrivimi gratis';
         });
     });
   }
@@ -1211,6 +1267,11 @@
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e7b35b91883449e0b1b69fbca05fce21"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
+
+
+
+
+
 
 
 
