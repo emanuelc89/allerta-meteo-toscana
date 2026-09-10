@@ -1,10 +1,11 @@
 {
- "aggiornato": "2026-09-10T09:46:59+00:00",
+ "aggiornato": "2026-09-10T09:48:48+00:00",
  "emesso_pioggia": "09/09/2026 15:46",
  "emesso_pioggia_data": "2026-09-09",
  "data_oggi": "2026-09-10",
  "data_domani": "2026-09-11",
  "fonte_pioggia": "Dipartimento della Protezione Civile",
+ "cfr_bollettino_piu_recente": null,
  "caldo_stagione_attiva": true,
  "caldo_citta_coperta": "Firenze",
  "caldo_zona_coperta": "Arno-Firenze",
