@@ -1,12 +1,12 @@
 {
- "aggiornato": "2026-09-12T10:25:31+00:00",
+ "aggiornato": "2026-09-12T10:27:15+00:00",
  "emesso_pioggia": "11/09/2026 14:13",
  "emesso_pioggia_data": "2026-09-11",
  "data_oggi": "2026-09-12",
  "data_domani": "2026-09-13",
  "fonte_pioggia": "Dipartimento della Protezione Civile",
  "cfr_bollettino_piu_recente": "12/09/2026 11:45",
- "caldo_stagione_attiva": false,
+ "caldo_stagione_attiva": true,
  "caldo_citta_coperta": "Firenze",
  "caldo_zona_coperta": "Arno-Firenze",
  "fonte_caldo": "Ministero della Salute (dati estratti da onData)",
@@ -30,7 +30,10 @@
    "idraulico": "verde",
    "temporali": "verde",
    "idrogeologico": "verde",
-   "caldo": null
+   "caldo": {
+    "livello": 0,
+    "etichetta": "Nessun rischio"
+   }
   },
   "Valdarno Inf.": {
    "pioggia": "verde",
