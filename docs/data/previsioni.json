@@ -616,7 +616,7 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "14/09/2026 07:43",
+   "aggiornamento": "14/09/2026 13:32",
    "giorni": [
     {
      "giorno": 1,
@@ -652,13 +652,13 @@
      "giorno": 3,
      "data_descr": "Mercoledì",
      "min": 17,
-     "max": 27,
+     "max": 28,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 94,
      "umidita_giorno": 74,
      "humidex_notte": 23,
-     "humidex_giorno": 27,
+     "humidex_giorno": 28,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -667,7 +667,7 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "14/09/2026 07:43",
+   "aggiornamento": "14/09/2026 13:32",
    "giorni": [
     {
      "giorno": 1,
