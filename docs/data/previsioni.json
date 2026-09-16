@@ -4,7 +4,7 @@
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -55,7 +55,7 @@
   },
   "Arno-Costa": {
    "comune": "Livorno",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -106,21 +106,21 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 18,
-     "max": 30,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "max": 29,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 70,
      "humidex_notte": null,
-     "humidex_giorno": 30,
+     "humidex_giorno": 29,
      "humidex_notte_etichetta": null,
-     "humidex_giorno_etichetta": "qualche disagio",
+     "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
     },
     {
@@ -157,15 +157,15 @@
   },
   "Arno-Valdarno Sup.": {
    "comune": "Montevarchi",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 17,
      "max": 28,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 64,
      "humidex_notte": null,
@@ -208,15 +208,15 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 18,
      "max": 29,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 71,
      "humidex_notte": null,
@@ -259,7 +259,7 @@
   },
   "Etruria": {
    "comune": "Campiglia Marittima",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -310,7 +310,7 @@
   },
   "Etruria-Costa Nord": {
    "comune": "Piombino",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -361,7 +361,7 @@
   },
   "Etruria-Costa Sud": {
    "comune": "Piombino",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -412,7 +412,7 @@
   },
   "Fiora e Albegna": {
    "comune": "Manciano",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -463,7 +463,7 @@
   },
   "Fiora e Albegna-Costa e Giglio": {
    "comune": "Orbetello",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -514,7 +514,7 @@
   },
   "Isole": {
    "comune": "Portoferraio",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -565,7 +565,7 @@
   },
   "Lunigiana": {
    "comune": "Aulla",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -616,15 +616,15 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 17,
      "max": 28,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 74,
      "humidex_notte": null,
@@ -667,15 +667,15 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 17,
      "max": 28,
-     "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 64,
      "humidex_notte": null,
@@ -718,7 +718,7 @@
   },
   "Ombrone Gr-Costa": {
    "comune": "Grosseto",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -769,15 +769,15 @@
   },
   "Ombrone Gr-Medio": {
    "comune": "Montalcino",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 16,
      "max": 25,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 60,
      "humidex_notte": null,
@@ -820,15 +820,15 @@
   },
   "Reno": {
    "comune": "Pistoia",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 18,
      "max": 29,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 70,
      "humidex_notte": null,
@@ -871,7 +871,7 @@
   },
   "Romagna-Toscana": {
    "comune": "Firenzuola",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -922,7 +922,7 @@
   },
   "Serchio-Costa": {
    "comune": "Viareggio",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -973,7 +973,7 @@
   },
   "Serchio-Garfagnana-Lima": {
    "comune": "Montecatini-Terme",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -1024,7 +1024,7 @@
   },
   "Serchio-Lucca": {
    "comune": "Lucca",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -1075,15 +1075,15 @@
   },
   "Valdarno Inf.": {
    "comune": "Empoli",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 18,
-     "max": 30,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "max": 29,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 73,
      "humidex_notte": null,
@@ -1126,15 +1126,15 @@
   },
   "Valdelsa-Valdera": {
    "comune": "Poggibonsi",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 17,
      "max": 29,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 68,
      "humidex_notte": null,
@@ -1177,15 +1177,15 @@
   },
   "Valdichiana": {
    "comune": "Arezzo",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 16,
      "max": 27,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 64,
      "humidex_notte": null,
@@ -1228,7 +1228,7 @@
   },
   "Valtiberina": {
    "comune": "Sansepolcro",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
@@ -1279,7 +1279,7 @@
   },
   "Versilia": {
    "comune": "Massa",
-   "aggiornamento": "16/09/2026 07:59",
+   "aggiornamento": "16/09/2026 13:26",
    "giorni": [
     {
      "giorno": 1,
