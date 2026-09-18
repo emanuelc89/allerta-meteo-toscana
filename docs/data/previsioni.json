@@ -106,7 +106,7 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "18/09/2026 09:07",
+   "aggiornamento": "18/09/2026 16:23",
    "giorni": [
     {
      "giorno": 1,
@@ -128,8 +128,8 @@
      "data_descr": "Sabato",
      "min": 17,
      "max": 27,
-     "descrizione": "pioggia e schiarite",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole2.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 90,
      "umidita_giorno": 68,
      "humidex_notte": 22,
@@ -667,7 +667,7 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "18/09/2026 09:07",
+   "aggiornamento": "18/09/2026 16:23",
    "giorni": [
     {
      "giorno": 1,
@@ -922,7 +922,7 @@
   },
   "Serchio-Costa": {
    "comune": "Viareggio",
-   "aggiornamento": "18/09/2026 09:07",
+   "aggiornamento": "18/09/2026 16:23",
    "giorni": [
     {
      "giorno": 1,
