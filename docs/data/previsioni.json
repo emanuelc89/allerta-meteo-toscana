@@ -4,15 +4,15 @@
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 15,
      "max": 30,
-     "descrizione": "pioggia debole e schiarite",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 70,
      "humidex_notte": null,
@@ -31,7 +31,7 @@
      "umidita_notte": 94,
      "umidita_giorno": 55,
      "humidex_notte": 18,
-     "humidex_giorno": 19,
+     "humidex_giorno": 17,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -55,7 +55,7 @@
   },
   "Arno-Costa": {
    "comune": "Livorno",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -81,7 +81,7 @@
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 65,
      "umidita_giorno": 42,
-     "humidex_notte": 27,
+     "humidex_notte": 26,
      "humidex_giorno": 26,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -106,7 +106,7 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -127,12 +127,12 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 17,
-     "max": 27,
+     "max": 28,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 77,
      "umidita_giorno": 47,
-     "humidex_notte": 25,
+     "humidex_notte": 24,
      "humidex_giorno": 24,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -157,7 +157,7 @@
   },
   "Arno-Valdarno Sup.": {
    "comune": "Montevarchi",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -208,7 +208,7 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -229,12 +229,12 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 18,
-     "max": 27,
+     "max": 28,
      "descrizione": "poco nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": 70,
      "umidita_giorno": 44,
-     "humidex_notte": 26,
+     "humidex_notte": 24,
      "humidex_giorno": 24,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -259,7 +259,7 @@
   },
   "Etruria": {
    "comune": "Campiglia Marittima",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -310,7 +310,7 @@
   },
   "Etruria-Costa Nord": {
    "comune": "Piombino",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -412,7 +412,7 @@
   },
   "Fiora e Albegna": {
    "comune": "Manciano",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -432,13 +432,13 @@
     {
      "giorno": 2,
      "data_descr": "Martedì",
-     "min": 17,
+     "min": 18,
      "max": 31,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 82,
      "umidita_giorno": 38,
-     "humidex_notte": 22,
+     "humidex_notte": 23,
      "humidex_giorno": 26,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -463,7 +463,7 @@
   },
   "Fiora e Albegna-Costa e Giglio": {
    "comune": "Orbetello",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -489,7 +489,7 @@
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 82,
      "umidita_giorno": 38,
-     "humidex_notte": 25,
+     "humidex_notte": 27,
      "humidex_giorno": 26,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -514,7 +514,7 @@
   },
   "Isole": {
    "comune": "Portoferraio",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -565,7 +565,7 @@
   },
   "Lunigiana": {
    "comune": "Aulla",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -616,7 +616,7 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -637,13 +637,13 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 14,
-     "max": 25,
+     "max": 27,
      "descrizione": "poco nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": 82,
      "umidita_giorno": 54,
      "humidex_notte": 23,
-     "humidex_giorno": 21,
+     "humidex_giorno": 22,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -718,7 +718,7 @@
   },
   "Ombrone Gr-Costa": {
    "comune": "Grosseto",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -738,13 +738,13 @@
     {
      "giorno": 2,
      "data_descr": "Martedì",
-     "min": 20,
-     "max": 30,
+     "min": 19,
+     "max": 31,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 76,
      "umidita_giorno": 37,
-     "humidex_notte": 25,
+     "humidex_notte": 24,
      "humidex_giorno": 25,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -769,7 +769,7 @@
   },
   "Ombrone Gr-Medio": {
    "comune": "Montalcino",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -820,7 +820,7 @@
   },
   "Reno": {
    "comune": "Pistoia",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -841,12 +841,12 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 18,
-     "max": 27,
+     "max": 28,
      "descrizione": "poco nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": 74,
      "umidita_giorno": 45,
-     "humidex_notte": 24,
+     "humidex_notte": 23,
      "humidex_giorno": 24,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -871,7 +871,7 @@
   },
   "Romagna-Toscana": {
    "comune": "Firenzuola",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -892,13 +892,13 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 14,
-     "max": 21,
+     "max": 24,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 91,
      "umidita_giorno": 57,
      "humidex_notte": 19,
-     "humidex_giorno": 18,
+     "humidex_giorno": 19,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -922,7 +922,7 @@
   },
   "Serchio-Costa": {
    "comune": "Viareggio",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -944,8 +944,8 @@
      "data_descr": "Martedì",
      "min": 20,
      "max": 28,
-     "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 64,
      "umidita_giorno": 41,
      "humidex_notte": 25,
@@ -973,7 +973,7 @@
   },
   "Serchio-Garfagnana-Lima": {
    "comune": "Montecatini-Terme",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -994,7 +994,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 18,
-     "max": 28,
+     "max": 29,
      "descrizione": "poco nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": 82,
@@ -1024,7 +1024,7 @@
   },
   "Serchio-Lucca": {
    "comune": "Lucca",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -1045,7 +1045,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 18,
-     "max": 27,
+     "max": 28,
      "descrizione": "poco nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": 82,
@@ -1075,7 +1075,7 @@
   },
   "Valdarno Inf.": {
    "comune": "Empoli",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -1096,12 +1096,12 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 17,
-     "max": 26,
+     "max": 29,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 75,
      "umidita_giorno": 48,
-     "humidex_notte": 24,
+     "humidex_notte": 23,
      "humidex_giorno": 24,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -1126,7 +1126,7 @@
   },
   "Valdelsa-Valdera": {
    "comune": "Poggibonsi",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -1177,7 +1177,7 @@
   },
   "Valdichiana": {
    "comune": "Arezzo",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -1198,13 +1198,13 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 16,
-     "max": 25,
+     "max": 27,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 76,
      "umidita_giorno": 44,
      "humidex_notte": 21,
-     "humidex_giorno": 21,
+     "humidex_giorno": 22,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -1228,7 +1228,7 @@
   },
   "Valtiberina": {
    "comune": "Sansepolcro",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -1279,7 +1279,7 @@
   },
   "Versilia": {
    "comune": "Massa",
-   "aggiornamento": "21/09/2026 08:24",
+   "aggiornamento": "21/09/2026 14:03",
    "giorni": [
     {
      "giorno": 1,
@@ -1301,11 +1301,11 @@
      "data_descr": "Martedì",
      "min": 18,
      "max": 27,
-     "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 74,
      "umidita_giorno": 58,
-     "humidex_notte": 23,
+     "humidex_notte": 25,
      "humidex_giorno": 26,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
