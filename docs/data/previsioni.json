@@ -106,7 +106,7 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -208,7 +208,7 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -667,7 +667,7 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -922,15 +922,15 @@
   },
   "Serchio-Costa": {
    "comune": "Viareggio",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 18,
      "max": 26,
-     "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": null,
      "umidita_giorno": 44,
      "humidex_notte": null,
