@@ -973,7 +973,7 @@
   },
   "Serchio-Garfagnana-Lima": {
    "comune": "Montecatini-Terme",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -1024,7 +1024,7 @@
   },
   "Serchio-Lucca": {
    "comune": "Lucca",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -1075,15 +1075,15 @@
   },
   "Valdarno Inf.": {
    "comune": "Empoli",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 13,
      "max": 26,
-     "descrizione": "poco nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": null,
      "umidita_giorno": 57,
      "humidex_notte": null,
@@ -1126,7 +1126,7 @@
   },
   "Valdelsa-Valdera": {
    "comune": "Poggibonsi",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -1177,15 +1177,15 @@
   },
   "Valdichiana": {
    "comune": "Arezzo",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 11,
      "max": 24,
-     "descrizione": "sereno",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 52,
      "humidex_notte": null,
@@ -1228,7 +1228,7 @@
   },
   "Valtiberina": {
    "comune": "Sansepolcro",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
@@ -1279,7 +1279,7 @@
   },
   "Versilia": {
    "comune": "Massa",
-   "aggiornamento": "23/09/2026 07:57",
+   "aggiornamento": "23/09/2026 14:37",
    "giorni": [
     {
      "giorno": 1,
