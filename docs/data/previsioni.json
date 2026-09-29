@@ -616,7 +616,7 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "29/09/2026 07:53",
+   "aggiornamento": "29/09/2026 13:37",
    "giorni": [
     {
      "giorno": 1,
@@ -667,13 +667,13 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "29/09/2026 07:53",
+   "aggiornamento": "29/09/2026 13:37",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Martedì",
      "min": 16,
-     "max": 27,
+     "max": 26,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": null,
