@@ -13,29 +13,34 @@
     --blu-chiaro: #eef2fa;
     --sfondo: #f4f6fa;
     --testo: #172033;
+    --titolo: #0f172a;
     --testo-tenue: #64708a;
-    --bordo: #e4e8f0;
-    --ombra: 0 1px 2px rgba(23,32,51,.04), 0 6px 20px rgba(23,32,51,.06);
+    --bordo: rgba(23,32,51,.09);
+    --bordo-forte: rgba(23,32,51,.16);
+    --ombra: 0 1px 1px rgba(23,32,51,.03), 0 2px 6px rgba(23,32,51,.05), 0 12px 32px -8px rgba(23,32,51,.08);
     --ombra-sm: 0 1px 2px rgba(23,32,51,.05);
   }
   * { box-sizing: border-box; margin: 0; }
   body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--sfondo); color: var(--testo); line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
   }
+  h1, h2, h3 { color: var(--titolo); text-wrap: balance; }
+  ::selection { background: rgba(43,67,128,.18); }
   :focus-visible { outline: 2px solid var(--blu); outline-offset: 2px; }
   header { background: var(--blu); color: #fff; padding: 12px 20px; box-shadow: 0 2px 12px rgba(23,32,51,.18); }
   .header-inner {
     max-width: 1180px; margin: 0 auto;
-    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap; row-gap: 10px;
   }
+  .header-inner > .logo + div { flex: 1 1 200px; min-width: 0; }
   .logo {
     width: 42px; height: 42px; flex-shrink: 0;
     background: rgba(255,255,255,.14); border-radius: 12px;
     display: grid; place-items: center; font-size: 20px;
   }
-  header h1 { font-size: 1.18rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.25; }
+  header h1 { color: #fff; font-size: 1.18rem; font-weight: 700; letter-spacing: -.012em; line-height: 1.25; }
   header .sottotitolo { font-size: .8rem; opacity: .82; margin-top: 2px; }
   .torna {
     margin-left: auto; color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500;
@@ -49,7 +54,7 @@
     border-radius: 14px; padding: 20px 22px; box-shadow: var(--ombra);
   }
   .card h2 { font-size: 1.02rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -.005em; }
-  .card .sotto { font-size: .82rem; color: var(--testo-tenue); margin-bottom: 12px; }
+  .card .sotto { font-size: .82rem; color: var(--testo-tenue); padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--bordo); }
   #mappa { height: 640px; border-radius: 12px; border: 1px solid var(--bordo); }
   .leaflet-bar { border: 1px solid var(--bordo) !important; border-radius: 10px !important; box-shadow: var(--ombra-sm) !important; overflow: hidden; }
   .leaflet-bar a { border-bottom: 1px solid var(--bordo) !important; color: var(--testo) !important; }
