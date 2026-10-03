@@ -10,57 +10,70 @@
   :root {
     --blu: #2b4380;
     --blu-scuro: #223768;
-    --sfondo: #f2f5f9;
-    --testo: #1f2937;
-    --testo-tenue: #6b7280;
-    --bordo: #e3e8f0;
+    --blu-chiaro: #eef2fa;
+    --sfondo: #f4f6fa;
+    --testo: #172033;
+    --testo-tenue: #64708a;
+    --bordo: #e4e8f0;
+    --ombra: 0 1px 2px rgba(23,32,51,.04), 0 6px 20px rgba(23,32,51,.06);
+    --ombra-sm: 0 1px 2px rgba(23,32,51,.05);
   }
   * { box-sizing: border-box; margin: 0; }
   body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: var(--sfondo); color: var(--testo); line-height: 1.5;
+    background: var(--sfondo); color: var(--testo); line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
-  header { background: var(--blu); color: #fff; padding: 14px 20px; }
+  :focus-visible { outline: 2px solid var(--blu); outline-offset: 2px; }
+  header { background: var(--blu); color: #fff; padding: 12px 20px; box-shadow: 0 2px 12px rgba(23,32,51,.18); }
   .header-inner {
     max-width: 1180px; margin: 0 auto;
     display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   }
   .logo {
     width: 42px; height: 42px; flex-shrink: 0;
-    background: var(--blu-scuro); border-radius: 6px;
+    background: rgba(255,255,255,.14); border-radius: 12px;
     display: grid; place-items: center; font-size: 20px;
   }
-  header h1 { font-size: 1.15rem; font-weight: 700; }
-  header .sottotitolo { font-size: .82rem; opacity: .85; }
+  header h1 { font-size: 1.18rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.25; }
+  header .sottotitolo { font-size: .8rem; opacity: .82; margin-top: 2px; }
   .torna {
-    margin-left: auto; color: #fff; text-decoration: none; font-size: .88rem;
-    border: 1px solid rgba(255,255,255,.4); border-radius: 4px; padding: 6px 12px;
+    margin-left: auto; color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500;
+    border: 1px solid rgba(255,255,255,.35); border-radius: 10px; padding: 7px 14px;
+    transition: background .15s ease;
   }
-  .torna:hover { background: rgba(255,255,255,.15); }
-  main { max-width: 1180px; margin: 22px auto; padding: 0 20px; }
+  .torna:hover { background: rgba(255,255,255,.14); }
+  main { max-width: 1180px; margin: 24px auto; padding: 0 20px; }
   .card {
     background: #fff; border: 1px solid var(--bordo);
-    border-radius: 6px; padding: 18px 20px;
+    border-radius: 14px; padding: 20px 22px; box-shadow: var(--ombra);
   }
-  .card h2 { font-size: 1rem; margin-bottom: 4px; }
+  .card h2 { font-size: 1.02rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -.005em; }
   .card .sotto { font-size: .82rem; color: var(--testo-tenue); margin-bottom: 12px; }
-  #mappa { height: 640px; border-radius: 6px; }
+  #mappa { height: 640px; border-radius: 12px; border: 1px solid var(--bordo); }
+  .leaflet-bar { border: 1px solid var(--bordo) !important; border-radius: 10px !important; box-shadow: var(--ombra-sm) !important; overflow: hidden; }
+  .leaflet-bar a { border-bottom: 1px solid var(--bordo) !important; color: var(--testo) !important; }
+  .leaflet-control-attribution { font-size: .72rem !important; background: rgba(255,255,255,.85) !important; }
+  .leaflet-popup-content-wrapper { border-radius: 12px; box-shadow: var(--ombra); }
   .legenda {
-    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--sfondo);
+    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--bordo);
     display: flex; flex-wrap: wrap; gap: 14px; font-size: .82rem; color: var(--testo-tenue);
   }
   .pallino { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: -1px; }
   .popup-fiume { font-size: .88rem; min-width: 180px; }
   .popup-fiume .titolo { font-weight: 700; margin-bottom: 4px; }
-  .popup-fiume .riga { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
+  .popup-fiume .riga { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; font-variant-numeric: tabular-nums; }
   .popup-fiume .stato-testo { font-weight: 600; }
   footer {
-    max-width: 1180px; margin: 24px auto 26px; padding: 0 20px;
-    font-size: .78rem; color: var(--testo-tenue);
+    max-width: 1180px; margin: 40px auto 28px; padding: 22px 20px 0;
+    border-top: 1px solid var(--bordo);
+    font-size: .78rem; color: var(--testo-tenue); line-height: 1.6;
   }
-  footer a { color: var(--blu); }
+  footer a { color: var(--blu); text-decoration-color: rgba(43,67,128,.35); }
   @media (max-width: 700px) {
     #mappa { height: 480px; }
+    main { margin: 16px auto; padding: 0 14px; }
+    .card { padding: 16px; }
   }
 </style>
 </head>
