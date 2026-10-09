@@ -1,6 +1,6 @@
 {
- "aggiornato": "2026-10-09T14:39:36+00:00",
- "emesso_pioggia": "09/10/2026 15:07",
+ "aggiornato": "2026-10-09T14:40:40+00:00",
+ "emesso_pioggia": "09/10/2026 16:15",
  "emesso_pioggia_data": "2026-10-09",
  "data_oggi": "2026-10-09",
  "data_domani": "2026-10-10",
@@ -287,9 +287,9 @@
    "caldo": null
   },
   "Isole": {
-   "pioggia": "gialla",
+   "pioggia": "verde",
    "idraulico": "verde",
-   "temporali": "gialla",
+   "temporali": "verde",
    "idrogeologico": "verde",
    "caldo": null
   },
