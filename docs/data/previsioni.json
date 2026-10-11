@@ -565,7 +565,7 @@
   },
   "Lunigiana": {
    "comune": "Aulla",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -871,7 +871,7 @@
   },
   "Romagna-Toscana": {
    "comune": "Firenzuola",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -973,7 +973,7 @@
   },
   "Serchio-Garfagnana-Lima": {
    "comune": "Montecatini-Terme",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -994,7 +994,7 @@
      "giorno": 2,
      "data_descr": "Lunedì",
      "min": 14,
-     "max": 25,
+     "max": 23,
      "descrizione": "pioggia debole e schiarite",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": 95,
@@ -1024,7 +1024,7 @@
   },
   "Serchio-Lucca": {
    "comune": "Lucca",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -1045,13 +1045,13 @@
      "giorno": 2,
      "data_descr": "Lunedì",
      "min": 14,
-     "max": 24,
+     "max": 22,
      "descrizione": "pioggia debole e schiarite",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": 95,
      "umidita_giorno": 75,
      "humidex_notte": 20,
-     "humidex_giorno": 22,
+     "humidex_giorno": 21,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -1075,7 +1075,7 @@
   },
   "Valdarno Inf.": {
    "comune": "Empoli",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -1096,7 +1096,7 @@
      "giorno": 2,
      "data_descr": "Lunedì",
      "min": 15,
-     "max": 23,
+     "max": 22,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 95,
@@ -1111,7 +1111,7 @@
      "giorno": 3,
      "data_descr": "Martedì",
      "min": 12,
-     "max": 23,
+     "max": 22,
      "descrizione": "sereno",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
      "umidita_notte": 78,
@@ -1126,7 +1126,7 @@
   },
   "Valdelsa-Valdera": {
    "comune": "Poggibonsi",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -1177,7 +1177,7 @@
   },
   "Valdichiana": {
    "comune": "Arezzo",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -1279,7 +1279,7 @@
   },
   "Versilia": {
    "comune": "Massa",
-   "aggiornamento": "11/10/2026 08:40",
+   "aggiornamento": "11/10/2026 09:27",
    "giorni": [
     {
      "giorno": 1,
@@ -1300,7 +1300,7 @@
      "giorno": 2,
      "data_descr": "Lunedì",
      "min": 15,
-     "max": 22,
+     "max": 21,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 89,
