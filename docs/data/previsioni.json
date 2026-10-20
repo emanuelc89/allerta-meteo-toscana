@@ -2,8 +2,108 @@
  "fonte": "Consorzio LaMMA - Regione Toscana",
  "nota": "Previsione del comune piu' popoloso della zona. L'Humidex e' un indicatore calcolato, non un dato ufficiale.",
  "zone": {
-  "Arno-Casentino": null,
-  "Arno-Costa": null,
+  "Arno-Casentino": {
+   "comune": "Bibbiena",
+   "aggiornamento": "20/10/2026 08:11",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Martedì",
+     "min": 8,
+     "max": 19,
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "umidita_notte": null,
+     "umidita_giorno": 78,
+     "humidex_notte": null,
+     "humidex_giorno": 17,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "nessun disagio",
+     "caldo_stimato": false
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Mercoledì",
+     "min": 10,
+     "max": 16,
+     "descrizione": "pioggia debole",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
+     "umidita_notte": 98,
+     "umidita_giorno": 95,
+     "humidex_notte": 16,
+     "humidex_giorno": 17,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio",
+     "caldo_stimato": false
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Giovedì",
+     "min": 6,
+     "max": 15,
+     "descrizione": "poco nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/poco_nuvoloso.png",
+     "umidita_notte": 98,
+     "umidita_giorno": 77,
+     "humidex_notte": 11,
+     "humidex_giorno": 10,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio",
+     "caldo_stimato": false
+    }
+   ]
+  },
+  "Arno-Costa": {
+   "comune": "Livorno",
+   "aggiornamento": "20/10/2026 08:11",
+   "giorni": [
+    {
+     "giorno": 1,
+     "data_descr": "Martedì",
+     "min": 17,
+     "max": 22,
+     "descrizione": "pioggia moderata-forte",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
+     "umidita_notte": null,
+     "umidita_giorno": 69,
+     "humidex_notte": null,
+     "humidex_giorno": 24,
+     "humidex_notte_etichetta": null,
+     "humidex_giorno_etichetta": "nessun disagio",
+     "caldo_stimato": false
+    },
+    {
+     "giorno": 2,
+     "data_descr": "Mercoledì",
+     "min": 17,
+     "max": 21,
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
+     "umidita_notte": 84,
+     "umidita_giorno": 73,
+     "humidex_notte": 21,
+     "humidex_giorno": 23,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio",
+     "caldo_stimato": false
+    },
+    {
+     "giorno": 3,
+     "data_descr": "Giovedì",
+     "min": 15,
+     "max": 20,
+     "descrizione": "sereno",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/sereno.png",
+     "umidita_notte": 62,
+     "umidita_giorno": 45,
+     "humidex_notte": 20,
+     "humidex_giorno": 17,
+     "humidex_notte_etichetta": "nessun disagio",
+     "humidex_giorno_etichetta": "nessun disagio",
+     "caldo_stimato": false
+    }
+   ]
+  },
   "Arno-Firenze": {
    "comune": "Firenze",
    "aggiornamento": "20/10/2026 08:11",
