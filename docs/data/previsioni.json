@@ -1177,7 +1177,7 @@
   },
   "Valdichiana": {
    "comune": "Arezzo",
-   "aggiornamento": "23/10/2026 08:21",
+   "aggiornamento": "23/10/2026 14:25",
    "giorni": [
     {
      "giorno": 1,
@@ -1279,15 +1279,15 @@
   },
   "Versilia": {
    "comune": "Massa",
-   "aggiornamento": "23/10/2026 08:21",
+   "aggiornamento": "23/10/2026 14:25",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Venerdì",
      "min": 15,
      "max": 19,
-     "descrizione": "pioggia moderata-forte",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
+     "descrizione": "pioggia debole",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
      "umidita_notte": null,
      "umidita_giorno": 85,
      "humidex_notte": null,
