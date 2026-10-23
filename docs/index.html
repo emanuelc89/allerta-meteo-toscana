@@ -2,1604 +2,429 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Allerta Meteo Toscana — Bollettino per zone di allerta</title>
 <meta name="description" content="Allerte pioggia e caldo per le zone di allerta della Toscana. Dati da fonti ufficiali aperte.">
+<meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1220" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b4cb3'/%3E%3Cpath d='M16 6 27 25H5z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 13v6' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='22' r='1.4' fill='white'/%3E%3C/svg%3E">
+<script>
+  // Applica il tema salvato prima del primo disegno, per evitare il lampo bianco.
+  try { var t = localStorage.getItem('tema'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="assets/stile.css">
 <style>
-  :root {
-    --blu: #2b4380;
-    --blu-scuro: #223768;
-    --blu-chiaro: #eef2fa;
-    --sfondo: #f4f6fa;
-    --superficie: #ffffff;
-    --testo: #172033;
-    --titolo: #0f172a;
-    --testo-tenue: #64708a;
-    --bordo: rgba(23,32,51,.09);
-    --bordo-forte: rgba(23,32,51,.16);
-    --raggio: 14px;
-    --raggio-sm: 10px;
-    --ombra: 0 1px 1px rgba(23,32,51,.03), 0 2px 6px rgba(23,32,51,.05), 0 12px 32px -8px rgba(23,32,51,.08);
-    --ombra-sm: 0 1px 2px rgba(23,32,51,.05);
-    --anello: 0 0 0 3px rgba(43,67,128,.16);
-    --verde-bg: #e6f5eb;
-    --verde-bordo: #c3e6cf;
-    --nessuna: #a9d6b5;
-    --p-gialla: #f2c94c;
-    --p-arancione: #f2994a;
-    --p-rossa: #eb5757;
-    --c1: #f6c453;
-    --c2: #f2994a;
-    --c3: #d64545;
+  /* ---------- Avvisi in cima ---------- */
+  .avvisi { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 12px; }
+  .avvisi:empty { display: none; }
+  .avviso {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--superficie); border: 1px solid var(--bordo); border-radius: 16px;
+    padding: 14px 16px; box-shadow: var(--ombra-sm); position: relative; overflow: hidden;
   }
-  * { box-sizing: border-box; margin: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: var(--sfondo); color: var(--testo); line-height: 1.55;
-    -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
+  .avviso::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--colore, var(--liv-verde)); }
+  .avviso .bolla {
+    width: 38px; height: 38px; border-radius: 12px; flex-shrink: 0; display: grid; place-items: center;
+    background: var(--tenue, var(--liv-verde-tenue)); color: var(--forte, var(--liv-verde-testo));
   }
-  h1, h2, h3 { color: var(--titolo); text-wrap: balance; }
-  ::selection { background: rgba(43,67,128,.18); }
-  :focus-visible { outline: 2px solid var(--blu); outline-offset: 2px; }
+  .avviso .bolla svg { width: 20px; height: 20px; }
+  .avviso strong { display: block; font-weight: 700; color: var(--titolo); line-height: 1.3; margin-bottom: 2px; }
+  .avviso p { font-size: .86rem; color: var(--testo-tenue); line-height: 1.5; }
+  .avviso .azioni-avviso { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .avviso.verde { --colore: var(--liv-verde); --tenue: var(--liv-verde-tenue); --forte: var(--liv-verde-testo); }
+  .avviso.gialla { --colore: var(--liv-gialla); --tenue: var(--liv-gialla-tenue); --forte: var(--liv-gialla-testo); }
+  .avviso.arancione { --colore: var(--liv-arancione); --tenue: var(--liv-arancione-tenue); --forte: var(--liv-arancione-testo); }
+  .avviso.rossa { --colore: var(--liv-rossa); --tenue: var(--liv-rossa-tenue); --forte: var(--liv-rossa-testo); }
+  .avviso.neutro { --colore: var(--liv-nd); --tenue: var(--liv-nd-tenue); --forte: var(--liv-nd-testo); }
+  .avviso.info { --colore: var(--blu); --tenue: var(--blu-tenue); --forte: var(--blu); }
 
-  header {
-    background: var(--blu); color: #fff; padding: 12px 20px;
-    box-shadow: 0 2px 12px rgba(23,32,51,.18);
-  }
-  .header-inner {
-    max-width: 1180px; margin: 0 auto;
-    display: flex; align-items: center; gap: 14px;
-  }
-  .logo {
-    width: 42px; height: 42px; flex-shrink: 0;
-    background: rgba(255,255,255,.14); border-radius: 12px;
-    display: grid; place-items: center; font-size: 20px;
-    transition: background 0.6s ease;
-  }
-  .logo.logo-attenzione { animation: pulsaLogo 2.2s ease-in-out infinite; }
-  @keyframes pulsaLogo {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(235,87,87,.55); }
-    50% { box-shadow: 0 0 0 8px rgba(235,87,87,0); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .logo.logo-attenzione { animation: none; }
-  }
-  header h1 { color: #fff; font-size: 1.18rem; font-weight: 700; letter-spacing: -.012em; line-height: 1.25; }
-  header .sottotitolo { font-size: .8rem; opacity: .82; margin-top: 2px; }
-  .tabs {
-    margin-left: auto; display: flex; gap: 2px;
-    background: rgba(0,0,0,.18); border-radius: 12px; padding: 3px;
-  }
-  .tabs button {
-    border: 0; background: transparent; color: #fff; cursor: pointer;
-    font: inherit; font-size: .88rem; font-weight: 500; padding: 7px 16px; border-radius: 9px;
-    transition: background .15s ease, color .15s ease;
-  }
-  .tabs button:hover { background: rgba(255,255,255,.12); }
-  .tabs button.attivo { background: #fff; color: var(--blu); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
-  .link-fiumi {
-    color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500; white-space: nowrap;
-    border: 1px solid rgba(255,255,255,.35); border-radius: 10px; padding: 7px 14px;
-    transition: background .15s ease;
-  }
-  .link-fiumi:hover { background: rgba(255,255,255,.14); }
-
-  main { max-width: 1180px; margin: 24px auto; padding: 0 20px; }
-
-  .banner-riga { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 10px; }
-  .banner {
-    border-radius: var(--raggio-sm); padding: 12px 14px 12px 16px;
-    display: flex; align-items: center; gap: 12px;
-    background: #f0f9f3; border: 1px solid var(--bordo); border-left: 4px solid #3f9142;
+  /* ---------- Barra di riepilogo / filtri ---------- */
+  .riepilogo {
+    margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
+    background: var(--superficie); border: 1px solid var(--bordo); border-radius: 16px; padding: 12px 14px;
     box-shadow: var(--ombra-sm);
   }
-  .banner.pioggia-attiva { background: #eef5fc; border-left-color: #2f80c9; }
-  .banner.caldo-attivo { background: #fef4ec; border-left-color: #e08a3c; }
-  .banner.avviso { background: #fdefed; border-left-color: #c0392b; }
-  .banner.neutro { background: #f7f8fb; border-left-color: #94a3b8; }
-  .banner .pallino {
-    width: 32px; height: 32px; flex-shrink: 0; color: #fff;
-    border-radius: 50%; display: grid; place-items: center; font-size: 15px;
-  }
-  .banner strong { display: block; font-weight: 650; color: var(--titolo); line-height: 1.3; }
-  .banner span { font-size: .84rem; color: var(--testo-tenue); line-height: 1.45; }
+  .riepilogo .etichetta-sezione { margin-right: 2px; }
+  .riepilogo .meta { margin-left: auto; display: flex; align-items: center; gap: 10px; font-size: .8rem; color: var(--testo-tenue); }
 
+  /* ---------- Griglia principale ---------- */
   .griglia {
-    display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(320px, 1fr);
-    gap: 20px; align-items: start; margin-top: 20px;
+    display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(330px, 1fr);
+    gap: 18px; align-items: start; margin-top: 16px;
   }
-  .card {
-    background: var(--superficie); border: 1px solid var(--bordo);
-    border-radius: var(--raggio); padding: 20px 22px; box-shadow: var(--ombra);
-  }
-  .card-testa { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--bordo); }
-  .card-testa h2 { margin-bottom: 0; }
-  .card h2 { font-size: 1.02rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -.008em; }
-  .quando { font-size: .8rem; color: var(--testo-tenue); }
-
-  #mappa { height: 500px; border-radius: 12px; border: 1px solid var(--bordo); }
-  .leaflet-container { background: #fff; font: inherit; }
-  .leaflet-interactive { transition: fill 0.5s ease; }
-  .leaflet-bar { border: 1px solid var(--bordo) !important; border-radius: 10px !important; box-shadow: var(--ombra-sm) !important; overflow: hidden; }
-  .leaflet-bar a { border-bottom: 1px solid var(--bordo) !important; color: var(--testo) !important; }
-  .leaflet-control-attribution { font-size: .72rem !important; background: rgba(255,255,255,.85) !important; }
-  .leaflet-tooltip { white-space: normal; max-width: 220px; border-radius: 8px; border-color: var(--bordo); box-shadow: var(--ombra-sm); font-size: .82rem; }
-  #pan-dett, #banner-riga { transition: opacity 0.25s ease; }
-  .dissolvenza { opacity: 0; }
-  @media (prefers-reduced-motion: reduce) {
-    .leaflet-interactive, #pan-dett, #banner-riga, .prev-giorno *, .pallino { transition: none !important; animation: none !important; }
-  }
-  .errore-mappa {
-    height: 100%; display: grid; place-items: center;
-    color: var(--testo-tenue); text-align: center; padding: 24px; font-size: .92rem;
-  }
-
-  .legenda { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bordo); }
-  .legenda-gruppo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: .82rem; color: var(--testo-tenue); margin-bottom: 8px; }
-  .legenda-titolo { font-weight: 600; color: var(--testo); margin-right: 2px; }
-  .quadr { width: 13px; height: 13px; border-radius: 4px; display: inline-block; margin-right: 5px; vertical-align: -2px; }
-  .legenda-icona { width: 15px; height: 15px; vertical-align: -3px; margin-right: 4px; }
-  .legenda-nota { font-size: .76rem; color: var(--testo-tenue); font-style: italic; }
-
-  .btn-aggiorna {
-    border: 1px solid var(--bordo); background: #fff; color: var(--blu);
-    font: inherit; font-size: .8rem; font-weight: 500; padding: 6px 12px; border-radius: 9px; cursor: pointer;
-    box-shadow: var(--ombra-sm); transition: background .15s ease, box-shadow .15s ease;
-  }
-  .btn-aggiorna:hover { background: var(--blu-chiaro); border-color: var(--bordo-forte); }
-  .btn-aggiorna:active { transform: translateY(1px); }
-  .btn-aggiorna:disabled { opacity: .6; cursor: default; }
-
-  .ricerca { position: relative; margin-bottom: 14px; }
-  .ricerca input {
-    width: 100%; font: inherit; font-size: .95rem;
-    padding: 11px 12px 11px 38px;
-    border: 1px solid var(--bordo); border-radius: var(--raggio-sm);
-    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364708a' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 12px center;
-    background-size: 18px; transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .ricerca input:focus { outline: none; border-color: var(--blu); box-shadow: var(--anello); }
+  .strumenti-mappa { display: flex; gap: 8px; margin-bottom: 12px; }
+  .ricerca { position: relative; flex: 1; min-width: 0; }
   .risultati {
     position: absolute; z-index: 1200; left: 0; right: 0; top: calc(100% + 6px);
-    background: #fff; border: 1px solid var(--bordo); border-radius: 12px;
-    box-shadow: var(--ombra);
-    list-style: none; margin: 0; padding: 6px; max-height: 260px; overflow-y: auto;
+    background: var(--superficie); border: 1px solid var(--bordo-forte); border-radius: 14px;
+    box-shadow: var(--ombra-alta); list-style: none; margin: 0; padding: 6px; max-height: 300px; overflow-y: auto;
   }
   .risultati li {
-    padding: 9px 11px; border-radius: 8px; cursor: pointer; font-size: .92rem;
-    display: flex; justify-content: space-between; gap: 10px; align-items: baseline;
+    padding: 9px 11px; border-radius: 9px; cursor: pointer; font-size: .92rem;
+    display: flex; justify-content: space-between; gap: 10px; align-items: center;
   }
-  .risultati li.evidenziato, .risultati li:hover { background: var(--blu-chiaro); }
-  .risultati .zona-nome { color: var(--testo-tenue); font-size: .8rem; white-space: nowrap; }
+  .risultati li[aria-selected="true"], .risultati li[role="option"]:hover { background: var(--blu-tenue); }
+  .risultati .zona-nome { color: var(--testo-tenue); font-size: .78rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+  .risultati mark { background: none; color: var(--blu); font-weight: 700; }
   .risultati .vuoto { color: var(--testo-tenue); cursor: default; }
-  .risultati .vuoto:hover { background: transparent; }
+
+  #mappa { height: 560px; }
+  .leaflet-interactive { transition: fill .45s ease, fill-opacity .3s ease, stroke-width .15s ease; }
+  .leaflet-control-vista a { display: grid !important; place-items: center; }
+  .leaflet-control-vista svg { width: 16px; height: 16px; }
+  .icona-mappa { pointer-events: none; }
+  .icona-mappa svg { filter: drop-shadow(0 1px 1.5px rgba(0,0,0,.4)); }
+
+  .legenda { margin-top: 14px; display: grid; gap: 8px; font-size: .8rem; color: var(--testo-tenue); }
+  .legenda-gruppo { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+  .legenda-titolo { font-weight: 700; color: var(--testo); }
+  .quadr { width: 12px; height: 12px; border-radius: 4px; display: inline-block; margin-right: 6px; vertical-align: -1px; }
+  .legenda-voce { display: inline-flex; align-items: center; }
+
+  /* ---------- Pannello laterale ---------- */
+  .pannello { padding: 0; overflow: hidden; }
+  @media (min-width: 981px) {
+    .pannello { position: sticky; top: 78px; max-height: calc(100vh - 96px); display: flex; flex-direction: column; }
+    .pannello > .vista { overflow-y: auto; overscroll-behavior: contain; }
+  }
+  .vista { padding: 18px 20px 20px; }
+  .vista-testa { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+  .vista-testa h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.012em; }
+  .elenco-zone { list-style: none; padding: 0; display: grid; gap: 2px; }
+  .zona-voce {
+    width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px;
+    padding: 10px 10px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left;
+    border-radius: 11px; cursor: pointer; transition: background .15s ease;
+  }
+  .zona-voce:hover { background: var(--superficie-2); }
+  .zona-voce[aria-current="true"] { background: var(--blu-tenue); }
+  .zona-voce .nome { font-weight: 600; font-size: .92rem; color: var(--titolo); line-height: 1.3; }
+  .zona-voce .sotto { font-size: .76rem; color: var(--testo-tenue); display: flex; gap: 8px; flex-wrap: wrap; }
+  .zona-voce .freccia { color: var(--testo-tenue); width: 16px; height: 16px; }
+  .elenco-vuoto { color: var(--testo-tenue); font-size: .9rem; padding: 18px 8px; text-align: center; }
+  .suggerimento-mappa {
+    display: flex; gap: 10px; align-items: center; font-size: .84rem; color: var(--testo-tenue);
+    background: var(--superficie-2); border: 1px dashed var(--bordo-forte); border-radius: 12px; padding: 10px 12px; margin-bottom: 12px;
+  }
+  .suggerimento-mappa svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--blu); }
+
+  .dett-testa { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  .dett-testa h2 { font-size: 1.35rem; font-weight: 800; letter-spacing: -.022em; }
+  .dett-livello { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .dett-livello .badge { font-size: .84rem; padding: 7px 11px 7px 10px; }
+  .pan-luogo { font-size: .86rem; color: var(--testo-tenue); margin-top: 10px; }
+  .pan-luogo summary { cursor: pointer; color: var(--blu); font-weight: 600; font-size: .82rem; margin-top: 4px; width: fit-content; }
+  .pan-luogo details p { margin-top: 6px; font-size: .82rem; line-height: 1.6; }
   .comune-trovato {
-    display: inline-block; font-size: .84rem; font-weight: 500; color: var(--blu); background: var(--blu-chiaro);
-    border: 1px solid rgba(43,67,128,.15); border-radius: 999px; padding: 5px 12px; margin-top: 8px;
+    display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; font-weight: 600; color: var(--blu); background: var(--blu-tenue);
+    border-radius: 999px; padding: 6px 12px; margin-top: 10px;
   }
+  .barra-dett { display: flex; gap: 6px; margin: -4px 0 12px; }
 
-  .pannello .suggerimento {
-    color: var(--testo-tenue); font-size: .92rem; text-align: center; padding: 34px 16px;
-    border: 1px dashed var(--bordo-forte); border-radius: 12px; background: #fafbfd;
+  .sezione {
+    background: var(--superficie-2); border: 1px solid var(--bordo); border-radius: 14px;
+    padding: 14px 16px; margin-top: 12px;
   }
-  .pan-testa h2 { font-size: 1.2rem; font-weight: 700; margin: 0; letter-spacing: -.01em; }
-  .pan-luogo { font-size: .88rem; color: var(--testo-tenue); margin-top: 4px; }
-
-  .sotto-card {
-    background: #fafbfd; border: 1px solid var(--bordo); border-radius: 12px;
-    padding: 14px 16px; margin-top: 14px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
-  }
-  .sotto-card h3 {
-    font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
-    color: var(--testo-tenue); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
-  }
+  .sezione h3 { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .sezione h3 svg { width: 15px; height: 15px; color: var(--testo-tenue); }
   .riga-rischio {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
     padding: 9px 0; border-top: 1px solid var(--bordo); font-size: .9rem;
   }
   .riga-rischio:first-of-type { border-top: 0; }
-  .stato { color: var(--testo-tenue); font-size: .85rem; }
-  .nota-copertura { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
+  .nota { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; line-height: 1.5; }
 
-  .previsioni-giorni { display: flex; gap: 8px; margin-top: 4px; }
+  .previsioni-giorni { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 4px; }
   .prev-giorno {
-    flex: 1; text-align: center; background: #fff; border: 1px solid var(--bordo); border-radius: 12px;
-    padding: 10px 4px; font-size: .82rem;
+    text-align: center; background: var(--superficie); border: 1px solid var(--bordo); border-radius: 12px;
+    padding: 10px 4px 8px; font-size: .82rem; transition: transform .15s ease, box-shadow .15s ease;
   }
-  .prev-giorno .g-nome { font-weight: 600; text-transform: capitalize; }
-  .prev-giorno img { width: 36px; height: 36px; margin: 2px auto; display: block; }
-  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .72rem; min-height: 1.6em; }
-  .prev-giorno .g-temp { font-weight: 600; font-variant-numeric: tabular-nums; }
-  .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 400; }
-  .prev-comune { font-size: .78rem; color: var(--testo-tenue); margin-top: 8px; }
-  .prev-giorno .g-humidex { font-size: .7rem; color: var(--testo-tenue); margin-top: 4px; border-top: 1px dashed var(--bordo); padding-top: 4px; }
+  .prev-giorno:hover { transform: translateY(-2px); box-shadow: var(--ombra); }
+  .prev-giorno.attivo { border-color: var(--blu); box-shadow: inset 0 0 0 1px var(--blu); }
+  .prev-giorno .g-nome { font-weight: 700; }
+  .prev-giorno img { width: 40px; height: 40px; margin: 2px auto; display: block; }
+  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .72rem; min-height: 2.6em; line-height: 1.3; padding: 0 2px; }
+  .prev-giorno .g-temp { font-weight: 700; font-variant-numeric: tabular-nums; font-size: .92rem; }
+  .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 500; }
+  .prev-giorno .g-humidex { font-size: .7rem; color: var(--testo-tenue); margin-top: 5px; border-top: 1px dashed var(--bordo-forte); padding-top: 5px; }
   .prev-giorno .g-humidex b { color: var(--testo); font-weight: 600; }
 
-  .fiume-riga {
-    display: flex; align-items: center; justify-content: space-between; gap: 10px;
-    padding: 10px 0; border-top: 1px solid var(--bordo); font-size: .85rem;
-  }
+  .fiume-riga { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-top: 1px solid var(--bordo); font-size: .85rem; }
   .fiume-riga:first-of-type { border-top: 0; }
-  .fiume-nome { font-weight: 600; }
-  .fiume-info { font-size: .72rem; color: var(--testo-tenue); margin-top: 2px; }
+  .fiume-nome { font-weight: 650; color: var(--titolo); }
+  .fiume-nome span { font-weight: 400; color: var(--testo-tenue); }
+  .fiume-info { font-size: .74rem; margin-top: 2px; }
   .fiume-dati { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .fiume-livello { font-weight: 600; }
+  .fiume-livello { font-weight: 700; }
   .fiume-portata { font-size: .7rem; color: var(--testo-tenue); }
   .fiume-sparkline { display: block; margin-left: auto; }
-  .fiume-collegamento {
-    font-size: .82rem; background: #fdf1e8; border: 1px solid #f6d3b3;
-    border-radius: 10px; padding: 9px 12px; margin-bottom: 10px;
-  }
+  .fiume-collegamento { font-size: .82rem; background: var(--liv-arancione-tenue); color: var(--liv-arancione-testo); border-radius: 10px; padding: 9px 12px; margin-bottom: 8px; }
 
-  footer {
-    max-width: 1180px; margin: 40px auto 28px; padding: 22px 20px 0;
-    border-top: 1px solid var(--bordo);
-    font-size: .78rem; color: var(--testo-tenue); line-height: 1.6;
+  /* ---------- Iscrizione ---------- */
+  .iscrizione {
+    margin-top: 16px; border-radius: var(--raggio); padding: 20px 22px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--blu-tenue), transparent 70%), var(--superficie);
+    border: 1px solid var(--bordo); box-shadow: var(--ombra-sm);
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 16px 24px; align-items: center;
   }
-  footer a { color: var(--blu); text-decoration-color: rgba(43,67,128,.35); }
-  .form-contatto {
-    margin-top: 16px; padding: 16px 18px; background: #fff; border: 1px solid var(--bordo);
-    border-radius: var(--raggio); max-width: 440px; box-shadow: var(--ombra-sm);
-  }
-  .form-contatto h3 { font-size: .9rem; color: var(--testo); margin-bottom: 10px; font-weight: 700; }
-  .form-contatto input, .form-contatto textarea {
-    width: 100%; font: inherit; font-size: .88rem; padding: 10px 12px; margin-bottom: 8px;
-    border: 1px solid var(--bordo); border-radius: var(--raggio-sm); box-sizing: border-box;
-    transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .form-contatto input:focus, .form-contatto textarea:focus { outline: none; border-color: var(--blu); box-shadow: var(--anello); }
-  .form-contatto textarea { min-height: 80px; resize: vertical; }
-  .form-contatto button {
-    border: 0; background: var(--blu); color: #fff; font: inherit; font-size: .88rem; font-weight: 600;
-    padding: 10px 18px; border-radius: var(--raggio-sm); cursor: pointer;
-    transition: background .15s ease;
-  }
-  .form-contatto button:hover { background: var(--blu-scuro); }
+  .iscrizione h2 { font-size: 1.12rem; font-weight: 800; letter-spacing: -.018em; margin-bottom: 4px; }
+  .iscrizione p { font-size: .88rem; color: var(--testo-tenue); max-width: 60ch; }
+  .riga-form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .riga-form select { flex: 1 1 190px; min-width: 0; }
+  .riga-form input { flex: 1.3 1 210px; min-width: 0; }
+  .esito { font-size: .86rem; margin-top: 8px; grid-column: 1 / -1; }
+  .esito:empty { display: none; }
+  .esito.ok { color: var(--liv-verde-testo); font-weight: 600; }
+  .esito.errore { color: var(--liv-rossa-testo); }
+  .iscrizione .campo[aria-invalid="true"] { border-color: var(--liv-rossa); }
 
-  .form-iscrizione input[type="email"] {
-    width: 100%; font: inherit; font-size: .85rem; padding: 8px 10px; margin-bottom: 8px;
-    border: 1px solid var(--bordo); border-radius: var(--raggio-sm); box-sizing: border-box;
-  }
-  .form-iscrizione .esito { font-size: .8rem; margin-top: 6px; }
-  .form-iscrizione .esito.ok { color: #3f9142; }
-  .form-iscrizione .esito.errore { color: #c0392b; }
+  /* ---------- Contatti ---------- */
+  .piede-griglia { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .form-contatto { background: var(--superficie); border: 1px solid var(--bordo); border-radius: 16px; padding: 16px 18px; box-shadow: var(--ombra-sm); display: grid; gap: 8px; }
+  .form-contatto h3 { font-size: .95rem; font-weight: 700; }
+  .form-contatto textarea { min-height: 84px; resize: vertical; }
+  .form-contatto .btn { justify-self: start; }
 
-  .card-iscrizione {
-    background: var(--blu-chiaro); border: 1px solid #d3ddf0;
-    border-radius: var(--raggio); padding: 20px 22px; margin-bottom: 20px;
-  }
-  .card-iscrizione h2 { font-size: 1.12rem; font-weight: 700; margin-bottom: 6px; letter-spacing: -.01em; }
-  .card-iscrizione p { font-size: .88rem; color: var(--testo-tenue); margin-bottom: 14px; max-width: 64ch; }
-  .card-iscrizione .riga-form { display: flex; gap: 10px; flex-wrap: wrap; }
-  .card-iscrizione select, .card-iscrizione input[type="email"] {
-    font: inherit; font-size: .92rem; padding: 10px 13px;
-    border: 1px solid var(--bordo); border-radius: var(--raggio-sm); background: #fff;
-    transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .card-iscrizione select:focus, .card-iscrizione input[type="email"]:focus { outline: none; border-color: var(--blu); box-shadow: var(--anello); }
-  .card-iscrizione select { flex: 1; min-width: 180px; }
-  .card-iscrizione input[type="email"] { flex: 1.4; min-width: 200px; }
-  .card-iscrizione button {
-    border: 0; background: var(--blu); color: #fff; font: inherit; font-size: .92rem; font-weight: 600;
-    padding: 10px 22px; border-radius: var(--raggio-sm); cursor: pointer; white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(43,67,128,.25); transition: background .15s ease, transform .1s ease;
-  }
-  .card-iscrizione button:hover { background: var(--blu-scuro); transform: translateY(-1px); }
-  .card-iscrizione button:active { transform: translateY(0); box-shadow: 0 1px 3px rgba(43,67,128,.25); }
-  .card-iscrizione button:disabled { opacity: .6; cursor: default; transform: none; }
-  .card-iscrizione .esito { font-size: .85rem; margin-top: 10px; }
-  .card-iscrizione .esito.ok { color: #3f9142; font-weight: 600; }
-  .card-iscrizione .esito.errore { color: #c0392b; }
-
-  @media (min-width: 901px) {
-    header { position: sticky; top: 0; z-index: 1100; }
-  }
-  @media (max-width: 900px) {
-    .header-inner { flex-wrap: wrap; row-gap: 10px; }
-    .header-inner > .logo + div { flex: 1 1 200px; min-width: 0; }
-    .tabs { margin-left: 0; }
+  @media (max-width: 980px) {
     .griglia { grid-template-columns: 1fr; }
-    #mappa { height: 400px; }
+    #mappa { height: 440px; }
+    .iscrizione { grid-template-columns: 1fr; }
+    .piede-griglia { grid-template-columns: 1fr; }
   }
-  @media (max-width: 600px) {
-    .card-iscrizione .riga-form > * { flex: 1 1 100%; min-width: 0; }
-  }
-  @media (max-width: 480px) {
-    main { margin: 16px auto; padding: 0 14px; }
-    .card { padding: 16px; }
-    .card-iscrizione { padding: 16px; }
-    .card-testa { flex-direction: column; align-items: flex-start; gap: 2px; }
-    .riga-rischio { flex-wrap: wrap; row-gap: 4px; font-size: .85rem; }
-    .tabs button { padding: 8px 14px; }
-    #mappa { height: 360px; }
+  @media (max-width: 520px) {
+    #mappa { height: 380px; }
+    .riepilogo .meta { margin-left: 0; width: 100%; justify-content: space-between; }
+    .iscrizione { padding: 16px; }
+    .riga-form > * { flex: 1 1 100%; }
+    .vista { padding: 16px; }
   }
 </style>
 </head>
 <body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
 
-<header>
-  <div class="header-inner">
-    <div class="logo" id="logo-triangolo" aria-hidden="true">&#9888;&#65039;</div>
-    <div>
-      <h1>Allerta Meteo Toscana</h1>
-      <div class="sottotitolo">Bollettino di criticità per le zone di allerta regionali · <span id="data-oggi"></span></div>
+<header class="testata">
+  <div class="testata-dentro">
+    <a class="marchio" href="./" aria-label="Allerta Meteo Toscana, pagina principale">
+      <span class="logo" id="logo-triangolo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 22 20H2z"/><path d="M12 10v4"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+      </span>
+      <div>
+        <h1>Allerta Meteo Toscana</h1>
+        <div class="sottotitolo">Criticità per zone di allerta · <span id="data-giorno">…</span></div>
+      </div>
+    </a>
+    <div class="azioni-testata">
+      <div class="segmenti" id="tabs" role="tablist" aria-label="Giorno del bollettino">
+        <button type="button" role="tab" data-giorno="oggi" aria-selected="true">Oggi</button>
+        <button type="button" role="tab" data-giorno="domani" aria-selected="false" tabindex="-1">Domani</button>
+      </div>
+      <a class="btn" href="fiumi.html" title="Mappa fluviale">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+        <span class="btn-testo-lungo">Fiumi</span><span class="sr-only">Mappa fluviale</span>
+      </a>
+      <button class="btn btn-icona" id="bottone-tema" type="button" aria-label="Cambia tema"></button>
     </div>
-    <div class="tabs" id="tabs">
-      <button data-giorno="oggi" class="attivo">Oggi</button>
-      <button data-giorno="domani">Domani</button>
-    </div>
-    <a class="link-fiumi" href="fiumi.html">&#127754; Mappa fluviale</a>
   </div>
 </header>
 
-<main>
-  <div class="banner-riga" id="banner-riga"></div>
+<main id="contenuto" tabindex="-1">
+  <section class="avvisi" id="banner-riga" aria-live="polite" aria-label="Stato del bollettino"></section>
 
-  <div class="card card-iscrizione">
-    <h2>&#128231; Fatti avvisare, non andare a cercarlo</h2>
-    <p>Il fiume della tua zona supera una soglia ufficiale, o il rischio pioggia peggiora davvero? Te lo scriviamo noi — un'email solo quando conta, mai un bollettino quotidiano.</p>
-    <div class="riga-form">
-      <select id="iscrizione-comune">
-        <option value="">Scegli il tuo comune&hellip;</option>
-        <option value="Fiora e Albegna">Abbadia San Salvatore</option>
-        <option value="Serchio-Garfagnana-Lima">Abetone Cutigliano</option>
-        <option value="Bisenzio e Ombrone Pt">Agliana</option>
-        <option value="Valdarno Inf.">Altopascio</option>
-        <option value="Valtiberina">Anghiari</option>
-        <option value="Ombrone Gr-Medio">Arcidosso</option>
-        <option value="Valdichiana">Arezzo</option>
-        <option value="Ombrone Gr-Alto">Asciano</option>
-        <option value="Lunigiana">Aulla</option>
-        <option value="Valtiberina">Badia Tedalda</option>
-        <option value="Serchio-Garfagnana-Lima">Bagni di Lucca</option>
-        <option value="Arno-Firenze">Bagno a Ripoli</option>
-        <option value="Lunigiana">Bagnone</option>
-        <option value="Arno-Firenze">Barberino Tavarnelle</option>
-        <option value="Mugello-Val di Sieve">Barberino di Mugello</option>
-        <option value="Serchio-Garfagnana-Lima">Barga</option>
-        <option value="Arno-Casentino">Bibbiena</option>
-        <option value="Etruria-Costa Nord">Bibbona</option>
-        <option value="Valdarno Inf.">Bientina</option>
-        <option value="Mugello-Val di Sieve">Borgo San Lorenzo</option>
-        <option value="Serchio-Lucca">Borgo a Mozzano</option>
-        <option value="Arno-Valdarno Sup.">Bucine</option>
-        <option value="Serchio-Garfagnana-Lima">Buggiano</option>
-        <option value="Ombrone Gr-Alto">Buonconvento</option>
-        <option value="Valdarno Inf.">Buti</option>
-        <option value="Valdarno Inf.">Calci</option>
-        <option value="Valdarno Inf.">Calcinaia</option>
-        <option value="Bisenzio e Ombrone Pt">Calenzano</option>
-        <option value="Versilia">Camaiore</option>
-        <option value="Ombrone Gr-Medio">Campagnatico</option>
-        <option value="Bisenzio e Ombrone Pt">Campi Bisenzio</option>
-        <option value="Etruria">Campiglia Marittima</option>
-        <option value="Isole">Campo nell'Elba</option>
-        <option value="Serchio-Garfagnana-Lima">Camporgiano</option>
-        <option value="Bisenzio e Ombrone Pt">Cantagallo</option>
-        <option value="Fiora e Albegna-Costa e Giglio">Capalbio</option>
-        <option value="Valdarno Inf.">Capannoli</option>
-        <option value="Valdarno Inf.">Capannori</option>
-        <option value="Isole">Capoliveri</option>
-        <option value="Arno-Casentino">Capolona</option>
-        <option value="Isole">Capraia Isola</option>
-        <option value="Valdarno Inf.">Capraia e Limite</option>
-        <option value="Valtiberina">Caprese Michelangelo</option>
-        <option value="Serchio-Garfagnana-Lima">Careggine</option>
-        <option value="Bisenzio e Ombrone Pt">Carmignano</option>
-        <option value="Versilia">Carrara</option>
-        <option value="Etruria">Casale Marittimo</option>
-        <option value="Valdarno Inf.">Casciana Terme Lari</option>
-        <option value="Valdarno Inf.">Cascina</option>
-        <option value="Lunigiana">Casola in Lunigiana</option>
-        <option value="Ombrone Gr-Alto">Casole d'Elsa</option>
-        <option value="Etruria-Costa Nord">Castagneto Carducci</option>
-        <option value="Arno-Casentino">Castel Focognano</option>
-        <option value="Arno-Casentino">Castel San Niccolò</option>
-        <option value="Ombrone Gr-Medio">Castel del Piano</option>
-        <option value="Valdelsa-Valdera">Castelfiorentino</option>
-        <option value="Arno-Valdarno Sup.">Castelfranco Piandiscò</option>
-        <option value="Valdarno Inf.">Castelfranco di Sotto</option>
-        <option value="Fiora e Albegna">Castell'Azzara</option>
-        <option value="Etruria">Castellina Marittima</option>
-        <option value="Ombrone Gr-Alto">Castellina in Chianti</option>
-        <option value="Ombrone Gr-Alto">Castelnuovo Berardenga</option>
-        <option value="Serchio-Garfagnana-Lima">Castelnuovo di Garfagnana</option>
-        <option value="Etruria">Castelnuovo di Val di Cecina</option>
-        <option value="Arno-Valdarno Sup.">Castiglion Fibocchi</option>
-        <option value="Valdichiana">Castiglion Fiorentino</option>
-        <option value="Ombrone Gr-Medio">Castiglione d'Orcia</option>
-        <option value="Etruria-Costa Sud">Castiglione della Pescaia</option>
-        <option value="Serchio-Garfagnana-Lima">Castiglione di Garfagnana</option>
-        <option value="Arno-Valdarno Sup.">Cavriglia</option>
-        <option value="Etruria-Costa Nord">Cecina</option>
-        <option value="Valdarno Inf.">Cerreto Guidi</option>
-        <option value="Valdelsa-Valdera">Certaldo</option>
-        <option value="Fiora e Albegna">Cetona</option>
-        <option value="Valdichiana">Chianciano Terme</option>
-        <option value="Valdelsa-Valdera">Chianni</option>
-        <option value="Valdarno Inf.">Chiesina Uzzanese</option>
-        <option value="Arno-Casentino">Chitignano</option>
-        <option value="Ombrone Gr-Alto">Chiusdino</option>
-        <option value="Valdichiana">Chiusi</option>
-        <option value="Arno-Casentino">Chiusi della Verna</option>
-        <option value="Ombrone Gr-Medio">Cinigiano</option>
-        <option value="Ombrone Gr-Medio">Civitella Paganico</option>
-        <option value="Valdichiana">Civitella in Val di Chiana</option>
-        <option value="Valdelsa-Valdera">Colle di Val d'Elsa</option>
-        <option value="Valdarno Inf.">Collesalvetti</option>
-        <option value="Lunigiana">Comano</option>
-        <option value="Serchio-Garfagnana-Lima">Coreglia Antelminelli</option>
-        <option value="Valdichiana">Cortona</option>
-        <option value="Valdarno Inf.">Crespina Lorenzana</option>
-        <option value="Mugello-Val di Sieve">Dicomano</option>
-        <option value="Valdarno Inf.">Empoli</option>
-        <option value="Serchio-Garfagnana-Lima">Fabbriche di Vergemoli</option>
-        <option value="Valdarno Inf.">Fauglia</option>
-        <option value="Arno-Firenze">Fiesole</option>
-        <option value="Arno-Valdarno Sup.">Figline e Incisa Valdarno</option>
-        <option value="Lunigiana">Filattiera</option>
-        <option value="Arno-Firenze">Firenze</option>
-        <option value="Romagna-Toscana">Firenzuola</option>
-        <option value="Lunigiana">Fivizzano</option>
-        <option value="Valdichiana">Foiano della Chiana</option>
-        <option value="Etruria-Costa Sud">Follonica</option>
-        <option value="Versilia">Forte dei Marmi</option>
-        <option value="Serchio-Garfagnana-Lima">Fosciandora</option>
-        <option value="Lunigiana">Fosdinovo</option>
-        <option value="Valdarno Inf.">Fucecchio</option>
-        <option value="Ombrone Gr-Alto">Gaiole in Chianti</option>
-        <option value="Serchio-Garfagnana-Lima">Gallicano</option>
-        <option value="Valdelsa-Valdera">Gambassi Terme</option>
-        <option value="Etruria">Gavorrano</option>
-        <option value="Arno-Firenze">Greve in Chianti</option>
-        <option value="Ombrone Gr-Costa">Grosseto</option>
-        <option value="Etruria">Guardistallo</option>
-        <option value="Arno-Firenze">Impruneta</option>
-        <option value="Fiora e Albegna-Costa e Giglio">Isola del Giglio</option>
-        <option value="Valdelsa-Valdera">Lajatico</option>
-        <option value="Valdarno Inf.">Lamporecchio</option>
-        <option value="Valdarno Inf.">Larciano</option>
-        <option value="Arno-Firenze">Lastra a Signa</option>
-        <option value="Arno-Valdarno Sup.">Laterina Pergine Valdarno</option>
-        <option value="Lunigiana">Licciana Nardi</option>
-        <option value="Arno-Costa">Livorno</option>
-        <option value="Mugello-Val di Sieve">Londa</option>
-        <option value="Arno-Valdarno Sup.">Loro Ciuffenna</option>
-        <option value="Serchio-Lucca">Lucca</option>
-        <option value="Valdichiana">Lucignano</option>
-        <option value="Fiora e Albegna-Costa e Giglio">Magliano in Toscana</option>
-        <option value="Fiora e Albegna">Manciano</option>
-        <option value="Isole">Marciana</option>
-        <option value="Isole">Marciana Marina</option>
-        <option value="Valdichiana">Marciano della Chiana</option>
-        <option value="Serchio-Garfagnana-Lima">Marliana</option>
-        <option value="Romagna-Toscana">Marradi</option>
-        <option value="Versilia">Massa</option>
-        <option value="Etruria">Massa Marittima</option>
-        <option value="Serchio-Garfagnana-Lima">Massa e Cozzile</option>
-        <option value="Serchio-Lucca">Massarosa</option>
-        <option value="Serchio-Garfagnana-Lima">Minucciano</option>
-        <option value="Serchio-Garfagnana-Lima">Molazzana</option>
-        <option value="Valdarno Inf.">Monsummano Terme</option>
-        <option value="Valdelsa-Valdera">Montaione</option>
-        <option value="Ombrone Gr-Alto">Montalcino</option>
-        <option value="Bisenzio e Ombrone Pt">Montale</option>
-        <option value="Fiora e Albegna-Costa e Giglio">Monte Argentario</option>
-        <option value="Valdichiana">Monte San Savino</option>
-        <option value="Valdarno Inf.">Montecarlo</option>
-        <option value="Etruria">Montecatini Val di Cecina</option>
-        <option value="Serchio-Garfagnana-Lima">Montecatini-Terme</option>
-        <option value="Valdarno Inf.">Montelupo Fiorentino</option>
-        <option value="Arno-Casentino">Montemignaio</option>
-        <option value="Bisenzio e Ombrone Pt">Montemurlo</option>
-        <option value="Valdichiana">Montepulciano</option>
-        <option value="Valtiberina">Monterchi</option>
-        <option value="Ombrone Gr-Alto">Monteriggioni</option>
-        <option value="Ombrone Gr-Alto">Monteroni d'Arbia</option>
-        <option value="Etruria">Monterotondo Marittimo</option>
-        <option value="Etruria">Montescudaio</option>
-        <option value="Valdelsa-Valdera">Montespertoli</option>
-        <option value="Arno-Valdarno Sup.">Montevarchi</option>
-        <option value="Etruria">Monteverdi Marittimo</option>
-        <option value="Ombrone Gr-Alto">Monticiano</option>
-        <option value="Etruria">Montieri</option>
-        <option value="Versilia">Montignoso</option>
-        <option value="Valdarno Inf.">Montopoli in Val d'Arno</option>
-        <option value="Lunigiana">Mulazzo</option>
-        <option value="Ombrone Gr-Alto">Murlo</option>
-        <option value="Fiora e Albegna-Costa e Giglio">Orbetello</option>
-        <option value="Etruria">Orciano Pisano</option>
-        <option value="Arno-Casentino">Ortignano Raggiolo</option>
-        <option value="Valdelsa-Valdera">Palaia</option>
-        <option value="Romagna-Toscana">Palazzuolo sul Senio</option>
-        <option value="Valdelsa-Valdera">Peccioli</option>
-        <option value="Mugello-Val di Sieve">Pelago</option>
-        <option value="Serchio-Lucca">Pescaglia</option>
-        <option value="Serchio-Garfagnana-Lima">Pescia</option>
-        <option value="Fiora e Albegna">Piancastagnaio</option>
-        <option value="Serchio-Garfagnana-Lima">Piazza al Serchio</option>
-        <option value="Ombrone Gr-Medio">Pienza</option>
-        <option value="Versilia">Pietrasanta</option>
-        <option value="Serchio-Garfagnana-Lima">Pieve Fosciana</option>
-        <option value="Valtiberina">Pieve Santo Stefano</option>
-        <option value="Valdarno Inf.">Pieve a Nievole</option>
-        <option value="Etruria-Costa Nord">Piombino</option>
-        <option value="Arno-Costa">Pisa</option>
-        <option value="Bisenzio e Ombrone Pt">Pistoia</option>
-        <option value="Fiora e Albegna">Pitigliano</option>
-        <option value="Lunigiana">Podenzana</option>
-        <option value="Valdelsa-Valdera">Poggibonsi</option>
-        <option value="Bisenzio e Ombrone Pt">Poggio a Caiano</option>
-        <option value="Etruria">Pomarance</option>
-        <option value="Valdarno Inf.">Ponsacco</option>
-        <option value="Arno-Firenze">Pontassieve</option>
-        <option value="Valdarno Inf.">Ponte Buggianese</option>
-        <option value="Valdarno Inf.">Pontedera</option>
-        <option value="Lunigiana">Pontremoli</option>
-        <option value="Arno-Casentino">Poppi</option>
-        <option value="Valdarno Inf.">Porcari</option>
-        <option value="Isole">Porto Azzurro</option>
-        <option value="Isole">Portoferraio</option>
-        <option value="Bisenzio e Ombrone Pt">Prato</option>
-        <option value="Arno-Casentino">Pratovecchio Stia</option>
-        <option value="Bisenzio e Ombrone Pt">Quarrata</option>
-        <option value="Ombrone Gr-Alto">Radda in Chianti</option>
-        <option value="Fiora e Albegna">Radicofani</option>
-        <option value="Etruria">Radicondoli</option>
-        <option value="Ombrone Gr-Alto">Rapolano Terme</option>
-        <option value="Arno-Valdarno Sup.">Reggello</option>
-        <option value="Arno-Valdarno Sup.">Rignano sull'Arno</option>
-        <option value="Isole">Rio</option>
-        <option value="Etruria">Riparbella</option>
-        <option value="Fiora e Albegna">Roccalbegna</option>
-        <option value="Etruria">Roccastrada</option>
-        <option value="Arno-Costa">Rosignano Marittimo</option>
-        <option value="Mugello-Val di Sieve">Rufina</option>
-        <option value="Reno">Sambuca Pistoiese</option>
-        <option value="Fiora e Albegna">San Casciano dei Bagni</option>
-        <option value="Arno-Firenze">San Casciano in Val di Pesa</option>
-        <option value="Valdelsa-Valdera">San Gimignano</option>
-        <option value="Arno-Valdarno Sup.">San Giovanni Valdarno</option>
-        <option value="Serchio-Costa">San Giuliano Terme</option>
-        <option value="Mugello-Val di Sieve">San Godenzo</option>
-        <option value="Reno">San Marcello Piteglio</option>
-        <option value="Valdarno Inf.">San Miniato</option>
-        <option value="Ombrone Gr-Medio">San Quirico d'Orcia</option>
-        <option value="Serchio-Garfagnana-Lima">San Romano in Garfagnana</option>
-        <option value="Etruria-Costa Nord">San Vincenzo</option>
-        <option value="Valtiberina">Sansepolcro</option>
-        <option value="Valdarno Inf.">Santa Croce sull'Arno</option>
-        <option value="Fiora e Albegna">Santa Fiora</option>
-        <option value="Etruria">Santa Luce</option>
-        <option value="Valdarno Inf.">Santa Maria a Monte</option>
-        <option value="Fiora e Albegna">Sarteano</option>
-        <option value="Etruria">Sassetta</option>
-        <option value="Arno-Firenze">Scandicci</option>
-        <option value="Ombrone Gr-Medio">Scansano</option>
-        <option value="Etruria-Costa Sud">Scarlino</option>
-        <option value="Mugello-Val di Sieve">Scarperia e San Piero</option>
-        <option value="Ombrone Gr-Medio">Seggiano</option>
-        <option value="Fiora e Albegna">Semproniano</option>
-        <option value="Serchio-Garfagnana-Lima">Seravezza</option>
-        <option value="Bisenzio e Ombrone Pt">Serravalle Pistoiese</option>
-        <option value="Valtiberina">Sestino</option>
-        <option value="Bisenzio e Ombrone Pt">Sesto Fiorentino</option>
-        <option value="Ombrone Gr-Alto">Siena</option>
-        <option value="Bisenzio e Ombrone Pt">Signa</option>
-        <option value="Serchio-Garfagnana-Lima">Sillano Giuncugnano</option>
-        <option value="Valdichiana">Sinalunga</option>
-        <option value="Fiora e Albegna">Sorano</option>
-        <option value="Ombrone Gr-Alto">Sovicille</option>
-        <option value="Serchio-Garfagnana-Lima">Stazzema</option>
-        <option value="Arno-Casentino">Subbiano</option>
-        <option value="Etruria">Suvereto</option>
-        <option value="Arno-Casentino">Talla</option>
-        <option value="Arno-Valdarno Sup.">Terranuova Bracciolini</option>
-        <option value="Valdelsa-Valdera">Terricciola</option>
-        <option value="Valdichiana">Torrita di Siena</option>
-        <option value="Ombrone Gr-Alto">Trequanda</option>
-        <option value="Lunigiana">Tresana</option>
-        <option value="Serchio-Garfagnana-Lima">Uzzano</option>
-        <option value="Serchio-Garfagnana-Lima">Vagli Sotto</option>
-        <option value="Mugello-Val di Sieve">Vaglia</option>
-        <option value="Bisenzio e Ombrone Pt">Vaiano</option>
-        <option value="Serchio-Costa">Vecchiano</option>
-        <option value="Bisenzio e Ombrone Pt">Vernio</option>
-        <option value="Serchio-Costa">Viareggio</option>
-        <option value="Mugello-Val di Sieve">Vicchio</option>
-        <option value="Valdarno Inf.">Vicopisano</option>
-        <option value="Serchio-Garfagnana-Lima">Villa Basilica</option>
-        <option value="Serchio-Garfagnana-Lima">Villa Collemandina</option>
-        <option value="Lunigiana">Villafranca in Lunigiana</option>
-        <option value="Valdarno Inf.">Vinci</option>
-        <option value="Valdelsa-Valdera">Volterra</option>
-        <option value="Lunigiana">Zeri</option>
-      </select>
-      <input type="email" id="iscrizione-email" placeholder="La tua email" autocomplete="email">
-      <button id="bottone-iscrizione" type="button">Iscrivimi gratis</button>
+  <section class="riepilogo" aria-label="Riepilogo e filtro per livello">
+    <span class="etichetta-sezione" id="etichetta-filtri">Filtra zone</span>
+    <div class="chip-riga" id="filtri" role="group" aria-labelledby="etichetta-filtri"></div>
+    <div class="meta">
+      <span id="riga-controllo" class="num"></span>
+      <button id="bottone-aggiorna" class="btn btn-piccolo" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg>
+        Aggiorna
+      </button>
     </div>
-    <div class="esito" id="iscrizione-esito"></div>
-  </div>
+  </section>
 
   <div class="griglia">
-    <div class="card">
+    <section class="card" aria-labelledby="titolo-mappa">
       <div class="card-testa">
-        <h2>Mappa delle zone di allerta</h2>
+        <h2 id="titolo-mappa">Mappa delle zone di allerta</h2>
         <span class="quando" id="mappa-quando"></span>
       </div>
-      <div class="ricerca">
-        <input type="search" id="cerca-comune" autocomplete="off" spellcheck="false"
-               placeholder="Cerca il tuo comune (es. Vinci, Empoli, Pistoia)"
-               aria-label="Cerca il tuo comune" aria-autocomplete="list" role="combobox" aria-expanded="false">
-        <ul class="risultati" id="risultati-ricerca" role="listbox" hidden></ul>
+      <div class="strumenti-mappa">
+        <div class="ricerca">
+          <label for="cerca-comune" class="sr-only">Cerca il tuo comune</label>
+          <input type="search" id="cerca-comune" class="campo campo-ricerca" autocomplete="off" spellcheck="false"
+                 placeholder="Cerca il tuo comune (es. Vinci, Empoli…)"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="risultati-ricerca">
+          <ul class="risultati" id="risultati-ricerca" role="listbox" aria-label="Comuni trovati" hidden></ul>
+        </div>
+        <button class="btn" id="bottone-posizione" type="button" title="Trova la zona in cui ti trovi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+          <span class="btn-testo-lungo">Dove sono</span><span class="sr-only">Trova la mia zona</span>
+        </button>
       </div>
-      <div id="mappa"></div>
+      <div class="mappa-contenitore">
+        <div id="mappa" role="region" aria-label="Mappa interattiva delle zone di allerta. In alternativa usa l'elenco delle zone."></div>
+        <div class="sovrapposto" id="mappa-stato">
+          <span class="caricamento-testo"><span class="rotella"></span>Caricamento della mappa…</span>
+        </div>
+      </div>
       <div class="legenda">
         <div class="legenda-gruppo">
           <span class="legenda-titolo">Criticità</span>
-          <span><i class="quadr" style="background:var(--nessuna)"></i>Nessuna</span>
-          <span><i class="quadr" style="background:var(--p-gialla)"></i>Gialla</span>
-          <span><i class="quadr" style="background:var(--p-arancione)"></i>Arancione</span>
-          <span><i class="quadr" style="background:var(--p-rossa)"></i>Rossa</span>
-          <span>&#128167; = zona con allerta pioggia attiva</span>
-        </div>
-        <div class="legenda-gruppo" id="riga-controllo" style="border-top:1px solid var(--sfondo);padding-top:8px;margin-top:4px"></div>
-        <div class="legenda-gruppo">
-          <button id="bottone-aggiorna" class="btn-aggiorna" type="button">&#8635; Aggiorna ora</button>
+          <span class="legenda-voce"><i class="quadr" style="background:var(--liv-verde-mappa)"></i>Nessuna</span>
+          <span class="legenda-voce"><i class="quadr" style="background:var(--liv-gialla)"></i>Gialla</span>
+          <span class="legenda-voce"><i class="quadr" style="background:var(--liv-arancione)"></i>Arancione</span>
+          <span class="legenda-voce"><i class="quadr" style="background:var(--liv-rossa)"></i>Rossa</span>
+          <span class="legenda-voce"><i class="quadr" style="background:var(--liv-nd)"></i>Non disponibile</span>
         </div>
         <div class="legenda-gruppo">
-          <span class="legenda-titolo">Caldo</span>
-          <span>&#127777;&#65039; rosso/arancio = allerta ufficiale (solo Firenze, Ministero della Salute)</span>
-        </div>
-        <div class="legenda-gruppo">
-          <span>&#127777;&#65039; <span style="color:#c0722d;font-weight:600">marrone</span> = stima calcolata (Humidex o temperatura oltre 35°, non un bollettino ufficiale)</span>
+          <span class="legenda-titolo">Icone</span>
+          <span>&#128167; allerta pioggia attiva</span>
+          <span>&#127777;&#65039; rosso/arancio: allerta caldo ufficiale (solo Firenze)</span>
+          <span>&#127777;&#65039; <span style="color:var(--caldo-stimato);font-weight:600">marrone</span>: stima calcolata (Humidex ≥ 40 o oltre 35°), non ufficiale</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card pannello">
-      <div id="pan-vuoto" class="suggerimento">
-        Tocca o clicca una zona della mappa per vederne i dettagli.
-      </div>
-      <div id="pan-dett" hidden>
-        <div class="pan-testa">
-          <h2 id="pan-nome"></h2>
+    <aside class="card pannello" id="pannello" aria-label="Dettagli zona">
+      <div class="vista" id="pan-vuoto">
+        <div class="vista-testa">
+          <h2>Zone di allerta</h2>
+          <span class="quando" id="elenco-conta"></span>
         </div>
+        <div class="suggerimento-mappa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>
+          Tocca una zona sulla mappa o sceglila qui sotto. Le zone sono ordinate per gravità.
+        </div>
+        <ul class="elenco-zone" id="elenco-zone">
+          <li><div class="scheletro" style="height:44px;margin:4px 0"></div></li>
+          <li><div class="scheletro" style="height:44px;margin:4px 0"></div></li>
+          <li><div class="scheletro" style="height:44px;margin:4px 0"></div></li>
+          <li><div class="scheletro" style="height:44px;margin:4px 0"></div></li>
+        </ul>
+      </div>
+
+      <div class="vista" id="pan-dett" hidden>
+        <div class="barra-dett">
+          <button class="btn btn-piccolo btn-fantasma" id="bottone-indietro" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            Tutte le zone
+          </button>
+          <button class="btn btn-piccolo btn-fantasma" id="bottone-condividi" type="button" style="margin-left:auto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+            Copia link
+          </button>
+        </div>
+        <div class="dett-testa">
+          <h2 id="pan-nome" tabindex="-1"></h2>
+        </div>
+        <div class="dett-livello" id="pan-livello"></div>
         <div class="pan-luogo" id="pan-comuni"></div>
         <div class="comune-trovato" id="comune-trovato" hidden></div>
 
-        <div class="sotto-card">
-          <h3>&#128167; Criticità <span id="pan-titolo-giorno-p"></span></h3>
-          <div class="riga-rischio">
-            <span>Rischio idraulico</span>
-            <span class="stato" id="r-idraulico"></span>
-          </div>
-          <div class="riga-rischio">
-            <span>Rischio temporali</span>
-            <span class="stato" id="r-temporali"></span>
-          </div>
-          <div class="riga-rischio">
-            <span>Rischio idrogeologico</span>
-            <span class="stato" id="r-idrogeologico"></span>
-          </div>
+        <div class="sezione">
+          <h3 class="etichetta-sezione">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2s-7 9-7 13.5A7 7 0 0 0 12 22a7 7 0 0 0 7-6.5C19 11 12 2 12 2z"/></svg>
+            Criticità <span id="pan-titolo-giorno-p"></span>
+          </h3>
+          <div class="riga-rischio"><span>Rischio idraulico</span><span id="r-idraulico"></span></div>
+          <div class="riga-rischio"><span>Rischio temporali</span><span id="r-temporali"></span></div>
+          <div class="riga-rischio"><span>Rischio idrogeologico</span><span id="r-idrogeologico"></span></div>
         </div>
 
-        <div class="sotto-card" id="box-caldo">
-          <h3>&#127777;&#65039; Rischio caldo <span id="pan-titolo-giorno-c"></span></h3>
+        <div class="sezione" id="box-caldo">
+          <h3 class="etichetta-sezione">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg>
+            Rischio caldo <span id="pan-titolo-giorno-c"></span>
+          </h3>
           <div id="caldo-contenuto"></div>
         </div>
 
-        <div class="sotto-card" id="box-idrometria" hidden>
-          <h3>&#127754; Fiumi monitorati <span id="idro-titolo-giorno"></span></h3>
+        <div class="sezione" id="box-idrometria" hidden>
+          <h3 class="etichetta-sezione">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+            Fiumi monitorati (ora)
+          </h3>
           <div id="idro-collegamento"></div>
           <div id="idrometria-contenuto"></div>
-          <div class="prev-comune" id="idrometria-nota"></div>
+          <div class="nota" id="idrometria-nota"></div>
         </div>
 
-        <div class="sotto-card" id="box-previsioni" hidden>
-          <h3>&#9925; Previsioni prossimi giorni</h3>
+        <div class="sezione" id="box-previsioni" hidden>
+          <h3 class="etichetta-sezione">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 18a4 4 0 1 1 .8-7.9A6 6 0 0 1 19 12a3 3 0 0 1-1 6z"/></svg>
+            Previsioni prossimi giorni
+          </h3>
           <div class="previsioni-giorni" id="previsioni-contenuto"></div>
-          <div class="prev-comune" id="previsioni-comune"></div>
+          <div class="nota" id="previsioni-comune"></div>
         </div>
 
-        <div class="sotto-card" id="box-vocale" hidden>
-          <h3>&#128266; Riassunto vocale</h3>
-          <p class="nota-copertura" id="testo-vocale"></p>
-          <button id="bottone-vocale" class="btn-aggiorna" type="button" aria-label="Ascolta il bollettino">&#128266; Ascolta</button>
+        <div class="sezione" id="box-vocale" hidden>
+          <h3 class="etichetta-sezione">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+            Riassunto vocale
+          </h3>
+          <p class="nota" id="testo-vocale" style="margin:0 0 10px"></p>
+          <button id="bottone-vocale" class="btn btn-piccolo" type="button">&#128266; Ascolta</button>
         </div>
-
       </div>
-    </div>
+    </aside>
   </div>
+
+  <section class="iscrizione" aria-labelledby="titolo-iscrizione">
+    <div>
+      <h2 id="titolo-iscrizione">&#128231; Fatti avvisare, non andare a cercarlo</h2>
+      <p>Il fiume della tua zona supera una soglia ufficiale, o il rischio pioggia peggiora davvero? Te lo scriviamo noi — un'email solo quando conta, mai un bollettino quotidiano.</p>
+    </div>
+    <form class="riga-form" id="form-iscrizione" novalidate>
+      <label for="iscrizione-comune" class="sr-only">Il tuo comune</label>
+      <select id="iscrizione-comune" class="campo" required>
+        <option value="">Caricamento comuni&hellip;</option>
+      </select>
+      <label for="iscrizione-email" class="sr-only">La tua email</label>
+      <input type="email" id="iscrizione-email" class="campo" placeholder="La tua email" autocomplete="email" required>
+      <button id="bottone-iscrizione" class="btn btn-primario" type="submit">Iscrivimi gratis</button>
+    </form>
+    <div class="esito" id="iscrizione-esito" role="status" aria-live="polite"></div>
+  </section>
 </main>
 
-<footer id="contatti">
-  Sito non ufficiale a scopo informativo. Per le allerte fa fede
-  <a href="https://www.regione.toscana.it/allertameteo">regione.toscana.it/allertameteo</a>.
-  Fonti dati: Dipartimento della Protezione Civile (pioggia), Ministero della Salute / dati estratti da
-  <a href="https://github.com/ondata/ondate-calore">onData</a> (caldo), Regione Toscana — Centro Funzionale Regionale, Consorzio LaMMA.
-  Progetto open source su <a href="https://github.com/emanuelc89/allerta-meteo-toscana">GitHub</a>.
-  &middot; <a href="fiumi.html">Mappa fluviale con tutti i livelli idrometrici</a>
-  <p style="margin-top:14px">Progetto ideato e sviluppato da <strong>Emanuel Ciuro</strong>.</p>
-
-  <div class="form-contatto">
-    <h3>Contattami</h3>
-    <form action="https://formsubmit.co/505fe97c4c3e22b4c44b9a70730cf270" method="POST">
+<footer class="piede" id="contatti">
+  <div class="piede-griglia">
+    <div>
+      <p>Sito non ufficiale a scopo informativo. Per le allerte fa fede
+        <a href="https://www.regione.toscana.it/allertameteo">regione.toscana.it/allertameteo</a>.</p>
+      <p style="margin-top:8px">Fonti dati: Dipartimento della Protezione Civile (pioggia), Ministero della Salute / dati estratti da
+        <a href="https://github.com/ondata/ondate-calore">onData</a> (caldo), Regione Toscana — Centro Funzionale Regionale, Consorzio LaMMA.
+        Progetto open source su <a href="https://github.com/emanuelc89/allerta-meteo-toscana">GitHub</a>
+        &middot; <a href="fiumi.html">Mappa fluviale con tutti i livelli idrometrici</a>.</p>
+      <p style="margin-top:14px">Progetto ideato e sviluppato da <strong>Emanuel Ciuro</strong>.</p>
+    </div>
+    <form class="form-contatto" action="https://formsubmit.co/505fe97c4c3e22b4c44b9a70730cf270" method="POST">
+      <h3>Contattami</h3>
       <input type="hidden" name="_subject" value="Nuovo messaggio da Allerta Meteo Toscana">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="Nome" placeholder="Il tuo nome (facoltativo)">
-      <input type="email" name="Email" placeholder="La tua email" required>
-      <textarea name="Messaggio" placeholder="Scrivi qui il tuo messaggio" required></textarea>
-      <button type="submit">Invia messaggio</button>
+      <label for="contatto-nome" class="sr-only">Nome</label>
+      <input type="text" id="contatto-nome" class="campo" name="Nome" placeholder="Il tuo nome (facoltativo)" autocomplete="name">
+      <label for="contatto-email" class="sr-only">Email</label>
+      <input type="email" id="contatto-email" class="campo" name="Email" placeholder="La tua email" autocomplete="email" required>
+      <label for="contatto-messaggio" class="sr-only">Messaggio</label>
+      <textarea id="contatto-messaggio" class="campo" name="Messaggio" placeholder="Scrivi qui il tuo messaggio" required></textarea>
+      <button class="btn btn-primario" type="submit">Invia messaggio</button>
     </form>
   </div>
 </footer>
 
+<div class="toast-zona" id="toast-zona" aria-live="polite"></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script>
-  var COLORI_PIOGGIA = { verde: '#a9d6b5', gialla: '#f2c94c', arancione: '#f2994a', rossa: '#eb5757' };
-  var ETICHETTE_PIOGGIA = { verde: 'Nessuna allerta', gialla: 'Allerta gialla', arancione: 'Allerta arancione', rossa: 'Allerta rossa' };
-  var ORDINE_PIOGGIA = { verde: 0, gialla: 1, arancione: 2, rossa: 3 };
-  var COLORI_CALDO = { 0: '#f6c453', 1: '#f6c453', 2: '#f2994a', 3: '#d64545' };
-  var COLORE_CALDO_STIMATO = '#c0722d';
-  var ETICHETTE_CALDO = { 0: 'Nessun rischio', 1: 'Pre-allerta', 2: 'Rischio elevato', 3: 'Ondata di calore' };
-
-  function formattaDataLunga(d) {
-    var s = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  }
-  var elDataOggi = document.getElementById('data-oggi');
-  if (elDataOggi) elDataOggi.textContent = formattaDataLunga(new Date());
-
-  var allerte = null;
-  var giorno = 'oggi';
-  var layerZone = null;
-  var iconeAttive = [];
-  var selezionata = null;
-  var nomeSelezionato = null;
-  var comuneCercato = null;
-  var indiceComuni = [];
-  var testoVocaleCorrente = '';
-
-  var mappa = L.map('mappa', { scrollWheelZoom: false, zoomSnap: 0.25 });
-  mappa.attributionControl.setPrefix(false);
-  mappa.attributionControl.addAttribution('Zone di allerta: dati DPC / Ministero della Salute');
-
-  var previsioni = null;
-  var idrometria = null;
-
-  fetch('data/idrometria.json')
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('idrometria ' + r.status)); })
-    .then(function (dati) { idrometria = dati; })
-    .catch(function (err) { console.warn('Idrometria non caricata:', err.message); });
-
-  fetch('data/previsioni.json')
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('previsioni ' + r.status)); })
-    .then(function (dati) { previsioni = dati; })
-    .catch(function (err) { console.warn('Previsioni non caricate:', err.message); });
-
-  fetch('data/allerte.json')
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('allerte ' + r.status)); })
-    .then(function (dati) { allerte = dati; aggiornaBanner(); return caricaMappa(); })
-    .catch(function (err) {
-      console.warn('Allerte non caricate:', err.message);
-      aggiornaBanner();
-      caricaMappa();
-    });
-
-  function caricaMappa() {
-    return fetch('zone.geojson')
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
-      .then(function (geo) {
-        layerZone = L.geoJSON(geo, {
-          style: stileZona,
-          onEachFeature: function (feat, ly) {
-            ly.on('mouseover', function () { if (ly !== selezionata) ly.setStyle({ weight: 2 }); ly.bringToFront(); });
-            ly.on('mouseout', function () { if (ly !== selezionata) ly.setStyle({ weight: 1 }); });
-            ly.on('click', function () { seleziona(feat, ly); });
-            aggiornaTooltip(feat, ly);
-          }
-        }).addTo(mappa);
-        mappa.fitBounds(layerZone.getBounds().pad(0.04));
-        disegnaIcone();
-        costruisciIndiceComuni(geo);
-      })
-      .catch(function (err) {
-        mappa.remove();
-        document.getElementById('mappa').innerHTML =
-          '<div class="errore-mappa">Le zone della mappa non si sono caricate (' + err.message + ').<br>' +
-          'Se apri il file col doppio clic, avvia il mini-server: nella cartella docs esegui ' +
-          '<code>python -m http.server 8000</code> e apri localhost:8000.</div>';
-      });
-  }
-
-  function datiZona(nomeZona) {
-    if (!allerte || !allerte[giorno]) return null;
-    return allerte[giorno][nomeZona] || null;
-  }
-
-  function caldoStimatoZona(nomeZona) {
-    if (!previsioni || !previsioni.zone) return null;
-    var dati = previsioni.zone[nomeZona];
-    if (!dati || !dati.giorni || !dati.giorni.length) return null;
-    var indice = giorno === 'oggi' ? 0 : 1;
-    return dati.giorni[indice] || null;
-  }
-
-  function stileZona(feat) {
-    var d = datiZona(feat.properties.nome);
-    var liv = d ? d.pioggia : null;
-    return {
-      color: '#ffffff', weight: 1,
-      fillColor: liv ? COLORI_PIOGGIA[liv] : '#d7dde6',
-      fillOpacity: 1
-    };
-  }
-
-  function aggiornaTooltip(feat, ly) {
-    var d = datiZona(feat.properties.nome);
-    var testo = feat.properties.nome;
-    if (d) {
-      testo += ' — Criticità: ' + ETICHETTE_PIOGGIA[d.pioggia];
-      if (d.caldo) {
-        testo += ' · Caldo: ' + ETICHETTE_CALDO[d.caldo.livello];
-      } else {
-        var stimato = caldoStimatoZona(feat.properties.nome);
-        if (stimato && stimato.caldo_stimato) {
-          testo += ' · Caldo (stima): ' + (stimato.max != null ? stimato.max + '°' : '?') +
-            (stimato.humidex_giorno_etichetta ? ', ' + stimato.humidex_giorno_etichetta : '');
-        }
-      }
-    }
-    if (ly.getTooltip()) ly.setTooltipContent(testo);
-    else ly.bindTooltip(testo, { sticky: true });
-  }
-
-  function svgGoccia(colore) {
-    return L.divIcon({
-      className: '',
-      html: '<svg width="22" height="22" viewBox="0 0 24 24" style="filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))">' +
-            '<path d="M12 2C12 2 5 11 5 15.5C5 19.6 8.1 22 12 22C15.9 22 19 19.6 19 15.5C19 11 12 2 12 2Z" ' +
-            'fill="' + colore + '" stroke="#fff" stroke-width="1.4"/></svg>',
-      iconSize: [22, 22], iconAnchor: [11, 20]
-    });
-  }
-
-  function svgTermometro(colore) {
-    return L.divIcon({
-      className: '',
-      html: '<svg width="18" height="26" viewBox="0 0 18 26" style="filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))">' +
-            '<rect x="6" y="2" width="6" height="14" rx="3" fill="#fff" stroke="' + colore + '" stroke-width="1.6"/>' +
-            '<circle cx="9" cy="20" r="5.5" fill="' + colore + '" stroke="#fff" stroke-width="1.4"/>' +
-            '<rect x="7.3" y="8" width="3.4" height="10" fill="' + colore + '"/></svg>',
-      iconSize: [18, 26], iconAnchor: [9, 24]
-    });
-  }
-
-  function disegnaIcone() {
-    iconeAttive.forEach(function (m) { mappa.removeLayer(m); });
-    iconeAttive = [];
-    if (!layerZone) return;
-
-    layerZone.eachLayer(function (ly) {
-      var d = datiZona(ly.feature.properties.nome);
-      if (!d) return;
-      var centro = ly.getBounds().getCenter();
-
-      if (d.pioggia && d.pioggia !== 'verde') {
-        var mGoccia = L.marker(centro, { icon: svgGoccia(COLORI_PIOGGIA[d.pioggia]), interactive: false });
-        mGoccia.addTo(mappa);
-        iconeAttive.push(mGoccia);
-      }
-      if (d.caldo && d.caldo.livello >= 1) {
-        var offset = (d.pioggia && d.pioggia !== 'verde') ? 0.06 : 0;
-        var puntoCaldo = L.latLng(centro.lat, centro.lng + offset);
-        var mTerm = L.marker(puntoCaldo, { icon: svgTermometro(COLORI_CALDO[d.caldo.livello]), interactive: false });
-        mTerm.addTo(mappa);
-        iconeAttive.push(mTerm);
-      } else {
-        var stimato = caldoStimatoZona(ly.feature.properties.nome);
-        if (stimato && stimato.caldo_stimato) {
-          var offsetStim = (d.pioggia && d.pioggia !== 'verde') ? 0.06 : 0;
-          var puntoCaldoStim = L.latLng(centro.lat, centro.lng + offsetStim);
-          var mTermStim = L.marker(puntoCaldoStim, { icon: svgTermometro(COLORE_CALDO_STIMATO), interactive: false });
-          mTermStim.addTo(mappa);
-          iconeAttive.push(mTermStim);
-        }
-      }
-    });
-  }
-
-  function ridisegna() {
-    if (!layerZone) return;
-    layerZone.eachLayer(function (ly) {
-      ly.setStyle(stileZona(ly.feature));
-      aggiornaTooltip(ly.feature, ly);
-    });
-    if (selezionata) selezionata.setStyle({ color: '#223768', weight: 2.5 });
-    disegnaIcone();
-    if (nomeSelezionato) mostraDettaglio(nomeSelezionato);
-  }
-
-  function seleziona(feat, ly, comuneEvidenziato) {
-    if (selezionata) selezionata.setStyle(stileZona(selezionata.feature));
-    selezionata = ly;
-    nomeSelezionato = feat.properties.nome;
-    comuneCercato = comuneEvidenziato || null;
-    ly.setStyle({ color: '#223768', weight: 2.5 });
-    ly.bringToFront();
-    mostraDettaglio(feat.properties.nome, feat.properties.comuni);
-  }
-
-  function testoRischio(liv) {
-    if (!liv) return '<span class="stato">Dato non disponibile</span>';
-    return '<i class="quadr" style="background:' + COLORI_PIOGGIA[liv] + '"></i> ' + ETICHETTE_PIOGGIA[liv];
-  }
-
-  function animaNumero(elemento, valoreFinale, suffisso, durataMs) {
-    suffisso = suffisso || '';
-    durataMs = durataMs || 600;
-    if (valoreFinale == null) { elemento.textContent = '—'; return; }
-    if (animazioniRidotte()) { elemento.textContent = valoreFinale + suffisso; return; }
-
-    var inizio = null;
-    var partenza = 0;
-    function passo(adesso) {
-      if (!inizio) inizio = adesso;
-      var progresso = Math.min((adesso - inizio) / durataMs, 1);
-      var valoreCorrente = Math.round(partenza + (valoreFinale - partenza) * progresso);
-      elemento.textContent = valoreCorrente + suffisso;
-      if (progresso < 1) requestAnimationFrame(passo);
-    }
-    requestAnimationFrame(passo);
-  }
-
-  function animazioniRidotte() {
-    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
-
-  function mostraPrevisioni(nomeZona) {
-    var box = document.getElementById('box-previsioni');
-    if (!previsioni || !previsioni.zone) { box.hidden = true; return; }
-    var dati = previsioni.zone[nomeZona];
-    if (!dati || !dati.giorni || !dati.giorni.length) { box.hidden = true; return; }
-
-    var html = dati.giorni.map(function (g, i) {
-      var icona = g.icona_url
-        ? '<img src="' + g.icona_url + '" alt="' + (g.descrizione || '') + '" loading="lazy">'
-        : '';
-      var nomeGiorno = (g.data_descr || '').slice(0, 3);
-      var fmtH = function (v) { return v != null ? v + '°' : '—'; };
-      var titoloHumidex = 'Notte: ' + fmtH(g.humidex_notte) + (g.humidex_notte_etichetta ? ' (' + g.humidex_notte_etichetta + ')' : '') +
-        ' · Giorno: ' + fmtH(g.humidex_giorno) + (g.humidex_giorno_etichetta ? ' (' + g.humidex_giorno_etichetta + ')' : '');
-      return '<div class="prev-giorno">' +
-        '<div class="g-nome">' + nomeGiorno + '</div>' +
-        icona +
-        '<div class="g-descr">' + (g.descrizione || '') + '</div>' +
-        '<div class="g-temp"><span id="pv-max-' + i + '">—</span>' +
-        ' <span class="min">' + (g.min != null ? g.min + '°' : '') + '</span></div>' +
-        '<div class="g-humidex" title="' + titoloHumidex + '"><svg width=\'13\' height=\'13\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\' style=\'vertical-align:-2px\'><path d=\'M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/></svg> ' +
-        '<b id="pv-hn-' + i + '">—</b>/<b id="pv-hg-' + i + '">—</b></div>' +
-        '</div>';
-    }).join('');
-
-    document.getElementById('previsioni-contenuto').innerHTML = html;
-
-    dati.giorni.forEach(function (g, i) {
-      animaNumero(document.getElementById('pv-max-' + i), g.max, '°');
-      animaNumero(document.getElementById('pv-hn-' + i), g.humidex_notte, '°');
-      animaNumero(document.getElementById('pv-hg-' + i), g.humidex_giorno, '°');
-    });
-    document.getElementById('previsioni-comune').innerHTML =
-      'Previsioni per ' + dati.comune + ', comune più popoloso della zona' +
-      (dati.aggiornamento ? ' · aggiornato ' + dati.aggiornamento : '') +
-      '<br><svg width=\'13\' height=\'13\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2.2\' stroke-linecap=\'round\' style=\'vertical-align:-2px\'><path d=\'M3 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/><path d=\'M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0\'/></svg> notte/giorno = Humidex medio (temperatura percepita in base all\'umidità) — indicatore calcolato, non un dato ufficiale.';
-    box.hidden = false;
-  }
-
-  function parlaDisponibile() {
-    return 'speechSynthesis' in window;
-  }
-
-  function costruisciTestoVocale(nomeZona, d, previsioneGiorno, quandoTxt) {
-    var frasi = [];
-    frasi.push('Bollettino per ' + nomeZona + ', ' + quandoTxt + '.');
-
-    if (!d) {
-      frasi.push('Dati non disponibili per questa zona.');
-    } else {
-      if (d.pioggia === 'verde') {
-        frasi.push('Nessuna allerta per rischio idraulico, temporali o idrogeologico.');
-      } else {
-        var attivi = [];
-        if (d.idraulico !== 'verde') attivi.push('idraulico');
-        if (d.temporali !== 'verde') attivi.push('temporali');
-        if (d.idrogeologico !== 'verde') attivi.push('idrogeologico');
-        frasi.push(ETICHETTE_PIOGGIA[d.pioggia] + ' per rischio ' + (attivi.join(' e ') || 'idrogeologico') + '.');
-      }
-
-      if (d.caldo) {
-        frasi.push('Allerta caldo ufficiale del Ministero della Salute: ' + d.caldo.etichetta + ', livello ' + d.caldo.livello + ' su 3.');
-      } else if (previsioneGiorno && previsioneGiorno.caldo_stimato) {
-        frasi.push('Attenzione al caldo: stima calcolata di ' + (previsioneGiorno.humidex_giorno_etichetta || 'disagio') +
-          ', humidex intorno ai ' + previsioneGiorno.humidex_giorno + ' gradi percepiti. Non è un bollettino ufficiale.');
-      } else {
-        frasi.push('Nessuna criticità da caldo prevista.');
-      }
-    }
-
-    if (previsioneGiorno) {
-      frasi.push('Le previsioni indicano cielo ' + (previsioneGiorno.descrizione || 'variabile') +
-        ', con temperatura massima di ' + (previsioneGiorno.max != null ? previsioneGiorno.max : '?') +
-        ' gradi e minima di ' + (previsioneGiorno.min != null ? previsioneGiorno.min : '?') + ' gradi.');
-    }
-
-    return frasi.join(' ');
-  }
-
-  function svgSparkline(punti) {
-    if (!punti || punti.length < 2) return '';
-    var valori = punti.map(function (p) { return p[1]; });
-    var minV = Math.min.apply(null, valori);
-    var maxV = Math.max.apply(null, valori);
-    var span = (maxV - minV) || 1;
-    var w = 56, h = 20;
-    var coord = punti.map(function (p, i) {
-      var x = (i / (punti.length - 1)) * w;
-      var y = h - ((p[1] - minV) / span) * (h - 3) - 1.5;
-      return x.toFixed(1) + ',' + y.toFixed(1);
-    }).join(' ');
-    return '<svg class="fiume-sparkline" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">' +
-      '<polyline points="' + coord + '" fill="none" stroke="currentColor" stroke-width="1.6" ' +
-      'stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  }
-
-  var ETICHETTE_STATO_FIUME = {
-    sopra_soglia2: 'sopra soglia 2 (criticità)',
-    in_avvicinamento_soglia2: 'in avvicinamento alla soglia di criticità',
-    sopra_soglia1: 'sopra soglia 1 (attenzione)',
-    in_avvicinamento_soglia1: 'in avvicinamento alla soglia di attenzione',
-    normale: 'sotto le soglie'
-  };
-  var COLORI_STATO_FIUME = {
-    sopra_soglia2: '#eb5757',
-    in_avvicinamento_soglia2: '#e0672f',
-    sopra_soglia1: '#f2994a',
-    in_avvicinamento_soglia1: '#f2c94c',
-    normale: '#3f9142'
-  };
-  var ICONE_TENDENZA_FIUME = { 'in aumento': '↑', 'in diminuzione': '↓', 'stabile': '→' };
-
-  function mostraIdrometria(nomeZona) {
-    var box = document.getElementById('box-idrometria');
-    if (giorno === 'domani') { box.hidden = true; return; }
-    if (!idrometria || !idrometria.zone) { box.hidden = true; return; }
-    var stazioni = idrometria.zone[nomeZona];
-    if (!stazioni || !stazioni.length) { box.hidden = true; return; }
-
-    var html = stazioni.map(function (s) {
-      var colore = s.stato ? COLORI_STATO_FIUME[s.stato] : '#9aa4b2';
-      var etichettaStato = s.stato ? ETICHETTE_STATO_FIUME[s.stato] : 'nessuna soglia definita per questa stazione';
-      var sogliaTxt = (s.soglia1 != null || s.soglia2 != null)
-        ? ' (soglie ' + (s.soglia1 != null ? s.soglia1.toFixed(2) : '?') + 'm / ' + (s.soglia2 != null ? s.soglia2.toFixed(2) : '?') + 'm)'
-        : '';
-      var portataTxt = s.portata != null ? s.portata.toFixed(2) + ' m³/s' : '';
-      return '<div class="fiume-riga">' +
-        '<div>' +
-          '<div class="fiume-nome">' + s.fiume + ' <span style="font-weight:400;color:var(--testo-tenue)">– ' + s.stazione + '</span></div>' +
-          '<div class="fiume-info" style="color:' + colore + '">' + etichettaStato + sogliaTxt + '</div>' +
-        '</div>' +
-        '<div class="fiume-dati">' +
-          svgSparkline(s.storico) +
-          '<div class="fiume-livello" style="color:' + colore + '">' +
-            (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA_FIUME[s.tendenza] || '') +
-          '</div>' +
-          (portataTxt ? '<div class="fiume-portata">' + portataTxt + '</div>' : '') +
-        '</div>' +
-      '</div>';
-    }).join('');
-
-    document.getElementById('idrometria-contenuto').innerHTML = html;
-
-    var d = datiZona(nomeZona);
-    var collegamento = document.getElementById('idro-collegamento');
-    if (d && d.pioggia && d.pioggia !== 'verde') {
-      collegamento.innerHTML = '<div class="fiume-collegamento">💧 ' + ETICHETTE_PIOGGIA[d.pioggia] +
-        ' in corso per questa zona: tieni d\'occhio l\'andamento dei fiumi qui sotto.</div>';
-    } else {
-      collegamento.innerHTML = '';
-    }
-
-    var testoGiornoIdro = giorno === 'oggi' ? '(oggi)' : '(domani)';
-    document.getElementById('idro-titolo-giorno').textContent = testoGiornoIdro;
-    document.getElementById('idrometria-nota').textContent =
-      'Fonte: Centro Funzionale Regionale, dati in tempo reale non validati' +
-      (idrometria.aggiornato ? ' · aggiornato ' + new Date(idrometria.aggiornato).toLocaleString('it-IT') : '') + '.';
-    box.hidden = false;
-  }
-
-  function mostraDettaglio(nomeZona, comuni) {
-    document.getElementById('pan-vuoto').hidden = true;
-    document.getElementById('pan-dett').hidden = false;
-    document.getElementById('pan-nome').textContent = nomeZona;
-
-    if (comuni && comuni.length) {
-      document.getElementById('pan-comuni').textContent =
-        comuni.length + ' comuni, tra cui ' + comuni.slice(0, 3).join(', ') + (comuni.length > 3 ? '…' : '');
-    }
-
-    var elTrovato = document.getElementById('comune-trovato');
-    if (elTrovato) {
-      if (comuneCercato) {
-        elTrovato.textContent = '📍 ' + comuneCercato + ' fa parte di questa zona di allerta.';
-        elTrovato.hidden = false;
-      } else {
-        elTrovato.hidden = true;
-      }
-    }
-
-    var testoGiorno = giorno === 'oggi' ? '(oggi)' : '(domani)';
-    document.getElementById('pan-titolo-giorno-p').textContent = testoGiorno;
-    document.getElementById('pan-titolo-giorno-c').textContent = testoGiorno;
-
-    var d = datiZona(nomeZona);
-    document.getElementById('r-idraulico').innerHTML = testoRischio(d && d.idraulico);
-    document.getElementById('r-temporali').innerHTML = testoRischio(d && d.temporali);
-    document.getElementById('r-idrogeologico').innerHTML = testoRischio(d && d.idrogeologico);
-
-    var boxCaldo = document.getElementById('caldo-contenuto');
-    var zonaCoperta = allerte && allerte.caldo_zona_coperta;
-    if (nomeZona === zonaCoperta) {
-      if (d && d.caldo) {
-        boxCaldo.innerHTML =
-          '<div class="riga-rischio"><span>Livello ' + d.caldo.livello + '</span>' +
-          '<span class="stato"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' +
-          COLORI_CALDO[d.caldo.livello] + ';margin-right:6px;vertical-align:-1px;"></span>' + d.caldo.etichetta + '</span></div>';
-      } else if (allerte && allerte.caldo_stagione_attiva === false) {
-        boxCaldo.innerHTML = '<p class="nota-copertura">Bollettino caldo fuori stagione (attivo indicativamente da fine maggio a metà settembre).</p>';
-      } else {
-        boxCaldo.innerHTML = '<p class="nota-copertura">Nessun dato disponibile per oggi.</p>';
-      }
-    } else {
-      var stimatoPannello = caldoStimatoZona(nomeZona);
-      if (stimatoPannello && stimatoPannello.caldo_stimato) {
-        boxCaldo.innerHTML =
-          '<div class="riga-rischio"><span>Stima: ' +
-          (stimatoPannello.max != null ? stimatoPannello.max + '° max' : 'n/d') +
-          (stimatoPannello.humidex_giorno_etichetta ? ', ' + stimatoPannello.humidex_giorno_etichetta : '') + '</span>' +
-          '<span class="stato"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' +
-          COLORE_CALDO_STIMATO + ';margin-right:6px;vertical-align:-1px;"></span>Attiva</span></div>' +
-          '<p class="nota-copertura">Il bollettino ufficiale ministeriale copre solo Firenze. Questa è una stima calcolata da temperatura e Humidex sui dati LaMMA, non un bollettino ufficiale.</p>';
-      } else {
-        boxCaldo.innerHTML = '<p class="nota-copertura">Il bollettino ufficiale ministeriale copre solo la città di Firenze. Nessuna stima di rischio caldo per questa zona al momento.</p>';
-      }
-    }
-
-    mostraIdrometria(nomeZona);
-    mostraPrevisioni(nomeZona);
-
-    var boxVocale = document.getElementById('box-vocale');
-    if (boxVocale) {
-      if (parlaDisponibile()) {
-        var quandoVocale = giorno === 'oggi' ? 'oggi' : 'domani';
-        var previsioneVocale = caldoStimatoZona(nomeZona);
-        testoVocaleCorrente = costruisciTestoVocale(nomeZona, d, previsioneVocale, quandoVocale);
-        document.getElementById('testo-vocale').textContent = testoVocaleCorrente;
-        boxVocale.hidden = false;
-      } else {
-        boxVocale.hidden = true;
-      }
-    }
-    if (parlaDisponibile() && window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
-      var bottoneVocaleReset = document.getElementById('bottone-vocale');
-      if (bottoneVocaleReset) bottoneVocaleReset.innerHTML = '&#128266; Ascolta';
-    }
-
-    var selettoreZonaIscrizione = document.getElementById('iscrizione-comune');
-    if (selettoreZonaIscrizione) selettoreZonaIscrizione.value = nomeZona;
-  }
-
-  function oreDa(isoString) {
-    if (!isoString) return null;
-    var t = Date.parse(isoString);
-    if (isNaN(t)) return null;
-    return (Date.now() - t) / 3600000;
-  }
-
-  function bannerHtml(classe, colorePallino, simbolo, titolo, testo) {
-    return '<div class="banner ' + classe + '"><div class="pallino" style="background:' + colorePallino + '">' +
-      simbolo + '</div><div><strong>' + titolo + '</strong><span>' + testo + '</span></div></div>';
-  }
-
-  function bannerFreschezza() {
-    if (!allerte) {
-      return bannerHtml('avviso', '#c0392b', '!', 'Dati non disponibili',
-        'Non è stato possibile leggere l\'ultimo bollettino. Consulta ' +
-        '<a href="https://www.regione.toscana.it/allertameteo">il sito ufficiale della Regione</a>.');
-    }
-
-    var ore = oreDa(allerte.aggiornato);
-
-    if (allerte.oggi === null || allerte.oggi === undefined) {
-      return bannerHtml('avviso', '#c0392b', '!', 'Nessun bollettino disponibile per oggi',
-        'L\'ultimo bollettino risale al ' + (allerte.emesso_pioggia || 'una data precedente') +
-        ' e non copre la giornata odierna. Fai riferimento ' +
-        '<a href="https://www.regione.toscana.it/allertameteo">al sito ufficiale della Regione</a>.');
-    }
-
-    if (ore !== null && ore > 36) {
-      return bannerHtml('avviso', '#c0392b', '!', 'Aggiornamento automatico fermo',
-        'Questa pagina non riceve nuovi dati da circa ' + Math.round(ore) + ' ore: le informazioni ' +
-        'mostrate potrebbero non essere attuali. Fai riferimento ' +
-        '<a href="https://www.regione.toscana.it/allertameteo">al sito ufficiale della Regione</a>.');
-    }
-
-    return '';
-  }
-
-  function aggiornaRigaControllo() {
-    var el = document.getElementById('riga-controllo');
-    if (!el) return;
-    if (!allerte || !allerte.aggiornato) { el.textContent = ''; return; }
-    var d = new Date(allerte.aggiornato);
-    var ore = oreDa(allerte.aggiornato);
-    var quando = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' }) + ' alle ' +
-                 d.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
-    el.innerHTML = '<span>Ultimo controllo automatico dei bollettini: ' + quando +
-      (ore !== null && ore > 36 ? ' <strong>(oltre 36 ore fa)</strong>' : '') + '</span>';
-  }
-
-  function aggiornaBanner() {
-    var contenitore = document.getElementById('banner-riga');
-    var quando = document.getElementById('mappa-quando');
-    var quandoTxt = giorno === 'oggi' ? 'oggi' : 'domani';
-    quando.textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' — ' +
-      formattaDataLunga(giorno === 'oggi' ? new Date() : new Date(Date.now() + 86400000));
-
-    var html = bannerFreschezza();
-    var zone = allerte ? allerte[giorno] : null;
-
-    if (!zone) {
-      if (giorno === 'domani') {
-        html += bannerHtml('neutro', '#9aa4b2', '&#8987;', 'Previsione di domani non ancora pubblicata',
-          'Il bollettino di criticità viene emesso di norma nel primo pomeriggio. ' +
-          'Riprova più tardi: la pagina si aggiorna da sola.');
-      } else if (!allerte || allerte.oggi === null || allerte.oggi === undefined) {
-        // niente: l'avviso principale e' gia' in cima
-      } else {
-        html += bannerHtml('neutro', '#9aa4b2', '?', 'Dati non disponibili',
-          'Non è stato possibile leggere i dati per questa giornata.');
-      }
-      var logoFermo = document.getElementById('logo-triangolo');
-      if (logoFermo) logoFermo.classList.remove('logo-attenzione');
-      contenitore.innerHTML = html;
-      aggiornaRigaControllo();
-      return;
-    }
-
-    var peggiorePioggia = 'verde';
-    var zoneConPioggia = [];
-    var peggioreCaldo = 0;
-    Object.keys(zone).forEach(function (n) {
-      var d = zone[n];
-      if (ORDINE_PIOGGIA[d.pioggia] > ORDINE_PIOGGIA[peggiorePioggia]) peggiorePioggia = d.pioggia;
-      if (d.pioggia !== 'verde') zoneConPioggia.push(n);
-      if (d.caldo && d.caldo.livello > peggioreCaldo) peggioreCaldo = d.caldo.livello;
-    });
-
-    var logo = document.getElementById('logo-triangolo');
-    if (logo) logo.classList.toggle('logo-attenzione', peggiorePioggia !== 'verde' || peggioreCaldo > 0);
-
-    var codaBollettino = allerte.emesso_pioggia ? '  ·  Bollettino emesso il ' + allerte.emesso_pioggia : '';
-
-    if (peggiorePioggia === 'verde') {
-      html += bannerHtml('', '#3f9142', '✓', 'Nessuna allerta ' + quandoTxt + ' in Toscana',
-        'Nessun fenomeno significativo previsto sulle zone di allerta.' + codaBollettino);
-    } else {
-      html += bannerHtml('pioggia-attiva', COLORI_PIOGGIA[peggiorePioggia], '&#128167;',
-        ETICHETTE_PIOGGIA[peggiorePioggia] + ' ' + quandoTxt + ' in Toscana',
-        zoneConPioggia.length + (zoneConPioggia.length === 1 ? ' zona interessata: ' : ' zone interessate: ') +
-        zoneConPioggia.slice(0, 4).join(', ') + (zoneConPioggia.length > 4 ? '…' : '') + '.' + codaBollettino);
-    }
-
-    if (allerte.caldo_stagione_attiva === false) {
-      html += bannerHtml('neutro', '#9aa4b2', '&#127777;&#65039;', 'Bollettino caldo non attivo',
-        'Il Ministero della Salute pubblica il bollettino ondate di calore da fine maggio a metà settembre.');
-    } else if (peggioreCaldo === 0) {
-      html += bannerHtml('', '#3f9142', '✓', 'Nessuna allerta caldo ' + quandoTxt + ' a Firenze',
-        'Dato ufficiale disponibile solo per la città di Firenze (Ministero della Salute).');
-    } else {
-      html += bannerHtml('caldo-attivo', COLORI_CALDO[peggioreCaldo], '&#127777;&#65039;',
-        ETICHETTE_CALDO[peggioreCaldo] + ' a Firenze ' + quandoTxt,
-        'Livello ' + peggioreCaldo + ' su 3 — dato ufficiale disponibile solo per la città di Firenze.');
-    }
-
-    contenitore.innerHTML = html;
-    aggiornaRigaControllo();
-  }
-
-  function normalizza(s) {
-    return s.toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]/g, '');
-  }
-
-  function costruisciIndiceComuni(geo) {
-    indiceComuni = [];
-    geo.features.forEach(function (f) {
-      (f.properties.comuni || []).forEach(function (com) {
-        indiceComuni.push({ comune: com, zona: f.properties.nome, chiave: normalizza(com) });
-      });
-    });
-    indiceComuni.sort(function (a, b) { return a.comune.localeCompare(b.comune, 'it'); });
-  }
-
-  function cerca(testo) {
-    var q = normalizza(testo);
-    if (q.length < 2) return [];
-    var inizio = [], dentro = [];
-    indiceComuni.forEach(function (v) {
-      if (v.chiave.indexOf(q) === 0) inizio.push(v);
-      else if (v.chiave.indexOf(q) > 0) dentro.push(v);
-    });
-    return inizio.concat(dentro).slice(0, 8);
-  }
-
-  var inputCercaEl = document.getElementById('cerca-comune');
-  if (inputCercaEl && window.innerWidth < 400) {
-    inputCercaEl.setAttribute('placeholder', 'Cerca il tuo comune…');
-  }
-
-  var inputCerca = document.getElementById('cerca-comune');
-  var listaRisultati = document.getElementById('risultati-ricerca');
-  var risultatiCorrenti = [];
-  var indiceEvidenziato = -1;
-
-  function mostraRisultati(items) {
-    risultatiCorrenti = items;
-    indiceEvidenziato = -1;
-    if (!items.length) {
-      listaRisultati.innerHTML = '<li class="vuoto">Nessun comune trovato</li>';
-    } else {
-      listaRisultati.innerHTML = items.map(function (v, i) {
-        return '<li role="option" data-i="' + i + '"><span>' + v.comune +
-               '</span><span class="zona-nome">' + v.zona + '</span></li>';
-      }).join('');
-    }
-    listaRisultati.hidden = false;
-    inputCerca.setAttribute('aria-expanded', 'true');
-  }
-
-  function chiudiRisultati() {
-    listaRisultati.hidden = true;
-    inputCerca.setAttribute('aria-expanded', 'false');
-    indiceEvidenziato = -1;
-  }
-
-  function evidenzia(i) {
-    var voci = listaRisultati.querySelectorAll('li[data-i]');
-    Array.prototype.forEach.call(voci, function (el, k) {
-      el.classList.toggle('evidenziato', k === i);
-    });
-    indiceEvidenziato = i;
-  }
-
-  function vaiAZona(voce) {
-    if (!layerZone || !voce) return;
-    var trovato = null;
-    layerZone.eachLayer(function (ly) {
-      if (ly.feature.properties.nome === voce.zona) trovato = ly;
-    });
-    if (!trovato) return;
-    mappa.fitBounds(trovato.getBounds().pad(0.6));
-    seleziona(trovato.feature, trovato, voce.comune);
-    chiudiRisultati();
-    inputCerca.value = voce.comune;
-    inputCerca.blur();
-  }
-
-  if (inputCerca) {
-    inputCerca.addEventListener('input', function () {
-      var testo = this.value.trim();
-      if (testo.length < 2) { chiudiRisultati(); return; }
-      mostraRisultati(cerca(testo));
-    });
-
-    inputCerca.addEventListener('keydown', function (e) {
-      if (listaRisultati.hidden || !risultatiCorrenti.length) return;
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        evidenzia((indiceEvidenziato + 1) % risultatiCorrenti.length);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        evidenzia((indiceEvidenziato - 1 + risultatiCorrenti.length) % risultatiCorrenti.length);
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        vaiAZona(risultatiCorrenti[indiceEvidenziato >= 0 ? indiceEvidenziato : 0]);
-      } else if (e.key === 'Escape') {
-        chiudiRisultati();
-      }
-    });
-
-    listaRisultati.addEventListener('mousedown', function (e) {
-      var li = e.target.closest('li[data-i]');
-      if (!li) return;
-      e.preventDefault();
-      vaiAZona(risultatiCorrenti[parseInt(li.getAttribute('data-i'), 10)]);
-    });
-
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.ricerca')) chiudiRisultati();
-    });
-  }
-
-  function applicaAggiornamento() {
-    var banner = document.getElementById('banner-riga');
-    var pannello = document.getElementById('pan-dett');
-    var conDissolvenza = !animazioniRidotte();
-
-    if (conDissolvenza) {
-      banner.style.opacity = '0';
-      if (!pannello.hidden) pannello.style.opacity = '0';
-    }
-
-    aggiornaBanner();
-    ridisegna();
-
-    if (conDissolvenza) {
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          banner.style.opacity = '1';
-          if (!pannello.hidden) pannello.style.opacity = '1';
-        });
-      });
-    }
-  }
-
-  function ricaricaDati(daBottone) {
-    var bottone = document.getElementById('bottone-aggiorna');
-    if (bottone && daBottone) { bottone.disabled = true; bottone.textContent = 'Aggiornamento…'; }
-
-    var cacheBust = '?_=' + Date.now();
-    Promise.all([
-      fetch('data/allerte.json' + cacheBust)
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('allerte ' + r.status)); }),
-      fetch('data/previsioni.json' + cacheBust)
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .catch(function () { return null; })
-    ]).then(function (risultati) {
-      allerte = risultati[0];
-      if (risultati[1]) previsioni = risultati[1];
-      applicaAggiornamento();
-    }).catch(function (err) {
-      console.warn('Aggiornamento automatico non riuscito:', err.message);
-    }).finally(function () {
-      if (bottone && daBottone) { bottone.disabled = false; bottone.textContent = '↻ Aggiorna ora'; }
-    });
-  }
-
-  var bottoneAggiorna = document.getElementById('bottone-aggiorna');
-  if (bottoneAggiorna) bottoneAggiorna.addEventListener('click', function () { ricaricaDati(true); });
-
-  setInterval(function () {
-    if (!document.hidden) ricaricaDati(false);
-  }, 5 * 60 * 1000);
-
-  document.addEventListener('visibilitychange', function () {
-    if (!document.hidden) ricaricaDati(false);
-  });
-
-  var bottoneVocale = document.getElementById('bottone-vocale');
-  if (bottoneVocale && parlaDisponibile()) {
-    window.speechSynthesis.getVoices();
-    if ('onvoiceschanged' in window.speechSynthesis) {
-      window.speechSynthesis.onvoiceschanged = function () { window.speechSynthesis.getVoices(); };
-    }
-
-    bottoneVocale.addEventListener('click', function () {
-      if (window.speechSynthesis.speaking) {
-        window.speechSynthesis.cancel();
-        bottoneVocale.innerHTML = '&#128266; Ascolta';
-        return;
-      }
-      if (!testoVocaleCorrente) return;
-
-      var u = new SpeechSynthesisUtterance(testoVocaleCorrente);
-      u.lang = 'it-IT';
-      var voci = window.speechSynthesis.getVoices();
-      var voceIt = voci.filter(function (v) { return v.lang && v.lang.toLowerCase().indexOf('it') === 0; })[0];
-      if (voceIt) u.voice = voceIt;
-      u.onend = function () { bottoneVocale.innerHTML = '&#128266; Ascolta'; };
-      u.onerror = function () { bottoneVocale.innerHTML = '&#128266; Ascolta'; };
-
-      bottoneVocale.innerHTML = '&#9209;&#65039; Interrompi';
-      window.speechSynthesis.speak(u);
-    });
-  }
-
-  var URL_WORKER = 'https://triggeridrometria.lmnc89.workers.dev';
-
-  var bottoneIscrizione = document.getElementById('bottone-iscrizione');
-  if (bottoneIscrizione) {
-    bottoneIscrizione.addEventListener('click', function () {
-      var selettoreZona = document.getElementById('iscrizione-comune');
-      var campoEmail = document.getElementById('iscrizione-email');
-      var esito = document.getElementById('iscrizione-esito');
-      var zona = selettoreZona.value;
-      var email = campoEmail.value.trim();
-
-      if (!zona) {
-        esito.textContent = 'Scegli prima la tua zona.';
-        esito.className = 'esito errore';
-        return;
-      }
-      if (!email || email.indexOf('@') === -1) {
-        esito.textContent = 'Scrivi un indirizzo email valido.';
-        esito.className = 'esito errore';
-        return;
-      }
-
-      bottoneIscrizione.disabled = true;
-      bottoneIscrizione.textContent = 'Invio...';
-      esito.textContent = '';
-      esito.className = 'esito';
-
-      fetch(URL_WORKER + '/iscrivi', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, zona: zona })
-      })
-        .then(function (r) { return r.json().then(function (dati) { return { status: r.status, dati: dati }; }); })
-        .then(function (risultato) {
-          if (risultato.status === 200 && risultato.dati.ok) {
-            esito.textContent = risultato.dati.messaggio;
-            esito.className = 'esito ok';
-            campoEmail.value = '';
-          } else {
-            esito.textContent = risultato.dati.errore || 'Qualcosa non ha funzionato, riprova.';
-            esito.className = 'esito errore';
-          }
-        })
-        .catch(function () {
-          esito.textContent = 'Impossibile contattare il servizio di iscrizione. Riprova più tardi.';
-          esito.className = 'esito errore';
-        })
-        .finally(function () {
-          bottoneIscrizione.disabled = false;
-          bottoneIscrizione.textContent = 'Iscrivimi gratis';
-        });
-    });
-  }
-
-  document.getElementById('tabs').addEventListener('click', function (e) {
-    var b = e.target.closest('button');
-    if (!b) return;
-    giorno = b.getAttribute('data-giorno');
-    Array.prototype.forEach.call(this.querySelectorAll('button'), function (x) { x.classList.toggle('attivo', x === b); });
-    applicaAggiornamento();
-  });
-</script>
+<script src="assets/comune.js"></script>
+<script src="assets/index.js"></script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e7b35b91883449e0b1b69fbca05fce21"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
