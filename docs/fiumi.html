@@ -17,42 +17,143 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="assets/stile.css">
 <style>
-  .griglia { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr); gap: 18px; align-items: start; }
-  .sotto { font-size: .82rem; color: var(--testo-tenue); }
-  .filtri-fiumi { display: grid; gap: 10px; margin-bottom: 12px; }
-  #mappa { height: 640px; }
-  .popup-fiume { font-size: .88rem; min-width: 200px; }
-  .popup-fiume .titolo { font-weight: 700; color: var(--titolo); margin-bottom: 6px; }
-  .popup-fiume .riga { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; font-variant-numeric: tabular-nums; border-top: 1px solid var(--bordo); }
-  .popup-fiume .riga:first-of-type { border-top: 0; }
-  .popup-fiume .riga span:first-child { color: var(--testo-tenue); }
-  .popup-fiume .badge { margin-top: 8px; }
-  .elenco { padding: 0; overflow: hidden; }
-  @media (min-width: 981px) {
-    .elenco { position: sticky; top: 78px; max-height: calc(100vh - 96px); display: flex; flex-direction: column; }
-    .elenco-corpo { overflow-y: auto; overscroll-behavior: contain; }
+  /* ---------- Riepilogo ---------- */
+  .riepilogo { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: 18px; align-items: center; }
+  .stato-generale { display: flex; gap: 14px; align-items: center; }
+  .stato-generale .bolla {
+    width: 52px; height: 52px; border-radius: 16px; flex-shrink: 0; display: grid; place-items: center;
+    background: var(--tenue, var(--liv-nd-tenue)); color: var(--forte, var(--liv-nd-testo));
   }
-  .elenco-testa { padding: 18px 20px 10px; border-bottom: 1px solid var(--bordo); }
-  .elenco-testa h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.012em; }
-  .elenco-corpo { padding: 6px 10px 12px; }
+  .stato-generale .bolla svg { width: 26px; height: 26px; }
+  .stato-generale.verde { --tenue: var(--liv-verde-tenue); --forte: var(--liv-verde-testo); }
+  .stato-generale.gialla { --tenue: var(--liv-gialla-tenue); --forte: var(--liv-gialla-testo); }
+  .stato-generale.arancione { --tenue: var(--liv-arancione-tenue); --forte: var(--liv-arancione-testo); }
+  .stato-generale.rossa { --tenue: var(--liv-rossa-tenue); --forte: var(--liv-rossa-testo); }
+  .stato-generale h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -.02em; }
+  .stato-generale p { font-size: .84rem; color: var(--testo-tenue); margin-top: 2px; }
+  .tessere { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .tessera {
+    text-align: left; font: inherit; color: inherit; cursor: pointer;
+    background: var(--superficie-2); border: 1px solid var(--bordo); border-radius: 14px; padding: 12px 14px 12px 16px;
+    display: grid; gap: 2px; position: relative; overflow: hidden;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  }
+  .tessera::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--c); }
+  .tessera:hover:not(:disabled) { transform: translateY(-2px); box-shadow: var(--ombra); }
+  .tessera[aria-pressed="true"] { border-color: var(--blu); box-shadow: inset 0 0 0 1px var(--blu); background: var(--blu-tenue); }
+  .tessera:disabled { cursor: default; opacity: .5; }
+  .tessera .n { font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; color: var(--titolo); font-variant-numeric: tabular-nums; }
+  .tessera .e { font-size: .78rem; font-weight: 600; color: var(--testo-tenue); line-height: 1.3; }
+
+  /* ---------- Barra strumenti ---------- */
+  .strumenti { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 8px; margin: 16px 0 10px; }
+  .strumenti select.campo { width: auto; max-width: 230px; }
+  .btn[aria-pressed="true"] { background: var(--blu-tenue); border-color: var(--blu); color: var(--titolo); }
+  .btn .conta { font-size: .74rem; padding: 1px 6px; border-radius: 999px; background: var(--sfondo-alt); color: var(--testo-tenue); }
+  .btn .conta:empty { display: none; }
+  .filtro-attivo { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .82rem; color: var(--testo-tenue); margin-bottom: 10px; }
+  .filtro-attivo:empty { display: none; }
+
+  /* ---------- Griglia ---------- */
+  .griglia { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(330px, 1fr); gap: 18px; align-items: start; }
+  #mappa { height: 620px; }
+  .scuro-tiles .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.6); }
+  .legenda-mappa {
+    background: var(--testata-sfondo); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    border: 1px solid var(--bordo-forte); border-radius: 12px; padding: 8px 10px; font-size: .74rem; color: var(--testo);
+    box-shadow: var(--ombra-sm); display: grid; gap: 3px;
+  }
+  .legenda-mappa span { display: flex; align-items: center; gap: 6px; }
+  .tt-liv { font-variant-numeric: tabular-nums; color: var(--testo-tenue); }
+
+  .laterale { display: grid; gap: 16px; min-width: 0; }
+  @media (min-width: 981px) {
+    .laterale { position: sticky; top: 78px; max-height: calc(100vh - 96px); grid-template-rows: auto minmax(0, 1fr); }
+    .laterale .scheda { max-height: 62vh; overflow-y: auto; overscroll-behavior: contain; }
+  }
+
+  /* ---------- Scheda stazione ---------- */
+  .scheda { padding: 18px 20px 20px; }
+  .scheda-testa { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
+  .scheda h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.022em; }
+  .scheda .luogo { font-size: .86rem; color: var(--testo-tenue); margin-top: 2px; }
+  .stella[aria-pressed="true"] { color: #d99a00; }
+  .stella[aria-pressed="true"] svg { fill: currentColor; }
+  .livello-grande { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .livello-grande .valore { font-size: 2.3rem; font-weight: 800; letter-spacing: -.04em; color: var(--titolo); font-variant-numeric: tabular-nums; line-height: 1; }
+  .livello-grande .unita { font-size: 1rem; font-weight: 600; color: var(--testo-tenue); margin-left: -6px; }
+  .frase { font-size: .9rem; margin-top: 10px; line-height: 1.5; }
+  .frase strong { color: var(--titolo); }
+
+  .indicatore { margin-top: 16px; }
+  .indicatore .barra { position: relative; height: 12px; display: flex; }
+  .indicatore .tratto { height: 100%; }
+  .indicatore .tratto:first-child { border-radius: 999px 0 0 999px; }
+  .indicatore .tratto:last-child { border-radius: 0 999px 999px 0; }
+  .indicatore .cursore {
+    position: absolute; top: 50%; width: 20px; height: 20px; border-radius: 50%; transform: translate(-50%, -50%);
+    background: var(--superficie); border: 4px solid var(--titolo); box-shadow: var(--ombra-sm);
+    transition: left .6s cubic-bezier(.2,.7,.3,1);
+  }
+  .indicatore .tacche { position: relative; height: 32px; font-size: .7rem; color: var(--testo-tenue); font-variant-numeric: tabular-nums; }
+  .indicatore .tacca { position: absolute; top: 4px; transform: translateX(-50%); white-space: nowrap; text-align: center; line-height: 1.25; }
+  .indicatore .tacca::before { content: ""; display: block; width: 1px; height: 5px; background: var(--bordo-forte); margin: -4px auto 2px; }
+
+  .cifre { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 6px; }
+  .cifra { background: var(--superficie-2); border: 1px solid var(--bordo); border-radius: 12px; padding: 9px 10px; }
+  .cifra .k { font-size: .7rem; color: var(--testo-tenue); font-weight: 600; }
+  .cifra .v { font-size: .95rem; font-weight: 700; color: var(--titolo); font-variant-numeric: tabular-nums; }
+
+  .grafico { margin-top: 14px; }
+  .grafico svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .grafico .didascalia { display: flex; justify-content: space-between; gap: 8px; font-size: .72rem; color: var(--testo-tenue); margin-top: 4px; }
+  .azioni-scheda { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+
+  /* ---------- Elenco ---------- */
+  .elenco { padding: 0; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+  .elenco-testa { padding: 16px 20px 10px; border-bottom: 1px solid var(--bordo); display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .elenco-testa h2 { font-size: 1.02rem; font-weight: 700; }
+  .elenco-corpo { padding: 6px 10px 12px; overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
   .elenco-corpo ul { list-style: none; padding: 0; }
-  .voce-stazione {
-    width: 100%; display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center;
-    padding: 9px 10px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; border-radius: 10px; cursor: pointer;
+  .gruppo-titolo { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--testo-tenue); padding: 12px 10px 4px; }
+  .voce {
+    width: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center;
+    padding: 9px 10px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; border-radius: 11px; cursor: pointer;
     transition: background .15s ease;
   }
-  .voce-stazione:hover, .voce-stazione:focus-visible { background: var(--superficie-2); }
-  .voce-stazione .nome { font-weight: 600; font-size: .9rem; color: var(--titolo); }
-  .voce-stazione .sotto-voce { font-size: .74rem; color: var(--testo-tenue); }
-  .voce-stazione .liv { font-weight: 700; font-variant-numeric: tabular-nums; font-size: .88rem; white-space: nowrap; }
-  .elenco-vuoto { color: var(--testo-tenue); font-size: .88rem; text-align: center; padding: 22px 10px; }
-  .scuro-tiles .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.6); }
+  .voce:hover { background: var(--superficie-2); }
+  .voce[aria-current="true"] { background: var(--blu-tenue); }
+  .voce .nome { font-weight: 650; font-size: .9rem; color: var(--titolo); }
+  .voce .nome span { font-weight: 400; color: var(--testo-tenue); }
+  .voce .sotto-voce { display: block; font-size: .74rem; color: var(--testo-tenue); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .voce .liv { font-weight: 700; font-variant-numeric: tabular-nums; font-size: .88rem; white-space: nowrap; text-align: right; }
+  .mini-barra { display: block; width: 60px; height: 5px; border-radius: 999px; background: var(--sfondo-alt); margin: 5px 0 0 auto; overflow: hidden; }
+  .mini-barra i { display: block; height: 100%; border-radius: 999px; }
+  .elenco-vuoto { color: var(--testo-tenue); font-size: .88rem; text-align: center; padding: 22px 10px; display: grid; gap: 10px; justify-items: center; }
+
+  /* ---------- Guida ---------- */
+  .guida { margin-top: 16px; }
+  .guida summary { cursor: pointer; font-weight: 700; color: var(--titolo); list-style: none; display: flex; align-items: center; gap: 10px; }
+  .guida summary::-webkit-details-marker { display: none; }
+  .guida summary::after { content: "+"; margin-left: auto; font-size: 1.4rem; line-height: 1; color: var(--testo-tenue); transition: transform .2s ease; }
+  .guida[open] summary::after { transform: rotate(45deg); }
+  .guida-griglia { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 14px; }
+  .guida-griglia div { font-size: .86rem; color: var(--testo-tenue); }
+  .guida-griglia strong { display: block; color: var(--titolo); margin-bottom: 4px; }
+
   @media (max-width: 980px) {
+    .riepilogo { grid-template-columns: 1fr; }
     .griglia { grid-template-columns: 1fr; }
-    #mappa { height: 480px; }
-    .elenco-corpo { max-height: 420px; overflow-y: auto; }
+    #mappa { height: 440px; }
+    .elenco-corpo { max-height: 480px; }
   }
-  @media (max-width: 520px) { #mappa { height: 400px; } }
+  @media (max-width: 640px) {
+    .tessere { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .strumenti { grid-template-columns: 1fr 1fr; }
+    .strumenti .ricerca-campo, .strumenti select.campo { grid-column: 1 / -1; max-width: none; width: 100%; }
+    #mappa { height: 380px; }
+    .livello-grande .valore { font-size: 2rem; }
+  }
 </style>
 </head>
 <body>
@@ -65,14 +166,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
       </span>
       <div>
-        <h1>Mappa fluviale della Toscana</h1>
-        <div class="sottotitolo">Livelli idrometrici in tempo reale · Centro Funzionale Regionale</div>
+        <h1>Fiumi della Toscana</h1>
+        <div class="sottotitolo">Livelli in tempo reale · Centro Funzionale Regionale</div>
       </div>
     </a>
     <div class="azioni-testata">
       <a class="btn" href="index.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        Torna al bollettino
+        Bollettino allerte
       </a>
       <button class="btn btn-icona" id="bottone-tema" type="button" aria-label="Cambia tema"></button>
     </div>
@@ -80,39 +181,81 @@
 </header>
 
 <main id="contenuto" tabindex="-1">
+  <section class="card riepilogo" aria-label="Situazione generale">
+    <div class="stato-generale" id="stato-generale" aria-live="polite">
+      <div class="bolla" id="stato-icona"><span class="rotella"></span></div>
+      <div>
+        <h2 id="stato-titolo">Caricamento dei livelli…</h2>
+        <p id="stato-testo" class="num"></p>
+      </div>
+    </div>
+    <div class="tessere" id="tessere" role="group" aria-label="Filtra le stazioni per stato"></div>
+  </section>
+
+  <div class="strumenti">
+    <div class="ricerca-campo">
+      <label for="cerca" class="sr-only">Cerca fiume o località</label>
+      <input type="search" id="cerca" class="campo campo-ricerca" placeholder="Cerca un fiume o una località (es. Arno, Pontedera)" autocomplete="off" spellcheck="false">
+    </div>
+    <label for="filtro-zona" class="sr-only">Zona di allerta</label>
+    <select id="filtro-zona" class="campo"><option value="">Tutte le zone</option></select>
+    <button class="btn" id="bottone-vicino" type="button" aria-pressed="false" title="Ordina le stazioni per distanza dalla tua posizione">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+      Vicino a me
+    </button>
+    <button class="btn" id="bottone-preferiti" type="button" aria-pressed="false" title="Mostra solo le stazioni salvate">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/></svg>
+      Preferiti <span class="conta num" id="conta-preferiti"></span>
+    </button>
+  </div>
+  <div class="filtro-attivo" id="filtro-attivo" aria-live="polite"></div>
+
   <div class="griglia">
-    <section class="card" aria-labelledby="titolo-mappa">
-      <div class="card-testa">
-        <div>
-          <h2 id="titolo-mappa">Stazioni idrometriche monitorate</h2>
-          <div class="sotto num" id="sottotesto" aria-live="polite">Caricamento…</div>
-        </div>
-        <button id="bottone-aggiorna" class="btn btn-piccolo" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg>
-          Aggiorna
-        </button>
-      </div>
-      <div class="filtri-fiumi">
-        <label for="cerca-stazione" class="sr-only">Cerca fiume o stazione</label>
-        <input type="search" id="cerca-stazione" class="campo campo-ricerca" placeholder="Cerca un fiume o una stazione (es. Arno, Ombrone…)" autocomplete="off" spellcheck="false">
-        <div class="chip-riga" id="filtri" role="group" aria-label="Filtra per stato"></div>
-      </div>
+    <section class="card" aria-labelledby="titolo-mappa" style="padding:14px">
+      <h2 id="titolo-mappa" class="sr-only">Mappa delle stazioni</h2>
       <div class="mappa-contenitore">
         <div id="mappa" role="region" aria-label="Mappa delle stazioni idrometriche. In alternativa usa l'elenco delle stazioni."></div>
         <div class="sovrapposto" id="mappa-stato">
           <span class="caricamento-testo"><span class="rotella"></span>Caricamento delle stazioni…</span>
         </div>
       </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <span class="quando num" id="aggiornato"></span>
+        <button id="bottone-aggiorna" class="btn btn-piccolo" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg>
+          Aggiorna
+        </button>
+      </div>
     </section>
 
-    <aside class="card elenco" aria-labelledby="titolo-elenco">
-      <div class="elenco-testa">
-        <h2 id="titolo-elenco">Stazioni</h2>
-        <div class="sotto" id="elenco-conta">Ordinate dalla più vicina alle soglie</div>
-      </div>
-      <div class="elenco-corpo"><ul id="elenco-stazioni"></ul></div>
-    </aside>
+    <div class="laterale">
+      <section class="card scheda" id="scheda" hidden aria-labelledby="scheda-nome"></section>
+      <section class="card elenco" aria-labelledby="titolo-elenco">
+        <div class="elenco-testa">
+          <h2 id="titolo-elenco">Stazioni</h2>
+          <span class="quando" id="elenco-conta"></span>
+        </div>
+        <div class="elenco-corpo" id="elenco-corpo">
+          <div class="scheletro" style="height:46px;margin:8px 4px"></div>
+          <div class="scheletro" style="height:46px;margin:8px 4px"></div>
+          <div class="scheletro" style="height:46px;margin:8px 4px"></div>
+        </div>
+      </section>
+    </div>
   </div>
+
+  <details class="card guida">
+    <summary>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--blu)" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7M12 17h.01"/></svg>
+      Come leggere questi dati
+    </summary>
+    <div class="guida-griglia">
+      <div><strong>Livello idrometrico</strong>L'altezza dell'acqua misurata dall'idrometro, in metri, rispetto allo zero di riferimento della stazione. Non è la profondità del fiume: lo zero cambia da stazione a stazione e il valore può anche essere negativo.</div>
+      <div><strong>Soglia 1 — attenzione</strong>Livello fissato dal Centro Funzionale Regionale oltre il quale il corso d'acqua va sorvegliato con particolare attenzione.</div>
+      <div><strong>Soglia 2 — criticità</strong>Livello oltre il quale sono possibili esondazioni e situazioni di pericolo. Segui sempre le indicazioni del tuo Comune e della Protezione Civile.</div>
+      <div><strong>Tendenza e affidabilità</strong>La freccia indica se il livello sale (↑), scende (↓) o è stabile (→). I dati arrivano in tempo reale e non sono validati: possono contenere errori dei sensori.</div>
+    </div>
+  </details>
 </main>
 
 <footer class="piede">
@@ -126,216 +269,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="assets/comune.js"></script>
-<script>
-(function () {
-  'use strict';
-  var A = window.AMT, esc = A.esc;
-
-  var STATI = ['sopra_soglia2', 'in_avvicinamento_soglia2', 'sopra_soglia1', 'in_avvicinamento_soglia1', 'normale', 'nessuna'];
-  var ETICHETTE = {
-    sopra_soglia2: 'Sopra soglia 2 (criticità)',
-    in_avvicinamento_soglia2: 'Vicino alla soglia 2',
-    sopra_soglia1: 'Sopra soglia 1 (attenzione)',
-    in_avvicinamento_soglia1: 'Vicino alla soglia 1',
-    normale: 'Sotto le soglie',
-    nessuna: 'Senza soglia'
-  };
-  var CLASSE = {
-    sopra_soglia2: 'rossa', in_avvicinamento_soglia2: 'arancione', sopra_soglia1: 'arancione',
-    in_avvicinamento_soglia1: 'gialla', normale: 'verde', nessuna: ''
-  };
-  var COLORI = {
-    sopra_soglia2: '#e2433a', in_avvicinamento_soglia2: '#e0672f', sopra_soglia1: '#f28a22',
-    in_avvicinamento_soglia1: '#f5c22b', normale: '#3f9a5f', nessuna: '#9aa4b2'
-  };
-  var ICONE_TENDENZA = { 'in aumento': '↑', 'in diminuzione': '↓', 'stabile': '→' };
-
-  var mappa = L.map('mappa', { scrollWheelZoom: false }).setView([43.45, 11.1], 8);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(mappa);
-  mappa.on('focus click', function () { mappa.scrollWheelZoom.enable(); });
-  mappa.on('blur mouseout', function () { mappa.scrollWheelZoom.disable(); });
-
-  var stazioni = [], marker = {}, gruppo = L.featureGroup().addTo(mappa);
-  var filtro = null, testo = '', primaVolta = true;
-
-  function statoDi(s) { return s.stato || 'nessuna'; }
-
-  function popup(s) {
-    var st = statoDi(s);
-    var soglie = (s.soglia1 != null || s.soglia2 != null)
-      ? '<div class="riga"><span>Soglie</span><span>' + (s.soglia1 != null ? s.soglia1.toFixed(2) : '?') + ' / ' +
-        (s.soglia2 != null ? s.soglia2.toFixed(2) : '?') + ' m</span></div>' : '';
-    return '<div class="popup-fiume"><div class="titolo">' + esc(s.fiume) + ' – ' + esc(s.stazione) + '</div>' +
-      '<div class="riga"><span>Zona</span><span>' + esc(s.zona_nome || '—') + '</span></div>' +
-      '<div class="riga"><span>Livello</span><strong>' + (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA[s.tendenza] || '') + '</strong></div>' +
-      (s.tendenza ? '<div class="riga"><span>Tendenza</span><span>' + esc(s.tendenza) + '</span></div>' : '') +
-      soglie +
-      (s.portata != null ? '<div class="riga"><span>Portata</span><span>' + s.portata.toFixed(2) + ' m³/s</span></div>' : '') +
-      '<span class="badge ' + CLASSE[st] + '">' + esc(ETICHETTE[st]) + '</span></div>';
-  }
-
-  function normalizza(s) {
-    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  }
-  function visibile(s) {
-    if (filtro && statoDi(s) !== filtro) return false;
-    if (testo) {
-      var t = normalizza(s.fiume + ' ' + s.stazione + ' ' + (s.zona_nome || ''));
-      if (t.indexOf(testo) === -1) return false;
-    }
-    return true;
-  }
-
-  function renderFiltri() {
-    var conta = {};
-    stazioni.forEach(function (s) { conta[statoDi(s)] = (conta[statoDi(s)] || 0) + 1; });
-    if (filtro && !conta[filtro]) filtro = null;
-    document.getElementById('filtri').innerHTML =
-      '<button type="button" class="chip" data-stato="" aria-pressed="' + (!filtro) + '">Tutte <span class="conta">' + stazioni.length + '</span></button>' +
-      STATI.map(function (st) {
-        return '<button type="button" class="chip" data-stato="' + st + '" aria-pressed="' + (filtro === st) + '"' + (conta[st] ? '' : ' disabled') + '>' +
-          '<span class="pallino-liv" style="background:' + COLORI[st] + '"></span>' + ETICHETTE[st] + ' <span class="conta">' + (conta[st] || 0) + '</span></button>';
-      }).join('');
-  }
-
-  function render() {
-    gruppo.clearLayers();
-    var visibili = stazioni.filter(visibile);
-    visibili.forEach(function (s) {
-      var st = statoDi(s);
-      var critico = st !== 'normale' && st !== 'nessuna';
-      var m = marker[s.id];
-      m.setStyle({ radius: critico ? 8.5 : 6, fillColor: COLORI[st] });
-      gruppo.addLayer(m);
-      if (critico) m.bringToFront();
-    });
-
-    var ordinate = visibili.slice().sort(function (a, b) {
-      return (STATI.indexOf(statoDi(a)) - STATI.indexOf(statoDi(b))) ||
-        ((vicinanza(b) - vicinanza(a)) || 0) || a.fiume.localeCompare(b.fiume, 'it');
-    });
-    document.getElementById('elenco-conta').textContent = ordinate.length + (ordinate.length === 1 ? ' stazione' : ' stazioni') +
-      ' · ordinate per vicinanza alle soglie';
-    var ul = document.getElementById('elenco-stazioni');
-    if (!ordinate.length) { ul.innerHTML = '<li class="elenco-vuoto">Nessuna stazione corrisponde ai filtri.</li>'; return; }
-    ul.innerHTML = ordinate.slice(0, 200).map(function (s) {
-      var st = statoDi(s);
-      return '<li><button type="button" class="voce-stazione" data-id="' + esc(s.id) + '">' +
-        '<span class="pallino-liv" style="background:' + COLORI[st] + '"></span>' +
-        '<span><span class="nome">' + esc(s.fiume) + '</span> <span class="sotto-voce">– ' + esc(s.stazione) + '</span>' +
-        '<span class="sotto-voce" style="display:block">' + esc(ETICHETTE[st]) + (s.zona_nome ? ' · ' + esc(s.zona_nome) : '') + '</span></span>' +
-        '<span class="liv">' + (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA[s.tendenza] || '') + '</span>' +
-        '</button></li>';
-    }).join('');
-  }
-
-  // Distanza in metri dalla prima soglia disponibile (per ordinare l'elenco). Si usa la
-  // differenza e non il rapporto perche' alcune stazioni hanno zero idrometrico e soglie negative.
-  function vicinanza(s) {
-    var soglia = s.soglia1 != null ? s.soglia1 : s.soglia2;
-    if (s.livello == null || soglia == null) return -Infinity;
-    return s.livello - soglia;
-  }
-
-  document.getElementById('filtri').addEventListener('click', function (e) {
-    var b = e.target.closest('.chip');
-    if (!b || b.disabled) return;
-    var st = b.getAttribute('data-stato') || null;
-    filtro = filtro === st ? null : st;
-    renderFiltri();
-    render();
-    if (gruppo.getLayers().length) mappa.flyToBounds(gruppo.getBounds().pad(0.2), { maxZoom: 11, duration: A.animazioniRidotte() ? 0 : 0.6 });
-  });
-
-  var timerRicerca = null;
-  document.getElementById('cerca-stazione').addEventListener('input', function () {
-    var valore = this.value;
-    clearTimeout(timerRicerca);
-    timerRicerca = setTimeout(function () {
-      testo = normalizza(valore.trim());
-      render();
-      if (testo && gruppo.getLayers().length) mappa.flyToBounds(gruppo.getBounds().pad(0.3), { maxZoom: 12, duration: A.animazioniRidotte() ? 0 : 0.6 });
-    }, 180);
-  });
-
-  document.getElementById('elenco-stazioni').addEventListener('click', function (e) {
-    var b = e.target.closest('.voce-stazione');
-    if (!b) return;
-    var m = marker[b.getAttribute('data-id')];
-    if (!m) return;
-    mappa.flyTo(m.getLatLng(), Math.max(mappa.getZoom(), 12), { duration: A.animazioniRidotte() ? 0 : 0.7 });
-    mappa.once('moveend', function () { m.openPopup(); });
-    if (window.matchMedia && window.matchMedia('(max-width: 980px)').matches) {
-      document.getElementById('titolo-mappa').scrollIntoView({ behavior: A.animazioniRidotte() ? 'auto' : 'smooth' });
-    }
-  });
-
-  function mostraStato(html) {
-    var el = document.getElementById('mappa-stato');
-    if (html == null) { el.hidden = true; return; }
-    el.innerHTML = html; el.hidden = false;
-  }
-
-  var inCorso = false;
-  function caricaDati(daBottone) {
-    if (inCorso) return;
-    inCorso = true;
-    var bottone = document.getElementById('bottone-aggiorna');
-    if (daBottone) { bottone.disabled = true; bottone.classList.add('gira'); }
-    A.caricaJson('data/idrometria_mappa.json', { senzaCache: true })
-      .then(function (dati) {
-        stazioni = (dati.stazioni || []).filter(function (s) { return s.lat != null && s.lng != null; });
-        var nuovi = {};
-        stazioni.forEach(function (s) {
-          var m = marker[s.id] || L.circleMarker([s.lat, s.lng], { weight: 1.5, color: '#fff', fillOpacity: 0.95 });
-          m.setLatLng([s.lat, s.lng]);
-          if (m.getPopup()) m.setPopupContent(popup(s)); else m.bindPopup(popup(s));
-          var tt = esc(s.fiume) + ' – ' + esc(s.stazione);
-          if (m.getTooltip()) m.setTooltipContent(tt); else m.bindTooltip(tt, { direction: 'top', offset: [0, -6] });
-          nuovi[s.id] = m;
-        });
-        marker = nuovi;
-        renderFiltri();
-        render();
-        mostraStato(null);
-        if (primaVolta && gruppo.getLayers().length) { mappa.fitBounds(gruppo.getBounds().pad(0.05)); primaVolta = false; }
-
-        var critiche = stazioni.filter(function (s) { return s.stato && s.stato.indexOf('sopra') === 0; }).length;
-        var quando = dati.aggiornato ? A.formattaIstante(dati.aggiornato) : '—';
-        document.getElementById('sottotesto').textContent = stazioni.length + ' stazioni · ' +
-          (critiche ? critiche + ' oltre soglia · ' : 'nessuna oltre soglia · ') + 'aggiornato ' + quando + ' · dati non validati';
-        if (daBottone) A.toast('Dati aggiornati');
-      })
-      .catch(function (err) {
-        if (!stazioni.length) {
-          mostraStato('<div class="stato-errore" role="alert"><strong>Stazioni non caricate</strong><span>Errore: ' + esc(err.message) +
-            '</span><button class="btn btn-piccolo" type="button" id="riprova">Riprova</button></div>');
-          document.getElementById('riprova').addEventListener('click', function () { caricaDati(true); });
-          document.getElementById('sottotesto').textContent = 'Non è stato possibile caricare i dati delle stazioni.';
-        } else if (daBottone) {
-          A.toast('Aggiornamento non riuscito, riprova più tardi');
-        }
-      })
-      .finally(function () {
-        inCorso = false;
-        if (daBottone) { bottone.disabled = false; bottone.classList.remove('gira'); }
-      });
-  }
-
-  function aggiornaTiles() { document.getElementById('mappa').classList.toggle('scuro-tiles', A.temaScuro()); }
-  A.quandoCambiaTema(aggiornaTiles);
-  A.inizializzaTema();
-  aggiornaTiles();
-
-  document.getElementById('bottone-aggiorna').addEventListener('click', function () { caricaDati(true); });
-  caricaDati(false);
-  setInterval(function () { if (!document.hidden) caricaDati(false); }, 5 * 60 * 1000);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) caricaDati(false); });
-})();
-</script>
+<script src="assets/fiumi.js"></script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e7b35b91883449e0b1b69fbca05fce21"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
