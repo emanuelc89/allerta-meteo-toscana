@@ -117,7 +117,7 @@
   .dett-livello { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
   .dett-livello .badge { font-size: .84rem; padding: 7px 11px 7px 10px; }
   .pan-luogo { font-size: .86rem; color: var(--testo-tenue); margin-top: 10px; }
-  .pan-luogo summary { cursor: pointer; color: var(--blu); font-weight: 600; font-size: .82rem; margin-top: 4px; width: fit-content; }
+  .pan-luogo summary { cursor: pointer; color: var(--blu); font-weight: 600; font-size: .82rem; margin-top: 2px; width: fit-content; padding: 10px 0; }
   .pan-luogo details p { margin-top: 6px; font-size: .82rem; line-height: 1.6; }
   .comune-trovato {
     display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; font-weight: 600; color: var(--blu); background: var(--blu-tenue);
@@ -147,10 +147,10 @@
   .prev-giorno.attivo { border-color: var(--blu); box-shadow: inset 0 0 0 1px var(--blu); }
   .prev-giorno .g-nome { font-weight: 700; }
   .prev-giorno img { width: 40px; height: 40px; margin: 2px auto; display: block; }
-  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .72rem; min-height: 2.6em; line-height: 1.3; padding: 0 2px; }
+  .prev-giorno .g-descr { color: var(--testo-tenue); font-size: .75rem; min-height: 2.6em; line-height: 1.3; padding: 0 2px; }
   .prev-giorno .g-temp { font-weight: 700; font-variant-numeric: tabular-nums; font-size: .92rem; }
   .prev-giorno .g-temp .min { color: var(--testo-tenue); font-weight: 500; }
-  .prev-giorno .g-humidex { font-size: .7rem; color: var(--testo-tenue); margin-top: 5px; border-top: 1px dashed var(--bordo-forte); padding-top: 5px; }
+  .prev-giorno .g-humidex { font-size: .75rem; color: var(--testo-tenue); margin-top: 5px; border-top: 1px dashed var(--bordo-forte); padding-top: 5px; }
   .prev-giorno .g-humidex b { color: var(--testo); font-weight: 600; }
 
   .fiume-riga { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-top: 1px solid var(--bordo); font-size: .85rem; }
@@ -160,7 +160,7 @@
   .fiume-info { font-size: .74rem; margin-top: 2px; }
   .fiume-dati { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .fiume-livello { font-weight: 700; }
-  .fiume-portata { font-size: .7rem; color: var(--testo-tenue); }
+  .fiume-portata { font-size: .75rem; color: var(--testo-tenue); }
   .fiume-sparkline { display: block; margin-left: auto; }
   .fiume-collegamento { font-size: .82rem; background: var(--liv-arancione-tenue); color: var(--liv-arancione-testo); border-radius: 10px; padding: 9px 12px; margin-bottom: 8px; }
 
@@ -191,12 +191,12 @@
 
   @media (max-width: 980px) {
     .griglia { grid-template-columns: 1fr; }
-    #mappa { height: 440px; }
+    #mappa { height: min(440px, 72vh); height: min(440px, 72svh); }
     .iscrizione { grid-template-columns: 1fr; }
     .piede-griglia { grid-template-columns: 1fr; }
   }
   @media (max-width: 520px) {
-    #mappa { height: 380px; }
+    #mappa { height: min(380px, 68vh); height: min(380px, 68svh); }
     .riepilogo .meta { margin-left: 0; width: 100%; justify-content: space-between; }
     .iscrizione { padding: 16px; }
     .riga-form > * { flex: 1 1 100%; }
