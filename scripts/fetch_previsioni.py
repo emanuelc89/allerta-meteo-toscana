@@ -1,4 +1,4 @@
-﻿"""
+"""
 Scarica le previsioni meteo a 3 giorni per un comune rappresentativo di
 ciascuna delle 26 zone di allerta, dai dati aperti del Consorzio LaMMA
 (servizio meteorologico ufficiale della Regione Toscana), e calcola
@@ -144,6 +144,22 @@ def caldo_stimato(temp_max, humidex_giorno):
     return False
 
 
+def intero(testo):
+    """Temperatura come intero; None se vuota o non numerica (es. "12.5" o "-"),
+    invece di far fallire l'intera zona con un ValueError."""
+    try:
+        return round(float((testo or "").strip().replace(",", ".")))
+    except ValueError:
+        return None
+
+
+def carica_precedenti(out):
+    try:
+        return (json.loads(out.read_text(encoding="utf-8")).get("zone") or {})
+    except (OSError, ValueError):
+        return {}
+
+
 def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
     root = ET.fromstring(xml_bytes)
     aggiornamento = root.findtext("aggiornamento", default="")
@@ -166,9 +182,9 @@ def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
             simbolo = prev.find("simbolo")
             for t in prev.findall("temp"):
                 if t.get("temp_type") == "min":
-                    d["min"] = int(t.text) if t.text else None
+                    d["min"] = intero(t.text)
                 elif t.get("temp_type") == "max":
-                    d["max"] = int(t.text) if t.text else None
+                    d["max"] = intero(t.text)
             if simbolo is not None:
                 d["descrizione"] = simbolo.get("descr")
                 if simbolo.get("image_name"):
@@ -221,6 +237,7 @@ def estrai_previsioni(xml_bytes, max_giorni=GIORNI_DA_MOSTRARE):
 def main():
     risultato = {}
     errori = 0
+    precedenti = carica_precedenti(OUT_DIR / "previsioni.json")
 
     for i, (zona, comune) in enumerate(sorted(RAPPRESENTANTI.items()), 1):
         slug = slug_comune(comune)
@@ -237,7 +254,10 @@ def main():
             }
         except Exception as e:
             log(f"  [{i}/26] {zona} ({comune}) FALLITO: {e}")
-            risultato[zona] = None
+            # Un errore temporaneo su un singolo comune non deve cancellare l'ultima
+            # previsione valida: la pagina abbina i giorni per nome, quindi un dato
+            # vecchio non viene mai mostrato sul giorno sbagliato.
+            risultato[zona] = precedenti.get(zona)
             errori += 1
 
     dati = {

@@ -2,213 +2,341 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mappa fluviale — Allerta Meteo Toscana</title>
 <meta name="description" content="Mappa dei fiumi e torrenti monitorati in Toscana, con livelli idrometrici in tempo reale.">
+<meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1220" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b4cb3'/%3E%3Cpath d='M6 12c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 3-2 5-1M6 20c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 3-2 5-1' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<script>
+  try { var t = localStorage.getItem('tema'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="assets/stile.css">
 <style>
-  :root {
-    --blu: #2b4380;
-    --blu-scuro: #223768;
-    --blu-chiaro: #eef2fa;
-    --sfondo: #f4f6fa;
-    --testo: #172033;
-    --titolo: #0f172a;
-    --testo-tenue: #64708a;
-    --bordo: rgba(23,32,51,.09);
-    --bordo-forte: rgba(23,32,51,.16);
-    --ombra: 0 1px 1px rgba(23,32,51,.03), 0 2px 6px rgba(23,32,51,.05), 0 12px 32px -8px rgba(23,32,51,.08);
-    --ombra-sm: 0 1px 2px rgba(23,32,51,.05);
+  .griglia { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr); gap: 18px; align-items: start; }
+  .sotto { font-size: .82rem; color: var(--testo-tenue); }
+  .filtri-fiumi { display: grid; gap: 10px; margin-bottom: 12px; }
+  #mappa { height: 640px; }
+  .popup-fiume { font-size: .88rem; min-width: 200px; }
+  .popup-fiume .titolo { font-weight: 700; color: var(--titolo); margin-bottom: 6px; }
+  .popup-fiume .riga { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; font-variant-numeric: tabular-nums; border-top: 1px solid var(--bordo); }
+  .popup-fiume .riga:first-of-type { border-top: 0; }
+  .popup-fiume .riga span:first-child { color: var(--testo-tenue); }
+  .popup-fiume .badge { margin-top: 8px; }
+  .elenco { padding: 0; overflow: hidden; }
+  @media (min-width: 981px) {
+    .elenco { position: sticky; top: 78px; max-height: calc(100vh - 96px); display: flex; flex-direction: column; }
+    .elenco-corpo { overflow-y: auto; overscroll-behavior: contain; }
   }
-  * { box-sizing: border-box; margin: 0; }
-  body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: var(--sfondo); color: var(--testo); line-height: 1.55;
-    -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
-  }
-  h1, h2, h3 { color: var(--titolo); text-wrap: balance; }
-  ::selection { background: rgba(43,67,128,.18); }
-  :focus-visible { outline: 2px solid var(--blu); outline-offset: 2px; }
-  header { background: var(--blu); color: #fff; padding: 12px 20px; box-shadow: 0 2px 12px rgba(23,32,51,.18); }
-  .header-inner {
-    max-width: 1180px; margin: 0 auto;
-    display: flex; align-items: center; gap: 14px; flex-wrap: wrap; row-gap: 10px;
-  }
-  .header-inner > .logo + div { flex: 1 1 200px; min-width: 0; }
-  .logo {
-    width: 42px; height: 42px; flex-shrink: 0;
-    background: rgba(255,255,255,.14); border-radius: 12px;
-    display: grid; place-items: center; font-size: 20px;
-  }
-  header h1 { color: #fff; font-size: 1.18rem; font-weight: 700; letter-spacing: -.012em; line-height: 1.25; }
-  header .sottotitolo { font-size: .8rem; opacity: .82; margin-top: 2px; }
-  .torna {
-    margin-left: auto; color: #fff; text-decoration: none; font-size: .85rem; font-weight: 500;
-    border: 1px solid rgba(255,255,255,.35); border-radius: 10px; padding: 7px 14px;
+  .elenco-testa { padding: 18px 20px 10px; border-bottom: 1px solid var(--bordo); }
+  .elenco-testa h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.012em; }
+  .elenco-corpo { padding: 6px 10px 12px; }
+  .elenco-corpo ul { list-style: none; padding: 0; }
+  .voce-stazione {
+    width: 100%; display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center;
+    padding: 9px 10px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; border-radius: 10px; cursor: pointer;
     transition: background .15s ease;
   }
-  .torna:hover { background: rgba(255,255,255,.14); }
-  main { max-width: 1180px; margin: 24px auto; padding: 0 20px; }
-  .card {
-    background: #fff; border: 1px solid var(--bordo);
-    border-radius: 14px; padding: 20px 22px; box-shadow: var(--ombra);
-  }
-  .card h2 { font-size: 1.02rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -.005em; }
-  .card .sotto { font-size: .82rem; color: var(--testo-tenue); padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--bordo); }
-  #mappa { height: 640px; border-radius: 12px; border: 1px solid var(--bordo); }
-  .leaflet-bar { border: 1px solid var(--bordo) !important; border-radius: 10px !important; box-shadow: var(--ombra-sm) !important; overflow: hidden; }
-  .leaflet-bar a { border-bottom: 1px solid var(--bordo) !important; color: var(--testo) !important; }
-  .leaflet-control-attribution { font-size: .72rem !important; background: rgba(255,255,255,.85) !important; }
-  .leaflet-popup-content-wrapper { border-radius: 12px; box-shadow: var(--ombra); }
-  .legenda {
-    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--bordo);
-    display: flex; flex-wrap: wrap; gap: 14px; font-size: .82rem; color: var(--testo-tenue);
-  }
-  .pallino { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: -1px; }
-  .popup-fiume { font-size: .88rem; min-width: 180px; }
-  .popup-fiume .titolo { font-weight: 700; margin-bottom: 4px; }
-  .popup-fiume .riga { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; font-variant-numeric: tabular-nums; }
-  .popup-fiume .stato-testo { font-weight: 600; }
-  footer {
-    max-width: 1180px; margin: 40px auto 28px; padding: 22px 20px 0;
-    border-top: 1px solid var(--bordo);
-    font-size: .78rem; color: var(--testo-tenue); line-height: 1.6;
-  }
-  footer a { color: var(--blu); text-decoration-color: rgba(43,67,128,.35); }
-  @media (max-width: 700px) {
+  .voce-stazione:hover, .voce-stazione:focus-visible { background: var(--superficie-2); }
+  .voce-stazione .nome { font-weight: 600; font-size: .9rem; color: var(--titolo); }
+  .voce-stazione .sotto-voce { font-size: .74rem; color: var(--testo-tenue); }
+  .voce-stazione .liv { font-weight: 700; font-variant-numeric: tabular-nums; font-size: .88rem; white-space: nowrap; }
+  .elenco-vuoto { color: var(--testo-tenue); font-size: .88rem; text-align: center; padding: 22px 10px; }
+  .scuro-tiles .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.9) saturate(.6); }
+  @media (max-width: 980px) {
+    .griglia { grid-template-columns: 1fr; }
     #mappa { height: 480px; }
-    main { margin: 16px auto; padding: 0 14px; }
-    .card { padding: 16px; }
+    .elenco-corpo { max-height: 420px; overflow-y: auto; }
   }
+  @media (max-width: 520px) { #mappa { height: 400px; } }
 </style>
 </head>
 <body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
 
-<header>
-  <div class="header-inner">
-    <div class="logo" aria-hidden="true">&#127754;</div>
-    <div>
-      <h1>Mappa fluviale della Toscana</h1>
-      <div class="sottotitolo">Livelli idrometrici in tempo reale, fonte Centro Funzionale Regionale</div>
+<header class="testata">
+  <div class="testata-dentro">
+    <a class="marchio" href="index.html">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+      </span>
+      <div>
+        <h1>Mappa fluviale della Toscana</h1>
+        <div class="sottotitolo">Livelli idrometrici in tempo reale · Centro Funzionale Regionale</div>
+      </div>
+    </a>
+    <div class="azioni-testata">
+      <a class="btn" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Torna al bollettino
+      </a>
+      <button class="btn btn-icona" id="bottone-tema" type="button" aria-label="Cambia tema"></button>
     </div>
-    <a class="torna" href="index.html">&larr; Torna al bollettino</a>
   </div>
 </header>
 
-<main>
-  <div class="card">
-    <h2>Stazioni idrometriche monitorate</h2>
-    <div class="sotto" id="sottotesto">Caricamento...</div>
-    <div id="mappa"></div>
-    <div class="legenda">
-      <span><i class="pallino" style="background:#3f9142"></i>Sotto le soglie</span>
-      <span><i class="pallino" style="background:#f2c94c"></i>In avvicinamento (attenzione)</span>
-      <span><i class="pallino" style="background:#f2994a"></i>Sopra soglia 1 (attenzione)</span>
-      <span><i class="pallino" style="background:#e0672f"></i>In avvicinamento (criticità)</span>
-      <span><i class="pallino" style="background:#eb5757"></i>Sopra soglia 2 (criticità)</span>
-      <span><i class="pallino" style="background:#9aa4b2"></i>Nessuna soglia definita</span>
-    </div>
+<main id="contenuto" tabindex="-1">
+  <div class="griglia">
+    <section class="card" aria-labelledby="titolo-mappa">
+      <div class="card-testa">
+        <div>
+          <h2 id="titolo-mappa">Stazioni idrometriche monitorate</h2>
+          <div class="sotto num" id="sottotesto" aria-live="polite">Caricamento…</div>
+        </div>
+        <button id="bottone-aggiorna" class="btn btn-piccolo" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg>
+          Aggiorna
+        </button>
+      </div>
+      <div class="filtri-fiumi">
+        <label for="cerca-stazione" class="sr-only">Cerca fiume o stazione</label>
+        <input type="search" id="cerca-stazione" class="campo campo-ricerca" placeholder="Cerca un fiume o una stazione (es. Arno, Ombrone…)" autocomplete="off" spellcheck="false">
+        <div class="chip-riga" id="filtri" role="group" aria-label="Filtra per stato"></div>
+      </div>
+      <div class="mappa-contenitore">
+        <div id="mappa" role="region" aria-label="Mappa delle stazioni idrometriche. In alternativa usa l'elenco delle stazioni."></div>
+        <div class="sovrapposto" id="mappa-stato">
+          <span class="caricamento-testo"><span class="rotella"></span>Caricamento delle stazioni…</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card elenco" aria-labelledby="titolo-elenco">
+      <div class="elenco-testa">
+        <h2 id="titolo-elenco">Stazioni</h2>
+        <div class="sotto" id="elenco-conta">Ordinate dalla più vicina alle soglie</div>
+      </div>
+      <div class="elenco-corpo"><ul id="elenco-stazioni"></ul></div>
+    </aside>
   </div>
 </main>
 
-<footer>
+<footer class="piede">
   Sito non ufficiale a scopo informativo. Dati acquisiti in tempo reale e non sottoposti a validazione ufficiale.
   Fonte: <a href="https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro">Centro Funzionale Regionale della Toscana</a>.
   Progetto open source su <a href="https://github.com/emanuelc89/allerta-meteo-toscana">GitHub</a>.
   <p style="margin-top:10px">Progetto ideato e sviluppato da <strong>Emanuel Ciuro</strong> &middot; <a href="index.html#contatti">Contattami</a></p>
 </footer>
 
+<div class="toast-zona" id="toast-zona" aria-live="polite"></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="assets/comune.js"></script>
 <script>
-  var COLORI_STATO = {
-    sopra_soglia2: '#eb5757',
-    in_avvicinamento_soglia2: '#e0672f',
-    sopra_soglia1: '#f2994a',
-    in_avvicinamento_soglia1: '#f2c94c',
-    normale: '#3f9142'
-  };
-  var ETICHETTE_STATO = {
+(function () {
+  'use strict';
+  var A = window.AMT, esc = A.esc;
+
+  var STATI = ['sopra_soglia2', 'in_avvicinamento_soglia2', 'sopra_soglia1', 'in_avvicinamento_soglia1', 'normale', 'nessuna'];
+  var ETICHETTE = {
     sopra_soglia2: 'Sopra soglia 2 (criticità)',
-    in_avvicinamento_soglia2: 'In avvicinamento alla soglia di criticità',
+    in_avvicinamento_soglia2: 'Vicino alla soglia 2',
     sopra_soglia1: 'Sopra soglia 1 (attenzione)',
-    in_avvicinamento_soglia1: 'In avvicinamento alla soglia di attenzione',
-    normale: 'Sotto le soglie'
+    in_avvicinamento_soglia1: 'Vicino alla soglia 1',
+    normale: 'Sotto le soglie',
+    nessuna: 'Senza soglia'
+  };
+  var CLASSE = {
+    sopra_soglia2: 'rossa', in_avvicinamento_soglia2: 'arancione', sopra_soglia1: 'arancione',
+    in_avvicinamento_soglia1: 'gialla', normale: 'verde', nessuna: ''
+  };
+  var COLORI = {
+    sopra_soglia2: '#e2433a', in_avvicinamento_soglia2: '#e0672f', sopra_soglia1: '#f28a22',
+    in_avvicinamento_soglia1: '#f5c22b', normale: '#3f9a5f', nessuna: '#9aa4b2'
   };
   var ICONE_TENDENZA = { 'in aumento': '↑', 'in diminuzione': '↓', 'stabile': '→' };
 
-  var mappa = L.map('mappa').setView([43.6, 11.1], 8);
+  var mappa = L.map('mappa', { scrollWheelZoom: false }).setView([43.45, 11.1], 8);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mappa);
+  mappa.on('focus click', function () { mappa.scrollWheelZoom.enable(); });
+  mappa.on('blur mouseout', function () { mappa.scrollWheelZoom.disable(); });
 
-  function costruisciPopup(s) {
-    var colore = s.stato ? COLORI_STATO[s.stato] : '#9aa4b2';
-    var etichetta = s.stato ? ETICHETTE_STATO[s.stato] : 'Nessuna soglia definita';
-    var sogliaTxt = (s.soglia1 != null || s.soglia2 != null)
-      ? '<div class="riga"><span>Soglie</span><span>' +
-        (s.soglia1 != null ? s.soglia1.toFixed(2) : '?') + 'm / ' +
-        (s.soglia2 != null ? s.soglia2.toFixed(2) : '?') + 'm</span></div>'
-      : '';
-    var portataTxt = s.portata != null
-      ? '<div class="riga"><span>Portata</span><span>' + s.portata.toFixed(2) + ' m³/s</span></div>'
-      : '';
-    return '<div class="popup-fiume">' +
-      '<div class="titolo">' + s.fiume + ' – ' + s.stazione + '</div>' +
-      '<div class="riga"><span>Zona</span><span>' + (s.zona_nome || '—') + '</span></div>' +
-      '<div class="riga"><span>Livello</span><span style="color:' + colore + '" class="stato-testo">' +
-        (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA[s.tendenza] || '') +
-      '</span></div>' +
-      sogliaTxt + portataTxt +
-      '<div class="riga" style="margin-top:4px"><span style="color:' + colore + '">' + etichetta + '</span></div>' +
-      '</div>';
+  var stazioni = [], marker = {}, gruppo = L.featureGroup().addTo(mappa);
+  var filtro = null, testo = '', primaVolta = true;
+
+  function statoDi(s) { return s.stato || 'nessuna'; }
+
+  function popup(s) {
+    var st = statoDi(s);
+    var soglie = (s.soglia1 != null || s.soglia2 != null)
+      ? '<div class="riga"><span>Soglie</span><span>' + (s.soglia1 != null ? s.soglia1.toFixed(2) : '?') + ' / ' +
+        (s.soglia2 != null ? s.soglia2.toFixed(2) : '?') + ' m</span></div>' : '';
+    return '<div class="popup-fiume"><div class="titolo">' + esc(s.fiume) + ' – ' + esc(s.stazione) + '</div>' +
+      '<div class="riga"><span>Zona</span><span>' + esc(s.zona_nome || '—') + '</span></div>' +
+      '<div class="riga"><span>Livello</span><strong>' + (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA[s.tendenza] || '') + '</strong></div>' +
+      (s.tendenza ? '<div class="riga"><span>Tendenza</span><span>' + esc(s.tendenza) + '</span></div>' : '') +
+      soglie +
+      (s.portata != null ? '<div class="riga"><span>Portata</span><span>' + s.portata.toFixed(2) + ' m³/s</span></div>' : '') +
+      '<span class="badge ' + CLASSE[st] + '">' + esc(ETICHETTE[st]) + '</span></div>';
   }
 
-  var gruppoMarker = null;
+  function normalizza(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+  function visibile(s) {
+    if (filtro && statoDi(s) !== filtro) return false;
+    if (testo) {
+      var t = normalizza(s.fiume + ' ' + s.stazione + ' ' + (s.zona_nome || ''));
+      if (t.indexOf(testo) === -1) return false;
+    }
+    return true;
+  }
 
-  function caricaDati() {
-    var cacheBust = '?_=' + Date.now();
-    fetch('data/idrometria_mappa.json' + cacheBust)
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
+  function renderFiltri() {
+    var conta = {};
+    stazioni.forEach(function (s) { conta[statoDi(s)] = (conta[statoDi(s)] || 0) + 1; });
+    if (filtro && !conta[filtro]) filtro = null;
+    document.getElementById('filtri').innerHTML =
+      '<button type="button" class="chip" data-stato="" aria-pressed="' + (!filtro) + '">Tutte <span class="conta">' + stazioni.length + '</span></button>' +
+      STATI.map(function (st) {
+        return '<button type="button" class="chip" data-stato="' + st + '" aria-pressed="' + (filtro === st) + '"' + (conta[st] ? '' : ' disabled') + '>' +
+          '<span class="pallino-liv" style="background:' + COLORI[st] + '"></span>' + ETICHETTE[st] + ' <span class="conta">' + (conta[st] || 0) + '</span></button>';
+      }).join('');
+  }
+
+  function render() {
+    gruppo.clearLayers();
+    var visibili = stazioni.filter(visibile);
+    visibili.forEach(function (s) {
+      var st = statoDi(s);
+      var critico = st !== 'normale' && st !== 'nessuna';
+      var m = marker[s.id];
+      m.setStyle({ radius: critico ? 8.5 : 6, fillColor: COLORI[st] });
+      gruppo.addLayer(m);
+      if (critico) m.bringToFront();
+    });
+
+    var ordinate = visibili.slice().sort(function (a, b) {
+      return (STATI.indexOf(statoDi(a)) - STATI.indexOf(statoDi(b))) ||
+        ((vicinanza(b) - vicinanza(a)) || 0) || a.fiume.localeCompare(b.fiume, 'it');
+    });
+    document.getElementById('elenco-conta').textContent = ordinate.length + (ordinate.length === 1 ? ' stazione' : ' stazioni') +
+      ' · ordinate per vicinanza alle soglie';
+    var ul = document.getElementById('elenco-stazioni');
+    if (!ordinate.length) { ul.innerHTML = '<li class="elenco-vuoto">Nessuna stazione corrisponde ai filtri.</li>'; return; }
+    ul.innerHTML = ordinate.slice(0, 200).map(function (s) {
+      var st = statoDi(s);
+      return '<li><button type="button" class="voce-stazione" data-id="' + esc(s.id) + '">' +
+        '<span class="pallino-liv" style="background:' + COLORI[st] + '"></span>' +
+        '<span><span class="nome">' + esc(s.fiume) + '</span> <span class="sotto-voce">– ' + esc(s.stazione) + '</span>' +
+        '<span class="sotto-voce" style="display:block">' + esc(ETICHETTE[st]) + (s.zona_nome ? ' · ' + esc(s.zona_nome) : '') + '</span></span>' +
+        '<span class="liv">' + (s.livello != null ? s.livello.toFixed(2) + ' m' : '—') + ' ' + (ICONE_TENDENZA[s.tendenza] || '') + '</span>' +
+        '</button></li>';
+    }).join('');
+  }
+
+  // Distanza in metri dalla prima soglia disponibile (per ordinare l'elenco). Si usa la
+  // differenza e non il rapporto perche' alcune stazioni hanno zero idrometrico e soglie negative.
+  function vicinanza(s) {
+    var soglia = s.soglia1 != null ? s.soglia1 : s.soglia2;
+    if (s.livello == null || soglia == null) return -Infinity;
+    return s.livello - soglia;
+  }
+
+  document.getElementById('filtri').addEventListener('click', function (e) {
+    var b = e.target.closest('.chip');
+    if (!b || b.disabled) return;
+    var st = b.getAttribute('data-stato') || null;
+    filtro = filtro === st ? null : st;
+    renderFiltri();
+    render();
+    if (gruppo.getLayers().length) mappa.flyToBounds(gruppo.getBounds().pad(0.2), { maxZoom: 11, duration: A.animazioniRidotte() ? 0 : 0.6 });
+  });
+
+  var timerRicerca = null;
+  document.getElementById('cerca-stazione').addEventListener('input', function () {
+    var valore = this.value;
+    clearTimeout(timerRicerca);
+    timerRicerca = setTimeout(function () {
+      testo = normalizza(valore.trim());
+      render();
+      if (testo && gruppo.getLayers().length) mappa.flyToBounds(gruppo.getBounds().pad(0.3), { maxZoom: 12, duration: A.animazioniRidotte() ? 0 : 0.6 });
+    }, 180);
+  });
+
+  document.getElementById('elenco-stazioni').addEventListener('click', function (e) {
+    var b = e.target.closest('.voce-stazione');
+    if (!b) return;
+    var m = marker[b.getAttribute('data-id')];
+    if (!m) return;
+    mappa.flyTo(m.getLatLng(), Math.max(mappa.getZoom(), 12), { duration: A.animazioniRidotte() ? 0 : 0.7 });
+    mappa.once('moveend', function () { m.openPopup(); });
+    if (window.matchMedia && window.matchMedia('(max-width: 980px)').matches) {
+      document.getElementById('titolo-mappa').scrollIntoView({ behavior: A.animazioniRidotte() ? 'auto' : 'smooth' });
+    }
+  });
+
+  function mostraStato(html) {
+    var el = document.getElementById('mappa-stato');
+    if (html == null) { el.hidden = true; return; }
+    el.innerHTML = html; el.hidden = false;
+  }
+
+  var inCorso = false;
+  function caricaDati(daBottone) {
+    if (inCorso) return;
+    inCorso = true;
+    var bottone = document.getElementById('bottone-aggiorna');
+    if (daBottone) { bottone.disabled = true; bottone.classList.add('gira'); }
+    A.caricaJson('data/idrometria_mappa.json', { senzaCache: true })
       .then(function (dati) {
-        if (gruppoMarker) mappa.removeLayer(gruppoMarker);
-        gruppoMarker = L.layerGroup();
-        dati.stazioni.forEach(function (s) {
-          var colore = s.stato ? COLORI_STATO[s.stato] : '#9aa4b2';
-          var marker = L.circleMarker([s.lat, s.lng], {
-            radius: 6, weight: 1.5, color: '#fff', fillColor: colore, fillOpacity: 0.95
-          });
-          marker.bindPopup(costruisciPopup(s));
-          gruppoMarker.addLayer(marker);
+        stazioni = (dati.stazioni || []).filter(function (s) { return s.lat != null && s.lng != null; });
+        var nuovi = {};
+        stazioni.forEach(function (s) {
+          var m = marker[s.id] || L.circleMarker([s.lat, s.lng], { weight: 1.5, color: '#fff', fillOpacity: 0.95 });
+          m.setLatLng([s.lat, s.lng]);
+          if (m.getPopup()) m.setPopupContent(popup(s)); else m.bindPopup(popup(s));
+          var tt = esc(s.fiume) + ' – ' + esc(s.stazione);
+          if (m.getTooltip()) m.setTooltipContent(tt); else m.bindTooltip(tt, { direction: 'top', offset: [0, -6] });
+          nuovi[s.id] = m;
         });
-        gruppoMarker.addTo(mappa);
+        marker = nuovi;
+        renderFiltri();
+        render();
+        mostraStato(null);
+        if (primaVolta && gruppo.getLayers().length) { mappa.fitBounds(gruppo.getBounds().pad(0.05)); primaVolta = false; }
 
-        var aggiornato = dati.aggiornato ? new Date(dati.aggiornato).toLocaleString('it-IT') : '—';
-        document.getElementById('sottotesto').textContent =
-          dati.stazioni.length + ' stazioni geolocalizzate · aggiornato ' + aggiornato +
-          ' · dati non validati (fonte CFR)';
+        var critiche = stazioni.filter(function (s) { return s.stato && s.stato.indexOf('sopra') === 0; }).length;
+        var quando = dati.aggiornato ? A.formattaIstante(dati.aggiornato) : '—';
+        document.getElementById('sottotesto').textContent = stazioni.length + ' stazioni · ' +
+          (critiche ? critiche + ' oltre soglia · ' : 'nessuna oltre soglia · ') + 'aggiornato ' + quando + ' · dati non validati';
+        if (daBottone) A.toast('Dati aggiornati');
       })
       .catch(function (err) {
-        document.getElementById('sottotesto').textContent =
-          'Non è stato possibile caricare i dati delle stazioni (' + err.message + ').';
+        if (!stazioni.length) {
+          mostraStato('<div class="stato-errore" role="alert"><strong>Stazioni non caricate</strong><span>Errore: ' + esc(err.message) +
+            '</span><button class="btn btn-piccolo" type="button" id="riprova">Riprova</button></div>');
+          document.getElementById('riprova').addEventListener('click', function () { caricaDati(true); });
+          document.getElementById('sottotesto').textContent = 'Non è stato possibile caricare i dati delle stazioni.';
+        } else if (daBottone) {
+          A.toast('Aggiornamento non riuscito, riprova più tardi');
+        }
+      })
+      .finally(function () {
+        inCorso = false;
+        if (daBottone) { bottone.disabled = false; bottone.classList.remove('gira'); }
       });
   }
 
-  caricaDati();
+  function aggiornaTiles() { document.getElementById('mappa').classList.toggle('scuro-tiles', A.temaScuro()); }
+  A.quandoCambiaTema(aggiornaTiles);
+  A.inizializzaTema();
+  aggiornaTiles();
 
-  setInterval(function () {
-    if (!document.hidden) caricaDati();
-  }, 5 * 60 * 1000);
-
-  document.addEventListener('visibilitychange', function () {
-    if (!document.hidden) caricaDati();
-  });
+  document.getElementById('bottone-aggiorna').addEventListener('click', function () { caricaDati(true); });
+  caricaDati(false);
+  setInterval(function () { if (!document.hidden) caricaDati(false); }, 5 * 60 * 1000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) caricaDati(false); });
+})();
 </script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e7b35b91883449e0b1b69fbca05fce21"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-
-
-
-

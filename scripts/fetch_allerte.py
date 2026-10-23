@@ -1,4 +1,4 @@
-﻿"""
+"""
 Scarica due bollettini ufficiali e produce docs/data/allerte.json:
 
 1) PIOGGIA - Dipartimento della Protezione Civile
@@ -23,6 +23,7 @@ import sys
 import urllib.request
 from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 REPO_DPC = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
 BASE_RAW_DPC = f"https://raw.githubusercontent.com/{REPO_DPC}/master/files/geojson"
@@ -31,6 +32,7 @@ API_COMMITS_DPC = f"https://api.github.com/repos/{REPO_DPC}/commits"
 URL_CALORE_CSV = "https://raw.githubusercontent.com/ondata/ondate-calore/main/data/ondate-calore_latest.csv"
 CITTA_CALORE_TOSCANA = "FIRENZE"
 ZONA_CALORE_TOSCANA = "Arno-Firenze"
+FUSO_ITALIA = ZoneInfo("Europe/Rome")
 TIMEOUT = 15
 
 QUI = Path(__file__).resolve().parent
@@ -237,7 +239,9 @@ def main():
         (data_emissione + timedelta(days=1)).isoformat(): estrai_zone_pioggia(bollettino_b, comuni_toscani),
     }
 
-    oggi_it = datetime.now(timezone(timedelta(hours=2))).date()
+    # Fuso orario reale (CET/CEST): un offset fisso di +2 ore sbagliava il giorno
+    # tra le 23 e la mezzanotte nei mesi dell'ora solare.
+    oggi_it = datetime.now(FUSO_ITALIA).date()
     domani_it = oggi_it + timedelta(days=1)
 
     zone_oggi = per_data.get(oggi_it.isoformat())
@@ -251,7 +255,9 @@ def main():
     caldo_per_data = carica_caldo_firenze()
     caldo_oggi = caldo_per_data.get(oggi_it.isoformat())
     caldo_domani = caldo_per_data.get(domani_it.isoformat())
-    caldo_attivo = bool(caldo_per_data)
+    # Il CSV "latest" di onData resta disponibile anche fuori stagione con l'ultimo
+    # bollettino di settembre: la stagione e' attiva solo se copre oggi o i giorni a venire.
+    caldo_attivo = any(d >= oggi_it.isoformat() for d in caldo_per_data)
 
     if zone_oggi and ZONA_CALORE_TOSCANA in zone_oggi and caldo_oggi:
         zone_oggi[ZONA_CALORE_TOSCANA]["caldo"] = caldo_oggi
