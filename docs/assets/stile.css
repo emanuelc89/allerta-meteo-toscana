@@ -358,3 +358,28 @@ main { max-width: 1240px; margin: 22px auto; padding: 0 20px; }
   .chip-riga::-webkit-scrollbar { display: none; }
   .chip { flex-shrink: 0; }
 }
+
+/* ---------- Ottimizzazioni per dispositivi touch ---------- */
+
+/* Sotto i 16px Safari su iPhone ingrandisce la pagina quando si tocca un campo. */
+@media (max-width: 720px), (pointer: coarse) {
+  .campo { font-size: 16px; }
+}
+
+/* Bersagli touch di almeno 40-44px, come raccomandato da Apple e Google. */
+@media (pointer: coarse) {
+  .btn { min-height: 44px; }
+  .btn-piccolo { min-height: 40px; padding: 8px 12px; }
+  .btn-icona { width: 44px; height: 44px; }
+  .chip { min-height: 40px; }
+  .segmenti button { min-height: 40px; }
+  .leaflet-touch .leaflet-bar a { width: 40px !important; height: 40px !important; line-height: 40px !important; }
+  .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px !important; }
+}
+
+/* Telefoni (verticale e orizzontale): la testata, che li' va su due righe, non resta fissa e la mappa
+   non supera l'altezza dello schermo, cosi' resta sempre spazio per scorrere la pagina. */
+@media (max-height: 520px), (max-width: 720px) {
+  .testata { position: static; }
+  html { scroll-padding-top: 0; }
+}

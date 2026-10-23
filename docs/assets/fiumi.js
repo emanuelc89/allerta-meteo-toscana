@@ -179,7 +179,7 @@
       '<defs><linearGradient id="' + idGrad + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + colore + '" stop-opacity=".35"/><stop offset="1" stop-color="' + colore + '" stop-opacity="0"/></linearGradient></defs>' +
       '<path d="M' + linea[0] + ' L' + linea.join(' L') + ' L' + x(t1).toFixed(1) + ',' + (H - pad) + ' L' + x(t0).toFixed(1) + ',' + (H - pad) + ' Z" fill="url(#' + idGrad + ')"/>' +
       (mostraS1 ? '<line x1="' + pad + '" x2="' + (W - pad) + '" y1="' + y(s.soglia1).toFixed(1) + '" y2="' + y(s.soglia1).toFixed(1) + '" stroke="var(--liv-arancione)" stroke-width="1.2" stroke-dasharray="4 4"/>' +
-        '<text x="' + (W - pad) + '" y="' + (y(s.soglia1) - 4).toFixed(1) + '" text-anchor="end" font-size="10" fill="var(--liv-arancione-testo)">soglia 1</text>' : '') +
+        '<text x="' + (W - pad) + '" y="' + (y(s.soglia1) - 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="var(--liv-arancione-testo)">soglia 1</text>' : '') +
       '<polyline points="' + linea.join(' ') + '" fill="none" stroke="' + colore + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>' +
       '<circle cx="' + x(t1).toFixed(1) + '" cy="' + y(ultimo[1]).toFixed(1) + '" r="4" fill="' + colore + '" stroke="var(--superficie)" stroke-width="2"/></svg>';
     var ore = Math.round((t1 - t0) / 3600000);
