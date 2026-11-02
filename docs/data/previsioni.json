@@ -667,19 +667,19 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "02/11/2026 08:23",
+   "aggiornamento": "02/11/2026 14:49",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 8,
-     "max": 12,
+     "max": 13,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": null,
      "umidita_giorno": 73,
      "humidex_notte": null,
-     "humidex_giorno": 9,
+     "humidex_giorno": 10,
      "humidex_notte_etichetta": null,
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
