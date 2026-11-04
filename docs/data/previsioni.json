@@ -4,7 +4,7 @@
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
-   "aggiornamento": "04/11/2026 08:11",
+   "aggiornamento": "04/11/2026 14:38",
    "giorni": [
     {
      "giorno": 1,
@@ -157,15 +157,15 @@
   },
   "Arno-Valdarno Sup.": {
    "comune": "Montevarchi",
-   "aggiornamento": "04/11/2026 08:11",
+   "aggiornamento": "04/11/2026 14:38",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 6,
      "max": 15,
-     "descrizione": "coperto",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 85,
      "humidex_notte": null,
@@ -208,15 +208,15 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "04/11/2026 08:11",
+   "aggiornamento": "04/11/2026 14:38",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 11,
      "max": 16,
-     "descrizione": "coperto",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
+     "descrizione": "nuvoloso",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 64,
      "humidex_notte": null,
@@ -310,7 +310,7 @@
   },
   "Etruria-Costa Nord": {
    "comune": "Piombino",
-   "aggiornamento": "04/11/2026 08:11",
+   "aggiornamento": "04/11/2026 14:38",
    "giorni": [
     {
      "giorno": 1,
@@ -361,7 +361,7 @@
   },
   "Etruria-Costa Sud": {
    "comune": "Piombino",
-   "aggiornamento": "04/11/2026 08:11",
+   "aggiornamento": "04/11/2026 14:38",
    "giorni": [
     {
      "giorno": 1,
@@ -616,7 +616,7 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "04/11/2026 08:11",
+   "aggiornamento": "04/11/2026 14:38",
    "giorni": [
     {
      "giorno": 1,
