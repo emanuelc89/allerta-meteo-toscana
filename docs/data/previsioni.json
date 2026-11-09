@@ -796,7 +796,7 @@
      "umidita_notte": 92,
      "umidita_giorno": 94,
      "humidex_notte": 15,
-     "humidex_giorno": 17,
+     "humidex_giorno": 16,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -1000,7 +1000,7 @@
      "umidita_notte": 96,
      "umidita_giorno": 96,
      "humidex_notte": 15,
-     "humidex_giorno": 17,
+     "humidex_giorno": 18,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
