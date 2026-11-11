@@ -10,6 +10,9 @@ i livelli idrometrici in tempo reale e le previsioni LaMMA.
 - `docs/assets/` — stile condiviso (tema chiaro/scuro), funzioni comuni e logica della pagina principale
 - `docs/data/*.json` — dati generati dagli script, aggiornati dai workflow GitHub Actions
 - `scripts/` — script Python (solo libreria standard, Python ≥ 3.9) che scaricano i dati ufficiali
+  - `fetch_allerte.py` — criticità per zone: fonte primaria il bollettino del Centro Funzionale Regionale
+    (letto da `cfr_toscana.py`, con controlli di coerenza), in riserva il bollettino nazionale DPC
+  - `test_cfr_toscana.py` — test del lettore CFR su una pagina reale salvata in `scripts/test_data/`
 
 ## Avvio in locale
 
@@ -27,4 +30,10 @@ Per rigenerare i dati:
 python scripts/fetch_allerte.py
 python scripts/fetch_previsioni.py
 python scripts/fetch_idrometria.py
+```
+
+Per eseguire i test del lettore CFR:
+
+```sh
+python scripts/test_cfr_toscana.py
 ```

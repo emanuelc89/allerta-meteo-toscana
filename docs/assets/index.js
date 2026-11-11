@@ -706,7 +706,7 @@
     if (!zone) {
       if (allerte && giorno === 'domani') {
         html += avvisoHtml('neutro', 'attesa', 'Previsione di domani non ancora pubblicata',
-          'Il bollettino di criticità viene emesso di norma nel primo pomeriggio. La pagina si aggiorna da sola.');
+          'Il Centro Funzionale Regionale emette il bollettino di criticità di norma entro le 13. La pagina si aggiorna da sola.');
       }
       logo.classList.remove('logo-attenzione');
       contenitore.innerHTML = html;
@@ -722,7 +722,8 @@
     });
     logo.classList.toggle('logo-attenzione', peggiore !== 'verde' || peggioreCaldo > 0);
 
-    var coda = allerte.emesso_pioggia ? ' Bollettino emesso il ' + esc(allerte.emesso_pioggia) + '.' : '';
+    var nomeFonte = allerte.fonte_pioggia_sigla === 'cfr' ? 'Bollettino CFR Toscana' : 'Bollettino nazionale DPC';
+    var coda = allerte.emesso_pioggia ? ' ' + nomeFonte + ' emesso il ' + esc(allerte.emesso_pioggia) + '.' : '';
     if (peggiore === 'verde') {
       html += avvisoHtml('verde', 'ok', 'Nessuna allerta ' + quandoTxt + ' in Toscana',
         'Nessun fenomeno significativo previsto sulle zone di allerta.' + coda);
