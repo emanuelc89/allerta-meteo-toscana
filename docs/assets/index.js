@@ -769,8 +769,8 @@
     document.getElementById('mappa-quando').textContent = (giorno === 'oggi' ? 'Oggi' : 'Domani') + ' · ' + etichetta;
     var el = document.getElementById('riga-controllo');
     if (allerte && allerte.aggiornato) {
-      el.textContent = 'Controllato ' + A.fraQuanto(allerte.aggiornato);
-      el.title = 'Ultimo controllo automatico dei bollettini: ' + (A.formattaIstante(allerte.aggiornato) || '');
+      el.textContent = 'Dati aggiornati ' + A.fraQuanto(allerte.aggiornato);
+      el.title = 'Ultima modifica dei dati pubblicati (i bollettini vengono ricontrollati ogni pochi minuti): ' + (A.formattaIstante(allerte.aggiornato) || '');
     } else {
       el.textContent = '';
     }

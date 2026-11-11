@@ -22,6 +22,7 @@ import csv
 import gzip
 import io
 import json
+import os
 import re
 import sys
 import urllib.request
@@ -31,6 +32,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import cfr_toscana  # noqa: E402
+from scrittura import scrivi_se_cambiato  # noqa: E402
 
 REPO_DPC = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
 BASE_RAW_DPC = f"https://raw.githubusercontent.com/{REPO_DPC}/master/files/geojson"
@@ -76,9 +78,12 @@ def peggiore(*livelli):
 def _scarica_bytes(url, timeout):
     """Scarica chiedendo la compressione gzip: sui bollettini DPC taglia i dati da
     trasferire di circa il 60%, utile su connessioni lente o reti filtrate."""
-    req = urllib.request.Request(
-        url, headers={"User-Agent": USER_AGENT, "Accept-Encoding": "gzip"}
-    )
+    headers = {"User-Agent": USER_AGENT, "Accept-Encoding": "gzip"}
+    # Su GitHub Actions il token del workflow alza il limite di api.github.com
+    # da 60 richieste/ora (per IP, condiviso con tutti i runner) a 1000+.
+    if url.startswith("https://api.github.com/") and os.environ.get("GITHUB_TOKEN"):
+        headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         dati = r.read()
         if r.info().get("Content-Encoding") == "gzip":
@@ -325,10 +330,12 @@ def main():
     if zone_oggi is not None and n < 20:
         log(f"ATTENZIONE: trovate solo {n} zone toscane per oggi (attese 26).")
 
-    log("Passo 5: salvo il file...")
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    log("Passo 5: salvo il file (solo se i dati sono cambiati)...")
     out = OUT_DIR / "allerte.json"
-    out.write_text(json.dumps(dati, ensure_ascii=False, indent=1), encoding="utf-8")
+    if scrivi_se_cambiato(out, dati):
+        log("  > dati cambiati rispetto al file precedente: file riscritto")
+    else:
+        log("  > nessuna differenza rispetto al file precedente: file lasciato com'era")
 
     msg_caldo = (
         f"caldo Firenze oggi: {ETICHETTE_CALDO.get(caldo_oggi['livello'])} (liv.{caldo_oggi['livello']})"

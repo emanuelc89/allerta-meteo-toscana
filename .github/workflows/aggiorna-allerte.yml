@@ -26,11 +26,16 @@ jobs:
         run: python scripts/test_cfr_toscana.py
 
       - name: Esegui lo script delle allerte
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/fetch_allerte.py
 
       - name: Esegui lo script delle previsioni
         run: python scripts/fetch_previsioni.py
 
+      # I file vengono riscritti dagli script solo se il contenuto e' cambiato
+      # (scripts/scrittura.py): se qui non c'e' nulla di staged, niente commit
+      # e quindi niente deploy inutile di GitHub Pages.
       - name: Salva i dati aggiornati, se cambiati
         run: |
           git config user.name "Robot allerte meteo"
