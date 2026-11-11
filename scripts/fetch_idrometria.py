@@ -18,6 +18,10 @@ import sys
 import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from scrittura import scrivi_se_cambiato  # noqa: E402
 
 URL_STAZIONI = "https://www.cfr.toscana.it/monitoraggio/stazioni.php?type=idro"
 URL_COORDINATE = (
@@ -25,6 +29,7 @@ URL_COORDINATE = (
     "&request=GetFeature&typeName=geo:cf_idrometri&outputFormat=application/json&srsName=EPSG:4326"
 )
 TIMEOUT = 20
+FUSO_ITALIA = ZoneInfo("Europe/Rome")
 
 QUI = Path(__file__).resolve().parent
 OUT_DIR = QUI.parent / "docs" / "data"
@@ -187,7 +192,34 @@ def raggruppa_per_zona(stazioni):
     return per_zona, senza_zona
 
 
-def aggiorna_storico(stazioni, adesso_iso):
+def istante_lettura(orario_lettura, adesso):
+    """
+    "11/11 15.10" (ora italiana, senza anno) -> ISO con fuso. L'anno e' quello
+    corrente, salvo a cavallo di Capodanno (una lettura "31/12" vista il 1/1 e'
+    dell'anno prima). Se il formato non si riconosce restituisce None.
+    """
+    m = re.match(r"^\s*(\d{1,2})/(\d{1,2})\s+(\d{1,2})[.:](\d{2})\s*$", orario_lettura or "")
+    if not m:
+        return None
+    giorno, mese, ora, minuto = (int(x) for x in m.groups())
+    adesso_it = adesso.astimezone(FUSO_ITALIA)
+    for anno in (adesso_it.year, adesso_it.year - 1):
+        try:
+            t = datetime(anno, mese, giorno, ora, minuto, tzinfo=FUSO_ITALIA)
+        except ValueError:
+            continue
+        if t <= adesso_it + timedelta(hours=1):
+            return t.isoformat(timespec="seconds")
+    return None
+
+
+def aggiorna_storico(stazioni, adesso):
+    """
+    Un punto per ogni NUOVA lettura della stazione (l'orario e' quello della
+    misura, non del run): se la stazione non ha ancora trasmesso una lettura
+    nuova dall'ultimo giro, non si aggiunge nulla. Cosi' il file cambia solo
+    quando arrivano dati davvero nuovi (di norma ogni 15 minuti).
+    """
     storico = {}
     if FILE_STORICO.exists():
         try:
@@ -195,20 +227,32 @@ def aggiorna_storico(stazioni, adesso_iso):
         except (json.JSONDecodeError, OSError):
             storico = {}
 
-    limite = datetime.now(timezone.utc) - timedelta(hours=ORE_STORICO_DA_TENERE)
+    limite = adesso - timedelta(hours=ORE_STORICO_DA_TENERE)
+    adesso_iso = adesso.isoformat(timespec="seconds")
+    nuove_letture = 0
 
     for s in stazioni:
         if s["livello"] is None:
             continue
+        quando = istante_lettura(s.get("orario_lettura"), adesso) or adesso_iso
         punti = storico.get(s["id"], [])
-        punti.append([adesso_iso, s["livello"]])
-        punti = [p for p in punti if datetime.fromisoformat(p[0]) >= limite]
-        storico[s["id"]] = punti
+        if punti:
+            # Confronto come istanti, non come stringhe: i punti vecchi sono in
+            # UTC (+00:00), quelli nuovi in ora italiana (+01:00/+02:00).
+            ultimo = datetime.fromisoformat(punti[-1][0])
+            if datetime.fromisoformat(quando) <= ultimo:
+                continue  # stessa lettura gia' registrata, o piu' vecchia dell'ultima
+        punti.append([quando, s["livello"]])
+        nuove_letture += 1
+        storico[s["id"]] = [p for p in punti if datetime.fromisoformat(p[0]) >= limite]
 
     id_attuali = {s["id"] for s in stazioni}
     storico = {k: v for k, v in storico.items() if k in id_attuali}
 
-    FILE_STORICO.write_text(json.dumps(storico, ensure_ascii=False), encoding="utf-8")
+    if scrivi_se_cambiato(FILE_STORICO, storico, campi_ignorati=(), indent=None):
+        log(f"  > storico: {nuove_letture} nuove letture registrate")
+    else:
+        log("  > storico: nessuna lettura nuova")
     return storico
 
 
@@ -237,8 +281,9 @@ def main():
             s["lat"], s["lng"] = None, None
     log(f"  > {con_coordinate}/{len(stazioni)} stazioni con coordinate note")
 
-    adesso = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    storico = aggiorna_storico(stazioni, adesso)
+    adesso_dt = datetime.now(timezone.utc)
+    adesso = adesso_dt.isoformat(timespec="seconds")
+    storico = aggiorna_storico(stazioni, adesso_dt)
 
     for s in stazioni:
         s["storico"] = storico.get(s["id"], [])[-PUNTI_SPARKLINE_MAX:]
@@ -253,9 +298,8 @@ def main():
         "zone": per_zona,
     }
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / "idrometria.json"
-    out.write_text(json.dumps(dati, ensure_ascii=False, indent=1), encoding="utf-8")
+    cambiato = scrivi_se_cambiato(out, dati)
 
     campi_mappa = ("id", "fiume", "stazione", "zona_nome", "lat", "lng",
                    "livello", "soglia1", "soglia2", "portata", "tendenza", "stato")
@@ -268,9 +312,10 @@ def main():
         ],
     }
     out_mappa = OUT_DIR / "idrometria_mappa.json"
-    out_mappa.write_text(json.dumps(dati_mappa, ensure_ascii=False), encoding="utf-8")
+    cambiato = scrivi_se_cambiato(out_mappa, dati_mappa, indent=None) or cambiato
 
-    log(f"OK - {len(stazioni)} stazioni, {zone_coperte}/26 zone - scritto {out} e {out_mappa}")
+    esito = "dati cambiati, file riscritti" if cambiato else "nessuna differenza, file lasciati com'erano"
+    log(f"OK - {len(stazioni)} stazioni, {zone_coperte}/26 zone - {esito} ({out}, {out_mappa})")
 
     if zone_coperte < 15:
         sys.exit(1)
