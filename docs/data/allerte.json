@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-19T23:00:31+00:00",
+ "aggiornato": "2026-11-20T11:31:07+00:00",
  "emesso_pioggia": "19/11/2026 14:22",
  "emesso_pioggia_data": "2026-11-19",
  "data_oggi": "2026-11-20",
@@ -7,8 +7,8 @@
  "fonte_pioggia": "Dipartimento della Protezione Civile",
  "fonte_pioggia_sigla": "dpc",
  "dpc_emesso": "19/11/2026 14:22",
- "cfr_emesso": "19/11/2026 13:01",
- "cfr_bollettino_piu_recente": null,
+ "cfr_emesso": "20/11/2026 12:28",
+ "cfr_bollettino_piu_recente": "20/11/2026 12:28",
  "caldo_stagione_attiva": false,
  "caldo_citta_coperta": "Firenze",
  "caldo_zona_coperta": "Arno-Firenze",
