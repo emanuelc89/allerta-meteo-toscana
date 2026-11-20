@@ -4,7 +4,7 @@
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
-   "aggiornamento": "20/11/2026 07:29",
+   "aggiornamento": "20/11/2026 16:52",
    "giorni": [
     {
      "giorno": 1,
@@ -106,7 +106,7 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "20/11/2026 07:29",
+   "aggiornamento": "20/11/2026 16:52",
    "giorni": [
     {
      "giorno": 1,
@@ -142,7 +142,7 @@
      "giorno": 3,
      "data_descr": "Domenica",
      "min": 10,
-     "max": 14,
+     "max": 15,
      "descrizione": "pioggia moderata-forte",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
      "umidita_notte": 98,
@@ -208,7 +208,7 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "20/11/2026 07:29",
+   "aggiornamento": "20/11/2026 16:52",
    "giorni": [
     {
      "giorno": 1,
@@ -616,7 +616,7 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "20/11/2026 07:29",
+   "aggiornamento": "20/11/2026 16:52",
    "giorni": [
     {
      "giorno": 1,
@@ -652,7 +652,7 @@
      "giorno": 3,
      "data_descr": "Domenica",
      "min": 10,
-     "max": 14,
+     "max": 15,
      "descrizione": "pioggia moderata-forte",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
      "umidita_notte": 98,
@@ -820,7 +820,7 @@
   },
   "Reno": {
    "comune": "Pistoia",
-   "aggiornamento": "20/11/2026 07:29",
+   "aggiornamento": "20/11/2026 16:52",
    "giorni": [
     {
      "giorno": 1,
@@ -856,7 +856,7 @@
      "giorno": 3,
      "data_descr": "Domenica",
      "min": 10,
-     "max": 13,
+     "max": 14,
      "descrizione": "pioggia moderata-forte",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
      "umidita_notte": 98,
@@ -871,7 +871,7 @@
   },
   "Romagna-Toscana": {
    "comune": "Firenzuola",
-   "aggiornamento": "20/11/2026 07:29",
+   "aggiornamento": "20/11/2026 16:52",
    "giorni": [
     {
      "giorno": 1,
