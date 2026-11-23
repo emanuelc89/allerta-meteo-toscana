@@ -4,7 +4,7 @@
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -24,14 +24,14 @@
     {
      "giorno": 2,
      "data_descr": "Martedì",
-     "min": 2,
-     "max": 12,
+     "min": 0,
+     "max": 11,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 101,
      "umidita_giorno": 88,
-     "humidex_notte": 1,
-     "humidex_giorno": 8,
+     "humidex_notte": -1,
+     "humidex_giorno": 7,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -55,13 +55,13 @@
   },
   "Arno-Costa": {
    "comune": "Livorno",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 10,
-     "max": 15,
+     "max": 16,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
@@ -76,7 +76,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 9,
-     "max": 15,
+     "max": 16,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": 80,
@@ -106,13 +106,13 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 7,
-     "max": 15,
+     "max": 16,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": null,
@@ -127,7 +127,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 5,
-     "max": 14,
+     "max": 15,
      "descrizione": "velato",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
      "umidita_notte": 94,
@@ -143,8 +143,8 @@
      "data_descr": "Mercoledì",
      "min": 9,
      "max": 13,
-     "descrizione": "pioggia debole",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
+     "descrizione": "pioggia moderata-forte",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
      "umidita_notte": 91,
      "umidita_giorno": 89,
      "humidex_notte": 11,
@@ -157,19 +157,19 @@
   },
   "Arno-Valdarno Sup.": {
    "comune": "Montevarchi",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 5,
-     "max": 13,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 87,
      "humidex_notte": null,
-     "humidex_giorno": 8,
+     "humidex_giorno": 9,
      "humidex_notte_etichetta": null,
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -178,13 +178,13 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 3,
-     "max": 12,
+     "max": 13,
      "descrizione": "velato",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
      "umidita_notte": 98,
      "umidita_giorno": 85,
      "humidex_notte": 3,
-     "humidex_giorno": 7,
+     "humidex_giorno": 8,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -194,8 +194,8 @@
      "data_descr": "Mercoledì",
      "min": 9,
      "max": 11,
-     "descrizione": "pioggia debole",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
+     "descrizione": "pioggia moderata-forte",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
      "umidita_notte": 96,
      "umidita_giorno": 90,
      "humidex_notte": 10,
@@ -208,19 +208,19 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 7,
-     "max": 15,
+     "max": 16,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": null,
      "umidita_giorno": 76,
      "humidex_notte": null,
-     "humidex_giorno": 10,
+     "humidex_giorno": 11,
      "humidex_notte_etichetta": null,
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -229,7 +229,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 5,
-     "max": 14,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 96,
@@ -259,13 +259,13 @@
   },
   "Etruria": {
    "comune": "Campiglia Marittima",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 9,
-     "max": 15,
+     "max": 16,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
@@ -280,7 +280,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 9,
-     "max": 14,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 88,
@@ -310,13 +310,13 @@
   },
   "Etruria-Costa Nord": {
    "comune": "Piombino",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 11,
-     "max": 17,
+     "max": 18,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
@@ -331,7 +331,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 11,
-     "max": 16,
+     "max": 17,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 88,
@@ -361,13 +361,13 @@
   },
   "Etruria-Costa Sud": {
    "comune": "Piombino",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 11,
-     "max": 17,
+     "max": 18,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
@@ -382,7 +382,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 11,
-     "max": 16,
+     "max": 17,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 88,
@@ -412,15 +412,15 @@
   },
   "Fiora e Albegna": {
    "comune": "Manciano",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 7,
      "max": 15,
-     "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": null,
      "umidita_giorno": 74,
      "humidex_notte": null,
@@ -433,7 +433,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 6,
-     "max": 14,
+     "max": 15,
      "descrizione": "pioggia debole e schiarite",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": 90,
@@ -463,15 +463,15 @@
   },
   "Fiora e Albegna-Costa e Giglio": {
    "comune": "Orbetello",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 9,
      "max": 17,
-     "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": null,
      "umidita_giorno": 74,
      "humidex_notte": null,
@@ -484,7 +484,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 8,
-     "max": 15,
+     "max": 16,
      "descrizione": "pioggia debole e schiarite",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": 90,
@@ -514,7 +514,7 @@
   },
   "Isole": {
    "comune": "Portoferraio",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -565,7 +565,7 @@
   },
   "Lunigiana": {
    "comune": "Aulla",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -586,7 +586,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 3,
-     "max": 13,
+     "max": 12,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": 90,
@@ -616,13 +616,13 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 5,
-     "max": 14,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
@@ -637,12 +637,12 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 5,
-     "max": 13,
+     "max": 14,
      "descrizione": "velato",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
      "umidita_notte": 97,
      "umidita_giorno": 89,
-     "humidex_notte": 5,
+     "humidex_notte": 4,
      "humidex_giorno": 9,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -667,15 +667,15 @@
   },
   "Ombrone Gr-Alto": {
    "comune": "Siena",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 6,
-     "max": 13,
-     "descrizione": "nuvoloso",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
+     "max": 15,
+     "descrizione": "pioggia debole e schiarite",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_sole3.png",
      "umidita_notte": null,
      "umidita_giorno": 83,
      "humidex_notte": null,
@@ -718,7 +718,7 @@
   },
   "Ombrone Gr-Costa": {
    "comune": "Grosseto",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -739,7 +739,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 7,
-     "max": 15,
+     "max": 16,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 90,
@@ -769,7 +769,7 @@
   },
   "Ombrone Gr-Medio": {
    "comune": "Montalcino",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -820,7 +820,7 @@
   },
   "Reno": {
    "comune": "Pistoia",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -841,13 +841,13 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 5,
-     "max": 13,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 98,
      "umidita_giorno": 84,
      "humidex_notte": 5,
-     "humidex_giorno": 9,
+     "humidex_giorno": 10,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -871,7 +871,7 @@
   },
   "Romagna-Toscana": {
    "comune": "Firenzuola",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -922,13 +922,13 @@
   },
   "Serchio-Costa": {
    "comune": "Viareggio",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 10,
-     "max": 15,
+     "max": 16,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": null,
@@ -943,7 +943,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 9,
-     "max": 14,
+     "max": 15,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": 73,
@@ -973,7 +973,7 @@
   },
   "Serchio-Garfagnana-Lima": {
    "comune": "Montecatini-Terme",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -993,13 +993,13 @@
     {
      "giorno": 2,
      "data_descr": "Martedì",
-     "min": 5,
+     "min": 4,
      "max": 13,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": 100,
      "umidita_giorno": 88,
-     "humidex_notte": 5,
+     "humidex_notte": 4,
      "humidex_giorno": 9,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
@@ -1024,7 +1024,7 @@
   },
   "Serchio-Lucca": {
    "comune": "Lucca",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -1045,7 +1045,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 5,
-     "max": 13,
+     "max": 14,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": 100,
@@ -1075,7 +1075,7 @@
   },
   "Valdarno Inf.": {
    "comune": "Empoli",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -1096,7 +1096,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 5,
-     "max": 13,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 94,
@@ -1112,8 +1112,8 @@
      "data_descr": "Mercoledì",
      "min": 9,
      "max": 13,
-     "descrizione": "pioggia debole",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
+     "descrizione": "pioggia moderata-forte",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
      "umidita_notte": 92,
      "umidita_giorno": 92,
      "humidex_notte": 10,
@@ -1126,19 +1126,19 @@
   },
   "Valdelsa-Valdera": {
    "comune": "Poggibonsi",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 7,
-     "max": 15,
+     "max": 16,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 83,
      "humidex_notte": null,
-     "humidex_giorno": 10,
+     "humidex_giorno": 11,
      "humidex_notte_etichetta": null,
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -1146,14 +1146,14 @@
     {
      "giorno": 2,
      "data_descr": "Martedì",
-     "min": 6,
-     "max": 14,
+     "min": 3,
+     "max": 12,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": 90,
      "umidita_giorno": 82,
-     "humidex_notte": 6,
-     "humidex_giorno": 11,
+     "humidex_notte": 5,
+     "humidex_giorno": 9,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -1177,19 +1177,19 @@
   },
   "Valdichiana": {
    "comune": "Arezzo",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 5,
-     "max": 13,
+     "max": 15,
      "descrizione": "nuvoloso",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/nuvoloso.png",
      "umidita_notte": null,
      "umidita_giorno": 78,
      "humidex_notte": null,
-     "humidex_giorno": 8,
+     "humidex_giorno": 9,
      "humidex_notte_etichetta": null,
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
@@ -1198,7 +1198,7 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 3,
-     "max": 12,
+     "max": 13,
      "descrizione": "velato",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/stratificata2.png",
      "umidita_notte": 92,
@@ -1228,7 +1228,7 @@
   },
   "Valtiberina": {
    "comune": "Sansepolcro",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
@@ -1279,13 +1279,13 @@
   },
   "Versilia": {
    "comune": "Massa",
-   "aggiornamento": "23/11/2026 10:03",
+   "aggiornamento": "23/11/2026 14:11",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Lunedì",
      "min": 8,
-     "max": 14,
+     "max": 16,
      "descrizione": "coperto",
      "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": null,
@@ -1300,13 +1300,13 @@
      "giorno": 2,
      "data_descr": "Martedì",
      "min": 8,
-     "max": 14,
-     "descrizione": "pioggia debole",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
+     "max": 15,
+     "descrizione": "coperto",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/coperto.png",
      "umidita_notte": 82,
      "umidita_giorno": 78,
      "humidex_notte": 8,
-     "humidex_giorno": 12,
+     "humidex_giorno": 13,
      "humidex_notte_etichetta": "nessun disagio",
      "humidex_giorno_etichetta": "nessun disagio",
      "caldo_stimato": false
