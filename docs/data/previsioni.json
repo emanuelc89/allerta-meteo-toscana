@@ -4,7 +4,7 @@
  "zone": {
   "Arno-Casentino": {
    "comune": "Bibbiena",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
@@ -106,15 +106,15 @@
   },
   "Arno-Firenze": {
    "comune": "Firenze",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 11,
      "max": 14,
-     "descrizione": "pioggia moderata-forte",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
+     "descrizione": "pioggia debole",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
      "umidita_notte": null,
      "umidita_giorno": 84,
      "humidex_notte": null,
@@ -208,7 +208,7 @@
   },
   "Bisenzio e Ombrone Pt": {
    "comune": "Prato",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
@@ -616,7 +616,7 @@
   },
   "Mugello-Val di Sieve": {
    "comune": "Pontassieve",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
@@ -820,7 +820,7 @@
   },
   "Reno": {
    "comune": "Pistoia",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
@@ -871,7 +871,7 @@
   },
   "Romagna-Toscana": {
    "comune": "Firenzuola",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
@@ -1075,15 +1075,15 @@
   },
   "Valdarno Inf.": {
    "comune": "Empoli",
-   "aggiornamento": "25/11/2026 07:40",
+   "aggiornamento": "25/11/2026 14:15",
    "giorni": [
     {
      "giorno": 1,
      "data_descr": "Mercoledì",
      "min": 11,
      "max": 14,
-     "descrizione": "pioggia moderata-forte",
-     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole.png",
+     "descrizione": "pioggia debole",
+     "icona_url": "https://www.lamma.toscana.it/previ/ita/xml/comuni_web/simboli_grandi/pioggia_debole1.png",
      "umidita_notte": null,
      "umidita_giorno": 91,
      "humidex_notte": null,
